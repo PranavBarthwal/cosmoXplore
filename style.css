@@ -34,3 +34,24 @@ body{
     margin-top: 20px;
     justify-content: center;
 }
+
+.apod{
+    height: 80vh;
+    width: 100vw;
+    background-color: rgba(255, 255, 255, 0.095);
+}
+
+.img_div{
+    margin-top: 30px;
+    height: 85%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.242);
+}
+
+.apod_button_div{
+    display: flex;
+    width: 100%;
+    height: 15%;
+    align-items: center;
+    justify-content: center;
+}

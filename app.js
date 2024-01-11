@@ -1,3 +1,5 @@
+// PARTICLES BACKGROUND
+
 particlesJS("bg", {
     "particles": {
       "number": {
@@ -108,3 +110,22 @@ particlesJS("bg", {
     },
     "retina_detect": true
   });
+
+
+
+
+// API CALL
+
+  fetch('https://api.nasa.gov/planetary/apod?api_key=eISHzmGbQk7EMWv9NTlVtvzZVmeLKPUoL3uKMSPJ')
+  .then((response) => {
+      return response.json()
+  }).then((data) => {
+      console.log(data.url)
+  })
+  .catch((error) => console.log(error))
+
+  console.log(data.url)
+
+  function displayImage(image){
+
+  }
