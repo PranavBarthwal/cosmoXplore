@@ -1,7 +1,16 @@
 body{
-   background-color: rgb(205, 41, 41);
+    background-image: linear-gradient(to right, rgb(0, 0, 0) , rgb(38, 2, 148));
+    margin: 0;
+    padding: 0;
+   
 }
 
-.container-fluid{
-    color: aliceblue;
+
+
+  
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+
 }
