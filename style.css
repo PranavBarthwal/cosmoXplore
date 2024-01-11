@@ -1,16 +1,36 @@
-body{
-    background-image: linear-gradient(to right, rgb(0, 0, 0) , rgb(38, 2, 148));
+*{
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
    
 }
 
 
-
+body{
+    background-image: linear-gradient(to right, rgb(10, 0, 73) , rgb(0, 0, 0));
+}
   
 .container{
     width: 100%;
     display: flex;
     justify-content: space-evenly;
 
+}
+
+#bg{
+    position: absolute;
+    top:0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+
+
+.nav_container{
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
 }
