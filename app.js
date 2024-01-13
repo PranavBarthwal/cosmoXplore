@@ -120,12 +120,21 @@ particlesJS("bg", {
   .then((response) => {
       return response.json()
   }).then((data) => {
-      console.log(data.url)
+      console.log(data)
+      
+      displayImage(data.url)
+      displayInfo(data.explanation)
   })
   .catch((error) => console.log(error))
 
-  console.log(data.url)
 
+  // function to display image in apod section
   function displayImage(image){
-
+    document.getElementById("apod_img").src = image
+  }
+  
+  //function to display image info in apod section
+  function displayInfo(info){
+    document.getElementById("apod_info").textContent = info
+ 
   }
