@@ -36,7 +36,10 @@
           <a class="nav-link text-light" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="#">APOD</a>
+          <a class="nav-link text-light" href="#">APoD</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#">CosmoNews</a>
         </li>
         <li class="nav-item">
           <button class="btn btn-outline-light" type="submit">Contact Us</button>
@@ -57,8 +60,8 @@
       <h1 class="display-2 fw-bold text-light">Let's embark on a Cosmic Expedition.</h1>
       <p class="lead text-light">Welcome to CosmoXplore, where the celestial canvas unfolds its mysteries before your eyes. Immerse yourself in a cosmic odyssey, as we harness the power of NASA's API to bring you a symphony of space resources. From breathtaking images to cutting-edge astronomical data, embark on a journey that transcends the limits of earthly imagination.</p>
       <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Primary</button>
-        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
+        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Explore</button>
+        
       </div>
     </div>
   </div>
@@ -76,15 +79,19 @@
 <div class="container my-5">
   <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
     <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-      <h2 class="display-6 fw-bold lh-1 text-light">Astronomy Picture Of The Day</h2>
+      <h2 class="display-6 fw-bold lh-1 text-light">Astronomy Picture Of The Day</h2><br>
+
       <p id="apod_info" class="lead">NASA's Astronomy Picture of the Day (APoD) showcases captivating celestial images accompanied by brief explanations. Each day, NASA features astronomical wonders, ranging from stunning nebulae and galaxies to snapshots of our solar system, providing a daily dose of cosmic beauty and scientific insight. APoD serves as a valuable resource for both astronomy enthusiasts and those seeking to explore the wonders of the universe.</p>
-      <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Primary</button>
-        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
-      </div>
+     
     </div>
-    <div class="col-lg-4 shadow-lg">
-        <img id="apod_img" src="" width="500" height="500">
+  
+    <div class="card text-bg-dark" style="width: 30rem; max-height: 400px;">
+      <img src="./assets/64e4e4aabd98a600197c0ca3.webp" id="apod_img" class="card-img" height="400px" width="30rem">
+      <div class="card-img-overlay">
+        <h5 id="title" class="card-title"></h5>
+        <p id="copyright" class="card-text"></p>
+        <p id="date" class="card-text"><small></small></p>
+      </div>
     </div>
   </div>
 </div>
@@ -92,6 +99,60 @@
 
 <br>
 <br>
+<br>
+
+
+
+<!-- COSMO NEWS -->
+<h1 align="center">CosmoNews</h1>
+<br>
+<br>
+<div class="container marketing">
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading fw-normal lh-1">First featurette heading. <span class="text-body-secondary">It’ll blow your mind.</span></h2>
+      <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
+    </div>
+    <div class="col-md-5">
+      <img src="./assets/64e4e4aabd98a600197c0ca3.webp" width="500" height="500">
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-7 order-md-2">
+      <h2 class="featurette-heading fw-normal lh-1">Oh yeah, it’s that good. <span class="text-body-secondary">See for yourself.</span></h2>
+      <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
+    </div>
+    <div class="col-md-5 order-md-1">
+      <img src="./assets/jb1p0zcvmgrdx7yq9sur.png" width="500" height="500">
+        </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading fw-normal lh-1">And lastly, this one. <span class="text-body-secondary">Checkmate.</span></h2>
+      <p class="lead">And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.</p>
+    </div>
+    <div class="col-md-5">
+      <img src="./assets/jb1p0zcvmgrdx7yq9sur.png" width="500" height="500">
+        </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <!-- /END THE FEATURETTES -->
+
+</div>
+<br>
+<br>
+
+
 
 
 <!-- CONTACT FORM -->
@@ -123,6 +184,12 @@
 
 </body>
 </html>
+<br>
+<br>
+
+
+
+
 
     <!-- FOOTER -->
 <div class="container">

@@ -27,16 +27,16 @@ body{
 }
 
 
-#apod_img{
+/* #apod_img{
   margin-bottom: 50px;
   border-radius: 20px;
   border-color: aliceblue;
   border: 1px;
-}
-
+} */
+/* 
 #apod_img:hover{
   box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
-}
+} */
 
 
 

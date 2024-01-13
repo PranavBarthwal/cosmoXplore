@@ -114,27 +114,41 @@ particlesJS("bg", {
 
 
 
-// API CALL
+// NASA API CALL
 
-  fetch('https://api.nasa.gov/planetary/apod?api_key=eISHzmGbQk7EMWv9NTlVtvzZVmeLKPUoL3uKMSPJ')
-  .then((response) => {
-      return response.json()
-  }).then((data) => {
-      console.log(data)
+  // fetch('https://api.nasa.gov/planetary/apod?api_key=eISHzmGbQk7EMWv9NTlVtvzZVmeLKPUoL3uKMSPJ')
+  // .then((response) => {
+  //     return response.json()
+  // }).then((data) => {
+  //     console.log(data)
       
-      displayImage(data.url)
-      displayInfo(data.explanation)
-  })
-  .catch((error) => console.log(error))
+  //     displayData(data.hdurl, data.explanation, data.title, data.date, data.copyright )
+     
+  // })
+  // .catch((error) => console.log(error))
 
 
-  // function to display image in apod section
-  function displayImage(image){
-    document.getElementById("apod_img").src = image
-  }
-  
-  //function to display image info in apod section
-  function displayInfo(info){
-    document.getElementById("apod_info").textContent = info
- 
-  }
+  // function to display data in apod section
+  // function displayData(image, info, title, date, copyright){
+  //   document.getElementById("apod_img").src = image
+  //   document.getElementById("apod_info").textContent = info
+  //   document.getElementById("title").textContent = title
+  //   document.getElementById("date").textContent = date
+  //   document.getElementById("copyright").textContent = copyright
+
+  // }
+
+
+
+
+  // NASA API CALL 2
+
+  // fetch('https://api.nasa.gov/EPIC/api/natural/images?api_key=eISHzmGbQk7EMWv9NTlVtvzZVmeLKPUoL3uKMSPJ')
+  // .then((response) => {
+  //     return response.json()
+  // }).then((data) => {
+  //     console.log(data)
+    
+     
+  // })
+  // .catch((error) => console.log(error))
