@@ -13,6 +13,7 @@
 body{
     background-image: linear-gradient(to right, rgb(10, 0, 73) , rgb(0, 0, 0));
     overflow-x: hidden;
+    color: white;
 }
   
 
@@ -26,42 +27,37 @@ body{
 }
 
 
-
-.nav_container{
-    width: 100%;
+.contact-form {
     display: flex;
-    margin-top: 20px;
-    justify-content: center;
-}
+    align-items: center;
+    justify-content: space-between;
+  }
 
-
-
-
-
-
-
-
-
-
-
-.apod{
-    height: 80vh;
-    width: 100vw;
-    background-color: rgba(255, 255, 255, 0.095);
-}
-
-.img_div{
-    margin-top: 30px;
-    height: 85%;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.242);
-}
-
-.apod_button_div{
+  .contact-form .left {
+    flex: 1;
     display: flex;
-    width: 100%;
-    height: 15%;
     align-items: center;
     justify-content: center;
-}
+  }
 
+  .contact-form .right {
+    flex: 1;
+    padding-left: 20px;
+  }
+
+  .right .form-control {
+    width: 100%;
+    max-width: 600px; /* Adjust the maximum width as needed */
+  }
+
+  /* Additional styling for responsiveness */
+  @media (max-width: 768px) {
+    .contact-form {
+      flex-direction: column;
+    }
+
+    .contact-form .right {
+      padding-left: 0;
+      margin-top: 10px; /* Adjust as needed */
+    }
+  }
