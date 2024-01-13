@@ -1,21 +1,20 @@
+
+
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    
+
    
 }
 
 
 body{
     background-image: linear-gradient(to right, rgb(10, 0, 73) , rgb(0, 0, 0));
+    overflow-x: hidden;
 }
   
-.container{
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-
-}
 
 #bg{
     position: absolute;
@@ -34,6 +33,16 @@ body{
     margin-top: 20px;
     justify-content: center;
 }
+
+
+
+
+
+
+
+
+
+
 
 .apod{
     height: 80vh;
@@ -55,3 +64,4 @@ body{
     align-items: center;
     justify-content: center;
 }
+
