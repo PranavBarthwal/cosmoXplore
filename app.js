@@ -114,36 +114,36 @@ particlesJS("bg", {
 
 
 
-// NASA API CALL
+// NASA API CALL 1 : APoD
 
-  // fetch('https://api.nasa.gov/planetary/apod?api_key=eISHzmGbQk7EMWv9NTlVtvzZVmeLKPUoL3uKMSPJ')
-  // .then((response) => {
-  //     return response.json()
-  // }).then((data) => {
-  //     console.log(data)
+  fetch('https://api.nasa.gov/planetary/apod?api_key=eISHzmGbQk7EMWv9NTlVtvzZVmeLKPUoL3uKMSPJ')
+  .then((response) => {
+      return response.json()
+  }).then((data) => {
+      console.log(data)
       
-  //     displayData(data.hdurl, data.explanation, data.title, data.date, data.copyright )
+      displayData(data.url, data.explanation, data.title, data.date, data.copyright )
      
-  // })
-  // .catch((error) => console.log(error))
+  })
+  .catch((error) => console.log(error))
 
 
-  // function to display data in apod section
-  // function displayData(image, info, title, date, copyright){
-  //   document.getElementById("apod_img").src = image
-  //   document.getElementById("apod_info").textContent = info
-  //   document.getElementById("title").textContent = title
-  //   document.getElementById("date").textContent = date
-  //   document.getElementById("copyright").textContent = copyright
+  //function to display data in apod section
+  function displayData(image, info, title, date, copyright){
+    document.getElementById("apod_img").src = image
+    document.getElementById("apod_info").textContent = info
+    document.getElementById("title").textContent = title
+    document.getElementById("date").textContent = date
+    document.getElementById("copyright").textContent = copyright
 
-  // }
-
-
+  }
 
 
-  // NASA API CALL 2
 
-  // fetch('https://api.nasa.gov/EPIC/api/natural/images?api_key=eISHzmGbQk7EMWv9NTlVtvzZVmeLKPUoL3uKMSPJ')
+
+  // NASA API CALL 2 : Mars Rover Photos
+
+  // fetch('https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-6-3&api_key=eISHzmGbQk7EMWv9NTlVtvzZVmeLKPUoL3uKMSPJ')
   // .then((response) => {
   //     return response.json()
   // }).then((data) => {
