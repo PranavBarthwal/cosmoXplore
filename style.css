@@ -11,11 +11,23 @@
 
 
 body{
-    background-image: linear-gradient(to right, rgb(10, 0, 73) , rgb(0, 0, 0));
+    background-image: linear-gradient(to left, rgb(10, 0, 73) , rgb(0, 0, 0));
     overflow-x: hidden;
-    color: white;
+    color: rgb(255, 255, 255);
+    font-family: sans-serif;
 }
-  
+
+
+  .body::-webkit-scrollbar {
+    display: none;
+}
+
+
+.auto-typed{
+  background: -webkit-linear-gradient(#e4d6fb, #8400ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 #bg{
     position:fixed;
@@ -38,6 +50,42 @@ body{
 }
 
 
+.apod_img_container{
+  
+  width: 500px;
+  height: 500px;
+}
+
+.img{
+   
+   width: 500px;
+   height: 400px;
+}
+
+.info{
+ 
+   width: 500px;
+   height: 100px;
+
+}
+
+#apod_img{
+  border-radius: 25px;
+}
+
+#apod_img:hover {
+  color: white;
+  box-shadow: 0 5px 15px #9000ff;
+}
+
+.hero_img{
+  border-radius: 50%;
+}
+
+.hero_img:hover{
+  color: rgb(191, 0, 255);
+  box-shadow: 0 5px 15px #9000ff;
+}
 
 
 .rover_container{
@@ -86,6 +134,15 @@ body{
     max-width: 600px; /* Adjust the maximum width as needed */
   }
 
+  .contact_img{
+    border-radius: 50%;
+  }
+
+  .contact_img:hover{
+    color: white;
+  box-shadow: 0 5px 15px #9000ff;
+  }
+
   /* Additional styling for responsiveness */
   @media (max-width: 768px) {
     .contact-form {
@@ -97,3 +154,4 @@ body{
       margin-top: 10px; /* Adjust as needed */
     }
   }
+
