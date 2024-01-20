@@ -152,3 +152,10 @@ particlesJS("bg", {
      
   // })
   // .catch((error) => console.log(error))
+
+
+  document.getElementsByClassName('mars_button')[0].addEventListener('click', display_mars);
+
+  function display_mars(){
+    document.getElementsByClassName('rover_container')[0].style.display = none;
+  }

@@ -29,6 +29,14 @@ body{
   -webkit-text-fill-color: transparent;
 }
 
+.section_title{
+  background: -webkit-linear-gradient(#e4d6fb, #8400ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 4rem;
+  font-weight: bold;
+}
+
 #bg{
     position:fixed;
     top:0;
@@ -89,19 +97,28 @@ body{
 
 
 .rover_container{
-  width: 100;
+  width: 100%;
   display: flex;
   justify-content: center;
 
 }
 .rover_section_text{
-  width: 70%;
+  width: 50%;
 }
 
+.mars_illus{
+  border-radius: 50%;
+  margin-right: 30px;
+}
+
+.mars_illus:hover{
+  color: rgb(191, 0, 255);
+  box-shadow: 0 5px 15px #ff0099;
+}
 
 .mars_container{
   width: 100%;
-  display: flex;
+  display: none;
   justify-content: center;
 
 }
