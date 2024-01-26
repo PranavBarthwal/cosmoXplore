@@ -36,13 +36,13 @@
           <a class="nav-link text-light" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="#">APoD</a>
+          <a class="nav-link text-light" href="#apod">APoD</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="#">MartianImagery</a>
+          <a class="nav-link text-light" href="#mars">MartianImagery</a>
         </li>
         <li class="nav-item">
-          <button class="btn btn-outline-light" type="submit">Contact Us</button>
+         <a href="#contact"> <button class="btn btn-outline-light" type="submit">Contact Us</button></a>
         </li>
     </div>
   </div>
@@ -60,7 +60,7 @@
       <h1 class="display-2 fw-bold text-light">Let's embark on a Cosmic <span class="auto-typed"></span></h1>
       <p class="lead text-light">Welcome to CosmoXplore, where the celestial canvas unfolds its mysteries before your eyes. Immerse yourself in a cosmic odyssey, as we harness the power of NASA's API to bring you a symphony of space resources. From breathtaking images to cutting-edge astronomical data, embark on a journey that transcends the limits of earthly imagination.</p>
       <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Explore</button>
+        <a href="#apod"><button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Explore</button></a>
         
       </div>
     </div>
@@ -75,7 +75,7 @@
 
 
 <!-- APOD SECTION -->
-<h1 align="center" class="section_title">Astronomy Picture of The Day</h1>
+<h1 align="center" class="section_title" id="apod">Astronomy Picture of The Day</h1>
 <div class="container my-5">
   <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
     <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
@@ -108,8 +108,10 @@
 
 
 <!-- Mars Rover Photos -->
-<h1 align="center" class="section_title">Mars Rover Photos</h1>
+<h1 align="center" class="section_title" id="mars">Mars Rover Imagery</h1>
 <br>
+
+<!-- Default display -->
 <div class="rover_container">
   <div class="rover_section_img">
     <img src="./assets/mars.png" class="mars_illus">
@@ -130,7 +132,7 @@
 </div>
 
 
-
+<!-- display on enetering a date -->
 <div class="rover_display">
 
   <div class="inner_conatiner">
@@ -210,7 +212,7 @@
 
 
 <!-- CONTACT FORM -->
-<h1 align="center" class="section_title">Contact Us</h1>
+<h1 align="center" class="section_title" id="contact">Contact Us</h1>
 <div class="contact-form">
   <div class="left">
     <!-- Add your image here -->
@@ -231,7 +233,7 @@
         <label for="exampleInputMessage" class="form-label text-light">Message</label>
         <textarea class="form-control" id="exampleInputMessage" rows="4" placeholder="feel free to ask your queries!"></textarea>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary" onclick="alert('Mail has been sent successfully!')">Submit</button>
     </form>
   </div>
 </div>
