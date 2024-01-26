@@ -120,7 +120,7 @@ particlesJS("bg", {
   .then((response) => {
       return response.json()
   }).then((data) => {
-      console.log(data)
+      //console.log(data)
       
       displayData(data.url, data.explanation, data.title, data.date, data.copyright )
      
@@ -144,11 +144,18 @@ particlesJS("bg", {
   // NASA API CALL 2 : Mars Rover Photos
 function displayRover(){
 
-  fetch('https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-6-3&api_key=eISHzmGbQk7EMWv9NTlVtvzZVmeLKPUoL3uKMSPJ')
+  document.querySelector('.rover_container').style.display = 'none';
+  document.querySelector('.rover_display').style.display = 'flex';
+
+  let userDate = document.querySelector('.date_input').value;
+
+  let url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${userDate}&api_key=eISHzmGbQk7EMWv9NTlVtvzZVmeLKPUoL3uKMSPJ`
+
+  fetch(url)
   .then((response) => {
       return response.json()
   }).then((data) => {
-      console.log(data)
+      //console.log(data)
      
       let img_src = data.photos[0].img_src;
       let date = data.photos[0].earth_date;
@@ -174,6 +181,5 @@ function displayRover(){
     document.querySelector('.camera').textContent = camera
     document.querySelector('.land').textContent = land
     document.querySelector('.launch').textContent = launch
-    console.log(document.querySelector('.launch'))
     document.querySelector('.status').textContent = status
 }

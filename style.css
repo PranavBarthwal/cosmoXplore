@@ -98,7 +98,7 @@ body{
 
 .rover_container{
   width: 100%;
-  display: none;
+  display: flex;
   justify-content: center;
 
 }
@@ -118,9 +118,9 @@ body{
 
 
 .rover_display{
-  height: 75vh;
+  height: 70vh;
   width :100%;
-  display: flex;
+  display: none;
   justify-content: center;
 
 }
@@ -149,6 +149,11 @@ body{
   height:500px;
   border-radius: 25px;
 
+}
+
+#roverImg:hover{
+  color: rgb(191, 0, 255);
+  box-shadow: 0 5px 15px #9000ff;
 }
 
 .info_div{
