@@ -142,13 +142,27 @@ particlesJS("bg", {
 
 
   // NASA API CALL 2 : Mars Rover Photos
+function displayRover(){
+  
+
 
   fetch('https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-6-3&api_key=eISHzmGbQk7EMWv9NTlVtvzZVmeLKPUoL3uKMSPJ')
   .then((response) => {
       return response.json()
   }).then((data) => {
       console.log(data)
+      console.log()
+      let img_src = data.photos[0].img_src;
+
+      updateDom(img_src)
     
      
   })
   .catch((error) => console.log(error))
+
+
+  function updateDom(img_src){
+
+    document.querySelector('#roverImg').src = img_src
+  }
+}

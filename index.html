@@ -110,7 +110,6 @@
 <!-- Mars Rover Photos -->
 <h1 align="center" class="section_title">Mars Rover Photos</h1>
 <br>
-<br>
 <div class="rover_container">
   <div class="rover_section_img">
     <img src="./assets/mars.png" class="mars_illus">
@@ -132,21 +131,69 @@
 
 
 
+<div class="rover_display">
 
-<div class="mars_container">
-<div class="card" style="width: 40rem;">
-  <img src="./assets/64e4e4aabd98a600197c0ca3.webp" class="card-img-top" alt="...">
-  <div class="card-body">
-    <p class="card-text">Get Martian Images real quick!</p>
+  <div class="inner_conatiner">
+    <div class="image_div">
+      <img id="roverImg" src="./assets/original-5fcdc62f8266e353ea97ca56731ad804.png">
+    </div>
+    
+    <div class="info_container">
+
+      <div class="info1">
+        <div class="row">
+          <div class="card">
+              <h4>Rover Name</h4>
+              <p>Rover Name<p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="card">
+              <h4>Rover Name</h4>
+              <p>Rover Name<p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="card">
+              <h4>Rover Name</h4>
+              <p>Rover Name<p>
+          </div>
+        </div>
+      </div>
+
+      <div class="info2">
+        <div class="row">
+            <div class="card">
+                <h4>Rover Name</h4>
+                <p>Rover Name<p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="card">
+                <h4>Rover Name</h4>
+                <p>Rover Name<p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="card">
+                <h4>Rover Name</h4>
+                <p>Rover Name<p>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    
   </div>
+
 </div>
-</div>
+
 <br>
 
 
 <div  class="input-group mb-4 input_container">
   <input class="date_input" type="text" ="form-control" placeholder="Enter the date for retrieving Mars Rover Images. (YYYY-MM-DD)" aria-label="Recipient's username" aria-describedby="button-addon2">
-  <button class="btn btn-primary mars_button" type="button" id="button-addon2" >Enter</button>
+  <button class="btn btn-primary mars_button" type="button" id="button-addon2" onclick="displayRover()" >Enter</button>
 </div>
 
 
