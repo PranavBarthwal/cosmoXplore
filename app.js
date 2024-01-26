@@ -149,12 +149,12 @@ function displayRover(){
       return response.json()
   }).then((data) => {
       console.log(data)
-      console.log(data.photos[0].launch_date)
+     
       let img_src = data.photos[0].img_src;
       let date = data.photos[0].earth_date;
       let roverName = data.photos[0].rover.name;
       let camera = data.photos[0].camera.full_name;
-      let launch = data.photos[0].launch_date;
+      let launch = data.photos[0].rover.launch_date;
       let land = data.photos[0].rover.landing_date;
       let status = data.photos[0].rover.status;
       
@@ -174,6 +174,7 @@ function displayRover(){
     document.querySelector('.camera').textContent = camera
     document.querySelector('.land').textContent = land
     document.querySelector('.launch').textContent = launch
+    console.log(document.querySelector('.launch'))
     document.querySelector('.status').textContent = status
 
 
