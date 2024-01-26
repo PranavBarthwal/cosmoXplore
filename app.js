@@ -164,7 +164,7 @@ function displayRover(){
      
   })
   .catch((error) => console.log(error))
-
+  }
 
   function updateDom(img_src, date, roverName, camera, launch, land, status){
 
@@ -176,8 +176,4 @@ function displayRover(){
     document.querySelector('.launch').textContent = launch
     console.log(document.querySelector('.launch'))
     document.querySelector('.status').textContent = status
-
-
-
-  }
 }
