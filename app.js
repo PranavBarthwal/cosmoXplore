@@ -120,7 +120,7 @@ particlesJS("bg", {
   .then((response) => {
       return response.json()
   }).then((data) => {
-      //console.log(data)
+      console.log(data)
       
       displayData(data.url, data.explanation, data.title, data.date, data.copyright )
      
@@ -155,7 +155,7 @@ function displayRover(){
   .then((response) => {
       return response.json()
   }).then((data) => {
-      //console.log(data)
+      console.log(data)
      
       let img_src = data.photos[0].img_src;
       let date = data.photos[0].earth_date;
