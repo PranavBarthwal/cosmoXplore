@@ -125,7 +125,7 @@ particlesJS("bg", {
       displayData(data.url, data.explanation, data.title, data.date, data.copyright )
      
   })
-  .catch((error) => console.log(error))
+  .catch((error) => console.error(error))
 
 
   //function to display data in apod section
@@ -170,7 +170,7 @@ function displayRover(){
       updateDom(img_src, date, roverName, camera, launch, land, status)    
      
   })
-  .catch((error) => console.log(error))
+  .catch((error) => console.error(error))
   }
 
   function updateDom(img_src, date, roverName, camera, launch, land, status){
