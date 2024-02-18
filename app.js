@@ -183,3 +183,18 @@ function displayRover(){
     document.querySelector('.launch').textContent = launch
     document.querySelector('.status').textContent = status
 }
+
+
+
+
+
+
+// API CALL 3 : NASA Photo Video Gallery
+fetch('https://images-api.nasa.gov/search?q=apollo')
+  .then((response) => {
+      return response.json()
+  }).then((data) => {
+      console.log(data)
+     
+  })
+  .catch((error) => console.error(error))
