@@ -4,6 +4,8 @@
 
 # Steps to Contribute 👨‍💻
 
+**Give this project some love! Star⭐ the repo and follow @PranavBarthwal to stay in the loop.**
+
 1. **Fork the Repository:** To make a copy of the repository in your GitHub account, click the "Fork" button located in the top right corner of the project repository page.
 
 2. **Clone the Forked Repository:** Clone the repository to your local development environment by opening the terminal or command prompt and executing the following command:
