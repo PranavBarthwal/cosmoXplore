@@ -43,7 +43,7 @@ body:
     validations:
       required: true
   - type: textarea
-    id: expected
+    id: fix
     attributes:
       label: How will you fix this?
       placeholder: I fix this by making xyz changes
