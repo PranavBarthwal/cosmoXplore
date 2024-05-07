@@ -18,8 +18,8 @@ body:
     id: description
     attributes:
       label: Additional Context
-      validations:
-        required: true                   
+    validations:
+      required: true                   
 
         
 
