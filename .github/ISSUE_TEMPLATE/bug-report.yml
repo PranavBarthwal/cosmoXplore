@@ -16,7 +16,7 @@ body:
   - type: textarea
     id: steps
     attributes:
-      label: Steps to reproduce
+      label: Steps to reproduce the bug
       placeholder: |
         1. Go to page X
         2. Click here
@@ -32,12 +32,25 @@ body:
     id: screenshots
     attributes:
       label: Put here any screenshots or videos (optional)
+    validations:
+      required: true  
   - type: dropdown
     id: assign
     attributes:
       label: "Would you like to work on this issue?"
       options:
         - "Yes"
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: How will you fix this?
+      placeholder: I fix this by making xyz changes
+    conditions:
+      assign: "Yes"
+    validations:
+      required: true  
   - type: markdown
     attributes:
       value: |
