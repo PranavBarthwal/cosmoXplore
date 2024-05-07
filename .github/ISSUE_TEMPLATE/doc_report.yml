@@ -14,9 +14,9 @@ body:
         - label: Refractoring sentences that make more sense.
         - label: Fixing broken links.
         - label: Refractors / reformating of the document.
-   - type: textarea
-      id: description
-      attributes:
+  - type: textarea
+    id: description
+    attributes:
       label: Additional Context
       validations:
         required: true                   
