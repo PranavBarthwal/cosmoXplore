@@ -45,12 +45,8 @@ body:
   - type: textarea
     id: fix
     attributes:
-      label: How will you fix this?
+      label: How will you fix this? (Only if you want to work on this issue)
       placeholder: I fix this by making xyz changes
-    conditions:
-      assign: "Yes"
-    validations:
-      required: true  
   - type: markdown
     attributes:
       value: |
