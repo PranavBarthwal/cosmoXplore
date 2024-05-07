@@ -15,9 +15,4 @@ body:
         - label: Fixing broken links.
         - label: Refractors / reformating of the document.
 
-   - type: textarea
-    id: description
-    attributes:
-      label: Additional Context
-    validations:
-      required: true     
+  
