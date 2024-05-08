@@ -4,3 +4,6 @@
 ![Screenshot (189)](https://github.com/PranavBarthwal/cosmoXplore/assets/110532770/8544a975-e787-4d23-a88b-048764d65b40)
 ![Screenshot (190)](https://github.com/PranavBarthwal/cosmoXplore/assets/110532770/fd74a0fc-adec-4049-91fa-b71c1a50f832)
 ![Screenshot 2024-02-25 233331](https://github.com/PranavBarthwal/cosmoXplore/assets/110532770/cadee836-6466-42b2-88ca-43e8fd026b41)
+
+## yo nigga's this will be my first repository
+## yo nigga, lets play play hide in seek in dark
