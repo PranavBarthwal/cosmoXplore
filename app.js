@@ -198,3 +198,15 @@ fetch('https://images-api.nasa.gov/search?q=apollo')
      
   })
   .catch((error) => console.error(error))
+
+async function handleSendMail(e) {
+  e.preventDefault();
+  console.log('clicked');
+  await emailjs.send("<--Add you service ID here-->","<--Add your email template here-->",{
+    from_name: document.querySelector('#email-from-name').value,
+    from_email: document.querySelector('#email-from-email').value,
+    message: document.querySelector('#email-message').value
+  });
+  alert('Email sent successfully');
+}
+document.querySelector('#send-mail').addEventListener('click', handleSendMail)
