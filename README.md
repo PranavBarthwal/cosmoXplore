@@ -1,6 +1,6 @@
 # cosmoXplore
 
-**Welcome, new contributors to CosmoXplore! We're excited to have you join us as we explore the cosmos.**
+**Welcome new contributors to CosmoXplore! We are excited to have you join us as we explore the cosmos.**
 
 
 ![Screenshot (187)](https://github.com/PranavBarthwal/cosmoXplore/assets/110532770/d8fd242f-b716-4637-96d8-3a23bbd98c38)
