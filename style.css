@@ -18,7 +18,7 @@ body {
 /* NAVBAR STYLING */
 
 .navbar_background{
-  background-color: rgba(0, 51, 102, 0.7);
+  background-image: linear-gradient(to left, rgb(10, 0, 73) , rgb(0, 0, 0));;
 }
 
 /* HERO SECTION STYLING */
