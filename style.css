@@ -50,6 +50,20 @@ font-style: normal;
 }
 
 
+/* NAVBAR STYLING */
+
+.navbar_background{
+  background-image: linear-gradient(to left, rgb(10, 0, 73) , rgb(0, 0, 0));
+}
+
+/* HERO SECTION STYLING */
+
+.highlight {
+  background: -webkit-linear-gradient(#e4d6fb, #8400ff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
 .auto-typed {
  
 
