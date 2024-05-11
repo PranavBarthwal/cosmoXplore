@@ -27,9 +27,28 @@
     <a class="navbar-brand" href="#">
       <img src="./assets/logo_white.png" alt="Bootstrap" width="370">
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon "></span>
-    </button>
+    </button> -->
+
+    <div class="sidebar-icon" id="sidebar-icon">
+      <img src="svg/menu-fill.svg" alt="" class="sidebar-i" id="sidebar-i">
+    </div>
+
+    <div class="sidebar-menu" id="sidebar-menu">
+      <div class="sidebar-links">
+        <ul>
+          <li class="sidebar-list-item rem"><a class="rem-default" href="#">Home</a></li>
+          <li class="sidebar-list-item rem"><a class="rem-default" href="#apod">APOD</a></li>
+          <li class="sidebar-list-item rem"><a class="rem-default" href="#mars">MartianImagery</a></li>
+        </ul>
+        <a href="#contact" class="sidebar-contact rem-default rem">
+        <button class="btn btn-outline-light rounded-pill" type="submit">Contact Us</button>
+        </a>
+      </div>
+    </div>
+
+  
     <div class="collapse navbar-collapse pe-5" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
@@ -51,12 +70,12 @@
 
 
 <!-- HERO SECTION -->
-<div class="container col-xxl-9 px-3 py-5">
+<div class="container col-xxl-9 px-3 py-5 override-display">
   <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
     <div class="col-10 col-sm-8 col-lg-6">
       <img src="./assets/A letter tech logo.png" class="d-block mx-lg-auto img-fluid hero_img" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
     </div>
-    <div class="col-lg-6 ">
+    <div class="col-lg-6">
       <h1 class="display-2 fw-bold text-light">Let's embark on a Cosmic <span class="auto-typed"></span></h1>
       <p class="lead text-light">Welcome to CosmoXplore, where the celestial canvas unfolds its mysteries before your eyes. Immerse yourself in a cosmic odyssey, as we harness the power of NASA's API to bring you a symphony of space resources. From breathtaking images to cutting-edge astronomical data, embark on a journey that transcends the limits of earthly imagination.</p>
       <div class="d-grid gap-5 d-md-flex justify-content-md-start pt-2">
@@ -75,9 +94,9 @@
 
 
 <!-- APOD SECTION -->
-<h1 align="center" class="section_title" id="apod">Astronomy Picture of The Day</h1>
+<h1 align="center" class="section_title section_title_mobile" id="apod">Astronomy Picture of The Day</h1>
 <div class="container my-5">
-  <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+  <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg" id="class_removal">
     <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
       <h2 id="title" class="display-7 fw-bold lh-1 text-light">APoD Title</h2><br>
 
@@ -87,13 +106,13 @@
   
     <div class="apod_img_container">
       <div class="img">
-           <img src="./assets/64e4e4aabd98a600197c0ca3.webp" id="apod_img" width="100%" height="100%">
+           <img src="./assets/64e4e4aabd98a600197c0ca3.webp" id="apod_img"  class="apod_img">
       </div>
-      <div class="info">
+      <!-- <div class="info">
         <h5 id="copyright" align="center" > </h5>
         <h6 id="date" align="center"> </h6>
 
-      </div>
+      </div> -->
       
     </div>
     
@@ -108,16 +127,16 @@
 
 
 <!-- Mars Rover Photos -->
-<h1 align="center" class="section_title" id="mars">Mars Rover Imagery</h1>
+<h1 align="center" class="section_title section_title_mobile" id="mars">Mars Rover Imagery</h1>
 <br>
 
 <!-- Default display -->
 <div class="rover_container">
-  <div class="rover_section_img">
+  <div class="rover_section_img" >
     <img src="./assets/mars.png" class="mars_illus">
   </div>
 <div class="rover_section_text">
-<p class="">Welcome to an extraordinary adventure into the Martian landscape, where we invite you to explore the wonders of the Red Planet through the lens of various rovers that have traversed its surface. Our journey takes us deep into the photographic archives, a treasure trove of captivating images captured by these robotic explorers. Each rover, armed with sophisticated cameras, has documented the Martian terrain, unveiling its mysteries one snapshot at a time.
+<p class="rover_section_para">Welcome to an extraordinary adventure into the Martian landscape, where we invite you to explore the wonders of the Red Planet through the lens of various rovers that have traversed its surface. Our journey takes us deep into the photographic archives, a treasure trove of captivating images captured by these robotic explorers. Each rover, armed with sophisticated cameras, has documented the Martian terrain, unveiling its mysteries one snapshot at a time.
 
   The heart of this exploration lies in a comprehensive database meticulously organized to offer you an unparalleled visual chronicle of Mars' exploration. This repository is a testament to the marvels of technology and the spirit of scientific curiosity that drives humanity to push the boundaries of exploration.
   
@@ -137,12 +156,12 @@
 
   <div class="inner_conatiner">
     <div class="image_div">
-      <img id="roverImg" src="./assets/feel the fear and do it anyway.png">
+      <img id="roverImg" src="./assets/feel the fear and do it anyway.png" class="rover_popup_image_mobile">
     </div>
     
     <div class="info_container">
 
-      <div class="info1">
+      <div class="info1 info-gen">
         <div class="row">
           <div class="card">
               <h4>Earth Date</h4>
@@ -163,7 +182,7 @@
         </div>
       </div>
 
-      <div class="info2">
+      <div class="info2 info-gen">
         <div class="row">
             <div class="card">
                 <h4>Launch Date</h4>

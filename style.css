@@ -125,7 +125,7 @@ body {
   margin-right: 50px;
 }
 
-#roverImg {
+.rover_popup_image_mobile {
   width: 500px;
   height: 500px;
   border-radius: 25px;
@@ -243,4 +243,172 @@ body {
 
 .card p {
   padding: 10px 0;
+}
+
+.img {
+  display: flex;
+  justify-content: center;
+}
+
+.apod_img {
+}
+
+@media (max-width: 765px) {
+  /*apod section optimized for mobile devices*/
+
+  .section_title_mobile {
+    font-size: 2rem;
+  }
+
+  .img {
+    width: 100%;
+  }
+
+  .apod_img {
+    height: 350px;
+    width: 350px;
+  }
+
+  /*mars illus optimized for mobile devices*/
+
+  .rover_section_img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2rem;
+  }
+  .mars_illus {
+    width: 70%;
+  }
+
+  .rover_section_text {
+    width: 100%;
+  }
+
+  .rover_section_para {
+    text-align: center;
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .rover_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .rover_display {
+    display: none; /*change to implement this feature*/
+  }
+
+  .override-display {
+    width: 90%;
+  }
+
+  /* optimized hero_img for mobile devices*/
+  .hero_img {
+    width: 70%;
+  }
+
+  /*contact section optimized for mobile*/
+  .contact_img {
+    width: 70%;
+  }
+
+  /*rover popup display for mobile*/
+  .inner_conatiner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 30rem;
+    width: 98%;
+    border-radius: 10px;
+    border: #e4d6fb;
+    border-style: solid;
+    border-width: 1px;
+  }
+
+  .rover_popup_image_mobile {
+    height: 80%;
+    width: 80%;
+  }
+  .image_div {
+    /* width: 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+    width: 80%;
+  }
+
+  .card {
+    height: 5rem;
+    width: 20rem;
+  }
+
+  .info_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .info-gen {
+    width: 20%;
+  }
+}
+
+.rover_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mars_illus {
+  height: 80%;
+}
+
+/* sidebar for mobile devices*/
+
+.sidebar-icon {
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  z-index: 10;
+}
+
+.sidebar-list-item {
+  list-style-type: none;
+  padding-bottom: 8px;
+}
+
+@media (min-width: 500px) {
+  .sidebar-icon {
+    display: none;
+  }
+}
+
+.sidebar-contact {
+  display: flex;
+  justify-content: center;
+}
+.sidebar-menu {
+  position: absolute;
+  top: 80px;
+  right: -200px; /* Initial position (off-screen) */
+  width: 160px;
+  height: 160px;
+  background-color: inherit;
+  transition: right 0.3s ease;
+  z-index: 5; /* Ensure it's on top of other content */
+}
+.sidebar-menu.active {
+  right: 0; /* Slide-in position */
+}
+
+.rem-default {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
