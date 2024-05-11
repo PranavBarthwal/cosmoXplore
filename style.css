@@ -15,12 +15,19 @@ body {
   display: none;
 }
 
+/* NAVBAR STYLING */
+
+.navbar_background{
+  background-color: rgba(0, 51, 102, 0.7);
+}
+
+/* HERO SECTION STYLING */
+
 .highlight {
   background: -webkit-linear-gradient(#e4d6fb, #8400ff);
   -webkit-background-clip: text;
   color: transparent;
 }
-
 
 .auto-typed {
   background: -webkit-linear-gradient(#e4d6fb, #8400ff);
