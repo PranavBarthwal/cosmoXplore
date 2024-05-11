@@ -335,7 +335,6 @@ body {
     width: 80%;
   }
   .image_div {
-    /* width: 100%; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -396,15 +395,15 @@ body {
 .sidebar-menu {
   position: absolute;
   top: 80px;
-  right: -200px; /* Initial position (off-screen) */
+  right: -200px; 
   width: 160px;
   height: 160px;
   background-color: inherit;
   transition: right 0.3s ease;
-  z-index: 5; /* Ensure it's on top of other content */
+  z-index: 5; 
 }
 .sidebar-menu.active {
-  right: 0; /* Slide-in position */
+  right: 0; 
 }
 
 .rem-default {
