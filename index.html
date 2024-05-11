@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
    <link rel="stylesheet" href="./style.css">
+   <link rel="icon" type="image/png" href="./assets/favicon.png"> 
 </head>
 
 
@@ -22,8 +23,9 @@
 
 <!-- NAVBAR -->
 
-<nav class="navbar navbar-expand-lg bg-* ">
-  <div class="container-fluid pt-2">
+
+<nav class="navbar navbar-expand-lg fixed-top navbar_background">
+  <div class="container-fluid">
     <a class="navbar-brand" href="#">
       <img src="./assets/logo_white.png" alt="Bootstrap" width="370">
     </a>
@@ -57,7 +59,7 @@
       <img src="./assets/A letter tech logo.png" class="d-block mx-lg-auto img-fluid hero_img" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
     </div>
     <div class="col-lg-6 ">
-      <h1 class="display-2 fw-bold text-light">Let's embark on a Cosmic <span class="auto-typed"></span></h1>
+      <h1 class="display-2 fw-bold text-light">Let's embark on a Cosmic <span class="highlight">X</span><span class="auto-typed"></span></h1>
       <p class="lead text-light">Welcome to CosmoXplore, where the celestial canvas unfolds its mysteries before your eyes. Immerse yourself in a cosmic odyssey, as we harness the power of NASA's API to bring you a symphony of space resources. From breathtaking images to cutting-edge astronomical data, embark on a journey that transcends the limits of earthly imagination.</p>
       <div class="d-grid gap-5 d-md-flex justify-content-md-start pt-2">
         <a href="#apod"><button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Explore</button></a>
@@ -233,7 +235,7 @@
         <label for="exampleInputMessage" class="form-label text-light">Message</label>
         <textarea class="form-control" name="message" id="exampleInputMessage" rows="4" placeholder="feel free to ask your queries!"></textarea>
       </div>
-      <button type="submit" class="btn btn-primary" >Submit</button>
+      <button type="submit" class="btn btn-primary" onclick="alert('Mail has been sent successfully!')">Submit</button>
     </form>
   </div>
 </div>
@@ -252,7 +254,7 @@
   <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
     
 
-    <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+    <a href="/cosmoXplore/index.html" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
       <img src="./assets/logo_white.png" width="150">
     </a>
     <p class="col-md-4 mb-0 text-light">© 2024 CosmoXplore India, Inc. All Rights Reserved</p>
