@@ -15,6 +15,13 @@ body {
   display: none;
 }
 
+.highlight {
+  background: -webkit-linear-gradient(#e4d6fb, #8400ff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+
 .auto-typed {
   background: -webkit-linear-gradient(#e4d6fb, #8400ff);
   -webkit-background-clip: text;
