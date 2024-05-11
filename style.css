@@ -270,3 +270,65 @@ body {
 .card p {
   padding: 10px 0;
 }
+
+/*Applying animation
+*/
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Apply animation to the hero_img */
+.hero_img {
+  animation: float 1.5s ease-in-out infinite;
+}
+
+.hero-banner,
+
+
+.hero-banner img,
+.img img {
+  height: auto;
+  display: block;
+  animation: float 1.5s ease-in-out infinite;
+}
+
+.hero-banner img,
+.rover_section_img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  animation: float 1.5s ease-in-out infinite;
+}
+
+/* Additional styling for the rover_section_img */
+.rover_section_img {
+  width: 431px;
+  /* Set the width of the div */
+  height: 596px;
+  /* Set the height of the div */
+  position: relative;
+  overflow: hidden;
+  transition: all 400ms cubic-bezier(0.03, 0.98, 0.52, 0.99) 0s;
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
+}
+
+.left {
+  position: relative;
+  overflow: hidden;
+}
+
+.left img {
+  display: block;
+  animation: float 1.5s ease-in-out infinite;
+  /* Applying the animation */
+}
