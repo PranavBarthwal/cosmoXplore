@@ -61,7 +61,7 @@ body {
   height: 500px;
 }
 
-.img {
+.img,.video {
   width: 500px;
   height: 400px;
 }
@@ -69,13 +69,14 @@ body {
 .info {
   width: 500px;
   height: 100px;
+  margin-top: 1rem;
 }
 
 #apod_img {
   border-radius: 25px;
 }
 
-#apod_img:hover {
+#apod_img:hover,#apod_video:hover {
   color: white;
   box-shadow: 0 5px 15px #9000ff;
 }
