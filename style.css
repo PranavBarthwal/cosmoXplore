@@ -42,10 +42,18 @@ body {
   display: flex;
   width: 100%;
   justify-content: center;
+  align-items: center;
+  cursor:pointer;
+  padding: 20px;
+}
+.input_container b{
+  font-size:20px;
+  padding-right: 10px;
 }
 
 .date_input {
   width: 700px;
+  height:40px;
 }
 
 .apod_img_container {
