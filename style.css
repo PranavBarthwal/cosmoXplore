@@ -87,7 +87,16 @@ body {
 .hero_img:hover {
   color: rgb(191, 0, 255);
   box-shadow: 0 5px 15px #9000ff;
+  animation: leviate 3s ease infinite;
 }
+
+/* Floating Animation */
+@keyframes leviate {
+  50% {
+      transform: translateY(-20px);
+  }
+}
+
 
 .rover_container {
   width: 100%;
@@ -106,6 +115,7 @@ body {
 .mars_illus:hover {
   color: rgb(191, 0, 255);
   box-shadow: 0 5px 15px #ff0099;
+  animation: leviate 3s ease infinite;
 }
 
 .rover_display {
@@ -186,6 +196,7 @@ body {
 .contact_img:hover {
   color: white;
   box-shadow: 0 5px 15px #9000ff;
+  animation: leviate 3s ease infinite;
 }
 
 /* Additional styling for responsiveness */
