@@ -8,14 +8,14 @@ window.addEventListener('load', () => {
 })
 
 function makeMediaRequest (APIurl) {
-  console.log('making request')
+  console.log(`making request at ${APIurl}`)
   fetch(APIurl)
     .then(response => {
       return response.json()
     })
     .then(data => {
       galleryData = data
-      console.log('hello')
+      console.log(data)
       Gallery(galleryData)
     })
     .catch(error => console.error(error))
@@ -28,22 +28,26 @@ function Gallery (data) {
   for (i = 0; i < 49; i++) {
     let url = data.collection.items[i]
 
+    let galleryContainer = document.createElement("div")
+
     fetch(url.href)
       .then(response => {
         return response.json()
       })
       .then(data => {
-        console.log(url.links[0].href)
+        // console.log(url.links[0].href)
         if (url.links[0].href.endsWith('.mp4')) {
           // console.log(url.links[0].href)
           htmlMedia(url.links[0].href, 'video')
         } else {
           // console.log(url.links[0].href)
           htmlMedia(url.links[0].href, 'img')
+          
         }
       })
       .catch(error => console.error(error))
   }
+  // galleryContainer => parentGalleryContainer
 }
 
 // generates html elements for gallery
@@ -52,7 +56,8 @@ function htmlMedia (data, element) {
   let elem = document.createElement(element)
   elem.classList.add('mini-gallery-media')
   elem.src = data
-
+  console.log('hello')
+  console.log(galleryContainer.hasChildNodes)
   galleryContainer.appendChild(elem)
 }
 
