@@ -15,12 +15,19 @@ body {
   display: none;
 }
 
+/* NAVBAR STYLING */
+
+.navbar_background{
+  background-image: linear-gradient(to left, rgb(10, 0, 73) , rgb(0, 0, 0));
+}
+
+/* HERO SECTION STYLING */
+
 .highlight {
   background: -webkit-linear-gradient(#e4d6fb, #8400ff);
   -webkit-background-clip: text;
   color: transparent;
 }
-
 
 .auto-typed {
   background: -webkit-linear-gradient(#e4d6fb, #8400ff);
@@ -47,6 +54,8 @@ body {
 
 .input_container {
   display: flex;
+  flex-direction: row; 
+  flex-wrap: nowrap;
   width: 100%;
   justify-content: center;
   align-items: center;
@@ -60,6 +69,7 @@ body {
 
 .date_input {
   width: 700px;
+  border-radius: 5px;
   height:40px;
 }
 
@@ -68,7 +78,7 @@ body {
   height: 500px;
 }
 
-.img {
+.img,.video {
   width: 500px;
   height: 400px;
 }
@@ -76,13 +86,14 @@ body {
 .info {
   width: 500px;
   height: 100px;
+  margin-top: 1rem;
 }
 
 #apod_img {
   border-radius: 25px;
 }
 
-#apod_img:hover {
+#apod_img:hover,#apod_video:hover {
   color: white;
   box-shadow: 0 5px 15px #9000ff;
 }
@@ -322,6 +333,14 @@ body {
   transform: translateY(1px); 
 }
 
+.decorate-text {
+  transition: color 0.2s ease; 
+}
 
-
+.decorate-text:hover {
+  color: rgb(207, 48, 170);
+  transition-delay: 0.2s; 
+  transform: scale(1.1);
+  transition: color 0.2s ease; 
+}
 
