@@ -281,66 +281,13 @@ body {
 .card p {
   padding: 10px 0;
 }
-
-#emailHelp.form-text.text-light {
-  color: #aaa !important;
-}
-
-.nav-link {
-  transition: color 0.5s ease-in-out, transform 0.5s ease-in-out;
-}
-
-.nav-link:hover {
-  color: #aaa; 
-  transform: scale(1.1); 
-}
-
-.nav-link {
-  position: relative;
-  color: #ffffff; 
-  text-decoration: none; 
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -2px; 
-  left: 0;
-  width: 0;
-  height: 2px; 
-  background-color: #aaa; 
-  transition: width 0.3s ease-in-out; 
-}
-
-.nav-link:hover::after {
-  width: 100%; 
-}
-
-.nav-item .nav-link {
-  margin-right: 15px; 
-}
-
-.btn-primary {
-  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-.btn-primary:hover {
-  background-color: #0056b3; 
-  transform: translateY(-2px); 
-}
-
-.btn-primary:active {
-  transform: translateY(1px); 
-}
-
 .decorate-text {
-  transition: color 0.2s ease; 
+  transition: color 0.2s ease; /* transition property for color change */
 }
 
 .decorate-text:hover {
   color: rgb(207, 48, 170);
   transition-delay: 0.2s; 
   transform: scale(1.1);
-  transition: color 0.2s ease; 
+  transition: color 0.2s ease; /* Smooth transition for color change */
 }
-
