@@ -121,21 +121,30 @@ particlesJS("bg", {
       return response.json()
   }).then((data) => {
       console.log(data)
-      
-      displayData(data.url, data.explanation, data.title, data.date, data.copyright )
-     
+      displayData(data.url, data.explanation, data.title, data.date, data.copyright,data.media_type)
   })
   .catch((error) => console.error(error))
 
 
   //function to display data in apod section
-  function displayData(image, info, title, date, copyright){
-    document.getElementById("apod_img").src = image
-    document.getElementById("apod_info").textContent = info
-    document.getElementById("title").textContent = title
-    document.getElementById("date").textContent = date
-    document.getElementById("copyright").textContent = copyright
-
+  function displayData(media, info, title, date, copyright,mediatype){
+    if(mediatype === "video")  // Check media type
+    {
+      // Hide image container, display video container, and embed video
+      document.querySelector(".img").style.display = "none"; 
+      document.querySelector(".video").style.display = "block"; 
+      document.querySelector(".video").style.height = "80%"; 
+      document.getElementById("apod_video").innerHTML = `<iframe width="100%" height="100%" src="${media}" frameborder="0" allowfullscreen></iframe>`;
+  } else {
+      // Hide video container, display image container, and set image source
+      document.querySelector(".video").style.display = "none";
+      document.querySelector(".img").style.display = "block"; 
+      document.getElementById("apod_img").src = media; 
+  }
+  document.getElementById("apod_info").textContent = info;
+  document.getElementById("title").textContent = title;
+  document.getElementById("date").textContent = date;
+  document.getElementById("copyright").textContent = copyright;
   }
 
 
