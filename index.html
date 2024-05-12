@@ -220,7 +220,7 @@
     <img src="./assets/original-5fcdc62f8266e353ea97ca56731ad804.png" class="contact_img" alt="Contact Image" style="max-width: 100%;">
   </div>
   <div class="right">
-    <form>
+    <form id="form">
       <div class="mb-3">
         <label for="exampleInputName" class="form-label text-light">Name</label>
         <input type="text" class="form-control" id="exampleInputName" placeholder="Enter your name">
@@ -232,7 +232,7 @@
       </div>
       <div class="mb-3">
         <label for="exampleInputMessage" class="form-label text-light">Message</label>
-        <textarea class="form-control" id="exampleInputMessage" rows="4" placeholder="feel free to ask your queries!"></textarea>
+        <textarea class="form-control" name="message" id="exampleInputMessage" rows="4" placeholder="feel free to ask your queries!"></textarea>
       </div>
       <button type="submit" class="btn btn-primary" onclick="alert('Mail has been sent successfully!')">Submit</button>
     </form>
@@ -270,11 +270,34 @@
 <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 <script>
   var typed = new Typed(".auto-typed", {
-    strings : ["pedition", "cursion", "ploration"],
+    strings : ["Expedition.", "Voyage.", "Odyssey."],
     typeSpeed : 150,
     backSpeed : 50,
     loop : true
   })
+</script>
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script type="text/javascript">
+  emailjs.init('Your_Public_Key')
+</script>
+<script>
+ document.getElementById('form')
+  .addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const serviceID = 'default_service';
+    const templateID = 'Your_template_id';
+
+    emailjs.sendForm(serviceID, templateID, this)
+      .then(() => {
+        alert('Sent!');
+      }, (err) => {
+        alert(JSON.stringify(err));
+      });
+  });
+
 </script>
 </body>
 </html>
