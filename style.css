@@ -107,6 +107,14 @@ body {
   box-shadow: 0 5px 15px #9000ff;
   animation: leviate 3s ease infinite;
 }
+.download-img{
+  display:none;
+  background: #9000ff;;
+  height:44px;
+  color:white;
+  padding:5px;
+  border-radius:10px;
+}
 
 /* Floating Animation */
 @keyframes leviate {

@@ -149,14 +149,15 @@ particlesJS("bg", {
 
 
 
-
+  
   // NASA API CALL 2 : Mars Rover Photos
 function displayRover(){
+  document.querySelector('.download-img').style.display = 'block';
 
   document.querySelector('.rover_container').style.display = 'none';
   document.querySelector('.rover_display').style.display = 'flex';
 
-  let userDate = document.querySelector('.date_input').value;
+  var userDate = document.querySelector('.date_input').value;
 
   let url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${userDate}&api_key=eISHzmGbQk7EMWv9NTlVtvzZVmeLKPUoL3uKMSPJ`
 
@@ -180,7 +181,7 @@ function displayRover(){
      
   })
   .catch((error) => console.error(error))
-  }
+}
 
   function updateDom(img_src, date, roverName, camera, launch, land, status){
 
@@ -191,11 +192,60 @@ function displayRover(){
     document.querySelector('.land').textContent = land
     document.querySelector('.launch').textContent = launch
     document.querySelector('.status').textContent = status
+
+}
+//script to download image
+
+ 
+function funone() {
+  var userDate = document.querySelector('.date_input').value;
+
+  let url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${userDate}&api_key=eISHzmGbQk7EMWv9NTlVtvzZVmeLKPUoL3uKMSPJ`
+
+
+  fetch(url)
+  .then((response) => {
+      return response.json()
+  }).then((data) => {
+      
+     
+      let iurl = data.photos[0].img_src;
+     // const imageSrc = iurl;
+      //const imageName = getImageNameFromUrl(imageSrc);
+      //downloadImage(imageSrc, imageName);  
+      downloadImage(iurl)
+     
+  })
+  .catch((error) => console.error(error))
 }
 
+/*function getImageNameFromUrl(url) {
+  return url.substring(url.lastIndexOf('/') + 1);
+}
 
-
-
+function downloadImage(url,filename ) {
+  const anchorElement = document.createElement('a');
+  anchorElement.href = url;
+  anchorElement.download = filename;
+  anchorElement.click();
+  anchorElement.remove();
+}*/
+ 
+ function downloadImage(url) {
+   fetch(url, {
+    mode : 'no-cors',
+  })
+    .then(response => response.blob())
+    .then(blob => {
+    let blobUrl = window.URL.createObjectURL(blob);
+    let a = document.createElement('a');
+    a.download = url.replace('image.jpg');
+    a.href = blobUrl;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  })
+}
 
 
 // API CALL 3 : NASA Photo Video Gallery
