@@ -9,6 +9,7 @@ body {
   overflow-x: hidden;
   color: rgb(255, 255, 255);
   font-family: sans-serif;
+  
 }
 
 .body::-webkit-scrollbar {
@@ -65,6 +66,11 @@ body {
 
 #apod_img {
   border-radius: 25px;
+}
+
+.apod_img{
+  position: relative;
+  height: 80%;
 }
 
 #apod_img:hover {
@@ -250,8 +256,7 @@ body {
   justify-content: center;
 }
 
-.apod_img {
-}
+
 
 @media (max-width: 765px) {
   /*apod section optimized for mobile devices*/
@@ -382,9 +387,10 @@ body {
   padding-bottom: 8px;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 990px) {
   .sidebar-icon {
     display: none;
+
   }
 }
 
@@ -393,7 +399,7 @@ body {
   justify-content: center;
 }
 .sidebar-menu {
-  position: absolute;
+  position: fixed;
   top: 80px;
   right: -200px; 
   width: 160px;
