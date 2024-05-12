@@ -232,3 +232,15 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 });
+
+/* scroll to remove the sidebar */
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos < currentScrollPos) {
+    document.querySelector(".sidebar-menu").classList.remove("active");
+  } else {
+    document.querySelector(".sidebar-menu").classList.remove("active");
+  }
+  prevScrollpos = currentScrollPos;
+}
