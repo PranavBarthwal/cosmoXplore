@@ -15,7 +15,6 @@ function makeMediaRequest (APIurl) {
     })
     .then(data => {
       galleryData = data
-      console.log(data)
       Gallery(galleryData)
     })
     .catch(error => console.error(error))
@@ -29,12 +28,13 @@ function Gallery (data) {
 
   for (let i = 0; i < 49; i++) {
     let url = data.collection.items[i]
+    let nasa_id = data.collection.items[i].data[0].nasa_id
 
     let promise = fetch(url.href)
       .then(response => response.json())
       .then(data => {
         let elementType = url.links[0].href.endsWith('.mp4') ? 'video' : 'img'
-        htmlMedia(url.links[0].href, elementType, childrenHTML)
+        htmlMedia(url.links[0].href, elementType, childrenHTML, nasa_id)
       })
       .catch(error => console.error(error))
 
@@ -45,17 +45,29 @@ function Gallery (data) {
   Promise.all(promises).then(() => {
     let galleryContainer = document.querySelector('#galleryContainer')
     galleryContainer.innerHTML = childrenHTML[0]
-    console.log(childrenHTML[0])
+
+    // whenever a media is clicked, it is directed to detail page
+    for (img of galleryContainer.children) {
+      img.addEventListener('click', function () {
+        openDetailPage(img.id)
+      })
+    }
   })
 }
 
 // generates html elements for gallery media
-function htmlMedia (data, element, childrenHTML) {
+function htmlMedia (data, element, childrenHTML, nasa_id) {
   let elem = document.createElement(element)
   elem.classList.add('mini-gallery-media')
   elem.src = data
+  elem.id = nasa_id
 
   childrenHTML[0] += elem.outerHTML
+}
+
+function openDetailPage (id) {
+  window.location.href = '/mediaDetail.html'
+
 }
 
 // when user search, this function makes API request for that query.
