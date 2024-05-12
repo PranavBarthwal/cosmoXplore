@@ -185,7 +185,7 @@ function displayRover(){
 }
 
 // added closeRover function 
-function closeRover(e){
+function closeRoverDisplay(e){
   document.querySelector('.rover_container').style.display = 'flex';
   document.querySelector('.rover_display').style.display = 'none';
 }
