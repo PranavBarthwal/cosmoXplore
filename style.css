@@ -54,6 +54,8 @@ body {
 
 .input_container {
   display: flex;
+  flex-direction: row; 
+  flex-wrap: nowrap;
   width: 100%;
   justify-content: center;
   align-items: center;
@@ -67,6 +69,7 @@ body {
 
 .date_input {
   width: 700px;
+  border-radius: 5px;
   height:40px;
 }
 
@@ -295,4 +298,14 @@ body {
 
 .card p {
   padding: 10px 0;
+}
+.decorate-text {
+  transition: color 0.2s ease; /* transition property for color change */
+}
+
+.decorate-text:hover {
+  color: rgb(207, 48, 170);
+  transition-delay: 0.2s; 
+  transform: scale(1.1);
+  transition: color 0.2s ease; /* Smooth transition for color change */
 }
