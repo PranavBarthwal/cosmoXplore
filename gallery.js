@@ -23,44 +23,42 @@ function makeMediaRequest (APIurl) {
 
 // shows the media in gallery
 function Gallery (data) {
-  // makeMediaRequest(APIurl)
-  // console.log(data.collection)
-  for (i = 0; i < 49; i++) {
+  let promises = []
+  // using array, so that we can pass it as reference to the htmlMedia function, because strings are passed as copies
+  let childrenHTML = ['']
+
+  for (let i = 0; i < 49; i++) {
     let url = data.collection.items[i]
 
-    let galleryContainer = document.createElement("div")
-
-    fetch(url.href)
-      .then(response => {
-        return response.json()
-      })
+    let promise = fetch(url.href)
+      .then(response => response.json())
       .then(data => {
-        // console.log(url.links[0].href)
-        if (url.links[0].href.endsWith('.mp4')) {
-          // console.log(url.links[0].href)
-          htmlMedia(url.links[0].href, 'video')
-        } else {
-          // console.log(url.links[0].href)
-          htmlMedia(url.links[0].href, 'img')
-          
-        }
+        let elementType = url.links[0].href.endsWith('.mp4') ? 'video' : 'img'
+        htmlMedia(url.links[0].href, elementType, childrenHTML)
       })
       .catch(error => console.error(error))
+
+    promises.push(promise)
   }
-  // galleryContainer => parentGalleryContainer
+
+  // when all promises resolve, we add the accumulated html, otherwise, the html would return empty string, because it would execute before promises
+  Promise.all(promises).then(() => {
+    let galleryContainer = document.querySelector('#galleryContainer')
+    galleryContainer.innerHTML = childrenHTML[0]
+    console.log(childrenHTML[0])
+  })
 }
 
-// generates html elements for gallery
-function htmlMedia (data, element) {
-  let galleryContainer = document.querySelector('#galleryContainer')
+// generates html elements for gallery media
+function htmlMedia (data, element, childrenHTML) {
   let elem = document.createElement(element)
   elem.classList.add('mini-gallery-media')
   elem.src = data
-  console.log('hello')
-  console.log(galleryContainer.hasChildNodes)
-  galleryContainer.appendChild(elem)
+
+  childrenHTML[0] += elem.outerHTML
 }
 
+// when user search, this function makes API request for that query.
 function searchMedia () {
   let inputMedia = document.getElementById('mediaInput')
   let query = inputMedia.value
