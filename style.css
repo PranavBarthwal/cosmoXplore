@@ -157,6 +157,7 @@ body {
   margin-right: 50px;
 }
 
+/* added position and style to button */
 #close_button{
   position: relative;
   left:80%;
