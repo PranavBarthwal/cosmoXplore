@@ -27,6 +27,46 @@
       }
     }
   </style>
+  <style>
+    .spinner1{
+      background-image: linear-gradient(rgb(186, 66, 255) 35%,rgb(0, 225, 255));
+      width: 100px;
+      height: 100px;
+      animation: spinning82341 1.7s linear infinite;
+      transition: opacity 3s,visibility 3s;
+      text-align: center;
+      border-radius: 50px;
+      filter: blur(1px);
+      box-shadow: 0px -5px 20px 0px rgb(186, 66, 255), 0px 5px 20px 0px rgb(0, 225, 255);
+    }
+    .spinner1--hidden{
+        opacity: 0;
+        visibility: hidden;
+    }
+    @keyframes spinning82341 {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    .l1{
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: black;
+      transition: opacity 3s, visibility 3s;
+      z-index: 100;
+    }
+    
+    .l1--hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+    </style>
 </head>
 <body>
     
