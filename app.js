@@ -184,6 +184,11 @@ function displayRover(){
     document.querySelector('.status').textContent = status
 }
 
+function closeRover(e){
+  document.querySelector('.rover_container').style.display = 'flex';
+  document.querySelector('.rover_display').style.display = 'none';
+}
+
 
 
 

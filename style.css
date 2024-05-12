@@ -87,11 +87,11 @@ body {
 .hero_img:hover {
   color: rgb(191, 0, 255);
   box-shadow: 0 5px 15px #9000ff;
-  animation: leviate 3s ease infinite;
+  animation: floating 3s ease infinite;
 }
 
 /* Floating Animation */
-@keyframes leviate {
+@keyframes floating {
   50% {
       transform: translateY(-20px);
   }
@@ -115,7 +115,7 @@ body {
 .mars_illus:hover {
   color: rgb(191, 0, 255);
   box-shadow: 0 5px 15px #ff0099;
-  animation: leviate 3s ease infinite;
+  animation: floating 3s ease infinite;
 }
 
 .rover_display {
@@ -141,6 +141,23 @@ body {
   width: 500px;
   height: 500px;
   margin-right: 50px;
+}
+
+#close_button{
+  position: relative;
+  left:80%;
+  bottom:45%;
+}
+
+#close{
+  font-size:20px;
+  padding: 0 20px;
+  border-radius: 10px;
+}
+
+#close:hover{
+  background-color:rgb(191, 0, 255);
+  color: white;
 }
 
 #roverImg {
@@ -196,7 +213,7 @@ body {
 .contact_img:hover {
   color: white;
   box-shadow: 0 5px 15px #9000ff;
-  animation: leviate 3s ease infinite;
+  animation: floating 3s ease infinite;
 }
 
 /* Additional styling for responsiveness */
