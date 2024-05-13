@@ -7,6 +7,7 @@ window.addEventListener('load', () => {
   mediaSearchButton.addEventListener('click', searchMedia)
 })
 
+// makes request for media
 function makeMediaRequest (APIurl) {
   console.log(`making request at ${APIurl}`)
   fetch(APIurl)
@@ -21,53 +22,69 @@ function makeMediaRequest (APIurl) {
 }
 
 // shows the media in gallery
+
 function Gallery (data) {
   let promises = []
-  // using array, so that we can pass it as reference to the htmlMedia function, because strings are passed as copies
   let childrenHTML = ['']
 
+  // show only 50 or less media at a time
   for (let i = 0; i < 49; i++) {
     let url = data.collection.items[i]
     let nasa_id = data.collection.items[i].data[0].nasa_id
+    let media_type = data.collection.items[i].data[0].media_type
 
+    // find the exact url for jpg image for showing in gallery, for every media
     let promise = fetch(url.href)
       .then(response => response.json())
       .then(data => {
-        let elementType = url.links[0].href.endsWith('.mp4') ? 'video' : 'img'
-        htmlMedia(url.links[0].href, elementType, childrenHTML, nasa_id)
+        let link = url.links[0]
+
+        htmlMedia(link.href, childrenHTML, nasa_id, media_type)
       })
       .catch(error => console.error(error))
 
     promises.push(promise)
   }
 
-  // when all promises resolve, we add the accumulated html, otherwise, the html would return empty string, because it would execute before promises
+  // when all promises resolve, we add the accumulated html
   Promise.all(promises).then(() => {
     let galleryContainer = document.querySelector('#galleryContainer')
     galleryContainer.innerHTML = childrenHTML[0]
 
-    // whenever a media is clicked, it is directed to detail page
-    for (img of galleryContainer.children) {
-      img.addEventListener('click', function () {
-        openDetailPage(img.id)
-      })
+    // Add event listener to each image
+    for (let media of galleryContainer.children) {
+      ;(function (id, src, type) {
+        let nextPageURL
+        // if (type === 'image') {
+        //   nextPageURL = src
+        // } else {
+        //   // it is a video, and the url will be with extension mp4
+        // }
+        media.addEventListener('click', function () {
+          openDetailPage(id, src)
+        })
+      })(media.id, media.src, media.media_type)
     }
   })
 }
 
 // generates html elements for gallery media
-function htmlMedia (data, element, childrenHTML, nasa_id) {
-  let elem = document.createElement(element)
+function htmlMedia (data, childrenHTML, nasa_id, media_type) {
+  let elem = document.createElement('img')
   elem.classList.add('mini-gallery-media')
   elem.src = data
   elem.id = nasa_id
+  elem.type = media_type
+
 
   childrenHTML[0] += elem.outerHTML
 }
 
+// when user clicks on a media, the function redirects them to detail page for that media
 function openDetailPage (id) {
   window.location.href = '/mediaDetail.html'
-
+  window.sessionStorage.setItem('nasa_id', id)
+  // window.sessionStorage.setItem('mediaURL', mediaURL)
 }
 
 // when user search, this function makes API request for that query.
@@ -80,3 +97,5 @@ function searchMedia () {
     makeMediaRequest(`https://images-api.nasa.gov/search?q=${query}`)
   }
 }
+
+// when user clicks

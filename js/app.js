@@ -1,5 +1,4 @@
 // PARTICLES BACKGROUND
-
 particlesJS('bg', {
   particles: {
     number: {
@@ -120,7 +119,8 @@ fetch(
     return response.json()
   })
   .then(data => {
-    // console.log(data)
+
+    console.log("fetching")
 
     displayData(
       data.url,
