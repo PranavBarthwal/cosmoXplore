@@ -197,7 +197,7 @@ function displayRover() {
       let status = data.photos[0].rover.status;
 
 
-      document.getElementById("api_loader").style.display = 'none';
+      document.getElementById("api_loader_rover").style.display = 'none';
       document.querySelector('.inner_container').style.display = 'flex';
 
       updateDom(img_src, date, roverName, camera, launch, land, status)
