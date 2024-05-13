@@ -2,7 +2,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
 }
 
 body {
@@ -14,6 +13,21 @@ body {
 
 .body::-webkit-scrollbar {
   display: none;
+}
+
+/* NAVBAR STYLING */
+
+.navbar_background {
+  background-image: linear-gradient(to left, rgb(10, 0, 73), rgb(0, 0, 0));
+}
+
+/* HERO SECTION STYLING */
+
+.highlight {
+  background: -webkit-linear-gradient(#e4d6fb, #8400ff);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin: 0;
 }
 
 .auto-typed {
@@ -41,12 +55,23 @@ body {
 
 .input_container {
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   width: 100%;
   justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 20px;
+}
+.input_container b {
+  font-size: 20px;
+  padding-right: 10px;
 }
 
 .date_input {
   width: 700px;
+  border-radius: 5px;
+  height: 40px;
 }
 
 .apod_img_container {
@@ -54,7 +79,8 @@ body {
   height: 500px;
 }
 
-.img {
+.img,
+.video {
   width: 500px;
   height: 400px;
 }
@@ -62,13 +88,15 @@ body {
 .info {
   width: 500px;
   height: 100px;
+  margin-top: 1rem;
 }
 
 #apod_img {
   border-radius: 25px;
 }
 
-#apod_img:hover {
+#apod_img:hover,
+#apod_video:hover {
   color: white;
   box-shadow: 0 5px 15px #9000ff;
 }
@@ -80,6 +108,32 @@ body {
 .hero_img:hover {
   color: rgb(191, 0, 255);
   box-shadow: 0 5px 15px #9000ff;
+  animation: floating 3s ease infinite;
+}
+
+/* Explore button */
+
+#explore {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+#explore_btn {
+  background: #8400ff;
+  border: none;
+}
+
+#explore_btn:hover {
+  box-shadow: 0 0 50px rgb(133, 63, 171);
+  transition: all 0.5s ease;
+}
+
+/* Floating Animation */
+@keyframes floating {
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 .rover_container {
@@ -99,6 +153,7 @@ body {
 .mars_illus:hover {
   color: rgb(191, 0, 255);
   box-shadow: 0 5px 15px #ff0099;
+  animation: floating 3s ease infinite;
 }
 
 .rover_display {
@@ -124,6 +179,24 @@ body {
   width: 500px;
   height: 500px;
   margin-right: 50px;
+}
+
+/* added position and style to button */
+#close_button {
+  position: relative;
+  left: 80%;
+  bottom: 45%;
+}
+
+#close {
+  font-size: 20px;
+  padding: 0 20px;
+  border-radius: 10px;
+}
+
+#close:hover {
+  background-color: rgb(191, 0, 255);
+  color: white;
 }
 
 #roverImg {
@@ -179,6 +252,7 @@ body {
 .contact_img:hover {
   color: white;
   box-shadow: 0 5px 15px #9000ff;
+  animation: floating 3s ease infinite;
 }
 
 /* Additional styling for responsiveness */
@@ -244,6 +318,16 @@ body {
 
 .card p {
   padding: 10px 0;
+}
+.decorate-text {
+  transition: color 0.2s ease; /* transition property for color change */
+}
+
+.decorate-text:hover {
+  color: rgb(207, 48, 170);
+  transition-delay: 0.2s;
+  transform: scale(1.1);
+  transition: color 0.2s ease; /* Smooth transition for color change */
 }
 
 /* MINI-PHOTO AND VIDEO GALLERY  */
