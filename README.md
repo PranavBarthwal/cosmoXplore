@@ -22,32 +22,38 @@
 git clone https://github.com/<your-github-username>/cosmoXplore.git
 ```
 
-3. **Create a New Branch:** Establish a new branch for your profile using the command:
+3. **Navigate to your repository:** Navigate to your new project directory by using the command:
+
+```
+cd cosmoXplore
+```
+
+4. **Create a New Branch:** Establish a new branch for your profile using the command:
 
 ```
 git checkout -b <branch_name>
 ```
 
-4. **Add Your Changes:** Add the modified files to the stage with the following command:
+5. **Add Your Changes:** Add the modified files to the stage with the following command:
 
 ```
 git add .
 ```
 
-5. **Commit Your Changes:** Save your alterations to the branch by executing:
+6. **Commit Your Changes:** Save your alterations to the branch by executing:
 
 ```
 git commit -m "Your descriptive commit message"
 ```
 
-6. **Push to the Branch:** Transmit the changes to the remote repository using:
+7. **Push to the Branch:** Transmit the changes to the remote repository using:
 
 ```
 git push origin <branch_name>
 ```
 
-7. **Create a Pull Request:** Submit your modifications to the main repository by generating a pull request. Click on the "Compare & pull request" button on your forked repository page.
+8. **Create a Pull Request:** Submit your modifications to the main repository by generating a pull request. Click on the "Compare & pull request" button on your forked repository page.
 
-8. **Wait for Review and Merge:** Wait for the project maintainers to review and merge your changes.
+9. **Wait for Review and Merge:** Wait for the project maintainers to review and merge your changes.
 
 ---
