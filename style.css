@@ -183,20 +183,10 @@ body {
 
 /* api loader */
 
-#api_loader{
-  height: 200px;
-  width: 200px;
+#api_loader img{
+  width: 400px;
+  height: 400px;
   border-radius: 50%;
-  border: 10px solid white;
-  border-bottom: 10px solid #9000ff;
-  border-top: 10px solid #9000ff;
-  animation: load 1s infinite linear;
-}
-
-@keyframes load {
-  100%{
-    transform: rotate(360deg);
-  }
 }
 
 
