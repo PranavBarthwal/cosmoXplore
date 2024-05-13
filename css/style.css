@@ -113,18 +113,18 @@ body {
 
 /* Explore button */
 
-#explore {
+#explore{
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-#explore_btn {
+#explore_btn{
   background: #8400ff;
   border: none;
 }
 
-#explore_btn:hover {
+#explore_btn:hover{
   box-shadow: 0 0 50px rgb(133, 63, 171);
   transition: all 0.5s ease;
 }
