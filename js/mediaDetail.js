@@ -33,6 +33,7 @@ function putDataInHTML (src, data) {
   if (data['AVAIL:MediaType'] === 'image') {
     let img = document.createElement('img')
     img.src = src
+    console.log(src)
     media.appendChild(img)
   } else {
     // search for mp4 url of video
@@ -41,17 +42,16 @@ function putDataInHTML (src, data) {
         return response.json()
       })
       .then(data => {
-        let count=2
+        let count = 2
         for (i = 0; i < data.collection.items.length; i++) {
           console.log('hello')
           let url = String(data.collection.items[i].href)
           if (url.endsWith('mp4')) {
-            if(count!=0)
-        {
-            let video = document.createElement('video')
+            if (count != 0) {
+              let video = document.createElement('video')
               video.src = url
-              video.setAttribute("controls", '')
-              video.style.width = "45vw"
+              video.setAttribute('controls', '')
+              video.style.width = '45vw'
               media.appendChild(video)
             }
             count--

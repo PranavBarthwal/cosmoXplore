@@ -21,6 +21,29 @@
   </head>
 
   <body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+   <link rel="stylesheet" href="./style.css">
+   <link rel="icon" type="image/png" href="./assets/favicon.png"> 
+
+  <style>
+    @keyframes float {
+      0% {
+        transform: translateY(0);
+      }
+  
+      50% {
+        transform: translateY(-10px);
+      }
+  
+      100% {
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+    
     <div id="bg"></div>
 
     <!-- NAVBAR -->
@@ -64,6 +87,34 @@
       </div>
     </nav>
 
+<nav class="navbar navbar-expand-lg fixed-top navbar_background">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="./assets/logo_white.png" alt="Bootstrap" width="370">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon "></span>
+    </button>
+    <div class="collapse navbar-collapse pe-5" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-light decorate-text" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light decorate-text" href="#apod">APoD</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link text-light decorate-text" href="#mars">MartianImagery</a>
+        </li>
+        <li class="nav-item">
+         <a href="#contact"> <button class="btn btn-outline-light rounded-pill decorate-text" type="submit">Contact Us</button></a>
+        </li>
+    </div>
+  </div>
+</nav>
+
+
+
     <!-- HERO SECTION -->
     <div class="container col-xxl-8 px-4 py-5">
       <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
@@ -102,6 +153,23 @@
         </div>
       </div>
     </div>
+<!-- HERO SECTION -->
+<div class="container col-xxl-9 px-3 py-5">
+  <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+    <div class="col-10 col-sm-8 col-lg-6">
+    <img src="./assets/A letter tech logo.png" class="d-block mx-lg-auto img-fluid hero_img" alt="Bootstrap Themes"
+      width="700" height="500" loading="lazy" style="animation: float 3s ease-in-out infinite;">
+    </div>
+    <div class="col-lg-6 ">
+      <h1 class="display-2 fw-bold text-light">Let's embark on a Cosmic <span class="highlight">X</span><span class="auto-typed"></span></h1>
+      <p class="lead text-light">Welcome to CosmoXplore, where the celestial canvas unfolds its mysteries before your eyes. Immerse yourself in a cosmic odyssey, as we harness the power of NASA's API to bring you a symphony of space resources. From breathtaking images to cutting-edge astronomical data, embark on a journey that transcends the limits of earthly imagination.</p>
+      <div class="d-grid gap-5 d-md-flex justify-content-md-start pt-2">
+        <a href="#apod"><button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Explore</button></a>
+        
+      </div>
+    </div>
+  </div>
+</div>
 
     <br />
     <br />
@@ -145,6 +213,20 @@
             <h6 id="date" align="center"></h6>
           </div>
         </div>
+      <p id="apod_info" class="lead">NASA's Astronomy Picture of the Day (APoD) showcases captivating celestial images accompanied by brief explanations. Each day, NASA features astronomical wonders, ranging from stunning nebulae and galaxies to snapshots of our solar system, providing a daily dose of cosmic beauty and scientific insight. APoD serves as a valuable resource for both astronomy enthusiasts and those seeking to explore the wonders of the universe.</p>
+     
+    </div>
+  
+    <div class="apod_img_container">
+      <div class="img">
+           <img src="./assets/64e4e4aabd98a600197c0ca3.webp" id="apod_img" width="100%" height="100%">
+      </div>
+      <div class="video" id="apod_video">
+   </div>
+      <div class="info">
+        <h5 id="copyright" align="center" > </h5>
+        <h6 id="date" align="center"> </h6>
+
       </div>
     </div>
 
@@ -197,6 +279,26 @@
         </p>
       </div>
     </div>
+<!-- Default display -->
+<div class="rover_container">
+  <div class="rover_section_img">
+    <img src="./assets/mars.png" class="mars_illus" style="animation: float 3s ease-in-out infinite;"> 
+  </div>
+<div class="rover_section_text">
+<p class="">Welcome to an extraordinary adventure into the Martian landscape, where we invite you to explore the wonders of the Red Planet through the lens of various rovers that have traversed its surface. Our journey takes us deep into the photographic archives, a treasure trove of captivating images captured by these robotic explorers. Each rover, armed with sophisticated cameras, has documented the Martian terrain, unveiling its mysteries one snapshot at a time.
+
+  The heart of this exploration lies in a comprehensive database meticulously organized to offer you an unparalleled visual chronicle of Mars' exploration. This repository is a testament to the marvels of technology and the spirit of scientific curiosity that drives humanity to push the boundaries of exploration.
+  
+  But how do you, the explorer, access this vast collection? Fear not, for we present a user-friendly approach that allows you to effortlessly navigate through the visual wonders of Mars. By simply entering the Earth date corresponding to a specific photo, you unlock a portal to the Red Planet's past, witnessing moments frozen in time by the lenses of our robotic companions.
+  
+  The convenience of this method provides unparalleled flexibility, enabling you to tailor your exploration based on your interests. Whether you're drawn to the intricate geological formations that dot the Martian surface, mesmerized by the dance of atmospheric phenomena in the thin Martian air, or captivated by the milestones achieved by the rovers themselves, our immersive experience ensures that your curiosity is rewarded.
+  
+  This journey offers a deeper understanding of Mars' unique features and the scientific endeavors that drive these robotic explorers. From the striking landscapes to the subtle details that tell the story of a planet's evolution, each image contributes to our collective knowledge of the Red Planet.
+  
+  Join us in unlocking the mysteries of Mars as we navigate through the cutting-edge technology and unparalleled exploration that has brought us face to face with the enigmatic Red Planet.</p>
+</div>
+</div>
+
 
     <!-- display on enetering a date -->
     <div class="rover_display">
@@ -393,3 +495,4 @@
     </script>
   </body>
 </html>
+

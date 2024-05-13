@@ -119,8 +119,7 @@ fetch(
     return response.json()
   })
   .then(data => {
-
-    console.log("fetching")
+    console.log('fetching')
 
     displayData(
       data.url,
@@ -178,6 +177,12 @@ function updateDom (img_src, date, roverName, camera, launch, land, status) {
   document.querySelector('.land').textContent = land
   document.querySelector('.launch').textContent = launch
   document.querySelector('.status').textContent = status
+}
+
+// added closeRover function
+function closeRoverDisplay (e) {
+  document.querySelector('.rover_container').style.display = 'flex'
+  document.querySelector('.rover_display').style.display = 'none'
 }
 
 // API CALL 3 : NASA Photo Video Gallery
