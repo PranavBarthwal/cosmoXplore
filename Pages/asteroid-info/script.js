@@ -113,10 +113,6 @@ particlesJS("bg-ast", {
 
 // Rest of the logic
 
-// Defining the API-KEY and the API-URL
-const apiKey = "eISHzmGbQk7EMWv9NTlVtvzZVmeLKPUoL3uKMSPJ";
-const apiUrl = "https://api.nasa.gov/neo/rest/v1/feed";
-
 // Search button and the asteroid-info-div
 let searchBtn = document.querySelector("#dates-submit-btn");
 let asteroidInfoDiv = document.querySelector(".asteroid-info");
@@ -127,7 +123,7 @@ var endDateInput;
 
 // Function to construct the URL
 function constructURL(startDate, endDate) {
-    return `https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${endDate}&api_key=sjXpizlXbdJhHI85IX6T4yBbVvwBfwFmguqtaJQN`; 
+    return `https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${endDate}&api_key=eISHzmGbQk7EMWv9NTlVtvzZVmeLKPUoL3uKMSPJ`; 
 }
 
 // Checks for change event in the starting date input
