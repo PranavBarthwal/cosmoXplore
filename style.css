@@ -312,8 +312,8 @@ body {
 
 .spinner {
   background-image: linear-gradient(rgb(186, 66, 255) 35%,rgb(0, 225, 255));
-  width: 100px;
-  height: 100px;
+  width: 100vw;
+  height: 100vh;
   animation: spinning82341 1.7s linear infinite;
   transition: opacity 3s,visibility 3s;
   text-align: center;
