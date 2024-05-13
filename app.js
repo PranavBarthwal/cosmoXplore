@@ -226,5 +226,5 @@ function miniGallery (data) {
 showMoreButton.addEventListener('click', mainGallery)
 
 function mainGallery () {
-  window.location.href = 'http://127.0.0.1:5500/gallery.html'
+  window.location.href = 'http://127.0.0.1:5500/pages/gallery/gallery.html'
 }

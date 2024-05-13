@@ -82,7 +82,7 @@ function htmlMedia (data, childrenHTML, nasa_id, media_type) {
 // when user clicks on a media, the function redirects them to detail page for that media
 function openDetailPage (id, mediaURL) {
   console.log(mediaURL)
-  window.location.href = '/mediaDetail.html'
+  window.location.href = 'mediaDetail.html'
   window.sessionStorage.setItem('nasa_id', id)
   window.sessionStorage.setItem('mediaURL', mediaURL)
 }
