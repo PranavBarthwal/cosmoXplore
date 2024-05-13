@@ -130,13 +130,16 @@ window.addEventListener("load", (e) => {
     document.getElementById("apod_img_container").style.display='none';
     
     displayData(data.url, data.explanation, data.title, data.date, data.copyright, data.media_type)
-    
-    document.getElementById("apod_info_container").style.display='block';
-    document.getElementById("apod_img_container").style.display='block';
+
+    setTimeout(()=>{      
+      document.getElementById("api_loader_apod").style.display='none'; // ending loading animation after api call
+      document.getElementById("apod_info_container").style.display='block';
+      document.getElementById("apod_img_container").style.display='block';
+    },1000)
+
   })
   .catch((error) => console.error(error))
   
-  document.getElementById("api_loader_apod").style.display='none'; // ending loading animation after api call
 })
 
 
