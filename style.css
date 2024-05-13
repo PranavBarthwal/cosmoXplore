@@ -160,6 +160,7 @@ body {
   width: 100%;
   display: none;
   justify-content: center;
+  align-items: center;
 }
 
 .inner_conatiner {
@@ -179,6 +180,26 @@ body {
   height: 500px;
   margin-right: 50px;
 }
+
+/* api loader */
+
+#api_loader{
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  border: 10px solid white;
+  border-bottom: 10px solid #9000ff;
+  border-top: 10px solid #9000ff;
+  animation: load 1s infinite linear;
+}
+
+@keyframes load {
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+
 
 /* added position and style to button */
 #close_button{
