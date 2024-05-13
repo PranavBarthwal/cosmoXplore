@@ -98,20 +98,28 @@
 
 <!-- APOD SECTION -->
 <h1 align="center" class="section_title" id="apod">Astronomy Picture of The Day</h1>
-<div class="container my-5">
-  <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
-    <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+<div class="container my-5" id="apod_container">
+
+  
+  <div class=" p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg flex justify-content-center ">
+
+    <!-- loader -->
+    <div class="loader" id="api_loader_apod" style="display: none;">
+      <img src="./assets/loader.gif" alt="loader">
+    </div>
+
+    <div class="col-lg-7 p-3 p-lg-5 pt-lg-3" id="apod_info_container" >
       <h2 id="title" class="display-7 fw-bold lh-1 text-light">APoD Title</h2><br>
 
       <p id="apod_info" class="lead">NASA's Astronomy Picture of the Day (APoD) showcases captivating celestial images accompanied by brief explanations. Each day, NASA features astronomical wonders, ranging from stunning nebulae and galaxies to snapshots of our solar system, providing a daily dose of cosmic beauty and scientific insight. APoD serves as a valuable resource for both astronomy enthusiasts and those seeking to explore the wonders of the universe.</p>
      
     </div>
   
-    <div class="apod_img_container">
+    <div id="apod_img_container">
       <div class="img">
            <img src="./assets/64e4e4aabd98a600197c0ca3.webp" id="apod_img" width="100%" height="100%">
       </div>
-      <div class="video" id="apod_video">
+      <div class="video" id="apod_video" style="display: none;">
    </div>
       <div class="info">
         <h5 id="copyright" align="center" > </h5>
@@ -160,7 +168,7 @@
 <div class="rover_display">
   
   <!-- loader -->
-  <div id="api_loader" style="display: none;">
+  <div class="loader" id="api_loader_rover" style="display: none;">
     <img src="./assets/loader.gif" alt="loader">
   </div>
 

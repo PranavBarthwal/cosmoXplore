@@ -74,6 +74,13 @@ body {
   height:40px;
 }
 
+#apod_container > div{
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .apod_img_container {
   width: 500px;
   height: 500px;
@@ -183,7 +190,13 @@ body {
 
 /* api loader */
 
-#api_loader img{
+.loader{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader img{
   width: 400px;
   height: 400px;
   border-radius: 50%;
