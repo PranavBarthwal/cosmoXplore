@@ -55,6 +55,7 @@
     <div id="bg"></div>
 
 
+
 <!-- NAVBAR -->
 
 
@@ -77,9 +78,6 @@
         <li class="nav-item ">
           <a class="nav-link text-light decorate-text" href="#mars">MartianImagery</a>
         </li>
-        <li class="nav-item ">
-          <a class="nav-link text-light decorate-text" href="./Pages/asteroid-info/index.html">NeoWs</a>
-        </li>
         <li class="nav-item">
          <a href="#contact"> <button class="btn btn-outline-light rounded-pill decorate-text" type="submit">Contact Us</button></a>
         </li>
@@ -97,15 +95,11 @@
       width="700" height="500" loading="lazy" style="animation: float 3s ease-in-out infinite;">
     </div>
     <div class="col-lg-6 ">
-      <h1 class="display-2 fw-bold text-light">Let's embark on a Cosmic <span class="highlight"><br>X</span><span class="auto-typed"></span></h1>
+      <h1 class="display-2 fw-bold text-light">Let's embark on a Cosmic <span class="highlight">X</span><span class="auto-typed"></span></h1>
       <p class="lead text-light">Welcome to CosmoXplore, where the celestial canvas unfolds its mysteries before your eyes. Immerse yourself in a cosmic odyssey, as we harness the power of NASA's API to bring you a symphony of space resources. From breathtaking images to cutting-edge astronomical data, embark on a journey that transcends the limits of earthly imagination.</p>
-      <div id="explore">
-        <h3 class="highlight">
-          Ready to Xplore ?
-        </h3>
-        <div class="d-grid gap-5 d-md-flex justify-content-md-start">
-          <a href="#apod"><button type="button" id="explore_btn" class="btn btn-primary btn-lg px-4 me-md-2">Launch 🚀</button></a>
-        </div>
+      <div class="d-grid gap-5 d-md-flex justify-content-md-start pt-2">
+        <a href="#apod"><button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Explore</button></a>
+        
       </div>
     </div>
   </div>
@@ -241,11 +235,10 @@
 </div>
 
 <br>
-<<<<<<< dateinput
 <!--Date Input-->
 <center>
-<div  class="input-group mb-4 input_container" style="width: 700px;">
-  <input style="width: 700px;" class="date_input" type="date" aria-label="Recipient's username" placeholder="Choose date from the date picker" aria-describedby="button-addon2" min="2019-01-01" max="2024-01-01" />
+<div  class="input-group mb-4 input_container" id="ig">
+  <input  class="date_input" type="date" aria-label="Recipient's username" placeholder="Choose date from the date picker" aria-describedby="button-addon2" min="2019-01-01" max="2024-01-01" />
   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M6.43949 3.83408C6.70916 2.72197 8.29084 2.72197 8.56051 3.83408L9.30252 6.89413C9.3988 7.29118 9.70882 7.6012 10.1059 7.69748L13.1659 8.43949C14.278 8.70916 14.278 10.2908 13.1659 10.5605L10.1059 11.3025C9.70882 11.3988 9.3988 11.7088 9.30252 12.1059L8.56051 15.1659C8.29084 16.278 6.70916 16.278 6.43949 15.1659L5.69748 12.1059C5.6012 11.7088 5.29118 11.3988 4.89413 11.3025L1.83408 10.5605C0.721973 10.2908 0.721972 8.70916 1.83408 8.43949L4.89413 7.69748C5.29118 7.6012 5.6012 7.29118 5.69748 6.89413L6.43949 3.83408Z" fill="#B5FF00" />
     <path d="M15.3474 14.5133C15.5133 13.8289 16.4867 13.8289 16.6526 14.5133L17.1092 16.3964C17.1685 16.6407 17.3593 16.8315 17.6036 16.8908L19.4867 17.3474C20.1711 17.5133 20.1711 18.4867 19.4867 18.6526L17.6036 19.1092C17.3593 19.1685 17.1685 19.3593 17.1092 19.6036L16.6526 21.4867C16.4867 22.1711 15.5133 22.1711 15.3474 21.4867L14.8908 19.6036C14.8315 19.3593 14.6407 19.1685 14.3964 19.1092L12.5133 18.6526C11.8289 18.4867 11.8289 17.5133 12.5133 17.3474L14.3964 16.8908C14.6407 16.8315 14.8315 16.6407 14.8908 16.3964L15.3474 14.5133Z" fill="#B5FF00" />
@@ -257,13 +250,6 @@
     <path d="M22 14C21.4477 14 21 13.5523 21 13C21 12.4477 21.4477 12 22 12C22.5523 12 23 12.4477 23 13C23 13.5523 22.5523 14 22 14Z" fill="#B5FF00" />
   </svg>
   <button style="width: 250px;height: 52px;" class="btn btn-primary mars_button" type="button" id="button-addon2" onclick="displayRover()" >Enter</button>
-=======
-
-
-<div  class="input-group mb-4 input_container">
-  <input class="date_input" type="date" aria-label="Recipient's username" placeholder="Choose date from the date picker" aria-describedby="button-addon2" min="2012-08-06" max="2024-01-01" />
-  <button class="btn btn-primary mars_button" type="button" id="button-addon2" onclick="displayRover()" >Enter</button>
->>>>>>> main
 </div>
 </center>
 
@@ -339,7 +325,7 @@
   var typed = new Typed(".auto-typed", {
     strings : ["pedition.", "cursion.", "ploration."],
     typeSpeed : 150,
-    backSpeed : 100,
+    backSpeed : 50,
     loop : true
   })
 </script>
