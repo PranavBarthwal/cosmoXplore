@@ -26,18 +26,21 @@ body {
 .highlight {
   background: -webkit-linear-gradient(#e4d6fb, #8400ff);
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
 }
 
 .auto-typed {
   background: -webkit-linear-gradient(#e4d6fb, #8400ff);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .section_title {
   background: -webkit-linear-gradient(#e4d6fb, #8400ff);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 4rem;
   font-weight: bold;
@@ -52,25 +55,10 @@ body {
   z-index: -1;
 }
 
-.input_container {
-  display: flex;
-  flex-direction: row; 
-  flex-wrap: nowrap;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  cursor:pointer;
-  padding: 20px;
-}
+
 .input_container b{
   font-size:20px;
-  padding-right: 10px;
-}
-
-.date_input {
-  width: 700px;
-  border-radius: 5px;
-  height:40px;
+  padding-left: 10px;
 }
 
 .apod_img_container {
@@ -353,3 +341,70 @@ body {
 .navbar{
   z-index: 99;
 }
+/*Improvement of date_input*/
+input {
+  all: unset;
+}
+
+.input-group {
+  width: 1000px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: 10px;
+
+  box-shadow: hsla(0, 0%, 0%, 0.1) 0px 20px 25px -5px,
+    #0000000a 0px 10px 10px -5px;
+  transition: all 0.35s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.date_input {
+  /*width: calc(100% - 70px);
+  font: inherit;*/
+  width: 1000px;
+  border-radius: 5px;
+  height:52px;
+  font-size: 18px;
+  padding: 1rem;
+  color: white;
+}
+
+.input-group:has(input:focus) {
+  border: 2px solid rgb(10, 0, 73);
+  box-shadow: 0 0 120px hsla(247, 55%, 45%, 0.5);
+}
+
+.input-group > svg {
+  position: absolute;
+  right: 1rem;
+  width: 28px;
+  flex-shrink: 0;
+  transition: 0.25s;
+}
+
+svg > path {
+  fill: none;
+  stroke: #727884;
+}
+
+.date_input:focus + svg > path {
+  stroke: none;
+  fill: hsla(247, 55%, 45%, 0.5);
+}
+.date_input:focus + svg {
+  scale: 1.2;
+}
+.input_container {
+      display: flex;
+      flex-direction: row; 
+      flex-wrap: nowrap;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      cursor:pointer;
+      padding: 20px;
+    }
