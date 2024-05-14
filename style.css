@@ -350,3 +350,6 @@ body {
   opacity: 0;
   visibility: hidden;
 }
+.navbar{
+  z-index: 99;
+}
