@@ -230,6 +230,7 @@ function fetchEPICImages(latitude, longitude) {
     // Get today_minus_3's date in YYYY-MM-DD format
     // Get today_minus_3's date
 
+        // if (min.lat > max.lat || (min.lat === max.lat && min.lon > max.lon)) 
     
     let today_minus_3 = new Date();
 
@@ -239,12 +240,11 @@ today_minus_3.setDate(today_minus_3.getDate() - 3);
 // Format the date as ISO string
 today_minus_3 = today_minus_3.toISOString().split('T')[0];
 
-    const apiKey="eISHzmGbQk7EMWv9NTlVtvzZVmeLKPUoL3uKMSPJ"
+
     // Form the request URL for EPIC images for today_minus_3's date and given location
-    const apiUrl = `https://api.nasa.gov/EPIC/api/natural/date/${today_minus_3}?api_key=${apiKey}`;
     
     // Fetch EPIC images for today_minus_3's date
-    fetch(apiUrl)
+    fetch(`https://api.nasa.gov/EPIC/api/natural/date/${today_minus_3}?api_key=eISHzmGbQk7EMWv9NTlVtvzZVmeLKPUoL3uKMSPJ`)
     .then(response => {
         return response.json(); // Convert response to JSON
     })
