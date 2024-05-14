@@ -15,6 +15,26 @@ body {
   display: none;
 }
 
+/* Date Button Styling */
+#getPic {
+  width: 25%;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 13px;
+  background: whitesmoke;
+  cursor: pointer;
+  margin-bottom: 2%;
+}
+
+#getDate {
+  width: 25%;
+  font-size: 20px;
+  padding: 9px 20px;
+  border-radius: 9px;
+  background: whitesmoke;
+  margin-bottom: 2%;
+}
+
 /* NAVBAR STYLING */
 
 .navbar_background{
