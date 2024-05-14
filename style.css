@@ -27,6 +27,7 @@ body {
   background: -webkit-linear-gradient(#e4d6fb, #8400ff);
   -webkit-background-clip: text;
   color: transparent;
+  margin: 0;
 }
 
 .auto-typed {
@@ -106,6 +107,24 @@ body {
   color: rgb(191, 0, 255);
   box-shadow: 0 5px 15px #9000ff;
   animation: floating 3s ease infinite;
+}
+
+/* Explore button */
+
+#explore{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+#explore_btn{
+  background: #8400ff;
+  border: none;
+}
+
+#explore_btn:hover{
+  box-shadow: 0 0 50px rgb(133, 63, 171);
+  transition: all 0.5s ease;
 }
 
 /* Floating Animation */
