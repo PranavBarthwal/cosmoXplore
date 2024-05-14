@@ -28,7 +28,6 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  margin: 0;
 }
 
 .auto-typed {
@@ -95,24 +94,6 @@ body {
   color: rgb(191, 0, 255);
   box-shadow: 0 5px 15px #9000ff;
   animation: floating 3s ease infinite;
-}
-
-/* Explore button */
-
-#explore{
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-#explore_btn{
-  background: #8400ff;
-  border: none;
-}
-
-#explore_btn:hover{
-  box-shadow: 0 0 50px rgb(133, 63, 171);
-  transition: all 0.5s ease;
 }
 
 /* Floating Animation */
@@ -365,8 +346,8 @@ input {
   all: unset;
 }
 
-.input-group {
-  width: 1000px;
+#ig {
+  width: 700px;
   height: 52px;
   display: flex;
   align-items: center;
@@ -392,12 +373,12 @@ input {
   color: white;
 }
 
-.input-group:has(input:focus) {
+#ig:has(input:focus) {
   border: 2px solid rgb(10, 0, 73);
   box-shadow: 0 0 120px hsla(247, 55%, 45%, 0.5);
 }
 
-.input-group > svg {
+#ig > svg {
   position: absolute;
   right: 1rem;
   width: 28px;
