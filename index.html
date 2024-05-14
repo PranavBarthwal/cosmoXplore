@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,9 +24,34 @@
       }
     }
   </style>
+  
 </head>
 <body>
-    
+  <div class="l">
+    <div class="spinner">
+    </div>
+</div>
+    <script>
+      window.addEventListener("load", () => {
+  const loader = document.querySelector(".l");
+  
+  loader.classList.add("l--hidden");
+  
+  loader.addEventListener("transitionend", () => {
+  document.body.removeChild(loader);
+  });
+  });
+  
+      window.addEventListener("load", () => {
+  const loader = document.querySelector(".spinner");
+  
+  loader.classList.add("spinner--hidden");
+  
+  loader.addEventListener("transitionend", () => {
+  document.body.removeChild(loader);
+  });
+  });
+    </script>
     <div id="bg"></div>
 
 
