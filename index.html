@@ -25,7 +25,14 @@
     }
   </style>
   <style>
-
+   .input-group:focus-within .mars_button {
+  outline: none;
+  box-shadow:    0 0 80px rgb(10, 0, 73), 0 0 100px rgb(10, 0, 73), 0 0 150px rgb(10, 0, 73);
+}
+.date_input:focus {
+  outline: none;
+  box-shadow:  0 0 5px rgb(10, 0, 73), 0 0 10px rgb(10, 0, 73), 0 0 80px rgb(10, 0, 73), 0 0 100px rgb(10, 0, 73), 0 0 150px rgb(10, 0, 73);
+}
   </style>
   
 </head>
@@ -243,7 +250,7 @@
 <center>
 <div  class="input-group mb-4 input_container">
   <input class="date_input" type="date" aria-label="Recipient's username" placeholder="Choose date from the date picker" aria-describedby="button-addon2" min="2019-01-01" max="2024-01-01" style="background-color: transparent;height: 52px;color: white;"/>
-  <button class="btn btn-primary mars_button" type="button" id="button-addon2" onclick="displayRover()" style="height: 52px;>Enter</button>
+  <button class="btn btn-primary mars_button" type="button" id="button-addon2" onclick="displayRover()" style="height: 52px;">Enter</button>
 </div>
 </center>
 
