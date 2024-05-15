@@ -134,7 +134,7 @@ particlesJS("bg", {
       document.querySelector(".img").style.display = "none"; 
       document.querySelector(".video").style.display = "block"; 
       const videoContainer = document.querySelector(".video");
-      videoContainer.style.height = "80vh"; // Use viewport height (vh) for better responsiveness
+      videoContainer.style.height = "80vh"; //Use viewport height (vh) for better responsiveness
  
       document.getElementById("apod_video").innerHTML = `<iframe width="100%" height="100%" src="${media}" frameborder="0" allowfullscreen></iframe>`;
   } else {
