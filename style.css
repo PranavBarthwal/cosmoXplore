@@ -328,3 +328,23 @@ body {
   transform: scale(1.1);
   transition: color 0.2s ease; /* Smooth transition for color change */
 }
+.navbar-nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 1rem;
+}
+.nav-item{
+  border:transparent;
+  background-color: rgb(191, 0, 255);
+  border-radius: 1.1rem;
+  padding:0rem 0.5rem;
+}
+.nav-link{
+  font-weight: bolder;
+  color: white;
+}
+.nav-item:hover{
+  color:black;
+  background-color: white;
+}
