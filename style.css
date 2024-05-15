@@ -162,6 +162,7 @@ body {
   justify-content: center;
 }
 
+
 .inner_container {
   height: 100%;
   width: 75%;
@@ -172,9 +173,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap:40px;
 }
 
 .image_div {
+  display:flex;
   width: 500px;
   height: 500px;
   margin-right: 50px;
@@ -202,6 +205,21 @@ body {
   width: 500px;
   height: 500px;
   border-radius: 25px;
+  transition: transform 0.5s ease-in-out; /* Add transition for smooth animation */
+}
+
+.arrow {
+  transform: translateY(0%); /* Adjust the buttons vertically to center them */
+  background: transparent; /* Remove background */
+  border: none; /* Remove border */
+  padding: 10px; /* Add padding */
+  color: white; /* Set button color */
+  font-size: 24px; /* Set button font size */
+}
+
+.arrow:hover{
+  color: rgb(191, 0, 255);
+  font-size: 40px; /* Set button font size */
 }
 
 #roverImg:hover {
