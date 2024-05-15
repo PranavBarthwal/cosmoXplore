@@ -17,8 +17,18 @@ body {
 
 /* NAVBAR STYLING */
 
-.navbar_background{
-  background-image: linear-gradient(to left, rgb(10, 0, 73) , rgb(0, 0, 0));
+.navbar_background {
+  background-image: linear-gradient(to left, rgb(10, 0, 73), rgb(0, 0, 0));
+}
+
+.navbar-nav {
+  gap: 44px;
+}
+
+.nav-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* HERO SECTION STYLING */
@@ -55,23 +65,24 @@ body {
 
 .input_container {
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
   flex-wrap: nowrap;
   width: 100%;
   justify-content: center;
   align-items: center;
-  cursor:pointer;
+  cursor: pointer;
   padding: 20px;
 }
-.input_container b{
-  font-size:20px;
+
+.input_container b {
+  font-size: 20px;
   padding-right: 10px;
 }
 
 .date_input {
   width: 700px;
   border-radius: 5px;
-  height:40px;
+  height: 40px;
 }
 
 .apod_img_container {
@@ -79,7 +90,8 @@ body {
   height: 500px;
 }
 
-.img,.video {
+.img,
+.video {
   width: 500px;
   height: 400px;
 }
@@ -94,7 +106,8 @@ body {
   border-radius: 25px;
 }
 
-#apod_img:hover,#apod_video:hover {
+#apod_img:hover,
+#apod_video:hover {
   color: white;
   box-shadow: 0 5px 15px #9000ff;
 }
@@ -111,18 +124,18 @@ body {
 
 /* Explore button */
 
-#explore{
+#explore {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-#explore_btn{
+#explore_btn {
   background: #8400ff;
   border: none;
 }
 
-#explore_btn:hover{
+#explore_btn:hover {
   box-shadow: 0 0 50px rgb(133, 63, 171);
   transition: all 0.5s ease;
 }
@@ -130,7 +143,7 @@ body {
 /* Floating Animation */
 @keyframes floating {
   50% {
-      transform: translateY(-20px);
+    transform: translateY(-20px);
   }
 }
 
@@ -140,6 +153,7 @@ body {
   display: flex;
   justify-content: center;
 }
+
 .rover_section_text {
   width: 50%;
 }
@@ -181,20 +195,20 @@ body {
 }
 
 /* added position and style to button */
-#close_button{
+#close_button {
   position: relative;
-  left:80%;
-  bottom:45%;
+  left: 80%;
+  bottom: 45%;
 }
 
-#close{
-  font-size:20px;
+#close {
+  font-size: 20px;
   padding: 0 20px;
   border-radius: 10px;
 }
 
-#close:hover{
-  background-color:rgb(191, 0, 255);
+#close:hover {
+  background-color: rgb(191, 0, 255);
   color: white;
 }
 
@@ -241,7 +255,8 @@ body {
 
 .right .form-control {
   width: 100%;
-  max-width: 600px; /* Adjust the maximum width as needed */
+  max-width: 600px;
+  /* Adjust the maximum width as needed */
 }
 
 .contact_img {
@@ -262,7 +277,8 @@ body {
 
   .contact-form .right {
     padding-left: 0;
-    margin-top: 10px; /* Adjust as needed */
+    margin-top: 10px;
+    /* Adjust as needed */
   }
 }
 
@@ -318,13 +334,16 @@ body {
 .card p {
   padding: 10px 0;
 }
+
 .decorate-text {
-  transition: color 0.2s ease; /* transition property for color change */
+  transition: color 0.2s ease;
+  /* transition property for color change */
 }
 
 .decorate-text:hover {
   color: rgb(207, 48, 170);
-  transition-delay: 0.2s; 
+  transition-delay: 0.2s;
   transform: scale(1.1);
-  transition: color 0.2s ease; /* Smooth transition for color change */
+  transition: color 0.2s ease;
+  /* Smooth transition for color change */
 }
