@@ -26,19 +26,21 @@ body {
 .highlight {
   background: -webkit-linear-gradient(#e4d6fb, #8400ff);
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
-  margin: 0;
 }
 
 .auto-typed {
   background: -webkit-linear-gradient(#e4d6fb, #8400ff);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .section_title {
   background: -webkit-linear-gradient(#e4d6fb, #8400ff);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 4rem;
   font-weight: bold;
@@ -107,24 +109,6 @@ body {
   color: rgb(191, 0, 255);
   box-shadow: 0 5px 15px #9000ff;
   animation: floating 3s ease infinite;
-}
-
-/* Explore button */
-
-#explore{
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-#explore_btn{
-  background: #8400ff;
-  border: none;
-}
-
-#explore_btn:hover{
-  box-shadow: 0 0 50px rgb(133, 63, 171);
-  transition: all 0.5s ease;
 }
 
 /* Floating Animation */
@@ -345,4 +329,46 @@ body {
   transition-delay: 0.2s; 
   transform: scale(1.1);
   transition: color 0.2s ease; /* Smooth transition for color change */
+}
+
+.spinner {
+  background-image: linear-gradient(rgb(186, 66, 255) 35%,rgb(0, 225, 255));
+  width: 100px;
+  height: 100px;
+  animation: spinning82341 1.7s linear infinite;
+  transition: opacity 3s,visibility 3s;
+  text-align: center;
+  border-radius: 50px;
+  filter: blur(1px);
+  box-shadow: 0px -5px 20px 0px rgb(186, 66, 255), 0px 5px 20px 0px rgb(0, 225, 255);
+}
+.spinner--hidden{
+    opacity: 0;
+    visibility: hidden;
+}
+@keyframes spinning82341 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.l{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  transition: opacity 3s, visibility 3s;
+  z-index: 100;
+}
+
+.l--hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+.navbar{
+  z-index: 99;
 }
