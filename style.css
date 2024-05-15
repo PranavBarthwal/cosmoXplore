@@ -78,7 +78,8 @@ body {
   display: flex;
   flex-direction: row; 
   flex-wrap: nowrap;
-  width: 100%;
+  width: 90%;
+  height: 52px;
   justify-content: center;
   align-items: center;
   cursor:pointer;
@@ -93,6 +94,8 @@ body {
   width: 700px;
   border-radius: 5px;
   height:40px;
+  border-color: transparent;
+  text-align: center;
 }
 
 .apod_img_container {
@@ -391,3 +394,4 @@ body {
 .navbar{
   z-index: 99;
 }
+
