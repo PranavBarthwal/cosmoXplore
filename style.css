@@ -162,9 +162,10 @@ body {
   justify-content: center;
 }
 
-.inner_conatiner {
-  height: 80vh;
-  width: 80%;
+
+.inner_container {
+  height: 100%;
+  width: 75%;
   border-radius: 10px;
   border: #e4d6fb;
   border-style: solid;
