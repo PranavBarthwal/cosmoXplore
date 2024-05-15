@@ -21,6 +21,25 @@ body {
   background-image: linear-gradient(to left, rgb(10, 0, 73) , rgb(0, 0, 0));
 }
 
+/* Increase gap between nav items */
+.nav-item {
+  margin-right: 10px; /* Adjust as needed */
+}
+
+/* Redesign nav-link */
+.nav-link {
+  padding: 10px 15px;
+  border-radius: 20px; 
+  transition: all ease-in .5s;
+}
+
+/* Redesign nav-link on hover */
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.contact-btn:hover{
+        color: #9000ff;
+}
 /* HERO SECTION STYLING */
 
 .highlight {
