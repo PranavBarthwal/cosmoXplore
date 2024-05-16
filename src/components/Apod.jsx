@@ -1,4 +1,5 @@
 import React from 'react';
+import img from '../assets/64e4e4aabd98a600197c0ca3.webp';
 
 function Apod() {
   return (
@@ -12,7 +13,7 @@ function Apod() {
           </div>
           <div className="apod_img_container">
             <div className="img">
-              <img src="./assets/64e4e4aabd98a600197c0ca3.webp" id="apod_img" className="apod_img" alt="APOD" />
+              <img src={img} id="apod_img" className="apod_img" alt="APOD" />
             </div>
           </div>
         </div>
