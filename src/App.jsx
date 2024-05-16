@@ -15,15 +15,15 @@ function App() {
 
   return (
     <>
-      <Background/>
-      <Navbar/>
-      <Hero/>
-      <Apod/>
-      <MarsRover/>
-      <DefaultDisplay/>
-      <DisplayDetails/>
-      <ContactForm/>
-      <Footer/>
+      {/* <Background/> */}
+      {/* <Navbar/> */}
+      {/* <Hero/> */}
+      {/* <Apod/> */}
+      {/* <MarsRover/> */}
+      {/* <DefaultDisplay/> */}
+      {/* <DisplayDetails/> */}
+      {/* <ContactForm/> */}
+      {/* <Footer/> */}
     </>
   )
 }
