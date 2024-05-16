@@ -6,6 +6,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Apod from './components/Apod'
 import MarsRover from './components/MarsRover'
+import DefaultDisplay from './components/DefaultDisplay'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
       <Hero/>
       <Apod/>
       <MarsRover/>
+      <DefaultDisplay/>
     </>
   )
 }
