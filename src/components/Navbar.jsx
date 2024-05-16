@@ -1,6 +1,7 @@
 import React from 'react';
 import logoWhite from '../assets/logo_white.png';
 import menuFill from '../assets/menu-fill.svg';
+// import sidebarToggle from '../../index.js';
 
 function Navbar() {
   return (

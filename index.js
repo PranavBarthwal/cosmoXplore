@@ -1,5 +1,4 @@
 // PARTICLES BACKGROUND
-function particlesJS() {
 particlesJS("bg", {
     particles: {
       number: {
@@ -110,7 +109,7 @@ particlesJS("bg", {
     },
     retina_detect: true,
   });
-}
+
   
   // NASA API CALL 1 : APoD
   
@@ -208,6 +207,7 @@ particlesJS("bg", {
   mediaQuery.addListener(handleMediaQueryChange);
   
   //sidebar toggle script
+  function sidebarToggle() {
   let menu = document.querySelector(".sidebar-menu");
   let icon = document.querySelector(".sidebar-icon");
   
@@ -233,6 +233,7 @@ particlesJS("bg", {
       });
     });
   });
+}
   
   /* scroll to remove the sidebar */
   var prevScrollpos = window.pageYOffset;
@@ -245,3 +246,5 @@ particlesJS("bg", {
     }
     prevScrollpos = currentScrollPos;
   }
+
+  export default sidebarToggle;
