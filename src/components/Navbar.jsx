@@ -1,15 +1,17 @@
 import React from 'react';
+import logoWhite from '../assets/logo_white.png';
+import menuFill from '../assets/menu-fill.svg';
 
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg bg-*">
       <div className="container-fluid pt-2">
         <a className="navbar-brand" href="#">
-          <img src="./assets/logo_white.png" alt="Bootstrap" width="370" />
+          <img src={logoWhite} alt="Bootstrap" width="370" />
         </a>
 
         <div className="sidebar-icon" id="sidebar-icon">
-          <img src="svg/menu-fill.svg" alt="" className="sidebar-i" id="sidebar-i" />
+          <img src={menuFill} alt="" className="sidebar-i" id="sidebar-i" />
         </div>
 
         <div className="sidebar-menu" id="sidebar-menu">
