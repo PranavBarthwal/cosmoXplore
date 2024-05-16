@@ -1,5 +1,5 @@
 // PARTICLES BACKGROUND
-
+function particlesJS() {
 particlesJS("bg", {
     particles: {
       number: {
@@ -110,6 +110,7 @@ particlesJS("bg", {
     },
     retina_detect: true,
   });
+}
   
   // NASA API CALL 1 : APoD
   

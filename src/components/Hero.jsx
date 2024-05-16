@@ -1,7 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import logo from '../assets/A letter tech logo.png';
+import Typed from 'typed.js'; // Import the Typed.js library
 
 function Hero() {
+  useEffect(() => {
+    // Initialize Typed instance
+    var typed = new Typed(".auto-typed", {
+      strings: ["Expedition.", "Voyage.", "Odyssey."],
+      typeSpeed: 150,
+      backSpeed: 50,
+      loop: true
+    });
+
+    // Cleanup function to destroy Typed instance when component unmounts
+    return () => {
+      typed.destroy();
+    };
+  }, []); // Empty dependency array to run only once when component mounts
+
   return (
     <div className="container col-xxl-9 px-3 py-5 override-display">
       <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
