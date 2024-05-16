@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asteroids - Near Earth Object Web Service</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="shortcut icon" href="../../assets/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <div id="bg-ast"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar_background">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="./assets/logo_white.png" alt="Bootstrap" width="370">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon "></span>
+            </button>
+            <div class="collapse navbar-collapse pe-5" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-light decorate-text" href="../../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light decorate-text" href="../../index.html#apod">APoD</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link text-light decorate-text" href="../../index.html#mars">MartianImagery</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link text-light decorate-text" href="#">NeoWs</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link text-light decorate-text" href="../earthPics/index.html">EPIC View</a>
+                      </li>
+                    <li class="nav-item">
+                        <a href="#contact"> <button class="btn btn-outline-light rounded-pill decorate-text"
+                                type="submit">Contact Us</button></a>
+                    </li>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- HERO SECTION -->
+    <div class="container">
+        <div class="input-field">
+            <h2 id="input-heading">Near Earth Objects</h2>
+
+            <div class="startDate date-input-fields-div">
+                <input type="date" id="starting-date" class="date-inputs start-date">
+                <label for="start-date">Starting date for Asteroid search</label>
+            </div>
+
+            <div class="endDate date-input-fields-div">
+                <input class="date-inputs end-date" type="date" id="ending-date">
+                <label for="end-date">End date for Asteroid search</label>
+            </div>
+
+            <div class="note">
+                
+
+                <div class="note-heading">
+                    <h5 id="dateNote"><span id="exclamation-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                        <path
+                            d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z" />
+                    </svg></span>The ending date should not be more than 7 than the Starting date</h5>
+                </div>
+            </div>
+
+            <button type="submit" id="dates-submit-btn">Search</button>
+        </div>
+
+        <div class="asteroid-info astInfoHidden">
+            <h3 id="name-of-asteroid">Name of the Asteroid: <span id="asteroid-name">X6969</span></h3>
+
+            <div class="asteroid-grid">
+
+                <div class="asteroid-info-card">
+                    <h4>Estimated diameter (km)</h4>
+                    <p>Min: <span id="estDiaMin">X</span></p>
+                    <p>Max: <span id="estDiaMax">X</span></p>
+                </div>
+
+                <div class="asteroid-info-card">
+                    <h4>Potential hazardous?</h4>
+                    <p id="potentialHazardVal">Yes</p>
+                </div>
+
+                <div class="asteroid-info-card">
+                    <h4>Close approach Date <span>(YYYY-MM-DD)</span></h4>
+                    <p id="closeApproachDate">2024-05-12</p>
+                </div>
+
+                <div class="asteroid-info-card">
+                    <h4>Relative Velocity</h4>
+                    <p>km/sec: <span id="relVelocitySec">X</span></p>
+                    <p>km/hr: <span id="relVelocityHr">X</span></p>
+                </div>
+
+                <div class="asteroid-info-card">
+                    <h4>Orbiting body</h4>
+                    <span id="orbitingBodyVal">Earth</span>
+                </div>
+
+                <div class="asteroid-info-card">
+                    <h4>Sentry object</h4>
+                    <span id="sentryObjectVal">No</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="./particles.min.js"></script>
+    <script src="script.js"></script>
+    <!-- AtharvKasar04 -->
+</body>
+
+</html>

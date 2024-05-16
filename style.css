@@ -15,22 +15,51 @@ body {
   display: none;
 }
 
+/* NAVBAR STYLING */
+
+.navbar_background{
+  background-image: linear-gradient(to left, rgb(10, 0, 73) , rgb(0, 0, 0));
+}
+
+/* Increase gap between nav items */
+.nav-item {
+  margin-right: 10px; /* Adjust as needed */
+}
+
+/* Redesign nav-link */
+.nav-link {
+  padding: 10px 15px;
+  border-radius: 20px; 
+  transition: all ease-in .5s;
+}
+
+/* Redesign nav-link on hover */
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.contact-btn:hover{
+        color: #9000ff;
+}
+/* HERO SECTION STYLING */
+
 .highlight {
   background: -webkit-linear-gradient(#e4d6fb, #8400ff);
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
 }
-
 
 .auto-typed {
   background: -webkit-linear-gradient(#e4d6fb, #8400ff);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .section_title {
   background: -webkit-linear-gradient(#e4d6fb, #8400ff);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 4rem;
   font-weight: bold;
@@ -47,7 +76,10 @@ body {
 
 .input_container {
   display: flex;
-  width: 100%;
+  flex-direction: row; 
+  flex-wrap: nowrap;
+  width: 90%;
+  height: 52px;
   justify-content: center;
   align-items: center;
   cursor:pointer;
@@ -60,7 +92,10 @@ body {
 
 .date_input {
   width: 700px;
+  border-radius: 5px;
   height:40px;
+  border-color: transparent;
+  text-align: center;
 }
 
 .apod_img_container {
@@ -68,7 +103,7 @@ body {
   height: 500px;
 }
 
-.img {
+.img,.video {
   width: 500px;
   height: 400px;
 }
@@ -76,6 +111,7 @@ body {
 .info {
   width: 500px;
   height: 100px;
+  margin-top: 1rem;
 }
 
 #apod_img {
@@ -83,8 +119,12 @@ body {
   transition: transform 0.7s ease-in-out;
 }
 
+
 #apod_img:hover {
   color: rgb(191, 0, 255);
+
+#apod_img:hover,#apod_video:hover {
+  color: white;
   box-shadow: 0 5px 15px #9000ff;
   animation: leviate 3s ease infinite;
 }
@@ -104,11 +144,11 @@ body {
 .hero_img:hover {
   color: rgb(191, 0, 255);
   box-shadow: 0 5px 15px #9000ff;
-  animation: leviate 3s ease infinite;
+  animation: floating 3s ease infinite;
 }
 
 /* Floating Animation */
-@keyframes leviate {
+@keyframes floating {
   50% {
       transform: translateY(-20px);
   }
@@ -132,7 +172,7 @@ body {
 .mars_illus:hover {
   color: rgb(191, 0, 255);
   box-shadow: 0 5px 15px #ff0099;
-  animation: leviate 3s ease infinite;
+  animation: floating 3s ease infinite;
 }
 
 .rover_display {
@@ -142,7 +182,8 @@ body {
   justify-content: center;
 }
 
-.inner_conatiner {
+
+.inner_container {
   height: 100%;
   width: 75%;
   border-radius: 10px;
@@ -152,18 +193,53 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap:40px;
 }
 
 .image_div {
+  display:flex;
   width: 500px;
   height: 500px;
   margin-right: 50px;
+}
+
+/* added position and style to button */
+#close_button{
+  position: relative;
+  left:80%;
+  bottom:45%;
+}
+
+#close{
+  font-size:20px;
+  padding: 0 20px;
+  border-radius: 10px;
+}
+
+#close:hover{
+  background-color:rgb(191, 0, 255);
+  color: white;
 }
 
 #roverImg {
   width: 500px;
   height: 500px;
   border-radius: 25px;
+  transition: transform 0.5s ease-in-out; /* Add transition for smooth animation */
+}
+
+.arrow {
+  transform: translateY(0%); /* Adjust the buttons vertically to center them */
+  background: transparent; /* Remove background */
+  border: none; /* Remove border */
+  padding: 10px; /* Add padding */
+  color: white; /* Set button color */
+  font-size: 24px; /* Set button font size */
+}
+
+.arrow:hover{
+  color: rgb(191, 0, 255);
+  font-size: 40px; /* Set button font size */
 }
 
 #roverImg:hover {
@@ -213,7 +289,7 @@ body {
 .contact_img:hover {
   color: white;
   box-shadow: 0 5px 15px #9000ff;
-  animation: leviate 3s ease infinite;
+  animation: floating 3s ease infinite;
 }
 
 /* Additional styling for responsiveness */
@@ -280,57 +356,59 @@ body {
 .card p {
   padding: 10px 0;
 }
-
-#emailHelp.form-text.text-light {
-  color: #aaa !important;
+.decorate-text {
+  transition: color 0.2s ease; /* transition property for color change */
 }
 
-.nav-link {
-  transition: color 0.5s ease-in-out, transform 0.5s ease-in-out;
+.decorate-text:hover {
+  color: rgb(207, 48, 170);
+  transition-delay: 0.2s; 
+  transform: scale(1.1);
+  transition: color 0.2s ease; /* Smooth transition for color change */
 }
 
-.nav-link:hover {
-  color: #aaa; 
-  transform: scale(1.1); 
+.spinner {
+  background-image: linear-gradient(rgb(186, 66, 255) 35%,rgb(0, 225, 255));
+  width: 100px;
+  height: 100px;
+  animation: spinning82341 1.7s linear infinite;
+  transition: opacity 3s,visibility 3s;
+  text-align: center;
+  border-radius: 50px;
+  filter: blur(1px);
+  box-shadow: 0px -5px 20px 0px rgb(186, 66, 255), 0px 5px 20px 0px rgb(0, 225, 255);
 }
-
-.nav-link {
-  position: relative;
-  color: #ffffff; 
-  text-decoration: none; 
+.spinner--hidden{
+    opacity: 0;
+    visibility: hidden;
 }
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -2px; 
+@keyframes spinning82341 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.l{
+  position: fixed;
+  top: 0;
   left: 0;
-  width: 0;
-  height: 2px; 
-  background-color: #aaa; 
-  transition: width 0.3s ease-in-out; 
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  transition: opacity 3s, visibility 3s;
+  z-index: 100;
 }
 
-.nav-link:hover::after {
-  width: 100%; 
+.l--hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+.navbar{
+  z-index: 99;
 }
 
-.nav-item .nav-link {
-  margin-right: 15px; 
-}
-
-.btn-primary {
-  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-.btn-primary:hover {
-  background-color: #0056b3; 
-  transform: translateY(-2px); 
-}
-
-.btn-primary:active {
-  transform: translateY(1px); 
-}
 
 /* Style the navigation bar */
 .navbar {
@@ -354,10 +432,4 @@ body {
   box-shadow: 0 5px 15px #ff0099;
   animation: leviate 3s ease infinite;
 }
-
-
-
-
-
-
 
