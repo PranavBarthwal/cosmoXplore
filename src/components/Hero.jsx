@@ -1,11 +1,12 @@
 import React from 'react';
+import logo from '../assets/A letter tech logo.png';
 
 function Hero() {
   return (
     <div className="container col-xxl-9 px-3 py-5 override-display">
       <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
         <div className="col-10 col-sm-8 col-lg-6">
-          <img src="./assets/A letter tech logo.png" className="d-block mx-lg-auto img-fluid hero_img" alt="Bootstrap Themes" width="700" height="500" loading="lazy" />
+          <img src={logo} className="d-block mx-lg-auto img-fluid hero_img" alt="Bootstrap Themes" width="700" height="500" loading="lazy" />
         </div>
         <div className="col-lg-6">
           <h1 className="display-2 fw-bold text-light">Let's embark on a Cosmic <span className="highlight">X</span><span className="auto-typed"></span></h1>
