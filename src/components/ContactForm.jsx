@@ -1,4 +1,5 @@
 import React from 'react';
+import img from '../assets/original-5fcdc62f8266e353ea97ca56731ad804.png';
 
 function ContactForm() {
   return (
@@ -6,7 +7,7 @@ function ContactForm() {
       <h1 align="center" className="section_title" id="contact">Contact Us</h1>
       <div className="contact-form">
         <div className="left">
-          <img src="./assets/original-5fcdc62f8266e353ea97ca56731ad804.png" className="contact_img" alt="Contact Image" style={{ maxWidth: "100%" }} />
+          <img src={img} className="contact_img" alt="Contact Image" style={{ maxWidth: "100%" }} />
         </div>
         <div className="right">
           <form>

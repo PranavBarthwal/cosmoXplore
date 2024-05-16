@@ -21,7 +21,7 @@ function App() {
       <Apod/>
       <MarsRover/>
       <DefaultDisplay/>
-      {/* <DisplayDetails/> */}
+      <DisplayDetails/>
       <ContactForm/>
       <Footer/>
     </>

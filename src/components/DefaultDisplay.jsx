@@ -1,10 +1,11 @@
 import React from 'react';
+import img from '../assets/mars.png';
 
 function DefaultDisplay() {
   return (
     <div className="rover_container">
       <div className="rover_section_img">
-        <img src="./assets/mars.png" className="mars_illus" alt="Mars" />
+        <img src={img} className="mars_illus" alt="Mars" />
       </div>
       <div className="rover_section_text">
         <p className="rover_section_para">Welcome to an extraordinary adventure into the Martian landscape, where we invite you to explore the wonders of the Red Planet through the lens of various rovers that have traversed its surface. Our journey takes us deep into the photographic archives, a treasure trove of captivating images captured by these robotic explorers. Each rover, armed with sophisticated cameras, has documented the Martian terrain, unveiling its mysteries one snapshot at a time.
