@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,16 +24,53 @@
       }
     }
   </style>
+  <style>
+   .input-group:focus-within .mars_button {
+  outline: none;
+  box-shadow:    0 0 80px rgb(10, 0, 73), 0 0 100px rgb(10, 0, 73), 0 0 150px rgb(10, 0, 73);
+}
+.date_input:focus {
+  outline: none;
+  box-shadow:  0 0 5px rgb(10, 0, 73), 0 0 10px rgb(10, 0, 73), 0 0 80px rgb(10, 0, 73), 0 0 100px rgb(10, 0, 73), 0 0 150px rgb(10, 0, 73);
+}
+  </style>
+  
 </head>
 <body>
-    
+  <div class="l">
+    <div class="spinner"></div>
+</div>
+    <script>
+      window.addEventListener("load", () => {
+  const loader = document.querySelector(".l");
+  
+  loader.classList.add("l--hidden");
+  
+  loader.addEventListener("transitionend", () => {
+  document.body.removeChild(loader);
+  });
+  });
+  
+      window.addEventListener("load", () => {
+  const loader = document.querySelector(".spinner");
+  
+  loader.classList.add("spinner--hidden");
+  
+  loader.addEventListener("transitionend", () => {
+  document.body.removeChild(loader);
+  });
+  });
+
+  
+    </script>
     <div id="bg"></div>
+
 
 
 <!-- NAVBAR -->
 
 
-<nav class="navbar navbar-expand-lg fixed-top navbar_background">
+<!-- <nav class="navbar navbar-expand-lg fixed-top navbar_background">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
       <img src="./assets/logo_white.png" alt="Bootstrap" width="370">
@@ -58,13 +92,44 @@
         <li class="nav-item ">
           <a class="nav-link text-light decorate-text" href="./Pages/asteroid-info/index.html">NeoWs</a>
         </li>
+        <li class="nav-item ">
+          <a class="nav-link text-light decorate-text" href="./Pages/earthPics/index.html">EPIC View</a>
+        </li>
         <li class="nav-item">
          <a href="#contact"> <button class="btn btn-outline-light rounded-pill decorate-text" type="submit">Contact Us</button></a>
         </li>
     </div>
   </div>
-</nav>
+</nav> -->
 
+<nav class="navbar navbar-expand-lg fixed-top navbar_background">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="./assets/logo_white.png" alt="Bootstrap" width="370">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon "></span>
+    </button>
+    <div class="collapse navbar-collapse pe-5" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-light decorate-text" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light decorate-text" href="#apod">APoD</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light decorate-text" href="#mars">MartianImagery</a>
+        </li>
+        <li class="nav-item">
+          <a href="#contact" class="nav-link">
+            <button class="btn btn-outline-light rounded-pill contact-btn" type="submit">Contact Us</button>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
 
 <!-- HERO SECTION -->
@@ -75,15 +140,11 @@
       width="700" height="500" loading="lazy" style="animation: float 3s ease-in-out infinite;">
     </div>
     <div class="col-lg-6 ">
-      <h1 class="display-2 fw-bold text-light">Let's embark on a Cosmic <span class="highlight"><br>X</span><span class="auto-typed"></span></h1>
+      <h1 class="display-2 fw-bold text-light">Let's embark on a Cosmic <span class="highlight">X</span><span class="auto-typed"></span></h1>
       <p class="lead text-light">Welcome to CosmoXplore, where the celestial canvas unfolds its mysteries before your eyes. Immerse yourself in a cosmic odyssey, as we harness the power of NASA's API to bring you a symphony of space resources. From breathtaking images to cutting-edge astronomical data, embark on a journey that transcends the limits of earthly imagination.</p>
-      <div id="explore">
-        <h3 class="highlight">
-          Ready to Xplore ?
-        </h3>
-        <div class="d-grid gap-5 d-md-flex justify-content-md-start">
-          <a href="#apod"><button type="button" id="explore_btn" class="btn btn-primary btn-lg px-4 me-md-2">Launch 🚀</button></a>
-        </div>
+      <div class="d-grid gap-5 d-md-flex justify-content-md-start pt-2">
+        <a href="#apod"><button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Explore</button></a>
+        
       </div>
     </div>
   </div>
@@ -164,7 +225,7 @@
 </div>
 
 
-<!-- display on enetering a date -->
+<!-- display on entering a date -->
 <div class="rover_display">
   
   <!-- loader -->
@@ -183,7 +244,9 @@
     
 
     <div class="image_div">
+      <button class="arrow" onclick="plusDivs(-1)">&#10094;</button>
       <img id="roverImg" src="./assets/feel the fear and do it anyway.png">
+      <button class="arrow" onclick="plusDivs(+1)">&#10095;</button>
     </div>
     
     <div class="info_container">
@@ -238,12 +301,12 @@
 
 <br>
 
-
+<center>
 <div  class="input-group mb-4 input_container">
-  <input class="date_input" type="date" aria-label="Recipient's username" placeholder="Choose date from the date picker" aria-describedby="button-addon2" min="2012-08-06" max="2024-01-01" />
-  <button class="btn btn-primary mars_button" type="button" id="button-addon2" onclick="displayRover()" >Enter</button>
+  <input class="date_input" type="date" aria-label="Recipient's username" placeholder="Choose date from the date picker" aria-describedby="button-addon2" min="2019-01-01" max="2024-01-01" style="background-color: transparent;height: 52px;color: white;"/>
+  <button class="btn btn-primary mars_button" type="button" id="button-addon2" onclick="displayRover()" style="height: 52px;">Enter</button>
 </div>
-
+</center>
 
 
 
@@ -317,7 +380,7 @@
   var typed = new Typed(".auto-typed", {
     strings : ["pedition.", "cursion.", "ploration."],
     typeSpeed : 150,
-    backSpeed : 100,
+    backSpeed : 50,
     loop : true
   })
 </script>
