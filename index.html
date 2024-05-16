@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--  -->
     <title>cosmoXplore</title>
     <link
       rel="stylesheet"
@@ -20,122 +21,146 @@
     <link rel="stylesheet" href="./style.css" />
     <link rel="icon" type="image/png" href="./assets/favicon.png" />
 
-    <style>
-      @keyframes float {
-        0% {
-          transform: translateY(0);
-        }
-
-        50% {
-          transform: translateY(-10px);
-        }
-
-        100% {
-          transform: translateY(0);
-        }
+  <style>
+    @keyframes float {
+      0% {
+        transform: translateY(0);
       }
-    </style>
-  </head>
-  <body>
+  
+      50% {
+        transform: translateY(-10px);
+      }
+  
+      100% {
+        transform: translateY(0);
+      }
+    }
+  </style>
+  <style>
+   .input-group:focus-within .mars_button {
+  outline: none;
+  box-shadow:    0 0 80px rgb(10, 0, 73), 0 0 100px rgb(10, 0, 73), 0 0 150px rgb(10, 0, 73);
+}
+.date_input:focus {
+  outline: none;
+  box-shadow:  0 0 5px rgb(10, 0, 73), 0 0 10px rgb(10, 0, 73), 0 0 80px rgb(10, 0, 73), 0 0 100px rgb(10, 0, 73), 0 0 150px rgb(10, 0, 73);
+}
+  </style>
+  
+</head>
+<body>
+  <div class="l">
+    <div class="spinner"></div>
+</div>
+    <script>
+      window.addEventListener("load", () => {
+  const loader = document.querySelector(".l");
+  
+  loader.classList.add("l--hidden");
+  
+  loader.addEventListener("transitionend", () => {
+  document.body.removeChild(loader);
+  });
+  });
+  
+      window.addEventListener("load", () => {
+  const loader = document.querySelector(".spinner");
+  
+  loader.classList.add("spinner--hidden");
+  
+  loader.addEventListener("transitionend", () => {
+  document.body.removeChild(loader);
+  });
+  });
+
+  
+    </script>
+    
+ 
+
     <div id="bg"></div>
 
     <!-- NAVBAR -->
 
-    <nav class="navbar navbar-expand-lg fixed-top navbar_background">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img src="./assets/logo_white.png" alt="Bootstrap" width="370" />
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse pe-5" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link text-light decorate-text" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-light decorate-text" href="#apod">APoD</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-light decorate-text" href="#mars"
-                >MartianImagery</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link text-light decorate-text"
-                href="./Pages/asteroid-info/index.html"
-                >NeoWs</a
-              >
-            </li>
-            <li class="nav-item">
-              <a href="#contact">
-                <button
-                  class="btn btn-outline-light rounded-pill decorate-text"
-                  type="submit"
-                >
-                  Contact Us
-                </button></a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+<!-- <nav class="navbar navbar-expand-lg fixed-top navbar_background">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="./assets/logo_white.png" alt="Bootstrap" width="370">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon "></span>
+    </button>
+    <div class="collapse navbar-collapse pe-5" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-light decorate-text" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light decorate-text" href="#apod">APoD</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link text-light decorate-text" href="#mars">MartianImagery</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link text-light decorate-text" href="./Pages/asteroid-info/index.html">NeoWs</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link text-light decorate-text" href="./Pages/earthPics/index.html">EPIC View</a>
+        </li>
+        <li class="nav-item">
+         <a href="#contact"> <button class="btn btn-outline-light rounded-pill decorate-text" type="submit">Contact Us</button></a>
+        </li>
+    </div>
+  </div>
+</nav> -->
 
-    <!-- HERO SECTION -->
-    <div class="container col-xxl-9 px-3 py-5">
-      <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-        <div class="col-10 col-sm-8 col-lg-6">
-          <img
-            src="./assets/A letter tech logo.png"
-            class="d-block mx-lg-auto img-fluid hero_img"
-            alt="Bootstrap Themes"
-            width="700"
-            height="500"
-            loading="lazy"
-            style="animation: float 3s ease-in-out infinite"
-          />
-        </div>
-        <div class="col-lg-6">
-          <h1 class="display-2 fw-bold text-light">
-            Let's embark on a Cosmic <span class="highlight"><br />X</span
-            ><span class="auto-typed"></span>
-          </h1>
-          <p class="lead text-light">
-            Welcome to CosmoXplore, where the celestial canvas unfolds its
-            mysteries before your eyes. Immerse yourself in a cosmic odyssey, as
-            we harness the power of NASA's API to bring you a symphony of space
-            resources. From breathtaking images to cutting-edge astronomical
-            data, embark on a journey that transcends the limits of earthly
-            imagination.
-          </p>
-          <div id="explore">
-            <h3 class="highlight">Ready to Xplore ?</h3>
-            <div class="d-grid gap-5 d-md-flex justify-content-md-start">
-              <a href="#apod"
-                ><button
-                  type="button"
-                  id="explore_btn"
-                  class="btn btn-primary btn-lg px-4 me-md-2"
-                >
-                  Launch 🚀
-                </button></a
-              >
-            </div>
-          </div>
-        </div>
+<nav class="navbar navbar-expand-lg fixed-top navbar_background">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="./assets/logo_white.png" alt="Bootstrap" width="370">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon "></span>
+    </button>
+    <div class="collapse navbar-collapse pe-5" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-light decorate-text" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light decorate-text" href="#apod">APoD</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light decorate-text" href="#mars">MartianImagery</a>
+        </li>
+        <li class="nav-item">
+          <a href="#contact" class="nav-link">
+            <button class="btn btn-outline-light rounded-pill contact-btn" type="submit">Contact Us</button>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- HERO SECTION -->
+<div class="container col-xxl-9 px-3 py-5">
+  <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+    <div class="col-10 col-sm-8 col-lg-6">
+    <img src="./assets/A letter tech logo.png" class="d-block mx-lg-auto img-fluid hero_img" alt="Bootstrap Themes"
+      width="700" height="500" loading="lazy" style="animation: float 3s ease-in-out infinite;">
+    </div>
+    <div class="col-lg-6 ">
+      <h1 class="display-2 fw-bold text-light">Let's embark on a Cosmic <span class="highlight">X</span><span class="auto-typed"></span></h1>
+      <p class="lead text-light">Welcome to CosmoXplore, where the celestial canvas unfolds its mysteries before your eyes. Immerse yourself in a cosmic odyssey, as we harness the power of NASA's API to bring you a symphony of space resources. From breathtaking images to cutting-edge astronomical data, embark on a journey that transcends the limits of earthly imagination.</p>
+      <div class="d-grid gap-5 d-md-flex justify-content-md-start pt-2">
+        <a href="#apod"><button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Explore</button></a>
+        
       </div>
     </div>
+  </div>
+</div>
 
     <br />
     <br />
@@ -237,46 +262,43 @@
       </div>
     </div>
 
-    <!-- display on enetering a date -->
-    <div class="rover_display">
-      <div class="inner_conatiner">
-        <!-- added close button  -->
-        <div id="close_button">
-          <button id="close" type="Button" onclick="closeRoverDisplay()">
-            <strong>X</strong>
-          </button>
-        </div>
-        <div class="image_div">
-          <img
-            id="roverImg"
-            src="./assets/feel the fear and do it anyway.png"
-          />
-        </div>
 
-        <div class="info_container">
-          <div class="info1">
-            <div class="row">
-              <div class="card">
-                <h4>Earth Date</h4>
-                <p class="date">....</p>
-                <p></p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="card">
-                <h4>Rover Name</h4>
-                <p class="roverName">....</p>
-                <p></p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="card">
-                <h4>Camera</h4>
-                <p class="camera">....</p>
-                <p></p>
-              </div>
-            </div>
+<!-- display on entering a date -->
+<div class="rover_display">
+  <div class="inner_container">
+
+    <!-- added close button  -->
+    <div id="close_button">
+      <button id="close" type="Button" onclick="closeRoverDisplay()"><strong>X</strong></button>
+    </div>
+    <div class="image_div">
+      <button class="arrow" onclick="plusDivs(-1)">&#10094;</button>
+      <img id="roverImg" src="./assets/feel the fear and do it anyway.png">
+      <button class="arrow" onclick="plusDivs(+1)">&#10095;</button>
+    </div>
+    
+    <div class="info_container">
+
+      <div class="info1">
+        <div class="row">
+          <div class="card">
+              <h4>Earth Date</h4>
+              <p class="date">....<p>
           </div>
+        </div>
+        <div class="row">
+          <div class="card">
+              <h4>Rover Name</h4>
+              <p class="roverName">....<p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="card">
+              <h4>Camera</h4>
+              <p class="camera">....<p>
+          </div>
+        </div>
+      </div>
 
           <div class="info2">
             <div class="row">
@@ -430,21 +452,22 @@
       </footer>
     </div>
 
-    <script src="./particles.min.js"></script>
-    <script src="./app.js"></script>
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script>
-      var typed = new Typed('.auto-typed', {
-        strings: ['pedition.', 'cursion.', 'ploration.'],
-        typeSpeed: 150,
-        backSpeed: 100,
-        loop: true
-      })
-    </script>
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
-    ></script>
+    
+  
+
+<script src="./particles.min.js"></script>
+<script src="./app.js"></script>
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script>
+  var typed = new Typed(".auto-typed", {
+    strings : ["pedition.", "cursion.", "ploration."],
+    typeSpeed : 150,
+    backSpeed : 50,
+    loop : true
+  })
+</script>
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <script type="text/javascript">
       emailjs.init('Your_Public_Key')
