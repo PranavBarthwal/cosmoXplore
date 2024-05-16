@@ -21,24 +21,45 @@ body {
   background-image: linear-gradient(to left, rgb(10, 0, 73) , rgb(0, 0, 0));
 }
 
+/* Increase gap between nav items */
+.nav-item {
+  margin-right: 10px; /* Adjust as needed */
+}
+
+/* Redesign nav-link */
+.nav-link {
+  padding: 10px 15px;
+  border-radius: 20px; 
+  transition: all ease-in .5s;
+}
+
+/* Redesign nav-link on hover */
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.contact-btn:hover{
+        color: #9000ff;
+}
 /* HERO SECTION STYLING */
 
 .highlight {
   background: -webkit-linear-gradient(#e4d6fb, #8400ff);
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
-  margin: 0;
 }
 
 .auto-typed {
   background: -webkit-linear-gradient(#e4d6fb, #8400ff);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .section_title {
   background: -webkit-linear-gradient(#e4d6fb, #8400ff);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 4rem;
   font-weight: bold;
@@ -57,7 +78,8 @@ body {
   display: flex;
   flex-direction: row; 
   flex-wrap: nowrap;
-  width: 100%;
+  width: 90%;
+  height: 52px;
   justify-content: center;
   align-items: center;
   cursor:pointer;
@@ -72,6 +94,8 @@ body {
   width: 700px;
   border-radius: 5px;
   height:40px;
+  border-color: transparent;
+  text-align: center;
 }
 
 .apod_img_container {
@@ -109,24 +133,6 @@ body {
   animation: floating 3s ease infinite;
 }
 
-/* Explore button */
-
-#explore{
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-#explore_btn{
-  background: #8400ff;
-  border: none;
-}
-
-#explore_btn:hover{
-  box-shadow: 0 0 50px rgb(133, 63, 171);
-  transition: all 0.5s ease;
-}
-
 /* Floating Animation */
 @keyframes floating {
   50% {
@@ -162,7 +168,8 @@ body {
   justify-content: center;
 }
 
-.inner_conatiner {
+
+.inner_container {
   height: 100%;
   width: 75%;
   border-radius: 10px;
@@ -172,9 +179,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap:40px;
 }
 
 .image_div {
+  display:flex;
   width: 500px;
   height: 500px;
   margin-right: 50px;
@@ -202,6 +211,21 @@ body {
   width: 500px;
   height: 500px;
   border-radius: 25px;
+  transition: transform 0.5s ease-in-out; /* Add transition for smooth animation */
+}
+
+.arrow {
+  transform: translateY(0%); /* Adjust the buttons vertically to center them */
+  background: transparent; /* Remove background */
+  border: none; /* Remove border */
+  padding: 10px; /* Add padding */
+  color: white; /* Set button color */
+  font-size: 24px; /* Set button font size */
+}
+
+.arrow:hover{
+  color: rgb(191, 0, 255);
+  font-size: 40px; /* Set button font size */
 }
 
 #roverImg:hover {
@@ -348,3 +372,46 @@ body {
   color:black;
   background-color: white;
 }
+
+.spinner {
+  background-image: linear-gradient(rgb(186, 66, 255) 35%,rgb(0, 225, 255));
+  width: 100px;
+  height: 100px;
+  animation: spinning82341 1.7s linear infinite;
+  transition: opacity 3s,visibility 3s;
+  text-align: center;
+  border-radius: 50px;
+  filter: blur(1px);
+  box-shadow: 0px -5px 20px 0px rgb(186, 66, 255), 0px 5px 20px 0px rgb(0, 225, 255);
+}
+.spinner--hidden{
+    opacity: 0;
+    visibility: hidden;
+}
+@keyframes spinning82341 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.l{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  transition: opacity 3s, visibility 3s;
+  z-index: 100;
+}
+
+.l--hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+.navbar{
+  z-index: 99;
+}
+
