@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
    <link rel="stylesheet" href="./style.css">
    <link rel="icon" type="image/png" href="./assets/favicon.png"> 
+   <script src="https://cdn.lordicon.com/lordicon.js"></script>
 
   <style>
     @keyframes float {
@@ -116,17 +117,27 @@
     <div class="collapse navbar-collapse pe-5" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link text-light decorate-text" href="#">Home</a>
+          <a class="nav-link text-light decorate-text" href="#"><lord-icon
+                    src="https://cdn.lordicon.com/wmwqvixz.json"
+                    trigger="hover"
+                    colors="primary:#ffffff"
+                    style="width:20px;height:20px">
+                </lord-icon>  Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light decorate-text" href="#apod">APoD</a>
+          <a class="nav-link text-light decorate-text" href="#apod"><i class="fa-solid fa-image" style="color: #ffffff;"></i>  APoD</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light decorate-text" href="#mars">MartianImagery</a>
+          <a class="nav-link text-light decorate-text" href="#mars"><i class="fa-solid fa-globe" style="color: #ffffff;"></i>  MartianImagery</a>
         </li>
         <li class="nav-item">
           <a href="#contact" class="nav-link">
-            <button class="btn btn-outline-light rounded-pill contact-btn" type="submit">Contact Us</button>
+            <button class="btn btn-outline-light rounded-pill contact-btn" type="submit"><lord-icon
+                              src="https://cdn.lordicon.com/srsgifqc.json"
+                              trigger="hover"
+                              colors="primary:#ffffff"
+                              style="width:15px;height:15px">
+                              </lord-icon>  Contact Us</button>
           </a>
         </li>
       </ul>
@@ -315,16 +326,16 @@
   <div class="right">
     <form id="form">
       <div class="mb-3">
-        <label for="exampleInputName" class="form-label text-light">Name</label>
+        <label for="exampleInputName" class="form-label text-light"><i class="fa-solid fa-signature" style="color: #ffffff;"></i>  Name</label>
         <input type="text" class="form-control" id="exampleInputName" placeholder="Enter your name">
       </div>
       <div class="mb-3">
-        <label for="exampleInputEmail2" class="form-label text-light">Email address</label>
+        <label for="exampleInputEmail2" class="form-label text-light"><i class="fa-solid fa-envelope" style="color: #ffffff;"></i>  Email address</label>
         <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Enter your email">
         <div id="emailHelp" class="form-text text-light">We'll never share your email with anyone else.</div>
       </div>
       <div class="mb-3">
-        <label for="exampleInputMessage" class="form-label text-light">Message</label>
+        <label for="exampleInputMessage" class="form-label text-light"><i class="fa-solid fa-message" style="color: #ffffff;"></i> Message</label>
         <textarea class="form-control" name="message" id="exampleInputMessage" rows="4" placeholder="feel free to ask your queries!"></textarea>
       </div>
       <button type="submit" class="btn btn-primary" onclick="alert('Mail has been sent successfully!')">Submit</button>
