@@ -10,3 +10,8 @@ body {
   color: rgb(255, 255, 255);
   font-family: sans-serif;
 }
+
+.body::-webkit-scrollbar {
+  display: none;
+}
+
