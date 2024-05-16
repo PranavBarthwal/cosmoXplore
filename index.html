@@ -23,8 +23,9 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg bg-* ">
   <div class="container-fluid pt-2">
-    <a class="navbar-brand" href="#">
-      <img src="./assets/logo_white.png" alt="Bootstrap" width="370">
+    <a class="navbar-brand d-flex align-items-center justify-content-center" href="#">
+      <img src="./assets/icon.gif" alt="Icon" width="45" style="margin-right: 10px;">
+      <img class="mb-2" src="./assets/logo_white.png" alt="Bootstrap" width="370">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon "></span>
@@ -39,6 +40,9 @@
         </li>
         <li class="nav-item">
           <a class="nav-link text-light" href="#mars">MartianImagery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="about.html">About Us</a>
         </li>
         <li class="nav-item">
          <a href="#contact"> <button class="btn btn-outline-light rounded-pill" type="submit">Contact Us</button></a>
@@ -221,16 +225,16 @@
     <form>
       <div class="mb-3">
         <label for="exampleInputName" class="form-label text-light">Name</label>
-        <input type="text" class="form-control" id="exampleInputName" placeholder="Enter your name">
+        <input type="text" class="form-control" id="exampleInputName" placeholder="Enter your name" required>
       </div>
       <div class="mb-3">
         <label for="exampleInputEmail2" class="form-label text-light">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Enter your email">
+        <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Enter your email" required>
         <div id="emailHelp" class="form-text text-light">We'll never share your email with anyone else.</div>
       </div>
       <div class="mb-3">
         <label for="exampleInputMessage" class="form-label text-light">Message</label>
-        <textarea class="form-control" id="exampleInputMessage" rows="4" placeholder="feel free to ask your queries!"></textarea>
+        <textarea class="form-control" id="exampleInputMessage" rows="4" placeholder="Feel free to ask your queries!" required></textarea>
       </div>
       <button type="submit" class="btn btn-primary" onclick="alert('Mail has been sent successfully!')">Submit</button>
     </form>
@@ -246,12 +250,21 @@
 <!-- Enhanced Footer -->
 <div class="container">
   <footer class="row py-3 my-4 border-top">
-    <!-- About Us Section -->
+    <!-- Subscription Section -->
     <div class="col-md-6 mb-3 mb-md-0">
-      <h5>About Us</h5>
-      <p class="text-light">CosmoXplore is your gateway to the cosmos, offering a unique blend of celestial exploration and scientific discovery. Our mission is to inspire and educate audiences about the wonders of the universe through captivating imagery, insightful articles, and interactive experiences.</p>
-      <p class="text-light">With a team of passionate astronomers, scientists, and educators, CosmoXplore curates the latest news, stunning imagery, and fascinating facts about space exploration. Whether you're a seasoned stargazer or a curious novice, there's something for everyone to enjoy and learn.</p>
+      <h5>Subscribe to Our Newsletter</h5>
+      <form id="subscribeForm">
+        <div class="input-group rounded" style="width: 33pc !important;">
+          <input type="email" class="form-control rounded" id="emailInput" placeholder="Enter your email address" aria-label="Enter your email address" aria-describedby="button-addon2">
+          <button class="btn btn-primary" type="button" id="subscribeButton" onclick="subscribe()">Subscribe</button>
+        </div>
+        <div id="emailError" class="text-danger mt-2" style="display: none;">Please enter a valid email address.</div>
+      </form>
+      <a href="about.html" class="btn btn-primary rounded mt-3 ">For More Info <img src="./assets/right-arrow.png"></a>
     </div>
+
+     <!-- Button for More Info -->
+   
     
     <!-- Explore and Contact Us Section -->
     <div class="col-md-6 mb-3 mb-md-0">
@@ -268,7 +281,7 @@
         
         <!-- Contact Us Section with Social Media Icons -->
         <div class="col-md-6 mb-3 mb-md-0">
-          <h5>Contact Us</h5>
+          <h5><a href="#contact">Contact Us</a></h5>
           <p class="text-light">Email: info@cosmoxplore.com<br>Phone: +91 1234567890<br>Address: 123 Street, City, Country</p>
           <!-- Social Media Icons -->
           <ul class="social-media-icons list-inline mt-2 mb-0">
@@ -286,3 +299,27 @@
     </div>
   </footer>
 </div>
+
+
+
+<!-- validation for subscription of email -->
+<script>
+function subscribe() {
+  var email = document.getElementById("emailInput").value;
+  var emailError = document.getElementById("emailError");
+  
+  // Email validation
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    emailError.style.display = "block";
+    return;
+  }
+  
+  // If email is valid, proceed with subscription
+  alert("Successfully subscribed to our newsletter!");
+  
+  // Reset email error message and input field
+  emailError.style.display = "none";
+  document.getElementById("subscribeForm").reset();
+}
+</script>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cosmoXplore</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+   <link rel="stylesheet" href="./style.css">
+</head>
+
+
+
+<body>
+    
+    <div id="bg"></div>
+
+
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg bg-* ">
+  <div class="container-fluid pt-2">
+    <a class="navbar-brand d-flex align-items-center justify-content-center" href="#">
+      <img src="./assets/icon.gif" alt="Icon" width="45" style="margin-right: 10px;">
+      <img class="mb-2" src="./assets/logo_white.png" alt="Bootstrap" width="370">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon "></span>
+    </button>
+    <div class="collapse navbar-collapse pe-5" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-light" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="/index.html#apod">APoD</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="/index.html#mars">MartianImagery</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-light" href="about.html">About Us</a>
+          </li>
+        <li class="nav-item">
+         <a href="/index.html#contact"> <button class="btn btn-outline-light rounded-pill" type="submit">Contact Us</button></a>
+        </li>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+<!-- Mars Rover Photos -->
+<h1 align="center" class="section_title" id="mars">About Us</h1>
+<br>
+
+<!-- Default display -->
+<div class="rover_container">
+  <div class="rover_section_img">
+    <img src="./assets/earth.png" class="aboutus">
+  </div>
+<div class="rover_section_text">
+<p class="">
+    Welcome to CosmoXplore, where our passion for space exploration meets innovative technology to bring the wonders of the universe closer to you. 
+    <p>At CosmoXplore, we're on a mission to make the cosmos accessible to everyone. </p>
+    <p>Through our platform, we aim to inspire curiosity, spark wonder, and foster a deeper understanding of the universe we inhabit. Dive into the mesmerizing beauty of space with NASA's Astronomy Picture of the Day, where captivating celestial images are accompanied by brief explanations, providing you with a daily dose of cosmic beauty and scientific insight. Embark on an extraordinary adventure into the Martian landscape with our collection of Martian imagery, offering a glimpse into the mysteries of Mars through the lens of various rovers that have traversed its surface. </p>
+    <p>Whether you're a space enthusiast or a curious explorer, our team is dedicated to providing exceptional service and support.</p>
+    <p>Join us as we embark on a cosmic adventure, unlocking the mysteries of the universe one discovery at a time.
+
+    </p></p>
+</div>
+</div>
+
+
+
+</body>
+</html>
+<br>
+<br>
+
+
+<!-- Enhanced Footer -->
+<div class="container">
+  <footer class="row py-3 my-4 border-top">
+    <!-- Subscription Section -->
+    <div class="col-md-6 mb-3 mb-md-0">
+      <h5>Subscribe to Our Newsletter</h5>
+      <form id="subscribeForm">
+        <div class="input-group rounded" style="width: 33pc !important;">
+          <input type="email" class="form-control rounded" id="emailInput" placeholder="Enter your email address" aria-label="Enter your email address" aria-describedby="button-addon2">
+          <button class="btn btn-primary" type="button" id="subscribeButton" onclick="subscribe()">Subscribe</button>
+        </div>
+        <div id="emailError" class="text-danger mt-2" style="display: none;">Please enter a valid email address.</div>
+      </form>
+      <a href="about.html" class="btn btn-primary rounded mt-3 ">For More Info <img src="./assets/right-arrow.png"></a>
+    </div>
+    
+    <!-- Explore and Contact Us Section -->
+    <div class="col-md-6 mb-3 mb-md-0">
+      <div class="row">
+        <!-- Explore Section with Additional Links -->
+        <div class="col-md-6 mb-3 mb-md-0">
+          <h5>Explore</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="/index.html#apod">APoD</a></li>
+            <li><a href="/index.html#mars">Martian Imagery</a></li>
+          </ul>
+        </div>
+        
+        <!-- Contact Us Section with Social Media Icons -->
+        <div class="col-md-6 mb-3 mb-md-0">
+          <h5><a href="/index.html#contact">Contact Us</a></h5>
+          <p class="text-light">Email: info@cosmoxplore.com<br>Phone: +91 1234567890<br>Address: 123 Street, City, Country</p>
+          <!-- Social Media Icons -->
+          <ul class="social-media-icons list-inline mt-2 mb-0">
+            <li class="list-inline-item"><a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+            <li class="list-inline-item"><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright Section -->
+    <div class="col-md-12 text-light text-center">
+      <p>© 2024 CosmoXplore India, Inc. All Rights Reserved</p>
+    </div>
+  </footer>
+</div>
+
+
+
+<!-- validation for subscription of email -->
+<script>
+function subscribe() {
+  var email = document.getElementById("emailInput").value;
+  var emailError = document.getElementById("emailError");
+  
+  // Email validation
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    emailError.style.display = "block";
+    return;
+  }
+  
+  // If email is valid, proceed with subscription
+  alert("Successfully subscribed to our newsletter!");
+  
+  // Reset email error message and input field
+  emailError.style.display = "none";
+  document.getElementById("subscribeForm").reset();
+}
+</script>
