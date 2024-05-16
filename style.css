@@ -100,12 +100,13 @@ body {
   background-color: transparent;
   border: 2px solid transparent;
   color: #fff;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
-  margin-left: 1rem;
-  padding: 0.5rem 1rem;
+  margin-left: 0px;
+  padding: 0.5rem 1 rem;
   position: relative;
   overflow: hidden;
+  margin-right: 0px;
 }
 
 .contact-btn::before {
@@ -124,7 +125,7 @@ body {
 }
 
 .contact-btn:hover {
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 20px  rgb(191, 0, 255 , 0.8);
   transform: scale(1.1);
 }
 
