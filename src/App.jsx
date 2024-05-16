@@ -15,7 +15,7 @@ function App() {
 
   return (
     <>
-      {/* <Background/> */}
+      <Background/>
       <Navbar/>
       <Hero/>
       <Apod/>
