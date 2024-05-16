@@ -1,9 +1,14 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import logoWhite from '../assets/logo_white.png';
 import menuFill from '../assets/menu-fill.svg';
-// import sidebarToggle from '../../index.js';
+import sidebarLogic from '../../sidebar.js';
 
 function Navbar() {
+
+  useEffect(() => {
+    // Execute the JavaScript logic when the component mounts
+    sidebarLogic();
+  }, []);
   return (
     <nav className="navbar navbar-expand-lg bg-*">
       <div className="container-fluid pt-2">
