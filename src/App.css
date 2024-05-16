@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext");
+
 .auto-typed {
     background: -webkit-linear-gradient(#e4d6fb, #8400ff);
     -webkit-background-clip: text;
@@ -20,17 +22,25 @@
     right: 0;
     z-index: -1;
   }
+
+  .ip{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  }
   
   .input_container {
     display: flex;
-    width: 100%;
+    width: 40%;
+    align-items: center;
     justify-content: center;
+    background-color: red;
   }
   
   .date_input {
-    width: 700px;
+    width: 20%;
   }
-  
+
   .apod_img_container {
     width: 500px;
     height: 500px;
@@ -182,7 +192,7 @@
   
   /* Info card in mars section */
   
-  @import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext");
+
   
   .card {
     border-radius: 10px;

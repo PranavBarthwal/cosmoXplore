@@ -1,6 +1,7 @@
 import React from 'react';
 import img from '../assets/logo_white.png';
 
+
 function Footer() {
   return (
     <div className="container">

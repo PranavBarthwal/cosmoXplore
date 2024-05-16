@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "../index.css";
 // import particlesJS from "particles.js";
 
+
 function Background() {
   // useEffect(() => {
   //   particlesJS("bg", {
