@@ -8,6 +8,8 @@ import Apod from './components/Apod'
 import MarsRover from './components/MarsRover'
 import DefaultDisplay from './components/DefaultDisplay'
 import DisplayDetails from './components/DisplayDetails'
+import ContactForm from './components/ContactForm'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -20,6 +22,8 @@ function App() {
       <MarsRover/>
       <DefaultDisplay/>
       <DisplayDetails/>
+      <ContactForm/>
+      <Footer/>
     </>
   )
 }
