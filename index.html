@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,12 +7,65 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
    <link rel="stylesheet" href="./style.css">
+   <link rel="icon" type="image/png" href="./assets/favicon.png"> 
+
+  <style>
+    @keyframes float {
+      0% {
+        transform: translateY(0);
+      }
+  
+      50% {
+        transform: translateY(-10px);
+      }
+  
+      100% {
+        transform: translateY(0);
+      }
+    }
+  </style>
+  <style>
+   .input-group .mars_button {
+  outline: none;
+  box-shadow:    0 0 80px rgb(10, 0, 73), 0 0 100px rgb(10, 0, 73), 0 0 150px rgb(10, 0, 73);
+}
+.date_input {
+  outline: none;
+  box-shadow:  0 0 5px rgb(10, 0, 73), 0 0 10px rgb(10, 0, 73), 0 0 80px rgb(10, 0, 73), 0 0 100px rgb(10, 0, 73), 0 0 150px rgb(10, 0, 73);
+}
+.date_input::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+  </style>
+  
 </head>
-
-
-
 <body>
-    
+  <div class="l">
+    <div class="spinner"></div>
+</div>
+    <script>
+      window.addEventListener("load", () => {
+  const loader = document.querySelector(".l");
+  
+  loader.classList.add("l--hidden");
+  
+  loader.addEventListener("transitionend", () => {
+  document.body.removeChild(loader);
+  });
+  });
+  
+      window.addEventListener("load", () => {
+  const loader = document.querySelector(".spinner");
+  
+  loader.classList.add("spinner--hidden");
+  
+  loader.addEventListener("transitionend", () => {
+  document.body.removeChild(loader);
+  });
+  });
+
+  
+    </script>
     <div id="bg"></div>
 
 
@@ -23,9 +73,8 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg bg-* ">
   <div class="container-fluid pt-2">
-    <a class="navbar-brand d-flex align-items-center justify-content-center" href="#">
-      <img src="./assets/icon.gif" alt="Icon" width="45" style="margin-right: 10px;">
-      <img class="mb-2" src="./assets/logo_white.png" alt="Bootstrap" width="370">
+    <a class="navbar-brand" href="#">
+      <img src="./assets/logo_white.png" alt="Bootstrap" width="370">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon "></span>
@@ -33,31 +82,34 @@
     <div class="collapse navbar-collapse pe-5" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link text-light" href="#">Home</a>
+          <a class="nav-link text-light decorate-text" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="#apod">APoD</a>
+          <a class="nav-link text-light decorate-text" href="#apod">APoD</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="#mars">MartianImagery</a>
+          <a class="nav-link text-light decorate-text" href="#mars">MartianImagery</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-light" href="about.html">About Us</a>
         </li>
         <li class="nav-item">
-         <a href="#contact"> <button class="btn btn-outline-light rounded-pill" type="submit">Contact Us</button></a>
+          <a href="#contact" class="nav-link">
+            <button class="btn btn-outline-light rounded-pill contact-btn" type="submit">Contact Us</button>
+          </a>
         </li>
+      </ul>
     </div>
   </div>
 </nav>
-
 
 
 <!-- HERO SECTION -->
 <div class="container col-xxl-9 px-3 py-5">
   <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
     <div class="col-10 col-sm-8 col-lg-6">
-      <img src="./assets/A letter tech logo.png" class="d-block mx-lg-auto img-fluid hero_img" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+    <img src="./assets/A letter tech logo.png" class="d-block mx-lg-auto img-fluid hero_img" alt="Bootstrap Themes"
+      width="700" height="500" loading="lazy" style="animation: float 3s ease-in-out infinite;">
     </div>
     <div class="col-lg-6 ">
       <h1 class="display-2 fw-bold text-light">Let's embark on a Cosmic <span class="highlight">X</span><span class="auto-typed"></span></h1>
@@ -92,6 +144,8 @@
       <div class="img">
            <img src="./assets/64e4e4aabd98a600197c0ca3.webp" id="apod_img" width="100%" height="100%">
       </div>
+      <div class="video" id="apod_video">
+   </div>
       <div class="info">
         <h5 id="copyright" align="center" > </h5>
         <h6 id="date" align="center"> </h6>
@@ -117,7 +171,7 @@
 <!-- Default display -->
 <div class="rover_container">
   <div class="rover_section_img">
-    <img src="./assets/mars.png" class="mars_illus">
+    <img src="./assets/mars.png" class="mars_illus" style="animation: float 3s ease-in-out infinite;"> 
   </div>
 <div class="rover_section_text">
 <p class="">Welcome to an extraordinary adventure into the Martian landscape, where we invite you to explore the wonders of the Red Planet through the lens of various rovers that have traversed its surface. Our journey takes us deep into the photographic archives, a treasure trove of captivating images captured by these robotic explorers. Each rover, armed with sophisticated cameras, has documented the Martian terrain, unveiling its mysteries one snapshot at a time.
@@ -135,12 +189,18 @@
 </div>
 
 
-<!-- display on enetering a date -->
+<!-- display on entering a date -->
 <div class="rover_display">
+  <div class="inner_container">
 
-  <div class="inner_conatiner">
+    <!-- added close button  -->
+    <div id="close_button">
+      <button id="close" type="Button" onclick="closeRoverDisplay()"><strong>X</strong></button>
+    </div>
     <div class="image_div">
+      <button class="arrow" onclick="plusDivs(-1)">&#10094;</button>
       <img id="roverImg" src="./assets/feel the fear and do it anyway.png">
+      <button class="arrow" onclick="plusDivs(+1)">&#10095;</button>
     </div>
     
     <div class="info_container">
@@ -195,12 +255,12 @@
 
 <br>
 
-
+<center>
 <div  class="input-group mb-4 input_container">
-  <input class="date_input" type="date" aria-label="Recipient's username" placeholder="Choose date from the date picker" aria-describedby="button-addon2" min="2019-01-01" max="2024-01-01" />
-  <button class="btn btn-primary mars_button" type="button" id="button-addon2" onclick="displayRover()" >Enter</button>
+  <input class="date_input" type="date" aria-label="Recipient's username" placeholder="Choose date from the date picker" aria-describedby="button-addon2" min="2019-01-01" max="2024-01-01" style="background-color: transparent;height: 52px;color: white;"/>
+  <button class="btn btn-primary mars_button" type="button" id="button-addon2" onclick="displayRover()" style="height: 52px;">Enter</button>
 </div>
-
+</center>
 
 
 
@@ -219,10 +279,10 @@
 <div class="contact-form">
   <div class="left">
     <!-- Add your image here -->
-    <img src="./assets/original-5fcdc62f8266e353ea97ca56731ad804.png" class="contact_img" alt="Contact Image" style="max-width: 100%;">
+    <img src="./assets/original-5fcdc62f8266e353ea97ca56731ad804.png" class="contact_img" alt="Contact Image" style="max-width: 100%; animation: float 3s ease-in-out infinite;">
   </div>
   <div class="right">
-    <form>
+    <form id="form">
       <div class="mb-3">
         <label for="exampleInputName" class="form-label text-light">Name</label>
         <input type="text" class="form-control" id="exampleInputName" placeholder="Enter your name" required>
@@ -234,7 +294,7 @@
       </div>
       <div class="mb-3">
         <label for="exampleInputMessage" class="form-label text-light">Message</label>
-        <textarea class="form-control" id="exampleInputMessage" rows="4" placeholder="Feel free to ask your queries!" required></textarea>
+        <textarea class="form-control" id="exampleInputMessage" rows="4" placeholder="feel free to ask your queries!"></textarea>
       </div>
       <button type="submit" class="btn btn-primary" onclick="alert('Mail has been sent successfully!')">Submit</button>
     </form>
@@ -304,22 +364,12 @@
 
 <!-- validation for subscription of email -->
 <script>
-function subscribe() {
-  var email = document.getElementById("emailInput").value;
-  var emailError = document.getElementById("emailError");
-  
-  // Email validation
-  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
-    emailError.style.display = "block";
-    return;
-  }
-  
-  // If email is valid, proceed with subscription
-  alert("Successfully subscribed to our newsletter!");
-  
-  // Reset email error message and input field
-  emailError.style.display = "none";
-  document.getElementById("subscribeForm").reset();
-}
+  var typed = new Typed(".auto-typed", {
+    strings : ["pedition", "cursion", "ploration"],
+    typeSpeed : 150,
+    backSpeed : 50,
+    loop : true
+  })
 </script>
+</body>
+</html>

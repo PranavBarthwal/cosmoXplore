@@ -121,27 +121,39 @@ particlesJS("bg", {
       return response.json()
   }).then((data) => {
       console.log(data)
-      
-      displayData(data.url, data.explanation, data.title, data.date, data.copyright )
-     
+      displayData(data.url, data.explanation, data.title, data.date, data.copyright,data.media_type)
   })
   .catch((error) => console.error(error))
 
 
   //function to display data in apod section
-  function displayData(image, info, title, date, copyright){
-    document.getElementById("apod_img").src = image
-    document.getElementById("apod_info").textContent = info
-    document.getElementById("title").textContent = title
-    document.getElementById("date").textContent = date
-    document.getElementById("copyright").textContent = copyright
-
+  function displayData(media, info, title, date, copyright,mediatype){
+    if(mediatype === "video")  // Check media type
+    {
+      // Hide image container, display video container, and embed video
+      document.querySelector(".img").style.display = "none"; 
+      document.querySelector(".video").style.display = "block"; 
+      const videoContainer = document.querySelector(".video");
+      videoContainer.style.height = "80vh"; //Use viewport height (vh) for better responsiveness
+ 
+      document.getElementById("apod_video").innerHTML = `<iframe width="100%" height="100%" src="${media}" frameborder="0" allowfullscreen></iframe>`;
+  } else {
+      // Hide video container, display image container, and set image source
+      document.querySelector(".video").style.display = "none";
+      document.querySelector(".img").style.display = "block"; 
+      document.getElementById("apod_img").src = media; 
+  }
+  document.getElementById("apod_info").textContent = info;
+  document.getElementById("title").textContent = title;
+  document.getElementById("date").textContent = date;
+  document.getElementById("copyright").textContent = copyright;
   }
 
 
 
 
   // NASA API CALL 2 : Mars Rover Photos
+let photosArr;
 function displayRover(){
 
   document.querySelector('.rover_container').style.display = 'none';
@@ -158,6 +170,7 @@ function displayRover(){
       console.log(data)
      
       let img_src = data.photos[0].img_src;
+      photosArr = data.photos;
       let date = data.photos[0].earth_date;
       let roverName = data.photos[0].rover.name;
       let camera = data.photos[0].camera.full_name;
@@ -165,8 +178,6 @@ function displayRover(){
       let land = data.photos[0].rover.landing_date;
       let status = data.photos[0].rover.status;
       
-
-
       updateDom(img_src, date, roverName, camera, launch, land, status)    
      
   })
@@ -184,9 +195,34 @@ function displayRover(){
     document.querySelector('.status').textContent = status
 }
 
+// added closeRover function 
+function closeRoverDisplay(e){
+  document.querySelector('.rover_container').style.display = 'flex';
+  document.querySelector('.rover_display').style.display = 'none';
+}
 
+//MARS PHOTOS SLIDESHOW OF MULTIPLE CAMERAS
+var slideIndex = 0; // Initialize slide index to 0
+function plusDivs(n) {
+  slideIndex += n;
+  if (slideIndex >= photosArr.length) {
+    slideIndex = 0; // Reset to first image if reached the end
+  } else if (slideIndex < 0) {
+    slideIndex = photosArr.length - 1; // Go to last image if reached the beginning
+  }
+  showDivs(slideIndex);
+}
 
-
+function showDivs(n) {
+  var roverImg = document.querySelector('#roverImg');
+  var cameraName = document.querySelector('.camera');
+  if (photosArr.length > 0) {
+    // Use modulo operator to ensure index wraps around correctly
+    n = (n + photosArr.length) % photosArr.length;
+    roverImg.src = photosArr[n].img_src;
+    cameraName.textContent = photosArr[n].camera.full_name;
+  }
+}
 
 
 // API CALL 3 : NASA Photo Video Gallery
