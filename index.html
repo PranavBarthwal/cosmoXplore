@@ -25,13 +25,16 @@
     }
   </style>
   <style>
-   .input-group:focus-within .mars_button {
+   .input-group .mars_button {
   outline: none;
   box-shadow:    0 0 80px rgb(10, 0, 73), 0 0 100px rgb(10, 0, 73), 0 0 150px rgb(10, 0, 73);
 }
-.date_input:focus {
+.date_input {
   outline: none;
   box-shadow:  0 0 5px rgb(10, 0, 73), 0 0 10px rgb(10, 0, 73), 0 0 80px rgb(10, 0, 73), 0 0 100px rgb(10, 0, 73), 0 0 150px rgb(10, 0, 73);
+}
+.date_input::-webkit-calendar-picker-indicator {
+    filter: invert(1);
 }
   </style>
   
