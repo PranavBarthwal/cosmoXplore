@@ -73,8 +73,9 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg bg-* ">
   <div class="container-fluid pt-2">
-    <a class="navbar-brand" href="#">
-      <img src="./assets/logo_white.png" alt="Bootstrap" width="370">
+    <a class="navbar-brand d-flex align-items-center justify-content-center" href="#">
+      <img src="./assets/icon.gif" alt="Icon" width="45" style="margin-right: 10px;">
+      <img class="mb-2" src="./assets/logo_white.png" alt="Bootstrap" width="370">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon "></span>
@@ -95,7 +96,7 @@
         </li>
         <li class="nav-item">
           <a href="#contact" class="nav-link">
-            <button class="btn btn-outline-light rounded-pill contact-btn" type="submit">Contact Us</button>
+            <button class="btn btn-outline-light rounded-pill contact-btn" style="margin-top: -6px;" type="submit">Contact Us</button>
           </a>
         </li>
       </ul>
@@ -306,7 +307,6 @@
 <br>
 <br>
 
-
 <!-- Enhanced Footer -->
 <div class="container">
   <footer class="row py-3 my-4 border-top">
@@ -320,12 +320,10 @@
         </div>
         <div id="emailError" class="text-danger mt-2" style="display: none;">Please enter a valid email address.</div>
       </form>
-      <a href="about.html" class="btn btn-primary rounded mt-3 ">For More Info <img src="./assets/right-arrow.png"></a>
+      <a href="Pages/about/about.html" class="btn btn-primary rounded mt-3 ">For More Info <img src="./assets/right-arrow.png"></img></a>
     </div>
 
-     <!-- Button for More Info -->
-   
-    
+       
     <!-- Explore and Contact Us Section -->
     <div class="col-md-6 mb-3 mb-md-0">
       <div class="row">
@@ -364,12 +362,24 @@
 
 <!-- validation for subscription of email -->
 <script>
-  var typed = new Typed(".auto-typed", {
-    strings : ["pedition", "cursion", "ploration"],
-    typeSpeed : 150,
-    backSpeed : 50,
-    loop : true
-  })
+function subscribe() {
+  var email = document.getElementById("emailInput").value;
+  var emailError = document.getElementById("emailError");
+  
+  // Email validation
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    emailError.style.display = "block";
+    return;
+  }
+  
+  // If email is valid, proceed with subscription
+  alert("Successfully subscribed to our newsletter!");
+  
+  // Reset email error message and input field
+  emailError.style.display = "none";
+  document.getElementById("subscribeForm").reset();
+}
 </script>
 </body>
 </html>

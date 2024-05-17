@@ -401,6 +401,18 @@ body {
   transform: translateY(1px); 
 }
 
+/* Style the navigation bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Style the navbar brand and logo */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
 
 
 
