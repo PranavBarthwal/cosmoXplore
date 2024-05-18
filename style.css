@@ -116,12 +116,26 @@ body {
 
 #apod_img {
   border-radius: 25px;
+  transition: transform 0.7s ease-in-out;
 }
+
+
+#apod_img:hover {
+  color: rgb(191, 0, 255);
 
 #apod_img:hover,#apod_video:hover {
   color: white;
   box-shadow: 0 5px 15px #9000ff;
+  animation: leviate 3s ease infinite;
 }
+
+/* Floating Animation */
+@keyframes leviate {
+  50% {
+      transform: translateY(-20px);
+  }
+}
+
 
 .hero_img {
   border-radius: 50%;
@@ -393,5 +407,29 @@ body {
 }
 .navbar{
   z-index: 99;
+}
+
+
+/* Style the navigation bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.aboutus {
+  border-radius: 50%;
+  margin-right: 30px;
+}
+
+.aboutus:hover {
+  color: rgb(191, 0, 255);
+  box-shadow: 0 5px 15px #ff0099;
+  animation: leviate 3s ease infinite;
 }
 
