@@ -71,44 +71,11 @@
 
 
 <!-- NAVBAR -->
-
-
-<!-- <nav class="navbar navbar-expand-lg fixed-top navbar_background">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="./assets/logo_white.png" alt="Bootstrap" width="370">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon "></span>
-    </button>
-    <div class="collapse navbar-collapse pe-5" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link text-light decorate-text" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light decorate-text" href="#apod">APoD</a>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link text-light decorate-text" href="#mars">MartianImagery</a>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link text-light decorate-text" href="./Pages/asteroid-info/index.html">NeoWs</a>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link text-light decorate-text" href="./Pages/earthPics/index.html">EPIC View</a>
-        </li>
-        <li class="nav-item">
-         <a href="#contact"> <button class="btn btn-outline-light rounded-pill decorate-text" type="submit">Contact Us</button></a>
-        </li>
-    </div>
-  </div>
-</nav> -->
-
-<nav class="navbar navbar-expand-lg fixed-top navbar_background">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="./assets/logo_white.png" alt="Bootstrap" width="370">
+<nav class="navbar navbar-expand-lg bg-* ">
+  <div class="container-fluid pt-2">
+    <a class="navbar-brand d-flex align-items-center justify-content-center" href="#">
+      <img src="./assets/icon.gif" alt="Icon" width="45" style="margin-right: 10px;">
+      <img class="mb-2" src="./assets/logo_white.png" alt="Bootstrap" width="370">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon "></span>
@@ -131,8 +98,11 @@
           <a class="nav-link text-light decorate-text" href="./Pages/earthPics/index.html">EPIC View</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link text-light" href="about.html">About Us</a>
+        </li>
+        <li class="nav-item">
           <a href="#contact" class="nav-link">
-            <button class="btn btn-outline-light rounded-pill contact-btn" type="submit">Contact Us</button>
+            <button class="btn btn-outline-light rounded-pill contact-btn" style="margin-top: -6px;" type="submit">Contact Us</button>
           </a>
         </li>
         
@@ -323,16 +293,16 @@
     <form id="form">
       <div class="mb-3">
         <label for="exampleInputName" class="form-label text-light">Name</label>
-        <input type="text" class="form-control" id="exampleInputName" placeholder="Enter your name">
+        <input type="text" class="form-control" id="exampleInputName" placeholder="Enter your name" required>
       </div>
       <div class="mb-3">
         <label for="exampleInputEmail2" class="form-label text-light">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Enter your email">
+        <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Enter your email" required>
         <div id="emailHelp" class="form-text text-light">We'll never share your email with anyone else.</div>
       </div>
       <div class="mb-3">
         <label for="exampleInputMessage" class="form-label text-light">Message</label>
-        <textarea class="form-control" name="message" id="exampleInputMessage" rows="4" placeholder="feel free to ask your queries!"></textarea>
+        <textarea class="form-control" id="exampleInputMessage" rows="4" placeholder="feel free to ask your queries!"></textarea>
       </div>
       <button type="submit" class="btn btn-primary" onclick="alert('Mail has been sent successfully!')">Submit</button>
     </form>
@@ -344,60 +314,79 @@
 <br>
 <br>
 
-
-
-
-
-    <!-- FOOTER -->
+<!-- Enhanced Footer -->
 <div class="container">
-  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-    
+  <footer class="row py-3 my-4 border-top">
+    <!-- Subscription Section -->
+    <div class="col-md-6 mb-3 mb-md-0">
+      <h5>Subscribe to Our Newsletter</h5>
+      <form id="subscribeForm">
+        <div class="input-group rounded" style="width: 33pc !important;">
+          <input type="email" class="form-control rounded" id="emailInput" placeholder="Enter your email address" aria-label="Enter your email address" aria-describedby="button-addon2">
+          <button class="btn btn-primary" type="button" id="subscribeButton" onclick="subscribe()">Subscribe</button>
+        </div>
+        <div id="emailError" class="text-danger mt-2" style="display: none;">Please enter a valid email address.</div>
+      </form>
+      <a href="Pages/about/about.html" class="btn btn-primary rounded mt-3 ">For More Info <img src="./assets/right-arrow.png"></img></a>
+    </div>
 
-    <a href="/cosmoXplore/index.html" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-      <img src="./assets/logo_white.png" width="150">
-    </a>
-    <p class="col-md-4 mb-0 text-light">© 2024 CosmoXplore India, Inc. All Rights Reserved</p>
+       
+    <!-- Explore and Contact Us Section -->
+    <div class="col-md-6 mb-3 mb-md-0">
+      <div class="row">
+        <!-- Explore Section with Additional Links -->
+        <div class="col-md-6 mb-3 mb-md-0">
+          <h5>Explore</h5>
+          <ul class="list-unstyled">
+            <li><a href="#">Home</a></li>
+            <li><a href="#apod">APoD</a></li>
+            <li><a href="#mars">Martian Imagery</a></li>
+          </ul>
+        </div>
+        
+        <!-- Contact Us Section with Social Media Icons -->
+        <div class="col-md-6 mb-3 mb-md-0">
+          <h5><a href="#contact">Contact Us</a></h5>
+          <p class="text-light">Email: info@cosmoxplore.com<br>Phone: +91 1234567890<br>Address: 123 Street, City, Country</p>
+          <!-- Social Media Icons -->
+          <ul class="social-media-icons list-inline mt-2 mb-0">
+            <li class="list-inline-item"><a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+            <li class="list-inline-item"><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-    
+    <!-- Copyright Section -->
+    <div class="col-md-12 text-light text-center">
+      <p>© 2024 CosmoXplore India, Inc. All Rights Reserved</p>
+    </div>
   </footer>
 </div>
 
-    
+
+
+<!-- validation for subscription of email -->
+<script>
+function subscribe() {
+  var email = document.getElementById("emailInput").value;
+  var emailError = document.getElementById("emailError");
   
-
-<script src="./particles.min.js"></script>
-<script src="./app.js"></script>
-<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-<script>
-  var typed = new Typed(".auto-typed", {
-    strings : ["pedition.", "cursion.", "ploration."],
-    typeSpeed : 150,
-    backSpeed : 50,
-    loop : true
-  })
-</script>
-<script type="text/javascript"
-  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-<script type="text/javascript">
-  emailjs.init('Your_Public_Key')
-</script>
-<script>
- document.getElementById('form')
-  .addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const serviceID = 'default_service';
-    const templateID = 'Your_template_id';
-
-    emailjs.sendForm(serviceID, templateID, this)
-      .then(() => {
-        alert('Sent!');
-      }, (err) => {
-        alert(JSON.stringify(err));
-      });
-  });
-
+  // Email validation
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    emailError.style.display = "block";
+    return;
+  }
+  
+  // If email is valid, proceed with subscription
+  alert("Successfully subscribed to our newsletter!");
+  
+  // Reset email error message and input field
+  emailError.style.display = "none";
+  document.getElementById("subscribeForm").reset();
+}
 </script>
 </body>
 </html>
