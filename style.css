@@ -17,8 +17,8 @@ body {
 
 /* NAVBAR STYLING */
 
-.navbar_background{
-  background-image: linear-gradient(to left, rgb(10, 0, 73) , rgb(0, 0, 0));
+.navbar_background {
+  background-image: linear-gradient(to left, rgb(10, 0, 73), rgb(0, 0, 0));
 }
 
 /* Increase gap between nav items */
@@ -76,17 +76,17 @@ body {
 
 .input_container {
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
   flex-wrap: nowrap;
   width: 90%;
   height: 52px;
   justify-content: center;
   align-items: center;
-  cursor:pointer;
+  cursor: pointer;
   padding: 20px;
 }
-.input_container b{
-  font-size:20px;
+.input_container b {
+  font-size: 20px;
   padding-right: 10px;
 }
 
@@ -103,7 +103,8 @@ body {
   height: 500px;
 }
 
-.img,.video {
+.img,
+.video {
   width: 500px;
   height: 400px;
 }
@@ -118,7 +119,8 @@ body {
   border-radius: 25px;
 }
 
-#apod_img:hover,#apod_video:hover {
+#apod_img:hover,
+#apod_video:hover {
   color: white;
   box-shadow: 0 5px 15px #9000ff;
 }
@@ -136,10 +138,9 @@ body {
 /* Floating Animation */
 @keyframes floating {
   50% {
-      transform: translateY(-20px);
+    transform: translateY(-20px);
   }
 }
-
 
 .rover_container {
   width: 100%;
@@ -190,20 +191,20 @@ body {
 }
 
 /* added position and style to button */
-#close_button{
+#close_button {
   position: relative;
-  left:80%;
-  bottom:45%;
+  left: 80%;
+  bottom: 45%;
 }
 
-#close{
-  font-size:20px;
+#close {
+  font-size: 20px;
   padding: 0 20px;
   border-radius: 10px;
 }
 
-#close:hover{
-  background-color:rgb(191, 0, 255);
+#close:hover {
+  background-color: rgb(191, 0, 255);
   color: white;
 }
 
@@ -292,7 +293,7 @@ body {
 
 /* Info card in mars section */
 
-@import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext");
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext');
 
 .card {
   border-radius: 10px;
@@ -315,7 +316,7 @@ body {
 }
 
 .card::before {
-  content: "";
+  content: '';
   position: absolute;
   z-index: -1;
   top: -15px;
@@ -348,10 +349,27 @@ body {
 
 .decorate-text:hover {
   color: rgb(207, 48, 170);
-  transition-delay: 0.2s; 
+  transition-delay: 0.2s;
   transform: scale(1.1);
   transition: color 0.2s ease; /* Smooth transition for color change */
 }
+
+/* MINI-PHOTO AND VIDEO GALLERY  */
+#galleryContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px;
+}
+
+.mini-gallery-media {
+  flex-basis: calc(33.33% - 10px);
+}
+
+.show-more {
+  width: 150px;
+}
+
 
 .spinner {
   background-image: linear-gradient(rgb(186, 66, 255) 35%,rgb(0, 225, 255));
