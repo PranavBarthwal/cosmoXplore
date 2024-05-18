@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
    <link rel="stylesheet" href="./style.css">
-   <link rel="icon" type="image/png" href="./assets/favicon.png"> 
+   <link rel="icon" type="image/png" href="./assets/favicon.png">
+   <script src="https://unpkg.com/scrollreveal"></script> 
 
   <style>
     @keyframes float {
@@ -108,23 +109,23 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar_background">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
-      <img src="./assets/logo_white.png" alt="Bootstrap" width="370">
+      <img src="./assets/logo_white.png" alt="Bootstrap" width="370" id="im1">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon "></span>
     </button>
     <div class="collapse navbar-collapse pe-5" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item">
+        <li class="nav-item" id="h">
           <a class="nav-link text-light decorate-text" href="#">Home</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" id="a">
           <a class="nav-link text-light decorate-text" href="#apod">APoD</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" id="m">
           <a class="nav-link text-light decorate-text" href="#mars">MartianImagery</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" id="c">
           <a href="#contact" class="nav-link">
             <button class="btn btn-outline-light rounded-pill contact-btn" type="submit">Contact Us</button>
           </a>
@@ -140,12 +141,12 @@
   <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
     <div class="col-10 col-sm-8 col-lg-6">
     <img src="./assets/A letter tech logo.png" class="d-block mx-lg-auto img-fluid hero_img" alt="Bootstrap Themes"
-      width="700" height="500" loading="lazy" style="animation: float 3s ease-in-out infinite;">
+      width="700" height="500" loading="lazy" style="animation: float 3s ease-in-out infinite;" id="im2">
     </div>
     <div class="col-lg-6 ">
-      <h1 class="display-2 fw-bold text-light">Let's embark on a Cosmic <span class="highlight">X</span><span class="auto-typed"></span></h1>
-      <p class="lead text-light">Welcome to CosmoXplore, where the celestial canvas unfolds its mysteries before your eyes. Immerse yourself in a cosmic odyssey, as we harness the power of NASA's API to bring you a symphony of space resources. From breathtaking images to cutting-edge astronomical data, embark on a journey that transcends the limits of earthly imagination.</p>
-      <div class="d-grid gap-5 d-md-flex justify-content-md-start pt-2">
+      <h1 class="display-2 fw-bold text-light" id="l">Let's embark on a Cosmic <span class="highlight">X</span><span class="auto-typed"></span></h1>
+      <p class="lead text-light" id="w">Welcome to CosmoXplore, where the celestial canvas unfolds its mysteries before your eyes. Immerse yourself in a cosmic odyssey, as we harness the power of NASA's API to bring you a symphony of space resources. From breathtaking images to cutting-edge astronomical data, embark on a journey that transcends the limits of earthly imagination.</p>
+      <div class="d-grid gap-5 d-md-flex justify-content-md-start pt-2" id="e">
         <a href="#apod"><button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Explore</button></a>
         
       </div>
@@ -162,7 +163,7 @@
 
 <!-- APOD SECTION -->
 <h1 align="center" class="section_title" id="apod">Astronomy Picture of The Day</h1>
-<div class="container my-5">
+<div class="container my-5" id="ac">
   <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
     <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
       <h2 id="title" class="display-7 fw-bold lh-1 text-light">APoD Title</h2><br>
@@ -202,9 +203,9 @@
 <!-- Default display -->
 <div class="rover_container">
   <div class="rover_section_img">
-    <img src="./assets/mars.png" class="mars_illus" style="animation: float 3s ease-in-out infinite;"> 
+    <img src="./assets/mars.png" class="mars_illus" style="animation: float 3s ease-in-out infinite;" id="im3"> 
   </div>
-<div class="rover_section_text">
+<div class="rover_section_text" id="para">
 <p class="">Welcome to an extraordinary adventure into the Martian landscape, where we invite you to explore the wonders of the Red Planet through the lens of various rovers that have traversed its surface. Our journey takes us deep into the photographic archives, a treasure trove of captivating images captured by these robotic explorers. Each rover, armed with sophisticated cameras, has documented the Martian terrain, unveiling its mysteries one snapshot at a time.
 
   The heart of this exploration lies in a comprehensive database meticulously organized to offer you an unparalleled visual chronicle of Mars' exploration. This repository is a testament to the marvels of technology and the spirit of scientific curiosity that drives humanity to push the boundaries of exploration.
@@ -327,7 +328,7 @@
         <label for="exampleInputMessage" class="form-label text-light">Message</label>
         <textarea class="form-control" name="message" id="exampleInputMessage" rows="4" placeholder="feel free to ask your queries!"></textarea>
       </div>
-      <button type="submit" class="btn btn-primary" onclick="alert('Mail has been sent successfully!')">Submit</button>
+      <button type="submit" class="btn btn-primary" onclick="alert('Mail has been sent successfully!')" id="btn">Submit</button>
     </form>
   </div>
 </div>
@@ -347,9 +348,9 @@
     
 
     <a href="/cosmoXplore/index.html" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-      <img src="./assets/logo_white.png" width="150">
+      <img src="./assets/logo_white.png" width="150" id="fim">
     </a>
-    <p class="col-md-4 mb-0 text-light">© 2024 CosmoXplore India, Inc. All Rights Reserved</p>
+    <p class="col-md-4 mb-0 text-light" id="copright">© 2024 CosmoXplore India, Inc. All Rights Reserved</p>
 
     
   </footer>
@@ -391,6 +392,28 @@
       });
   });
 
+</script>
+<script>
+  ScrollReveal({ 
+      //reset: true ,
+      distance : '60px' ,
+      duration:2500,
+      delay:400
+  });
+  ScrollReveal().reveal('#im1 ,#h,#a,#m,#c', { delay: 500 , origin:'top' ,interval: 200});
+  ScrollReveal().reveal('#l,#w,#e', { delay: 600 , origin:'left',interval: 200 });
+  ScrollReveal().reveal('#im2', { delay: 600 , origin:'right' });
+  ScrollReveal().reveal('#apod,#ac', { delay: 600 , origin:'top' , interval: 200});
+
+  ScrollReveal().reveal('#mars', { delay: 500 , origin:'top' });
+  ScrollReveal().reveal('#im3', { delay: 600 , origin:'left' });
+  ScrollReveal().reveal('#para', { delay: 600 , origin:'right' });
+  ScrollReveal().reveal('.input_container', { delay: 500 , origin:'top' });
+  ScrollReveal().reveal('#contact', { delay: 600 , origin:'top' });
+  ScrollReveal().reveal('.contact_img', { delay: 600 , origin:'left' });
+  ScrollReveal().reveal('.mb-3,#btn', { delay: 600 , origin:'right' });
+  ScrollReveal().reveal('#fim', { delay: 600 , origin:'left' });
+  ScrollReveal().reveal('#copright', { delay: 600 , origin:'right' });
 </script>
 </body>
 </html>
