@@ -170,8 +170,8 @@ body {
 
 
 .inner_container {
-  height: 100%;
-  width: 75%;
+  height: 500px;
+  width: 90%;
   border-radius: 10px;
   border: #e4d6fb;
   border-style: solid;
@@ -192,8 +192,8 @@ body {
 /* added position and style to button */
 #close_button{
   position: relative;
-  left:80%;
   bottom:45%;
+  left:90%;
 }
 
 #close{
@@ -208,8 +208,9 @@ body {
 }
 
 #roverImg {
-  width: 500px;
-  height: 500px;
+  margin-top: 50px;
+  width: 400px;
+  height: 400px;
   border-radius: 25px;
   transition: transform 0.5s ease-in-out; /* Add transition for smooth animation */
 }
