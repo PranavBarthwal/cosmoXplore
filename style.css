@@ -394,4 +394,12 @@ body {
 .navbar{
   z-index: 99;
 }
-
+.select-date {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid #ccc; /* Change #ccc for a different border color */
+  border-radius: 4px; /* Adjust for desired roundness */
+  font-weight: bold; /* Makes text a bit bolder */
+  color: #d8d2d2; /* Change #333 for a different text color */
+  cursor: pointer; /* Makes it look clickable if desired */
+}
