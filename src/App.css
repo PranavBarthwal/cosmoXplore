@@ -181,6 +181,25 @@
   box-shadow: 0 5px 15px #9000ff;
 }
 
+/* floating animation for images */
+.hero_img {
+  animation: leviate 2s ease infinite;
+}
+
+.mars_illus {
+  animation: leviate 2s ease infinite;
+}
+
+.contact_img {
+  animation: leviate 2s ease infinite;
+}
+
+@keyframes leviate {
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
 /* Additional styling for responsiveness */
 @media (max-width: 768px) {
   .contact-form {
