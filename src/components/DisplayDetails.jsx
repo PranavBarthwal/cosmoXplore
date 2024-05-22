@@ -6,7 +6,7 @@ function DisplayDetails() {
   return (
     <>
       <div className="rover_display">
-        <div className="inner_container">
+        <div className="inner_conatiner">
           <div className="image_div">
             
             <img
