@@ -13,7 +13,7 @@ body:
         - label: New category addition.
         - label: Refractoring sentences that make more sense.
         - label: Fixing broken links.
-        - label: Refractors / reformatting of the document.
+        - label: Refractors / reformating of the document.
   - type: textarea
     id: description
     attributes:

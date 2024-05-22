@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: linear-gradient(to left, rgb(10, 0, 73), rgb(0, 0, 0));
+  overflow-x: hidden;
+  color: rgb(255, 255, 255);
+  font-family: sans-serif;
+}
+
+.body::-webkit-scrollbar {
+  display: none;
+}
+

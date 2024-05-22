@@ -1,0 +1,9 @@
+# Node modules
+node_modules/
+
+# Vite cache
+.vite/
+
+# Lock files
+package-lock.json
+bun.lockb
