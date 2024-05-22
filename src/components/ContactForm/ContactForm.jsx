@@ -1,5 +1,5 @@
 import React from 'react';
-import img from '../assets/original-5fcdc62f8266e353ea97ca56731ad804.png';
+import img from '../../assets/original-5fcdc62f8266e353ea97ca56731ad804.png';
 
 
 function ContactForm() {

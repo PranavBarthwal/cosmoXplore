@@ -1,5 +1,5 @@
 import React from 'react';
-import img from '../assets/64e4e4aabd98a600197c0ca3.webp';
+import img from '../../assets/64e4e4aabd98a600197c0ca3.webp';
 
 
 function Apod() {

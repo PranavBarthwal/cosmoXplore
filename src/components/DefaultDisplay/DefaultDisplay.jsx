@@ -1,5 +1,5 @@
 import React from "react";
-import img from "../assets/mars.png";
+import img from "../../assets/mars.png";
 
 function DefaultDisplay() {
   function displayRover() {
