@@ -2,7 +2,7 @@
   "name": "cosmoxplore",
   "private": true,
   "version": "0.0.0",
-  "homepage": "/home",
+  "homepage": "./",
   "type": "module",
   "scripts": {
     "dev": "vite",
