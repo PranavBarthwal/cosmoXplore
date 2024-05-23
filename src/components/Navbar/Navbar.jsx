@@ -1,7 +1,7 @@
-import React, {useEffect} from 'react';
-import logoWhite from '../assets/logo_white.png';
-import menuFill from '../assets/menu-fill.svg';
-import sidebarLogic from '../../sidebar.js';
+import React, { useEffect } from 'react';
+import logoWhite from '../../assets/logo_white.png';
+import menuFill from '../../assets/menu-fill.svg';
+import sidebarLogic from '../../../sidebar.js';
 
 function Navbar() {
 
