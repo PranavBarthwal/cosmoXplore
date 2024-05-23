@@ -28,9 +28,9 @@
 }
 
 #apod_img {
+    aspect-ratio: 5 / 4;
     border-radius: 25px;
     position: relative;
-    height: 80%;
 }
 
 #apod_img:hover {
