@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import logo from '../assets/A letter tech logo.png';
-import Typed from 'typed.js'; 
+import logo from '../../assets/A letter tech logo.png';
+import Typed from 'typed.js';
 
 
 function Hero() {

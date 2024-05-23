@@ -1,14 +1,9 @@
-import './App.css';
-import Background from './components/Background';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Apod from './components/Apod';
-import MarsRover from './components/MarsRover';
-import DefaultDisplay from './components/DefaultDisplay';
-import DisplayDetails from './components/DisplayDetails';
-import ContactForm from './components/ContactForm';
-import Footer from './components/Footer';
-import ErrorBoundary from './components/ErrorBoundary';
+import { Outlet } from 'react-router-dom'
+import './App.css'
+import Background from './components/Background/Background.jsx'
+import Navbar from './components/Navbar/Navbar.jsx'
+import Footer from './components/Footer/Footer.jsx'
+import ErrorBoundary from './components/ErrorBoundry/ErrorBoundary.jsx';
 
 function App() {
   return (
@@ -17,12 +12,7 @@ function App() {
         <Background />
       </ErrorBoundary>
       <Navbar />
-      <Hero />
-      <Apod />
-      <MarsRover />
-      <DefaultDisplay />
-      <DisplayDetails />
-      <ContactForm />
+      <Outlet />
       <Footer />
     </>
   );

@@ -1,6 +1,6 @@
 import React from "react";
-import img from "../assets/feel the fear and do it anyway.png";
-import '../App.css'
+import img from "../../assets/feel the fear and do it anyway.png";
+import '../../App.css'
 
 function DisplayDetails() {
   return (
@@ -8,7 +8,7 @@ function DisplayDetails() {
       <div className="rover_display">
         <div className="inner_conatiner">
           <div className="image_div">
-            
+
             <img
               id="roverImg"
               src={img}
@@ -62,7 +62,7 @@ function DisplayDetails() {
           </div>
         </div>
 
-        
+
       </div>
     </>
   );
