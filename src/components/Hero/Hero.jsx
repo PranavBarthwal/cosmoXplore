@@ -7,7 +7,7 @@ function Hero() {
   useEffect(() => {
     // Initialize Typed instance
     var typed = new Typed(".auto-typed", {
-      strings: ["Expedition.", "Voyage.", "Odyssey.", "ploration.", "enogesis.", "-cursion."],
+      strings: ["pedition.", "ploration.", "enostellar.", "cursion."],
       typeSpeed: 150,
       backSpeed: 70,
       loop: true
