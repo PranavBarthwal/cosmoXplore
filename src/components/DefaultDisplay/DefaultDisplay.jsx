@@ -19,8 +19,6 @@ function DefaultDisplay() {
   async function displayRover(e) {
     try {
 
-      console.log(userDate);
-
       e.preventDefault();
 
       setShowDefault((prev) => {
