@@ -40,6 +40,56 @@
     box-shadow: 0 5px 15px #9000ff;
 }
 
+/* restyling contact-form */
+.right form{
+    width: 30vw;
+    padding: 30px;
+    background-color:transparent;
+    backdrop-filter: blur(25px);
+    border: 2px solid rgba(255,255,255,0.2);
+    box-sizing: content-box;
+    border-radius:10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.504);
+}
+
+.right .form-control{
+    outline: none;
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius:40px;
+    background: transparent;
+    border-radius:10px;
+    color: white;
+}
+
+.right .form-control::placeholder{
+    color: white;
+}
+
+
+.right .form-control:focus{
+    outline: none;
+    border: none;
+    background-color:#7805e39d;
+    box-shadow: none;
+    color:white ;
+}
+
+.right button{
+    outline: none;
+    border:none;
+    border-radius: 30px;
+    background-color:#8400ff;
+}
+
+.right button:hover{
+    background: #40019a;
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px white;
+    cursor: pointer;
+}
+
+
 /* Additional styling for responsiveness */
 @media (max-width: 768px) {
     .contact-form {
