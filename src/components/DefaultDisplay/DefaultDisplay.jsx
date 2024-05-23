@@ -19,6 +19,13 @@ function DefaultDisplay() {
   async function displayRover(e) {
     try {
 
+      if (userDate == "") {
+        alert("Enter Date")
+        return
+      }
+
+      console.log(userDate);
+
       e.preventDefault();
 
       setShowDefault((prev) => {
@@ -87,9 +94,8 @@ function DefaultDisplay() {
         <div className="input-group mb-4 input_container">
           <input
             className="date_input form-control"
-            type="text"
+            type="date"
             name="date"
-            placeholder="Enter the date for retrieving Mars Rover Images. (YYYY-MM-DD)"
             aria-label="Recipient's username"
             aria-describedby="button-addon2"
             onChange={(e) => setUserDate((prev) => e.target.value)}
