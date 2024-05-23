@@ -84,6 +84,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  padding: 5% 0;
 }
 
 .rover_section_text {
@@ -106,6 +107,7 @@
   display: flex;
   justify-content: center;
   margin: 30px 0;
+
 }
 
 .inner_conatiner {
