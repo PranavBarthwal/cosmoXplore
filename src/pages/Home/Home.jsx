@@ -13,7 +13,6 @@ function Home() {
             <Apod />
             <MarsRover />
             <DefaultDisplay />
-            <DisplayDetails />
             <ContactForm />
         </>
     )

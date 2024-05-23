@@ -103,8 +103,9 @@
 .rover_display {
   height: 70vh;
   width: 100%;
-  display: none;
+  display: flex;
   justify-content: center;
+  margin: 30px 0;
 }
 
 .inner_conatiner {
