@@ -16,6 +16,8 @@ function DefaultDisplay() {
     status: ""
   })
 
+
+
   async function displayRover(e) {
     try {
 
@@ -23,8 +25,6 @@ function DefaultDisplay() {
         alert("Enter Date")
         return
       }
-
-      console.log(userDate);
 
       e.preventDefault();
 
@@ -38,6 +38,23 @@ function DefaultDisplay() {
 
       response = await response.json();
 
+      if (response.photos.length === 0) {
+        alert("No images for selected date")
+        setShowDefault(true)
+        setRoverInfo({
+          url: "",
+          earthDate: "",
+          roverName: "",
+          cameraName: "",
+          launchDate: "",
+          landingDate: "",
+          status: ""
+        })
+        return
+      }
+
+      console.log(response);
+
       const image_from_rover = response.photos[0];
 
       setRoverInfo((prev) => {
@@ -48,6 +65,23 @@ function DefaultDisplay() {
       console.log(error.message);
     }
   }
+
+
+  function getMaxDate() {
+
+    const today_date = new Date();
+    const temp = new Date();
+
+    temp.setDate((today_date.getDate() - 124))
+
+    var dd = String(temp.getDate()).padStart(2, '0');
+    var mm = String(temp.getMonth() + 1).padStart(2, '0');
+    var yyyy = temp.getFullYear();
+
+    return `${yyyy}-${mm}-${dd}`;
+
+  }
+
 
   return (
     <>
@@ -98,6 +132,8 @@ function DefaultDisplay() {
             name="date"
             aria-label="Recipient's username"
             aria-describedby="button-addon2"
+            min="2015-06-03"
+            max={getMaxDate()}
             onChange={(e) => setUserDate((prev) => e.target.value)}
           />
           <button
