@@ -4,6 +4,10 @@
     width: 100%;
     min-width: 400px;
     max-width: 1500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
 #heading {
@@ -81,5 +85,38 @@
 @media (max-width:1000px) {
     #projects {
         grid-template-columns: 1fr;
+    }
+}
+
+#load_more {
+    border: none;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#load_more:hover {
+    background: rgb(54, 10, 136);
+    color: white;
+    box-shadow: 0 0 20px rgb(223, 149, 241);
+    animation: breath 3s ease-in-out infinite;
+}
+
+@keyframes breath {
+    50% {
+        box-shadow: 0 0 5px rgb(86, 74, 252);
+    }
+}
+
+.reload {
+    animation: load 2s linear infinite;
+}
+
+@keyframes load {
+    100% {
+        transform: rotate(360deg);
     }
 }
