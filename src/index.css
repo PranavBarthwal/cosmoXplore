@@ -13,6 +13,24 @@ body {
   font-family: "Space Grotesk", sans-serif;
 }
 
-.body::-webkit-scrollbar {
-  display: none;
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #121212; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #9333ea, #3EBCD8); 
+  border-radius: 10px;
+  border: 1px solid #121212; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #3EBCD8, #a855f7); 
 }
