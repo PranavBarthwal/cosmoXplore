@@ -1,9 +1,9 @@
 #container {
-    min-height: 1000dvh;
+    min-height: 100dvh;
     padding: 20px;
     width: 100%;
-    min-width: 1400px;
-    border: 2px solid red;
+    min-width: 400px;
+    max-width: 1500px;
 }
 
 #heading {
@@ -17,6 +17,7 @@
 }
 
 #search-wrapper {
+    z-index: 100;
     position: fixed;
     right: 20px;
     width: fit-content;
@@ -27,10 +28,16 @@
 #search {
     width: 400px;
     font-size: 1.3rem;
-    padding-left: 10px;
+    padding: 10px;
     outline: none;
     border-radius: 10px;
     border: none;
+}
+
+.icons {
+    background: rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 10px;
 }
 
 /* animation for opening and closing search bar */
@@ -60,5 +67,19 @@
 @keyframes slideRight {
     100% {
         transform: scale(0, 0);
+    }
+}
+
+#projects {
+    min-width: 500px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    row-gap: 20px;
+}
+
+@media (max-width:1000px) {
+    #projects {
+        grid-template-columns: 1fr;
     }
 }

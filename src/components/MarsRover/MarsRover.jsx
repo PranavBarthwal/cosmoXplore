@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import img from "../../assets/mars.png";
-import DisplayDetails from "../DefaultDisplay/DefaultDisplay.jsx";
+import DisplayDetails from "../DisplayDetails/DisplayDetails.jsx";
 
 function MarsRover() {
 
