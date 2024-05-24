@@ -190,9 +190,6 @@
   animation: leviate 2s ease infinite;
 }
 
-.contact_img {
-  animation: leviate 2s ease infinite;
-}
 
 @keyframes leviate {
   50% {
