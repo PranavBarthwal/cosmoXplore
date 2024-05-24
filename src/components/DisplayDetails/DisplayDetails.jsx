@@ -7,7 +7,7 @@ function DisplayDetails({ roverInfo }) {
   return (
     <>
       <div className="rover_display">
-        <div className="inner_conatiner">
+        <div className="inner_container">
           <div className="image_div">
 
             <img

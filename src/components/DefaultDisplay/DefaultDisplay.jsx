@@ -24,8 +24,6 @@ function DefaultDisplay() {
         return
       }
 
-      console.log(userDate);
-
       e.preventDefault();
 
       setShowDefault((prev) => {
