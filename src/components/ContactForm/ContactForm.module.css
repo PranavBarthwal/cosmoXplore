@@ -41,24 +41,53 @@
 }
 
 /* restyling contact-form */
+.contact_img {
+    animation: leviate 2s ease-in-out infinite;
+    animation-delay: 2ms;
+}
+@keyframes leviate {
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
 .right form{
     width: 30vw;
     padding: 30px;
     background-color:transparent;
     backdrop-filter: blur(25px);
-    border: 2px solid rgba(255,255,255,0.2);
+    border: 2px solid #40019a;
     box-sizing: content-box;
     border-radius:10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.504);
+    animation: circle 4s ease-in-out infinite;
+}
+
+@keyframes circle {
+    0%{
+        box-shadow: 10px 10px 10px #8400ff;
+    }
+    25%{
+        box-shadow: -10px 10px 10px #8400ff;
+    }
+    50%{
+        box-shadow: -10px -10px 10px #8400ff;
+    }
+    75%{
+        box-shadow: 10px -10px 10px #8400ff;
+    }
+    100%{
+        box-shadow: 10px 10px 10px #8400ff;
+    }
 }
 
 .right .form-control{
     outline: none;
-    border: 2px solid rgba(255,255,255,0.2);
+    border: 2px solid #9000ff;
     border-radius:40px;
     background: transparent;
     border-radius:10px;
     color: white;
+    resize: none;
 }
 
 .right .form-control::placeholder{
