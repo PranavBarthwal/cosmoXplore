@@ -25,7 +25,8 @@
 }
 
 #search {
-    font-size: 1.5rem;
+    width: 400px;
+    font-size: 1.3rem;
     padding-left: 10px;
     outline: none;
     border-radius: 10px;
