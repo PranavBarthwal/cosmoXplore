@@ -48,7 +48,7 @@ function ContactForm() {
 
     
     if(!(contactInfo.message.split(" ").length>=5)){
-      alert("Message should contain atlest 5 words")
+      alert("Message should contain at lest 5 words")
       return
     }
     sendEmail()
