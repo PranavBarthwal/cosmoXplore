@@ -11,6 +11,7 @@
     align-items: center;
     justify-content:center;
     gap: 150px;
+    margin-bottom: 100px;
 }
 
 .contact-form .left {
@@ -32,23 +33,17 @@
     /* Adjust the maximum width as needed */
 }
 
-.contact_img {
-    border-radius: 50%;
-}
-
-.contact_img:hover {
-    color: white;
-    box-shadow: 0 5px 15px #9000ff;
-}
 
 /* restyling contact-form */
 .contact_img {
-    animation: leviate 2s ease-in-out infinite;
-    animation-delay: 2ms;
+    border-radius: 50%;
+    animation: leviate 3s ease infinite;
+    box-shadow: 0px 0px 10px #570099;
 }
 @keyframes leviate {
     50% {
-        transform: translateY(-20px);
+        transform: translateY(-15px);
+        box-shadow: 5px 10px 30px #9000ff;
     }
 }
 

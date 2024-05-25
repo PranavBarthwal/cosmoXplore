@@ -35,7 +35,7 @@
   width: 20%;
   align-items: center;
   justify-content: center;
-  outline:none;
+  outline: none;
   border: none;
   /* background-color: red; */
 }
@@ -43,7 +43,7 @@
 .date_input {
   width: 20%;
   outline: none;
-  border:none;
+  border: none;
 }
 
 .apod_img_container {
@@ -75,14 +75,6 @@
   box-shadow: 0 5px 15px #9000ff;
 }
 
-.hero_img {
-  border-radius: 50%;
-}
-
-.hero_img:hover {
-  color: rgb(191, 0, 255);
-  box-shadow: 0 5px 15px #9000ff;
-}
 
 .rover_container {
   width: 100%;
@@ -95,15 +87,7 @@
   width: 50%;
 }
 
-.mars_illus {
-  border-radius: 50%;
-  margin-right: 30px;
-}
 
-.mars_illus:hover {
-  color: rgb(191, 0, 255);
-  box-shadow: 0 5px 15px #ff0099;
-}
 
 .rover_display {
   height: 70vh;
@@ -190,19 +174,33 @@
 
 /* floating animation for images */
 .hero_img {
-  animation: leviate 2s ease infinite;
+  border-radius: 50%;
+  animation: leviate1 3s ease infinite;
+  box-shadow: 0px 0px 10px #570099;
+}
+
+@keyframes leviate1 {
+  50% {
+    transform: translateY(-15px);
+    box-shadow: 5px 10px 30px #9000ff;
+  }
 }
 
 .mars_illus {
-  animation: leviate 2s ease infinite;
+  border-radius: 50%;
+  margin-right: 30px;
+  box-shadow: 0 5px 15px #900257;
+  animation: leviate2 3s ease infinite;
 }
 
-
-@keyframes leviate {
+@keyframes leviate2 {
   50% {
-    transform: translateY(-20px);
+    transform: translateY(-15px);
+    box-shadow: 5px 10px 30px #ff0099;
   }
 }
+
+
 
 /*update date input styles*/
 
@@ -210,30 +208,32 @@
   outline: none;
   border: 2px solid #9000ff;
   border-right: none;
-  border-radius:40px;
-  background:transparent;
+  border-radius: 40px;
+  background: transparent;
   color: white;
 }
 
-.ip .date_input::-webkit-calendar-picker-indicator { 
+.ip .date_input::-webkit-calendar-picker-indicator {
   filter: invert(100%);
   cursor: pointer;
 }
-.ip .form-control:focus{
+
+.ip .form-control:focus {
   outline: none;
   border: 2px solid #9000ff;
   box-shadow: 0 0 15px white;
-  color:white ;
+  color: white;
 }
 
-.ip .btn{
+.ip .btn {
   outline: none;
   border: 2px solid #9000ff;
   background-color: #8400ff;
   border-left: none;
-  border-radius:40px;
+  border-radius: 40px;
 }
-.ip .btn:hover{
+
+.ip .btn:hover {
   background: #40019a;
   color: white;
   box-shadow: 0 0 15px white;
@@ -244,36 +244,37 @@
 /* Ui Update */
 
 
-.ip{
+.ip {
   margin-top: 75px;
   margin-bottom: 150px;
 }
 
-.input_container{
+.input_container {
   min-width: 400px;
   max-width: 600px;
 }
 
-#mars{
+#mars {
   margin-top: 150px;
   margin-bottom: 30px;
 }
 
-.rover_container{
+.rover_container {
   padding-top: 0;
-  padding-bottom:50px;
-}
-.rover_section_para{
-  font-size: 1.25rem;
-  font-weight: 300;
-  text-align: justify ;
+  padding-bottom: 50px;
 }
 
-.rover_section_text{
+.rover_section_para {
+  font-size: 1.25rem;
+  font-weight: 300;
+  text-align: justify;
+}
+
+.rover_section_text {
   max-width: 992px;
 }
 
-.container-fluid{
+.container-fluid {
   max-width: 1400px;
 }
 
