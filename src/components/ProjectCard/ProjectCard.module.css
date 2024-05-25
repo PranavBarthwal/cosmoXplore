@@ -2,13 +2,12 @@
     max-width: 500px;
     min-width: 300px;
     background: rgba(5, 17, 66, 0.55);
-    /* background: linear-gradient(rgb(0, 0, 0), rgb(7, 33, 148)); */
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
-    padding: 10px;
+    padding: 20px;
     color: rgba(255, 255, 255, 0.801);
 }
 
@@ -31,8 +30,23 @@
 }
 
 .description {
+    max-height: 250px;
     min-height: 200px;
     word-spacing: 2px;
+    overflow-y: auto;
+    margin: 5px 0px;
+}
+
+.card ::-webkit-scrollbar {
+    width: 10px;
+    background: rgba(255, 255, 255, 0.253);
+    border-radius: 20px;
+}
+
+.card ::-webkit-scrollbar-thumb {
+    background: rgb(135, 62, 177);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.493);
 }
 
 .dates {
@@ -42,5 +56,4 @@
 
 .title {
     color: rgb(155, 82, 252);
-    /* border-bottom: 1px solid white; */
 }
