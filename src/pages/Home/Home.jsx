@@ -12,7 +12,6 @@ function Home() {
             <Hero />
             <Apod />
             <MarsRover />
-            <DefaultDisplay />
             <ContactForm />
         </>
     )
