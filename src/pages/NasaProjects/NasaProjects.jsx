@@ -35,23 +35,31 @@ function TechNews() {
     async function fetchData() {
 
         try {
-            // let temp = [];
+            let temp = [];
 
-            console.log("call");
+
 
             let response = await fetch(`https://techport.nasa.gov/api/projects?updatedSince=2024-05-01&api_key=${import.meta.env.VITE_API_KEY}`)
 
             const reader = response.body.pipeThrough(new TextDecoderStream("utf-8")).getReader();
 
-            let temp = "";
+            let json_temp = "";
 
             while (true) {
                 const { value, done } = await reader.read();
-                temp = temp + (value ? value : "");
+                json_temp = json_temp + (value ? value : "");
                 if (done) break;
             }
 
-            console.log(temp);
+            const data = JSON.parse(json_temp);
+
+            data.projects.map((item, idx) => {
+                temp.push(item.projectId);
+            })
+
+            setProjectIds((prev) => [...temp]);
+
+            console.log(projectIds);
 
         } catch (error) {
             console.log(error);
