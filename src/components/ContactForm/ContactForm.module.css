@@ -118,6 +118,10 @@
     cursor: pointer;
 }
 
+.section_title{
+    margin-top: 175px;
+    margin-bottom: 50px;
+}
 
 /* Additional styling for responsiveness */
 @media (max-width: 768px) {

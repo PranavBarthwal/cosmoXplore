@@ -6,21 +6,6 @@
     font-weight: bold;
 }
 
-@media (max-width: 765px) {
-    .section_title_mobile {
-        font-size: 2rem;
-    }
-
-    .img {
-        width: 100%;
-    }
-
-    .apod_img {
-        height: 350px;
-        width: 350px;
-    }
-
-}
 
 .apod_img_container {
     width: 500px;
@@ -43,4 +28,26 @@
     height: 400px;
     display: flex;
     justify-content: center;
+}
+
+.section_title{
+    margin-top: 150px;
+    margin-bottom: 75px;
+}
+
+
+@media (max-width: 765px) {
+    .section_title_mobile {
+        font-size: 2rem;
+    }
+
+    .img {
+        width: 100%;
+    }
+
+    .apod_img {
+        height: 350px;
+        width: 350px;
+    }
+
 }

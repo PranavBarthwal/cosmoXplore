@@ -20,7 +20,7 @@ function Hero() {
   }, []); // Empty dependency array to run only once when component mounts
 
   return (
-    <div className="container col-xxl-9 px-3 py-5 override-display">
+    <div className="container mt-5 col-xxl-9 px-3 py-5 override-display">
       <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
         <div className="col-10 col-sm-8 col-lg-6">
           <img src={logo} className="d-block mx-lg-auto img-fluid hero_img" alt="Bootstrap Themes" width="700" height="500" loading="lazy" />

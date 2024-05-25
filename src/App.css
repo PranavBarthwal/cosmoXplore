@@ -241,6 +241,33 @@
 }
 
 
+/* Ui Update */
+
+
+.ip{
+  margin-top: 75px;
+  margin-bottom: 150px;
+}
+
+#mars{
+  margin-top: 150px;
+  margin-bottom: 30px;
+}
+
+.rover_container{
+  padding-top: 0;
+  padding-bottom:50px;
+}
+.rover_section_para{
+  font-size: 1.25rem;
+  font-weight: 300;
+  text-align: justify ;
+}
+
+.rover_section_text{
+  max-width: 992px;
+}
+
 /* Additional styling for responsiveness */
 @media (max-width: 768px) {
   .contact-form {
