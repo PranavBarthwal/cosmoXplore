@@ -17,7 +17,7 @@ function Apod() {
 
     try {
 
-      let response = await fetch("https://api.nasa.gov/planetary/apod?api_key=eISHzmGbQk7EMWv9NTlVtvzZVmeLKPUoL3uKMSPJ")
+      let response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${import.meta.env.VITE_API_KEY}`)
 
       response = await response.json();
 
