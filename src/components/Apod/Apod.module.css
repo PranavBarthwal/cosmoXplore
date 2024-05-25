@@ -35,6 +35,9 @@
     margin-bottom: 75px;
 }
 
+#apod_info{
+    text-align: justify;
+}
 
 @media (max-width: 765px) {
     .section_title_mobile {

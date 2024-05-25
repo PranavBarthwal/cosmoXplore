@@ -40,7 +40,7 @@ function Apod() {
     <>
       <h1 align="center" className={Styles['section_title'] + " " + Styles['section_title_mobile']} id="apod">Astronomy Picture of The Day</h1 >
 
-      <div className="container">
+      <div className="container mt-5">
 
         <div className="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg" id="class_removal">
 
@@ -50,7 +50,7 @@ function Apod() {
 
             <br />
 
-            <p id="apod_info" className="lead">{apodInfo.explanation ? apodInfo.explanation : " NASA's Astronomy Picture of the Day (APoD) showcases captivating celestial images accompanied by brief explanations. Each day, NASA features astronomical wonders, ranging from stunning nebulae and galaxies to snapshots of our solar system, providing a daily dose of cosmic beauty and scientific insight. APoD serves as a valuable resource for both astronomy enthusiasts and those seeking to explore the wonders of the universe."}</p>
+            <p id={Styles["apod_info"]} className="lead">{apodInfo.explanation ? apodInfo.explanation : " NASA's Astronomy Picture of the Day (APoD) showcases captivating celestial images accompanied by brief explanations. Each day, NASA features astronomical wonders, ranging from stunning nebulae and galaxies to snapshots of our solar system, providing a daily dose of cosmic beauty and scientific insight. APoD serves as a valuable resource for both astronomy enthusiasts and those seeking to explore the wonders of the universe."}</p>
 
           </div>
 
