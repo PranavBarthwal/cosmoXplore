@@ -33,7 +33,7 @@
     max-height: 250px;
     min-height: 200px;
     word-spacing: 2px;
-    overflow-y: auto;
+    overflow-y: scroll;
     margin: 5px 0px;
     padding-right: 5px;
 }

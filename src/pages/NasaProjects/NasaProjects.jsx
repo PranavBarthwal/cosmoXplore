@@ -11,13 +11,15 @@ import { IoReloadOutline } from "react-icons/io5";
 function TechNews() {
 
     const [showSearch, setShowSearch] = useState(false);
+    const [search, setSearch] = useState("")
     const [isLoading, setIsLoading] = useState(false);
-    const [isFetch, setIsFetch] = useState(true);
-    const [projectIds, setProjectIds] = useState([]);
+    const [projects, setProjects] = useState([]);
+    const [week, setWeek] = useState(1);
 
     const today_date = new Date();
 
 
+    // Adding on scroll event listener for auto closing search bar.
     useEffect(() => {
         let position = window.scrollY;
         window.onscroll = () => {
@@ -27,21 +29,31 @@ function TechNews() {
         }
     }, [showSearch])
 
+    // to fetch projects when component is loaded.
     useEffect(() => {
-        fetchData();
-    }, [])
+        fetchProjectsId();
+    }, [week])
 
+    // returns date of n days ago
+    function getStartDate(n = 0) {
 
-    async function fetchData() {
+        const today_date = new Date();
+        const temp = new Date();
 
+        temp.setDate((today_date.getDate() - (n * week)))
+
+        var dd = String(temp.getDate()).padStart(2, '0');
+        var mm = String(temp.getMonth() + 1).padStart(2, '0');
+        var yyyy = temp.getFullYear();
+        console.log(`${yyyy}-${mm}-${dd}`);
+        return `${yyyy}-${mm}-${dd}`;
+
+    }
+
+    // decodes stream of data chunks.
+    async function decodeData(body) {
         try {
-            let temp = [];
-
-
-
-            let response = await fetch(`https://techport.nasa.gov/api/projects?updatedSince=2024-05-01&api_key=${import.meta.env.VITE_API_KEY}`)
-
-            const reader = response.body.pipeThrough(new TextDecoderStream("utf-8")).getReader();
+            const reader = body.pipeThrough(new TextDecoderStream("utf-8")).getReader();
 
             let json_temp = "";
 
@@ -52,25 +64,64 @@ function TechNews() {
             }
 
             const data = JSON.parse(json_temp);
-
-            data.projects.map((item, idx) => {
-                temp.push(item.projectId);
-            })
-
-            setProjectIds((prev) => [...temp]);
-
-            console.log(projectIds);
-
+            return data;
         } catch (error) {
-            console.log(error);
+            console.log(error.message);
         }
     }
 
+    // fetches projects Id's.
+    async function fetchProjectsId() {
 
+        try {
+
+            let response = await fetch(`https://techport.nasa.gov/api/projects?updatedSince=${getStartDate(7)}&api_key=${import.meta.env.VITE_API_KEY}`)
+
+            const data = await decodeData(response.body);
+
+            let projectsIds = [];
+
+            data.projects.map((item, idx) => {
+                projectsIds.push(item.projectId);
+            })
+
+            await fetchProjects(projectsIds);
+
+        } catch (error) {
+            console.log(error.message);
+        }
+    }
+
+    // fetches projects by the projects Id's.
+    async function fetchProjects(projectsIds) {
+        try {
+            const temp = []
+            Promise.all(projectsIds.map(async (id, index) => {
+                const response = await fetch(`https://techport.nasa.gov/api/projects/${id}`)
+                const data = await decodeData(response.body);
+                temp.push(data.project);
+            })).then(() => {
+
+            }).then(() => {
+
+                setProjects([...projects, ...temp])
+            })
+
+        } catch (error) {
+            console.log(error.message);
+        }
+    }
+
+    // handle load more projects.
     function handleLoadMore() {
         setIsLoading((prev) => true);
-        console.log(isLoading);
+        setWeek((prev) => prev + 1);
         setTimeout(() => setIsLoading(false), 5000)
+    }
+
+    // search for projects
+    function handleChange(e) {
+        setSearch(e.target.value);
     }
 
 
@@ -100,19 +151,11 @@ function TechNews() {
 
             <div id={Styles['projects']}>
 
-                <ProjectCard projectId="117090" title="Urban Air Mobility (UAM) Operational Fleet Noise Assessment
-" acronym="AAVP26" description="<p>In order to address the need for a documented methodology for generating noise assessments of fleet operations of UAM eVTOL aircraft concepts, NASA will deliver validated tools and tool chain documentation at TRL&#61;5, document best practices for fleet noise modeling, and demonstrate fleet noise assessments of representative UAM operations.tools and tool chain documentation at TRL&#61;5, document best practices for fleet noise modeling, and demonstrate fleet noise assessments of representative UAM operations.tools and tool chain documentation at TRL&#61;5, document best practices for fleet noise modeling, and demonstrate fleet noise assessments of representative UAM operations.tools and tool chain documentation at TRL&#61;5, document best practices for fleet noise modeling, and demonstrate fleet noise assessments of representative UAM operations.tools and tool chain documentation at TRL&#61;5, document best practices for fleet noise modeling, and demonstrate fleet noise assessments of representative UAM operations.tools and tool chain documentation at TRL&#61;5, document best practices for fleet noise modeling, and demonstrate fleet noise assessments of representative UAM operations.tools and tool chain documentation at TRL&#61;5, document best practices for fleet noise modeling, and demonstrate fleet noise assessments of representative UAM operations.tools and tool chain documentation at TRL&#61;5, document best practices for fleet noise modeling, and demonstrate fleet noise assessments of representative UAM operations.tools and tool chain documentation at TRL&#61;5, document best practices for fleet noise modeling, and demonstrate fleet noise assessments of representative UAM operations.tools and tool chain documentation at TRL&#61;5, document best practices for fleet noise modeling, and demonstrate fleet noise assessments of representative UAM operations.tools and tool chain documentation at TRL&#61;5, document best practices for fleet noise modeling, and demonstrate fleet noise assessments of representative UAM operations.tools and tool chain documentation at TRL&#61;5, document best practices for fleet noise modeling, and demonstrate fleet noise assessments of representative UAM operations.</p> " startDate="Mar 2020" endDate="Jun 2024" lastUpdated="2024-5-23
-" status="Active" />
-                <ProjectCard projectId="117090" title="Urban Air Mobility (UAM) Operational Fleet Noise Assessment
-" acronym="AAVP26" description="<p>In order to address the need for a documented methodology for generating noise assessments of fleet operations of UAM eVTOL aircraft concepts, </p> " startDate="Mar 2020" endDate="Jun 2024" lastUpdated="2024-5-23
-" status="Active" />
-                <ProjectCard projectId="117090" title="Urban Air Mobility (UAM) Operational Fleet Noise Assessment
-" acronym="AAVP26" description="<p>In order to address the need for a documented methodology for generating noise assessments of fleet operations of UAM eVTOL aircraft concepts, NASA will deliver validated tools and tool chain documentation at TRL&#61;5, document best practices for fleet noise modeling, and demonstrate fleet noise assessments of representative UAM operations.</p> " startDate="Mar 2020" endDate="Jun 2024" lastUpdated="2024-5-23
-" status="Active" />
-                <ProjectCard projectId="117090" title="Urban Air Mobility (UAM) Operational Fleet Noise Assessment
-" acronym="AAVP26" description="<p>In order to address the need for a documented methodology for generating noise assessments of fleet operations of UAM eVTOL aircraft concepts, NASA will deliver validated tools and tool chain documentation at TRL&#61;5, document best practices for fleet noise modeling, and demonstrate fleet noise assessments of representative UAM operations.</p> " startDate="Mar 2020" endDate="Jun 2024" lastUpdated="2024-5-23
-" status="Active" />
+                {projects.map((project, idx) => (
 
+                    <ProjectCard key={idx} projectId={project.projectId} title={project.title} acronym={project.acronym} description={project.description} startDate={project.startDateString} endDate={project.endDateString} lastUpdated={project.lastUpdated} status={project.statusDescription} />
+
+                ))}
             </div>
 
             <button id={Styles['load_more']} onClick={handleLoadMore}>Load More <IoReloadOutline className={isLoading ? Styles['reload'] : ''} /></button>
