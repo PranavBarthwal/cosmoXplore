@@ -81,9 +81,20 @@ function TechNews() {
             </div>
 
             <div id={Styles['projects']}>
+
                 <ProjectCard projectId="117090" title="Urban Air Mobility (UAM) Operational Fleet Noise Assessment
 " acronym="AAVP26" description="<p>In order to address the need for a documented methodology for generating noise assessments of fleet operations of UAM eVTOL aircraft concepts, NASA will deliver validated tools and tool chain documentation at TRL&#61;5, document best practices for fleet noise modeling, and demonstrate fleet noise assessments of representative UAM operations.</p> " startDate="Mar 2020" endDate="Jun 2024" lastUpdated="2024-5-23
 " status="Active" />
+                <ProjectCard projectId="117090" title="Urban Air Mobility (UAM) Operational Fleet Noise Assessment
+" acronym="AAVP26" description="<p>In order to address the need for a documented methodology for generating noise assessments of fleet operations of UAM eVTOL aircraft concepts, </p> " startDate="Mar 2020" endDate="Jun 2024" lastUpdated="2024-5-23
+" status="Active" />
+                <ProjectCard projectId="117090" title="Urban Air Mobility (UAM) Operational Fleet Noise Assessment
+" acronym="AAVP26" description="<p>In order to address the need for a documented methodology for generating noise assessments of fleet operations of UAM eVTOL aircraft concepts, NASA will deliver validated tools and tool chain documentation at TRL&#61;5, document best practices for fleet noise modeling, and demonstrate fleet noise assessments of representative UAM operations.</p> " startDate="Mar 2020" endDate="Jun 2024" lastUpdated="2024-5-23
+" status="Active" />
+                <ProjectCard projectId="117090" title="Urban Air Mobility (UAM) Operational Fleet Noise Assessment
+" acronym="AAVP26" description="<p>In order to address the need for a documented methodology for generating noise assessments of fleet operations of UAM eVTOL aircraft concepts, NASA will deliver validated tools and tool chain documentation at TRL&#61;5, document best practices for fleet noise modeling, and demonstrate fleet noise assessments of representative UAM operations.</p> " startDate="Mar 2020" endDate="Jun 2024" lastUpdated="2024-5-23
+" status="Active" />
+
             </div>
 
             <button id={Styles['load_more']} onClick={handleLoadMore}>Load More <IoReloadOutline className={isLoading ? Styles['reload'] : ''} /></button>

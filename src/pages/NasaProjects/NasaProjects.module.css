@@ -76,11 +76,14 @@
 }
 
 #projects {
+    width: 90%;
     min-width: 500px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
     row-gap: 20px;
+    column-gap: 20px;
+    margin: 2% 0 5% 0;
 }
 
 @media (max-width:1000px) {

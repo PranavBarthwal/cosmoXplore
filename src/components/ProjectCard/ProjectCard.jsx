@@ -17,7 +17,9 @@ function ProjectCard({ projectId, title, acronym, description, startDate, endDat
             <h3 >
                 <span className={Styles['title']}>Description: </span>
             </h3>
-            {new Parser().parse(description)}
+            <div className={Styles['description']} >
+                {new Parser().parse(description)}
+            </div>
             <div >
                 <p><span className={Styles['title']}>Start Date:</span> {startDate}</p>
                 <p><span className={Styles['title']}>End Date:</span> {endDate}</p>

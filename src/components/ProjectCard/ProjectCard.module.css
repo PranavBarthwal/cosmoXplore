@@ -1,5 +1,5 @@
 .card {
-    max-width: 450px;
+    max-width: 500px;
     min-width: 300px;
     background: rgba(5, 17, 66, 0.55);
     /* background: linear-gradient(rgb(0, 0, 0), rgb(7, 33, 148)); */
@@ -9,14 +9,17 @@
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     padding: 10px;
+    color: rgba(255, 255, 255, 0.801);
 }
 
 .card h1 {
     font-size: 2rem;
+    color: white;
 }
 
 .card h2 {
     font-size: 1.5rem;
+    color: white;
 }
 
 .card h3 {
@@ -27,6 +30,10 @@
     box-shadow: 0 0 20px rgb(153, 0, 255);
 }
 
+.description {
+    min-height: 200px;
+    word-spacing: 2px;
+}
 
 .dates {
     display: flex;
@@ -35,5 +42,5 @@
 
 .title {
     color: rgb(155, 82, 252);
-    border-bottom: 1px solid white;
+    /* border-bottom: 1px solid white; */
 }
