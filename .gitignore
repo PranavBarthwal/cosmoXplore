@@ -4,6 +4,8 @@ node_modules/
 # Vite cache
 .vite/
 
+.env
+
 # Lock files
 package-lock.json
 bun.lockb
@@ -30,5 +32,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
-.env
