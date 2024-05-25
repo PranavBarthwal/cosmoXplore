@@ -10,14 +10,13 @@ import { IoReloadOutline } from "react-icons/io5";
 
 function TechNews() {
 
-    const [showSearch, setShowSearch] = useState(false);
-    const [search, setSearch] = useState("")
-    const [isLoading, setIsLoading] = useState(false);
-    const [projects, setProjects] = useState([]);
-    const [week, setWeek] = useState(1);
+    const [showSearch, setShowSearch] = useState(false); // to show search bar
+    const [search, setSearch] = useState("") // to store search query
+    const [isLoading, setIsLoading] = useState(false); // to show loading state
+    const [projects, setProjects] = useState(JSON.parse(localStorage.getItem("projects")) || []); // to store projects
+    const [week, setWeek] = useState(1); // to set weeks for fetching data
 
     const today_date = new Date();
-
 
     // Adding on scroll event listener for auto closing search bar.
     useEffect(() => {
@@ -99,12 +98,13 @@ function TechNews() {
             Promise.all(projectsIds.map(async (id, index) => {
                 const response = await fetch(`https://techport.nasa.gov/api/projects/${id}`)
                 const data = await decodeData(response.body);
-                temp.push(data.project);
+                const { projectId, title, acronym, description, startDateString, endDateString, lastUpdated, statusDescription } = data.project;
+                temp.push({ projectId, title, acronym, description, startDateString, endDateString, lastUpdated, statusDescription });
             })).then(() => {
-
             }).then(() => {
-
-                setProjects([...projects, ...temp])
+                setProjects((prev) => [...prev, ...temp]);
+            }).then(() => {
+                localStorage.setItem("projects", JSON.stringify(temp));
             })
 
         } catch (error) {
