@@ -1,14 +1,33 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import logoWhite from '../../assets/logo_white.png';
 import menuFill from '../../assets/menu-fill.svg';
-import sidebarLogic from '../../../sidebar.js';
 
 function Navbar() {
 
+  const [isToggle, setIsToggle] = useState(false);
+
+  function toggleMenu() {
+    setIsToggle((prev) => !prev);
+  }
+
+  function handleMenuClose() {
+    setIsToggle(false);
+  }
+
   useEffect(() => {
-    // Execute the JavaScript logic when the component mounts
-    sidebarLogic();
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+      var currentScrollPos = window.pageYOffset;
+      if (prevScrollpos < currentScrollPos) {
+        handleMenuClose()
+      } else {
+        handleMenuClose()
+      }
+      prevScrollpos = currentScrollPos;
+    }
   }, []);
+
+
   return (
     <nav className="navbar navbar-expand-lg bg-*">
       <div className="container-fluid pt-2">
@@ -16,16 +35,16 @@ function Navbar() {
           <img src={logoWhite} alt="Bootstrap" width="370" />
         </a>
 
-        <div className="sidebar-icon" id="sidebar-icon">
+        <div className="sidebar-icon" id="sidebar-icon" onClick={toggleMenu}>
           <img src={menuFill} alt="" className="sidebar-i" id="sidebar-i" />
         </div>
 
-        <div className="sidebar-menu" id="sidebar-menu">
+        <div className={"sidebar-menu" + (isToggle ? " active" : "")} id="sidebar-menu">
           <div className="sidebar-links">
             <ul>
-              <li className="sidebar-list-item rem"><a className="rem-default" href="#">Home</a></li>
-              <li className="sidebar-list-item rem"><a className="rem-default" href="#apod">APOD</a></li>
-              <li className="sidebar-list-item rem"><a className="rem-default" href="#mars">MartianImagery</a></li>
+              <li className="sidebar-list-item rem" onClick={handleMenuClose}><a className="rem-default" href="#">Home</a></li>
+              <li className="sidebar-list-item rem" onClick={handleMenuClose}><a className="rem-default" href="#apod">APOD</a></li>
+              <li className="sidebar-list-item rem" onClick={handleMenuClose}><a className="rem-default" href="#mars">MartianImagery</a></li>
             </ul>
             <a href="#contact" className="sidebar-contact rem-default rem">
               <button className="btn btn-outline-light rounded-pill" type="submit">Contact Us</button>
