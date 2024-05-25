@@ -36,6 +36,21 @@ function MarsRover() {
 
             response = await response.json();
 
+            if (response.photos.length === 0) {
+                alert("No images for selected date")
+                setShowDefault(true)
+                setRoverInfo({
+                    url: "",
+                    earthDate: "",
+                    roverName: "",
+                    cameraName: "",
+                    launchDate: "",
+                    landingDate: "",
+                    status: ""
+                })
+                return
+            }
+
             const image_from_rover = response.photos[0];
 
             setRoverInfo((prev) => {
