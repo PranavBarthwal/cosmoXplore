@@ -9,7 +9,8 @@
 .contact-form {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content:center;
+    gap: 150px;
 }
 
 .contact-form .left {
@@ -121,6 +122,13 @@
 .section_title{
     margin-top: 175px;
     margin-bottom: 50px;
+}
+
+.left{
+    max-width: 500px;
+}
+.right form,.right{
+    max-width: 500px;
 }
 
 /* Additional styling for responsiveness */
