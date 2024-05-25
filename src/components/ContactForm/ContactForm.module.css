@@ -1,0 +1,133 @@
+.section_title {
+    background: -webkit-linear-gradient(#e4d6fb, #8400ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.contact-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contact-form .left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-form .right {
+    flex: 1;
+    padding-left: 20px;
+}
+
+
+.right .form-control {
+    width: 100%;
+    max-width: 600px;
+    /* Adjust the maximum width as needed */
+}
+
+.contact_img {
+    border-radius: 50%;
+}
+
+.contact_img:hover {
+    color: white;
+    box-shadow: 0 5px 15px #9000ff;
+}
+
+/* restyling contact-form */
+.contact_img {
+    animation: leviate 2s ease-in-out infinite;
+    animation-delay: 2ms;
+}
+@keyframes leviate {
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.right form{
+    width: 30vw;
+    padding: 30px;
+    background-color:transparent;
+    backdrop-filter: blur(25px);
+    border: 2px solid #40019a;
+    box-sizing: content-box;
+    border-radius:10px;
+    animation: circle 4s ease-in-out infinite;
+}
+
+@keyframes circle {
+    0%{
+        box-shadow: 10px 10px 10px #8400ff;
+    }
+    25%{
+        box-shadow: -10px 10px 10px #8400ff;
+    }
+    50%{
+        box-shadow: -10px -10px 10px #8400ff;
+    }
+    75%{
+        box-shadow: 10px -10px 10px #8400ff;
+    }
+    100%{
+        box-shadow: 10px 10px 10px #8400ff;
+    }
+}
+
+.right .form-control{
+    outline: none;
+    border: 2px solid #9000ff;
+    border-radius:40px;
+    background: transparent;
+    border-radius:10px;
+    color: white;
+    resize: none;
+}
+
+.right .form-control::placeholder{
+    color: white;
+}
+
+
+.right .form-control:focus{
+    outline: none;
+    border: none;
+    background-color:#7805e39d;
+    box-shadow: none;
+    color:white ;
+}
+
+.right button{
+    outline: none;
+    border:none;
+    border-radius: 30px;
+    background-color:#8400ff;
+}
+
+.right button:hover{
+    background: #40019a;
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px white;
+    cursor: pointer;
+}
+
+
+/* Additional styling for responsiveness */
+@media (max-width: 768px) {
+    .contact-form {
+        flex-direction: column;
+    }
+
+    .contact-form .right {
+        padding-left: 0;
+        margin-top: 10px;
+        /* Adjust as needed */
+    }
+}

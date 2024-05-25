@@ -1,0 +1,46 @@
+.section_title {
+    background: -webkit-linear-gradient(#e4d6fb, #8400ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+@media (max-width: 765px) {
+    .section_title_mobile {
+        font-size: 2rem;
+    }
+
+    .img {
+        width: 100%;
+    }
+
+    .apod_img {
+        height: 350px;
+        width: 350px;
+    }
+
+}
+
+.apod_img_container {
+    width: 500px;
+    height: 500px;
+}
+
+#apod_img {
+    aspect-ratio: 5 / 4;
+    border-radius: 25px;
+    position: relative;
+}
+
+#apod_img:hover {
+    color: white;
+    box-shadow: 0 5px 15px #9000ff;
+}
+
+.img {
+    width: 500px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+}
