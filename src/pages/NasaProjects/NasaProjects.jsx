@@ -117,7 +117,7 @@ function TechNews() {
         try {
             const temp = []
             for (const id of projectsIds) {
-                const response = await fetch(`https://techport.nasa.gov/api/projects/${id}`)
+                const response = await fetch(`https://techport.nasa.gov/api/projects/${id}?api_key=${import.meta.env.VITE_API_KEY}`)
                 const data = await decodeData(response.body);
                 const { projectId, title, acronym, description, startDateString, endDateString, lastUpdated, statusDescription } = data.project;
                 temp.push({ projectId, title, acronym, description, startDateString, endDateString, lastUpdated, statusDescription });
