@@ -124,3 +124,18 @@
         transform: rotate(360deg);
     }
 }
+
+#page-btns {
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.page-icons {
+    cursor: pointer;
+}
+
+#page-num {
+    font-size: 2rem;
+}
