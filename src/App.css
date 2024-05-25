@@ -273,6 +273,10 @@
   max-width: 992px;
 }
 
+.container-fluid{
+  max-width: 1400px;
+}
+
 /* Additional styling for responsiveness */
 @media (max-width: 768px) {
   .contact-form {
