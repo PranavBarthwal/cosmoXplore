@@ -35,6 +35,7 @@
     word-spacing: 2px;
     overflow-y: auto;
     margin: 5px 0px;
+    padding-right: 5px;
 }
 
 .card ::-webkit-scrollbar {
