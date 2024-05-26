@@ -4,10 +4,12 @@ import Background from './components/Background/Background.jsx'
 import Navbar from './components/Navbar/Navbar.jsx'
 import Footer from './components/Footer/Footer.jsx'
 import ErrorBoundary from './components/ErrorBoundry/ErrorBoundary.jsx';
+import Toast from "./components/Toast/Toast.jsx"
 
 function App() {
   return (
     <>
+      <Toast />
       <ErrorBoundary>
         <Background />
       </ErrorBoundary>

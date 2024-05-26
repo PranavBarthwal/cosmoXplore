@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import img from "../../assets/mars.png";
 import DisplayDetails from "../DisplayDetails/DisplayDetails.jsx";
+import { toastify } from ".././Toast/Toast.jsx"
 
 function DefaultDisplay() {
 
@@ -20,7 +21,7 @@ function DefaultDisplay() {
     try {
 
       if (userDate == "") {
-        alert("Enter Date")
+        toastify("Enter Date", false)
         return
       }
 
