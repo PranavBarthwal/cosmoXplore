@@ -62,7 +62,6 @@ function TechNews() {
         var dd = String(temp.getDate()).padStart(2, '0');
         var mm = String(temp.getMonth() + 1).padStart(2, '0');
         var yyyy = temp.getFullYear();
-        console.log(`${yyyy}-${mm}-${dd}`);
         return `${yyyy}-${mm}-${dd}`;
     }
 
@@ -94,7 +93,16 @@ function TechNews() {
 
         try {
 
-            let response = await fetch(`https://techport.nasa.gov/api/projects?updatedSince=${getStartDate(7)}&api_key=${import.meta.env.VITE_API_KEY}`)
+            let response = await fetch(`https://inplace-ghib.onrender.com/inplace`, {
+                method: "POST",
+                body:
+                    JSON.stringify({
+                        url: `https://techport.nasa.gov/api/projects?updatedSince=${getStartDate(7)}&api_key=${import.meta.env.VITE_API_KEY}`
+                    }),
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            })
 
             const data = await decodeData(response.body);
 
@@ -117,7 +125,16 @@ function TechNews() {
         try {
             const temp = []
             for (const id of projectsIds) {
-                const response = await fetch(`https://techport.nasa.gov/api/projects/${id}?api_key=${import.meta.env.VITE_API_KEY}`)
+                let response = await fetch(`https://inplace-ghib.onrender.com/inplace`, {
+                    method: "POST",
+                    body:
+                        JSON.stringify({
+                            url: `https://techport.nasa.gov/api/projects/${id}?api_key=${import.meta.env.VITE_API_KEY}`
+                        }),
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                })
                 const data = await decodeData(response.body);
                 const { projectId, title, acronym, description, startDateString, endDateString, lastUpdated, statusDescription } = data.project;
                 temp.push({ projectId, title, acronym, description, startDateString, endDateString, lastUpdated, statusDescription });
@@ -195,7 +212,6 @@ function TechNews() {
 
     // to make pages
     function Pagination() {
-        console.log(projects.length);
         setTempProjects((prev) => {
             const last_index = page * 10;
             const start_index = last_index - 10;
