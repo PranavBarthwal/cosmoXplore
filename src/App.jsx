@@ -8,9 +8,9 @@ import ErrorBoundary from './components/ErrorBoundry/ErrorBoundary.jsx';
 function App() {
   return (
     <>
-      <ErrorBoundary>
+      {/* <ErrorBoundary>
         <Background />
-      </ErrorBoundary>
+      </ErrorBoundary> */}
       <Navbar />
       <Outlet />
       <Footer />
