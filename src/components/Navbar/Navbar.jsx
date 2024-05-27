@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import logoWhite from '../../assets/logo_white.png';
 import menuFill from '../../assets/menu-fill.svg';
+import './navabar.css'
 
 function Navbar() {
 
