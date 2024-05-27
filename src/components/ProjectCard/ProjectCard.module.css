@@ -1,0 +1,61 @@
+.card {
+    max-width: 500px;
+    min-width: 500px;
+    background: rgba(5, 17, 66, 0.55);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 20px;
+    color: rgba(255, 255, 255, 0.801);
+}
+
+.card h1 {
+    font-size: 2rem;
+    color: white;
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.card h3 {
+    font-size: 1rem;
+}
+
+.card:hover {
+    box-shadow: 0 0 20px rgb(153, 0, 255);
+}
+
+.description {
+    max-height: 250px;
+    min-height: 200px;
+    word-spacing: 2px;
+    overflow-y: scroll;
+    margin: 5px 0px;
+    padding-right: 5px;
+    scroll-behavior: smooth;
+}
+
+.card ::-webkit-scrollbar {
+    width: 10px;
+    background: rgba(255, 255, 255, 0.253);
+    border-radius: 20px;
+}
+
+.card ::-webkit-scrollbar-thumb {
+    background: rgb(135, 62, 177);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.493);
+}
+
+.dates {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.title {
+    color: rgb(155, 82, 252);
+}
