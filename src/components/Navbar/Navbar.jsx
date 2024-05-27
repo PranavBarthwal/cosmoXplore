@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { NavLink, Link } from 'react-router-dom'
 import logoWhite from '../../assets/logo_white.png';
 import menuFill from '../../assets/menu-fill.svg';
+import './navabar.css'
 
 function Navbar() {
 
