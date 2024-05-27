@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import img from "../../assets/mars.png";
 import DisplayDetails from "../DisplayDetails/DisplayDetails.jsx";
+import { toastify } from "../Toast/Toast.jsx";
 
 function MarsRover() {
 
@@ -20,7 +21,7 @@ function MarsRover() {
         try {
 
             if (userDate == "") {
-                alert("Enter Date")
+                toastify("Enter Date", false)
                 return
             }
 
@@ -37,7 +38,7 @@ function MarsRover() {
             response = await response.json();
 
             if (response.photos.length === 0) {
-                alert("No images for selected date")
+                toastify("No images for selected date", false)
                 setShowDefault(true)
                 setRoverInfo({
                     url: "",

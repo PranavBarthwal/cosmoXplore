@@ -3,7 +3,7 @@
     z-index: 99;
     left: 40%;
     top: 20px;
-    animation: in 1s ease, out 1s 4s ease;
+    animation: in 0.8s ease, out 1s 4s ease;
     height: fit-content;
 }
 
@@ -52,7 +52,7 @@
 
 @keyframes in {
     0% {
-        transform: translateX(-100vw);
+        transform: translateX(-90vw);
     }
 }
 
