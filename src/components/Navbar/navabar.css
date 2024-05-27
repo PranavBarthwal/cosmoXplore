@@ -5,7 +5,8 @@
 top: 0; 
 left: 0; 
 width: 100%; 
-background-color: #333; 
+/* background-color: rgb(142, 9,193 / 0%);  */
+background: linear-gradient(#e4d6fb,#8400ff);
 color: #fff; 
 padding: 10px 0px; 
 text-align: center;
