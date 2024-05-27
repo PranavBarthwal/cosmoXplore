@@ -24,7 +24,7 @@ function Toast() {
         timeOut = setTimeout(() => {
             setIsShow(false)
             timeOut = null
-        }, 4000);
+        }, 5000);
     }
 
     function handleClose() {

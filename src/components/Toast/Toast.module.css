@@ -52,12 +52,12 @@
 
 @keyframes in {
     0% {
-        transform: translateX(-800px);
+        transform: translateX(-100vw);
     }
 }
 
 @keyframes out {
     100% {
-        transform: translateX(800px);
+        transform: translateX(100vw);
     }
 }
