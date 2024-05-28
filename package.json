@@ -11,10 +11,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.3.3",
+    "@tsparticles/all": "^3.4.0",
+    "@tsparticles/react": "^3.0.0",
     "axios": "^1.7.2",
     "html-to-react": "^1.7.0",
-    "@emailjs/browser": "^4.3.3",
-    "particles.js": "^2.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.2.1",
