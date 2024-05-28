@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import img from "../../assets/mars.png";
 import DisplayDetails from "../DisplayDetails/DisplayDetails.jsx";
+import { toastify } from "../Toast/Toast.jsx";
 
 function MarsRover() {
 
@@ -16,13 +17,11 @@ function MarsRover() {
         status: ""
     })
 
-
-
     async function displayRover(e) {
         try {
 
             if (userDate == "") {
-                alert("Enter Date")
+                toastify("Enter Date", false)
                 return
             }
 
@@ -32,14 +31,14 @@ function MarsRover() {
                 return false;
             })
 
-            let url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${userDate}&api_key=eISHzmGbQk7EMWv9NTlVtvzZVmeLKPUoL3uKMSPJ`;
+            let url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${userDate}&api_key=${import.meta.env.VITE_API_KEY}`;
 
             let response = await fetch(url);
 
             response = await response.json();
 
             if (response.photos.length === 0) {
-                alert("No images for selected date")
+                toastify("No images for selected date", false)
                 setShowDefault(true)
                 setRoverInfo({
                     url: "",
@@ -52,8 +51,6 @@ function MarsRover() {
                 })
                 return
             }
-
-            console.log(response);
 
             const image_from_rover = response.photos[0];
 
@@ -85,6 +82,8 @@ function MarsRover() {
 
     return (
         <>
+            <h1 align="center" className="section_title section_title_mobile" id="mars">Mars Rover Imagery</h1>
+            <br />
             {showDefault ?
 
                 <div className="rover_container">

@@ -1,70 +1,71 @@
-import React,{useState,useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import img from '../../assets/original-5fcdc62f8266e353ea97ca56731ad804.png';
 import Styles from "./ContactForm.module.css"
 import emailjs from '@emailjs/browser';
+import { toastify } from "../Toast/Toast.jsx"
 
 
 function ContactForm() {
-  
-  const [contactInfo,setContactInfo]=useState({
-    name:"",
-    email:"",
-    message:""
+
+  const [contactInfo, setContactInfo] = useState({
+    name: "",
+    email: "",
+    message: ""
   })
 
   const sendEmail = () => {
-// importing environment variables from .env 
-    const {VITE_SERVICE_ID,VITE_TEMPLATE_ID,VITE_PUBLIC_KEY}=import.meta.env;
+    // importing environment variables from .env 
+    const { VITE_SERVICE_ID, VITE_TEMPLATE_ID, VITE_PUBLIC_KEY } = import.meta.env;
 
     emailjs
-      .send(VITE_SERVICE_ID,VITE_TEMPLATE_ID , contactInfo, {
+      .send(VITE_SERVICE_ID, VITE_TEMPLATE_ID, contactInfo, {
         publicKey: VITE_PUBLIC_KEY,
       })
       .then(
         () => {
-          console.log('SUCCESS!');
+          setContactInfo({
+            name: "",
+            email: "",
+            message: ""
+          })
+          toastify("Mail sent", true);
         },
         (error) => {
-          console.log('FAILED...', error.text);
+          toastify('Error', false);
         },
       );
-    };
+  };
 
 
-  function handleSubmit(e){
+  async function handleSubmit(e) {
     e.preventDefault();
     // checking for input
-    if(contactInfo.name==="" || contactInfo.email==="" || contactInfo.message===""){
-      alert("fill all required fields");
+    if (contactInfo.name === "" || contactInfo.email === "" || contactInfo.message === "") {
+      toastify("fill all required fields", false);
       return;
     }
 
-    if(!contactInfo.email.match(
+    if (!contactInfo.email.match(
       "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
-    )){
-      alert("Invalid email")
+    )) {
+      toastify("Invalid email", false)
       return;
     }
 
-    
-    if(!(contactInfo.message.split(" ").length>=5)){
-      alert("Message should contain atlest 5 words")
+
+    if (!(contactInfo.message.split(" ").length >= 5)) {
+      toastify("Message should contain atlest 5 words", false)
       return
     }
     sendEmail()
-    alert("Mail sent");
 
-    setContactInfo({
-      name:"",
-      email:"",
-      message:""
-    })
-    
+
+
   }
 
-  function handleChange(e){
-    setContactInfo((prev)=>{
-      return {...prev,[e.target.name]:e.target.value};
+  function handleChange(e) {
+    setContactInfo((prev) => {
+      return { ...prev, [e.target.name]: e.target.value };
     })
   }
 
