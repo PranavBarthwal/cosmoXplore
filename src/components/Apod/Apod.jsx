@@ -63,7 +63,7 @@ function Apod() {
             <div className={Styles["img"]}>
               {
                 apodInfo.media_type == "video" ?
-                  <iframe src={apodInfo.url} id={Styles["apod_img"]} className={Styles["apod_img"]} alt="APOD" /> :
+                  <iframe src={apodInfo.url ? apodInfo.url + "autoplay=1&mute=1" : ""} id={Styles["apod_img"]} className={Styles["apod_img"]} alt="APOD" /> :
                   <img src={apodInfo.url ? apodInfo.url : img} id={Styles["apod_img"]} className={Styles["apod_img"]} alt="APOD" />
               }
             </div>
