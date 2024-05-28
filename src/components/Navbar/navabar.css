@@ -1,0 +1,14 @@
+
+
+.navbar
+ {position: fixed;
+top: 0; 
+left: 0; 
+width: 100%; 
+/* background-color: rgb(142, 9,193 / 0%);  */
+background: linear-gradient(to left, rgb(10, 0, 73), rgb(0, 0, 0));
+color: #fff; 
+padding: 10px 0px; 
+text-align: center;
+z-index: 1000; 
+}
