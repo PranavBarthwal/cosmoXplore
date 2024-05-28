@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { NavLink, Link } from 'react-router-dom'
 import logoWhite from '../../assets/logo_white.png';
 import menuFill from '../../assets/menu-fill.svg';
+import './navabar.css'
 
 function Navbar() {
 
@@ -35,6 +37,8 @@ function Navbar() {
           <img src={logoWhite} alt="Bootstrap" width="370" />
         </a>
 
+        {/* burger menu for mobiles */}
+
         <div className="sidebar-icon" id="sidebar-icon" onClick={toggleMenu}>
           <img src={menuFill} alt="" className="sidebar-i" id="sidebar-i" />
         </div>
@@ -45,6 +49,7 @@ function Navbar() {
               <li className="sidebar-list-item rem" onClick={handleMenuClose}><a className="rem-default" href="#">Home</a></li>
               <li className="sidebar-list-item rem" onClick={handleMenuClose}><a className="rem-default" href="#apod">APOD</a></li>
               <li className="sidebar-list-item rem" onClick={handleMenuClose}><a className="rem-default" href="#mars">MartianImagery</a></li>
+              <li className="sidebar-list-item rem" onClick={handleMenuClose}><NavLink className="rem-default" to="/nasa-projects">NASA's Projects</NavLink></li>
             </ul>
             <a href="#contact" className="sidebar-contact rem-default rem">
               <button className="btn btn-outline-light rounded-pill" type="submit">Contact Us</button>
@@ -52,10 +57,12 @@ function Navbar() {
           </div>
         </div>
 
+        {/* navbar for screens */}
+
         <div className="collapse navbar-collapse pe-5" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link text-light" href="#">Home</a>
+              <Link className="nav-link text-light" href="/">Home</Link>
             </li>
             <li className="nav-item">
               <a className="nav-link text-light" href="#apod">APoD</a>
@@ -64,12 +71,16 @@ function Navbar() {
               <a className="nav-link text-light" href="#mars">MartianImagery</a>
             </li>
             <li className="nav-item">
+              <NavLink className="nav-link text-light" to="/nasa-projects">NASA's Projects</NavLink>
+            </li>
+            <li className="nav-item">
               <a href="#contact">
                 <button className="btn btn-outline-light rounded-pill" type="submit">Contact Us</button>
               </a>
             </li>
           </ul>
         </div>
+
       </div>
     </nav>
   );
