@@ -3,10 +3,10 @@
     padding: 20px;
     width: 100%;
     min-width: 400px;
-    max-width: 1500px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 20px;
     margin-top: 50px;
 }
