@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import img from "../../assets/mars.png";
 import DisplayDetails from "../DisplayDetails/DisplayDetails.jsx";
 import { toastify } from "../Toast/Toast.jsx";
+import ReadableStreamDecoder from './../../utils/ReadableStreamDecoder';
 
 function MarsRover() {
 
@@ -16,6 +17,11 @@ function MarsRover() {
         landingDate: "",
         status: ""
     })
+    const [maxDate, setMaxDate] = useState("");
+
+    useEffect(() => {
+        getMaxDate();
+    }, [])
 
     async function displayRover(e) {
         try {
@@ -62,6 +68,34 @@ function MarsRover() {
             console.log(error.message);
         }
     }
+
+
+    async function getMaxDate() {
+
+        try {
+            const response = await fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/latest_photos?api_key=${import.meta.env.VITE_API_KEY}`)
+
+            const data = await ReadableStreamDecoder(response.body);
+
+            setMaxDate(data.latest_photos[0].rover.max_date);
+
+        } catch (error) {
+            console.log(error.message);
+        }
+
+        const today_date = new Date();
+        const temp = new Date();
+
+        temp.setDate((today_date.getDate() - 124))
+
+        var dd = String(temp.getDate()).padStart(2, '0');
+        var mm = String(temp.getMonth() + 1).padStart(2, '0');
+        var yyyy = temp.getFullYear();
+
+        return `${yyyy}-${mm}-${dd}`;
+
+    }
+
 
     return (
         <>
@@ -114,6 +148,8 @@ function MarsRover() {
                         name="date"
                         aria-label="Recipient's username"
                         aria-describedby="button-addon2"
+                        min="2015-06-03"
+                        max={maxDate}
                         onChange={(e) => setUserDate((prev) => e.target.value)}
                     />
                     <button
