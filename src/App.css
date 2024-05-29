@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext");
 
-
 .highlight {
   background: -webkit-linear-gradient(#e4d6fb, #8400ff);
   -webkit-background-clip: text;
@@ -26,7 +25,7 @@
   width: 40%;
   align-items: center;
   justify-content: center;
-  outline:none;
+  outline: none;
   border: none;
   /* background-color: red; */
 }
@@ -34,7 +33,7 @@
 .date_input {
   width: 20%;
   outline: none;
-  border:none;
+  border: none;
 }
 
 .apod_img_container {
@@ -102,7 +101,6 @@
   display: flex;
   justify-content: center;
   margin: 30px 0;
-
 }
 
 .inner_container {
@@ -188,7 +186,6 @@
   animation: leviate 2s ease infinite;
 }
 
-
 @keyframes leviate {
   50% {
     transform: translateY(-20px);
@@ -201,36 +198,35 @@
   outline: none;
   border: 2px solid #9000ff;
   border-right: none;
-  border-radius:40px;
-  background:transparent;
+  border-radius: 40px;
+  background: transparent;
   color: white;
 }
 
-.ip .date_input::-webkit-calendar-picker-indicator { 
+.ip .date_input::-webkit-calendar-picker-indicator {
   filter: invert(100%);
   cursor: pointer;
 }
-.ip .form-control:focus{
+.ip .form-control:focus {
   outline: none;
   border: 2px solid #9000ff;
   box-shadow: 0 0 15px white;
-  color:white ;
+  color: white;
 }
 
-.ip .btn{
+.ip .btn {
   outline: none;
   border: 2px solid #9000ff;
   background-color: #8400ff;
   border-left: none;
-  border-radius:40px;
+  border-radius: 40px;
 }
-.ip .btn:hover{
+.ip .btn:hover {
   background: #40019a;
   color: white;
   box-shadow: 0 0 15px white;
   cursor: pointer;
 }
-
 
 /* Additional styling for responsiveness */
 @media (max-width: 768px) {
@@ -246,8 +242,6 @@
 }
 
 /* Info card in mars section */
-
-
 
 .card {
   border-radius: 10px;
@@ -441,24 +435,46 @@
   }
 }
 
+@media (max-width: 425px) {
+  .sidebar-icon {
+    top: 75px;
+    right: 10px;
+  }
+}
+
 .sidebar-contact {
   display: flex;
   justify-content: center;
 }
 
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  width: 100%;
+}
+
 .sidebar-menu {
   position: fixed;
-  top: 80px;
-  right: -200px;
-  width: 160px;
-  height: 160px;
+  top: 75px;
+  right: -700px;
+  width: 80%;
+  height: auto;
   background-color: inherit;
   transition: right 0.3s ease;
   z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .sidebar-menu.active {
-  right: 0;
+  right: 50px;
+  background-color: black;
 }
 
 .rem-default {

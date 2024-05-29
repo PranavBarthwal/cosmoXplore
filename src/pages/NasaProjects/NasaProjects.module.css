@@ -1,145 +1,163 @@
 #container {
-    min-height: 100dvh;
-    padding: 20px;
-    /* width: 100dvw; */
-    min-width: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 50px;
+  min-height: 100dvh;
+  padding: 20px;
+  width: 100vw;
+  min-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 50px;
 }
 
 #heading {
-    padding-bottom: 1rem;
-    border-bottom: 2px solid white;
-    margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid white;
+  margin-bottom: 2rem;
 }
 
 #heading img {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 #search-wrapper {
-    z-index: 100;
-    position: fixed;
-    right: 20px;
-    width: fit-content;
-    display: flex;
-    align-items: center;
+  z-index: 100;
+  position: fixed;
+  right: 20px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
 }
 
 #search {
-    width: 400px;
-    font-size: 1.3rem;
-    padding: 5px 10px;
-    outline: none;
-    border-radius: 10px;
-    border: none;
+  width: 400px;
+  font-size: 1.3rem;
+  padding: 5px 10px;
+  outline: none;
+  border-radius: 10px;
+  border: none;
 }
 
 .icons {
-    background: rgb(255, 255, 255);
-    padding: 10px;
-    border-radius: 10px;
+  background: rgb(255, 255, 255);
+  padding: 10px;
+  border-radius: 10px;
 }
 
 /* animation for opening and closing search bar */
 
 .open {
-    animation: slideLeft 1s ease-in-out;
-    animation-fill-mode: forwards;
-    transform-origin: right;
+  animation: slideLeft 1s ease-in-out;
+  animation-fill-mode: forwards;
+  transform-origin: right;
 }
 
 @keyframes slideLeft {
-    0% {
-        transform: scaleX(0);
-    }
+  0% {
+    transform: scaleX(0);
+  }
 
-    100% {
-        transform: scaleX(1);
-    }
+  100% {
+    transform: scaleX(1);
+  }
 }
 
 .close {
-    animation: slideRight 1s ease-in-out;
-    animation-fill-mode: forwards;
-    transform-origin: right;
+  animation: slideRight 1s ease-in-out;
+  animation-fill-mode: forwards;
+  transform-origin: right;
 }
 
 @keyframes slideRight {
-    100% {
-        transform: scaleX(0);
-    }
+  100% {
+    transform: scaleX(0);
+  }
 }
 
 #projects {
-    width: 90%;
-    min-width: 500px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-items: center;
-    row-gap: 20px;
-    column-gap: 20px;
-    margin: 2% 0 5% 0;
+  width: 90%;
+  min-width: 500px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  row-gap: 20px;
+  column-gap: 20px;
+  margin: 2% 0 5% 0;
 }
 
-@media (max-width:1000px) {
-    #projects {
-        grid-template-columns: 1fr;
-    }
+@media (max-width: 1000px) {
+  #projects {
+    grid-template-columns: 1fr;
+  }
 
-    #search {
-        width: 300px;
-    }
+  #search {
+    width: 300px;
+  }
+}
+
+@media (max-width: 425px) {
+  #container {
+    min-width: auto;
+  }
+  #search {
+    width: 100%;
+  }
+  #projects {
+    min-width: auto;
+    width: 100%;
+  }
+  #search-wrapper {
+    width: 90%;
+    top: 120px;
+    right: 10px;
+  }
 }
 
 #load_more {
-    border: none;
-    font-size: 1.5rem;
-    padding: 10px 20px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  border: none;
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 #load_more:hover {
-    background: rgb(54, 10, 136);
-    color: white;
-    box-shadow: 0 0 20px rgb(223, 149, 241);
-    animation: breath 3s ease-in-out infinite;
+  background: rgb(54, 10, 136);
+  color: white;
+  box-shadow: 0 0 20px rgb(223, 149, 241);
+  animation: breath 3s ease-in-out infinite;
 }
 
 @keyframes breath {
-    50% {
-        box-shadow: 0 0 5px rgb(86, 74, 252);
-    }
+  50% {
+    box-shadow: 0 0 5px rgb(86, 74, 252);
+  }
 }
 
 .reload {
-    animation: load 2s linear infinite;
+  animation: load 2s linear infinite;
 }
 
 @keyframes load {
-    100% {
-        transform: rotate(360deg);
-    }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 #page-btns {
-    width: 250px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .page-icons {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 #page-num {
-    font-size: 2rem;
+  font-size: 2rem;
 }
