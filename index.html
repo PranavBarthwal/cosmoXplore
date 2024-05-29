@@ -8,7 +8,29 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
    <link rel="stylesheet" href="./style.css">
    <link rel="icon" type="image/png" href="./assets/favicon.png"> 
-
+   <script src="https://unpkg.com/scrollreveal"></script>
+   <style>
+        
+    .circle{
+       z-index: 10000;
+       width: 20px;
+       height: 20px;
+       border-radius: 50%;
+       pointer-events: none;
+        animation: colors 5s infinite;
+        position: fixed;
+      transform: translate(-50%,-50%);
+    }
+    .circle::before {
+        content: "";
+        position: fixed;
+      width: 50px;
+      height: 50px;
+      opacity: 0.2;
+      transform: translate(-30%,-30%);
+      border-radius: 50%;
+    }
+        </style>
   <style>
     @keyframes float {
       0% {
@@ -40,6 +62,28 @@
   
 </head>
 <body>
+  <div class="circle-container">
+    <div class="circle" style="background-color: #0a49bd; left: 504px; top: 59px; scale: 0.95;"></div>
+    <div class="circle" style="background-color: #012e82; left: 504px; top: 59px; scale: 0.9;"></div>
+    <div class="circle" style="background-color: #042b6f; left: 504px; top: 59px; scale: 0.85;"></div>
+    <div class="circle" style="background-color: #4d2be5; left: 504px; top: 59px; scale: 0.8;"></div>
+    <div class="circle" style="background-color: #0915c3; left: 504px; top: 59px; scale: 0.75;"></div>
+    <div class="circle" style="background-color: #958cdc; left: 504px; top: 59px; scale: 0.7;"></div>
+    <div class="circle" style="background-color: #010101; left: 504px; top: 59px; scale: 0.65;"></div>
+    <div class="circle" style="background-color: #080e63; left: 504px; top: 59px; scale: 0.6;"></div>
+    <div class="circle" style="background-color: #5010ff; left: 504px; top: 59px; scale: 0.55;"></div>
+    <div class="circle" style="background-color: #460cc3; left: 504px; top: 59px; scale: 0.5;"></div>
+    <div class="circle" style="background-color: #311671; left: 504px; top: 59px; scale: 0.45;"></div>
+    <div class="circle" style="background-color: #4e3ab3; left: 504px; top: 59px; scale: 0.4;"></div>
+    <div class="circle" style="background-color: #4f3f68; left: 504px; top: 59px; scale: 0.35;"></div>
+    <div class="circle" style="background-color: #181ecd; left: 504px; top: 59px; scale: 0.3;"></div>
+    <div class="circle" style="background-color: #302a42; left: 504px; top: 59px; scale: 0.25;"></div>
+    <div class="circle" style="background-color: #075af6; left: 504px; top: 59px; scale: 1;"></div>
+    <div class="circle" style="background-color: #003283; left: 504px; top: 59px; scale: 0.2;"></div>
+    <div class="circle" style="background-color: #3b17d7; left: 504px; top: 59px; scale: 0.15;"></div>
+    <div class="circle" style="background-color: #180068; left: 504px; top: 59px; scale: 0.1;"></div>
+    <div class="circle" style="background-color: #0b3687; left: 504px; top: 59px; scale: 0.05;"></div>
+</div>
   <div class="l">
     <div class="spinner"></div>
 </div>
@@ -212,7 +256,7 @@
     <img src="./assets/mars.png" class="mars_illus" style="animation: float 3s ease-in-out infinite;"> 
   </div>
 <div class="rover_section_text">
-<p class="">Welcome to an extraordinary adventure into the Martian landscape, where we invite you to explore the wonders of the Red Planet through the lens of various rovers that have traversed its surface. Our journey takes us deep into the photographic archives, a treasure trove of captivating images captured by these robotic explorers. Each rover, armed with sophisticated cameras, has documented the Martian terrain, unveiling its mysteries one snapshot at a time.
+<p class="para">Welcome to an extraordinary adventure into the Martian landscape, where we invite you to explore the wonders of the Red Planet through the lens of various rovers that have traversed its surface. Our journey takes us deep into the photographic archives, a treasure trove of captivating images captured by these robotic explorers. Each rover, armed with sophisticated cameras, has documented the Martian terrain, unveiling its mysteries one snapshot at a time.
 
   The heart of this exploration lies in a comprehensive database meticulously organized to offer you an unparalleled visual chronicle of Mars' exploration. This repository is a testament to the marvels of technology and the spirit of scientific curiosity that drives humanity to push the boundaries of exploration.
   
@@ -398,6 +442,146 @@
       });
   });
 
+</script>
+<script>
+  ScrollReveal({ 
+      //reset: true ,
+      distance : '60px' ,
+      duration:2500,
+      delay:400
+  });
+  ScrollReveal().reveal('.navbar-brand,.nav-item', { delay: 600 , origin:'top' });
+  ScrollReveal().reveal('.display-2,.lead,.btn,.col-lg-7,.img', { delay: 600 , origin:'left' });
+  ScrollReveal().reveal('.col-10,.para', { delay: 700 , origin:'right' });
+  ScrollReveal().reveal('.section_title', { delay: 500 , origin:'top'});
+</script>
+<script>
+
+  //Custom Cursor
+  const coords = { x: 0, y: 0 };
+  const circles = document.querySelectorAll(".circle");
+
+  const colors = [
+    "#0a49bd",
+    "#012e82",
+    "#042b6f",
+    "#4d2be5",
+    "#0915c3",
+    "##958cdc",
+    "##010101",
+    "#080e63",
+    "#5010ff",
+    "#460cc3",
+    "#311671",
+    "#4e3ab3",
+    "#4f3f68",
+    "#181ecd",
+    "#302a42",
+    "#003283",
+    "#3b17d7",
+    "#180068",
+    "#0b3687",
+  ];
+
+  circles.forEach(function (circle, index) {
+    circle.x = 0;
+    circle.y = 0;
+    circle.style.backgroundColor = colors[index % colors.length];
+  });
+
+  window.addEventListener("mousemove", function (e) {
+    coords.x = e.clientX;
+    coords.y = e.clientY;
+
+  });
+
+  function animateCircles() {
+
+    let x = coords.x;
+    let y = coords.y;
+
+    circles.forEach(function (circle, index) {
+      circle.style.left = x - 12 + "px";
+      circle.style.top = y - 12 + "px";
+
+      circle.style.scale = (circles.length - index) / circles.length;
+
+      circle.x = x;
+      circle.y = y;
+
+      const nextCircle = circles[index + 1] || circles[0];
+      x += (nextCircle.x - x) * 0.3;
+      y += (nextCircle.y - y) * 0.3;
+    });
+
+    requestAnimationFrame(animateCircles);
+  }
+
+  animateCircles();
+
+
+  // Function to toggle dark mode
+  function toggleDarkMode() {
+    const isDarkMode = isDarkModePreferred();
+    setDarkModePreference(!isDarkMode);
+    applyDarkModePreference();
+  }
+
+  // Function to apply dark mode preference
+  function applyDarkModePreference() {
+    const isDarkMode = isDarkModePreferred();
+    if (isDarkMode) {
+      document.body.classList.add('dark-mode');
+      document.getElementById('theme-icon').src = 'assets/images/icons8-sun.svg';
+    } else {
+      document.body.classList.remove('dark-mode');
+      document.getElementById('theme-icon').src = 'assets/images/moon_solid.svg';
+    }
+  }
+
+  // Function to set dark mode preference
+  document.addEventListener('DOMContentLoaded', () => {
+    const currentTheme = localStorage.getItem('theme');
+    const switchCheckbox = document.getElementById('switch'); // Define switchCheckbox here
+    const starRating = document.querySelector('.star_rating');
+    const thankYouMessage = document.querySelector(".thank_you_message");
+    if (switchCheckbox) { // Check if switchCheckbox is not null
+      function applyDarkModeStyles() {
+        document.body.classList.remove('light-mode');
+        document.body.classList.add('dark-mode');
+        starRating.style.backgroundColor = '#2d2828';
+        thankYouMessage.style.backgroundColor = '#2d2828';
+      }
+
+      function applyLightModeStyles() {
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add('light-mode');
+        starRating.style.backgroundColor = 'white';
+        thankYouMessage.style.backgroundColor = 'white';
+      }
+
+      if (currentTheme) {
+        if (currentTheme === 'dark-mode') {
+          applyDarkModeStyles();
+          switchCheckbox.checked = true;
+        } else {
+          applyLightModeStyles();
+        }
+      }
+
+      switchCheckbox.addEventListener('change', () => {
+        if (switchCheckbox.checked) {
+          applyDarkModeStyles();
+          localStorage.setItem('theme', 'dark-mode');
+        } else {
+          applyLightModeStyles();
+          localStorage.setItem('theme', 'light-mode');
+        }
+      });
+    } else {
+      console.error("Switch checkbox not found!"); // Log an error if switchCheckbox is null
+    }
+  });
 </script>
 </body>
 </html>
