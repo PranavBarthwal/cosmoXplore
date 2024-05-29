@@ -10,7 +10,8 @@ function Apod() {
     explanation: "",
     title: "",
     date: "",
-    copyright: ""
+    copyright: "",
+    media_type: "",
   })
 
   async function fetchAPOD() {
@@ -21,9 +22,13 @@ function Apod() {
 
       response = await response.json();
 
+      console.log(response);
+
       setApodInfo((prev) => {
-        return { ...prev, url: response.url, explanation: response.explanation, title: response.title, date: response.date, copyright: response.copyright }
+        return { ...prev, url: response.url, explanation: response.explanation, title: response.title, date: response.date, copyright: response.copyright, media_type: response.media_type }
       })
+
+      console.log(apodInfo);
 
     } catch (error) {
       console.log(error.message);
@@ -56,9 +61,14 @@ function Apod() {
 
           <div className={Styles["apod_img_container"]}>
             <div className={Styles["img"]}>
-              <img src={apodInfo.url ? apodInfo.url : img} id={Styles["apod_img"]} className={Styles["apod_img"]} alt="APOD" />
+              {
+                apodInfo.media_type == "video" ?
+                  <iframe src={apodInfo.url ? apodInfo.url.replace("rel=1", "rel=0") + "&mute=1&color=white" : ""} id={Styles["apod_img"]} className={Styles["apod_img"]} alt="APOD" /> :
+                  <img src={apodInfo.url ? apodInfo.url : img} id={Styles["apod_img"]} className={Styles["apod_img"]} alt="APOD" />
+              }
             </div>
           </div>
+          {apodInfo.copyright ? <p>Took by {apodInfo.copyright} </p> : ""}
         </div>
       </div>
     </>

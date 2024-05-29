@@ -15,15 +15,6 @@
   font-weight: bold;
 }
 
-#bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
-}
-
 .ip {
   display: flex;
   justify-content: center;
@@ -36,14 +27,12 @@
   align-items: center;
   justify-content: center;
   outline: none;
-  border: none;
-  /* background-color: red; */
 }
 
 .date_input {
   width: 20%;
   outline: none;
-  border: none;
+  border:none;
 }
 
 .apod_img_container {
@@ -200,8 +189,6 @@
   }
 }
 
-
-
 /*update date input styles*/
 
 .ip .form-control {
@@ -213,11 +200,6 @@
   color: white;
 }
 
-.ip .date_input::-webkit-calendar-picker-indicator {
-  filter: invert(100%);
-  cursor: pointer;
-}
-
 .ip .form-control:focus {
   outline: none;
   border: 2px solid #9000ff;
@@ -226,6 +208,23 @@
 }
 
 .ip .btn {
+  border-radius:40px;
+  background:transparent;
+  color: white;
+}
+
+.ip .date_input::-webkit-calendar-picker-indicator { 
+  filter: invert(100%);
+  cursor: pointer;
+}
+.ip .form-control:focus{
+  outline: none;
+  border: 2px solid #9000ff;
+  box-shadow: 0 0 15px white;
+  color:white ;
+}
+
+.ip .btn{
   outline: none;
   border: 2px solid #9000ff;
   background-color: #8400ff;
@@ -234,6 +233,9 @@
 }
 
 .ip .btn:hover {
+  border-radius:40px;
+}
+.ip .btn:hover{
   background: #40019a;
   color: white;
   box-shadow: 0 0 15px white;
