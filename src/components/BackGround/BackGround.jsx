@@ -37,7 +37,7 @@ function StarField({ numberOfStars = 100 }) {
 
   useEffect(addStars, []);
   return (
-    <group ref={starFieldRef} rotation={[0, 0, -1]}>
+    <group ref={starFieldRef} rotation={[0, 0, 0]}>
       {
         positions.map((position, index) => (
           <Star key={index} position={position} />
@@ -52,7 +52,7 @@ function Background() {
 
   return (
     <div id={Styles['container']}>
-      <Canvas id={Styles['background']} camera={{ fov: 80, position: [0, 0, 7] }} >
+      <Canvas id={Styles['background']} camera={{ fov: 80, position: [0, 0, 10], near: 0.25, far: 10 }} >
         <ambientLight intensity={1} />
         <StarField numberOfStars={5000} />
       </Canvas>
