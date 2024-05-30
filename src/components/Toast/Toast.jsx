@@ -32,7 +32,6 @@ function Toast() {
     function handleClose() {
         setIsShow(false);
         if (timeOut) {
-            console.log("cancle");
             clearTimeout(timeOut)
             timeOut = null
         }
