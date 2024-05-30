@@ -1,0 +1,33 @@
+.wrapper{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: green;
+}
+
+.btn{
+    background: red;
+    width: 200px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.scroll-btn{
+    background-color: #8400ff;
+    color: white;
+    border:none;
+    outline: none;
+    border-radius: 50%;
+    padding: 10px;
+
+}
+
+.scroll-btn:hover{
+    /* background-color: #8400ff; */
+    background-color: #40019a;
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px white;
+    cursor: pointer;
+}
