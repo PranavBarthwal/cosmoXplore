@@ -1,6 +1,6 @@
 .card {
     max-width: 500px;
-    min-width: 500px;
+    /* min-width: 100px; */
     background: rgba(5, 17, 66, 0.55);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(20px);
@@ -58,4 +58,11 @@
 
 .title {
     color: rgb(155, 82, 252);
+}
+
+@media (max-width:500px) {
+    .card {
+        font-size: 1rem;
+        width: 300px;
+    }
 }

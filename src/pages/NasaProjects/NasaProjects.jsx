@@ -8,6 +8,7 @@ import { IoReloadOutline } from "react-icons/io5";
 import { FaAnglesLeft } from "react-icons/fa6";
 import { FaAngleLeft } from "react-icons/fa6";
 import { FaAngleRight } from "react-icons/fa6";
+import ReadableStreamDecoder from "../../utils/ReadableStreamDecoder.js"
 
 
 
@@ -66,28 +67,6 @@ function TechNews() {
     }
 
 
-    // decodes stream of data chunks.
-    async function decodeData(body) {
-        try {
-
-            const reader = body.pipeThrough(new TextDecoderStream("utf-8")).getReader();
-            let json_temp = "";
-
-            while (true) {
-                const { value, done } = await reader.read();
-                json_temp = json_temp + (value ? value : "");
-                if (done) break;
-            }
-
-            const data = JSON.parse(json_temp);
-            return data;
-        } catch (error) {
-            setTimeout(() => setIsLoading(false), 2000)
-            console.log(error.message);
-        }
-    }
-
-
     // fetches projects Id's.
     async function fetchProjectsId() {
 
@@ -104,7 +83,7 @@ function TechNews() {
                 },
             })
 
-            const data = await decodeData(response.body);
+            const data = await ReadableStreamDecoder(response.body);
 
             let projectsIds = [];
 
@@ -114,8 +93,10 @@ function TechNews() {
 
             await fetchProjects(projectsIds);
         } catch (error) {
-            setTimeout(() => setIsLoading(false), 2000)
             console.log(error.message);
+        }
+        finally {
+            setTimeout(() => setIsLoading(false), 2000)
         }
     }
 
@@ -135,7 +116,7 @@ function TechNews() {
                         "Content-Type": "application/json",
                     },
                 })
-                const data = await decodeData(response.body);
+                const data = await ReadableStreamDecoder(response.body);
                 const { projectId, title, acronym, description, startDateString, endDateString, lastUpdated, statusDescription } = data.project;
                 temp.push({ projectId, title, acronym, description, startDateString, endDateString, lastUpdated, statusDescription });
             }
