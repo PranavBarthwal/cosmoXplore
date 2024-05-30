@@ -29,7 +29,7 @@ function StarField({ numberOfStars = 100 }) {
     for (let i = 0; i < numberOfStars; i++) {
       let x = (Math.random() * 2 - 1) * 10; // Ensure x is within -5 to 5 range
       let y = (Math.random() * 2 - 1) * 10; // Ensure y is within -5 to 5 range
-      let z = (Math.random() * 2 - 1) * 4; // Ensure z is within -5 to 5 range
+      let z = (Math.random() * 2 - 1) * 10; // Ensure z is within -5 to 5 range
       starsPosition.push([x, y, z]);
     }
     setPositions((prev) => [...starsPosition]);
@@ -37,7 +37,7 @@ function StarField({ numberOfStars = 100 }) {
 
   useEffect(addStars, []);
   return (
-    <group ref={starFieldRef} rotation={[0, 0, 1]}>
+    <group ref={starFieldRef} rotation={[0, 0, -1]}>
       {
         positions.map((position, index) => (
           <Star key={index} position={position} />
