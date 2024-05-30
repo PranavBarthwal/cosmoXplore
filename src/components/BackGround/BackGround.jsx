@@ -52,7 +52,7 @@ function Background() {
 
   return (
     <div id={Styles['container']}>
-      <Canvas id={Styles['background']} camera={{ fov: 80, position: [0, 0, 10], near: 0.25, far: 10 }} >
+      <Canvas id={Styles['background']} camera={{ fov: 80, position: [0, 0, 10], near: 1, far: 1000 }} >
         <ambientLight intensity={1} />
         <StarField numberOfStars={5000} />
       </Canvas>
