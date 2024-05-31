@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import img from "../../assets/mars.png";
-import DisplayDetails from "../DisplayDetails/DisplayDetails.jsx";
-import { toastify } from "../Toast/Toast.jsx";
+import DisplayDetails from "../../components/DisplayDetails/DisplayDetails.jsx";
+import { toastify } from "../../components/Toast/Toast.jsx";
 import ReadableStreamDecoder from './../../utils/ReadableStreamDecoder';
 
 function MarsRover() {
 
-    const [showDefault, setShowDefault] = useState(true);
+    const [showImages, setShowImages] = useState(false);
     const [userDate, setUserDate] = useState("");
     const [roverInfo, setRoverInfo] = useState({
         url: "",
@@ -26,16 +26,12 @@ function MarsRover() {
     async function displayRover(e) {
         try {
 
+            e.preventDefault();
+
             if (userDate == "") {
                 toastify("Enter Date", false)
                 return
             }
-
-            e.preventDefault();
-
-            setShowDefault((prev) => {
-                return false;
-            })
 
             let url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${userDate}&api_key=${import.meta.env.VITE_API_KEY}`;
 
@@ -45,7 +41,7 @@ function MarsRover() {
 
             if (response.photos.length === 0) {
                 toastify("No images for selected date", false)
-                setShowDefault(true)
+                setShowImages(false)
                 setRoverInfo({
                     url: "",
                     earthDate: "",
@@ -64,6 +60,8 @@ function MarsRover() {
                 return { ...prev, url: image_from_rover.img_src, earthDate: image_from_rover.earth_date, roverName: image_from_rover.rover.name, cameraName: image_from_rover.camera.full_name, launchDate: image_from_rover.rover.launch_date, landingDate: image_from_rover.rover.landing_date, status: image_from_rover.rover.status };
             })
 
+            setShowImages(true)
+
         } catch (error) {
             console.log(error.message);
         }
@@ -78,22 +76,11 @@ function MarsRover() {
             const data = await ReadableStreamDecoder(response.body);
 
             setMaxDate(data.latest_photos[0].rover.max_date);
+            setUserDate(data.latest_photos[0].rover.max_date);
 
         } catch (error) {
             console.log(error.message);
         }
-
-        const today_date = new Date();
-        const temp = new Date();
-
-        temp.setDate((today_date.getDate() - 124))
-
-        var dd = String(temp.getDate()).padStart(2, '0');
-        var mm = String(temp.getMonth() + 1).padStart(2, '0');
-        var yyyy = temp.getFullYear();
-
-        return `${yyyy}-${mm}-${dd}`;
-
     }
 
 
@@ -101,7 +88,6 @@ function MarsRover() {
         <>
             <h1 align="center" className="section_title section_title_mobile" id="mars">Mars Rover Imagery</h1>
             <br />
-            {showDefault ?
 
                 <div className="rover_container">
                     <div className="rover_section_img">
@@ -134,12 +120,6 @@ function MarsRover() {
                     </div>
                 </div>
 
-                :
-
-                <DisplayDetails roverInfo={roverInfo} />
-
-            }
-
             <div className="ip">
                 <div className="input-group mb-4 input_container">
                     <input
@@ -150,6 +130,7 @@ function MarsRover() {
                         aria-describedby="button-addon2"
                         min="2015-06-03"
                         max={maxDate}
+                        value={userDate}
                         onChange={(e) => setUserDate((prev) => e.target.value)}
                     />
                     <button
@@ -162,6 +143,8 @@ function MarsRover() {
                     </button>
                 </div>
             </div>
+
+            {showImages && (<DisplayDetails roverInfo={roverInfo} fun={setShowImages} />)}
 
         </>
     );
