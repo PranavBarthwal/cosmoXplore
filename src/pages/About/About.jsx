@@ -21,7 +21,6 @@ function About() {
     const [pageinatedContributors, setPageinatedContributors] = useState([]);
 
 
-
     useEffect(() => {
         fetchContributors()
     }, [])
@@ -36,8 +35,6 @@ function About() {
             const response = await fetch(`https://api.github.com/repos/${FOUNDER_NAME}/${repoName}/contributors`)
 
             const data = await response.json();
-
-            console.log(data);
 
             setContributors((prev) => {
                 return data.filter((user, idx) => user.login != FOUNDER_NAME);
@@ -57,12 +54,12 @@ function About() {
             <section id={Styles.section_1}>
                 <h1>About CosmoXplore</h1>
                 <p><b>
-                    ''Making space exploration accessible and exciting for everyone, CosmoXplore is your portal to the universe's wonders.''
+                    “CosmoXplore is your portal to the universe's wonders, Making space exploration accessible and exciting for everyone.”
                 </b></p>
             </section>
 
             <section id={Styles.section_2}>
-                <h1>Our Vision</h1>
+                <h1><u>Our Vision </u></h1>
                 <div>
                     <p>Explore the cosmos with CosmoXplore and stay informed about the innovations driving humanity's journey into the final frontier. Join us in discovering the beauty and mysteries of space, one photo and breakthrough at a time.As an open source organization, we are committed to transparency, collaboration, and community-driven development.</p>
                     <img src={vision} width='400px' height='400px' />
@@ -70,7 +67,7 @@ function About() {
             </section>
 
             <section id={Styles.section_3}>
-                <h1>Our Methods</h1>
+                <h1><u>Our Methods</u></h1>
                 <div>
                     <img src={method} width='400px' height='400px' />
                     <p>Our platform brings you stunning Astronomy Picture of the Day (APOD) images, fascinating photos of Mars, and updates on the latest technological breakthroughs at NASA. Utilizing NASA's open API, we deliver a seamless and engaging experience for space enthusiasts and curious minds alike.</p>
@@ -80,7 +77,7 @@ function About() {
             <section id={Styles.section_4}>
 
                 <div id={Styles.founder}>
-                    <h1>Our Founder</h1>
+                    <h1><u>Our Founder</u></h1>
                     <div>
                         <img src={founder.avatar_url} />
                         <h3>{founder.login}</h3>
@@ -92,11 +89,12 @@ function About() {
                 </div>
 
                 <div id={Styles.contributors}>
-                    <h2>Our Contributors</h2>
+                    <h2><u>Our Contributors</u></h2>
+
                     <div id={Styles.cards}>
                         {
-                            pageinatedContributors.map((user) => (
-                                <div className={Styles.card}>
+                            pageinatedContributors.map((user, idx) => (
+                                <div key={idx} className={Styles.card}>
                                     <img src={user.avatar_url} />
                                     <h3>{user.login}</h3>
                                     <div id={Styles.social}>
@@ -106,10 +104,13 @@ function About() {
                             ))
                         }
                     </div>
+
                     <div id={Styles['page-btns']}>
                         <FaAnglesLeft className={Styles['page-icons']} size={30} onClick={() => setCurrentPage(Pagination.StartPage(contributors, currentPage, CARDS_PER_PAGE))} />
                         <FaAngleLeft className={Styles['page-icons']} size={25} onClick={() => setCurrentPage(Pagination.PrevPage(contributors, currentPage, CARDS_PER_PAGE))} />
+
                         <span id={Styles['page-num']}>{currentPage}</span>
+
                         <FaAngleRight className={Styles['page-icons']} size={25} onClick={() => setCurrentPage(Pagination.NextPage(contributors, currentPage, CARDS_PER_PAGE))} />
                         <FaAnglesRight className={Styles['page-icons']} size={30} onClick={() => setCurrentPage(Pagination.LastPage(contributors, currentPage, CARDS_PER_PAGE))} />
                     </div>
