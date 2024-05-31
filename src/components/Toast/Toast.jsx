@@ -14,7 +14,6 @@ function Toast() {
     const [isSuccess, setIsSuccess] = useState(false);
 
     toastify = (message = "", isSuccess = true) => {
-        console.log(timeOut);
         if (timeOut) {
             setMessage(message);
             setIsSuccess(isSuccess);

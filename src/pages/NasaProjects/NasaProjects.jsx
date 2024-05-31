@@ -118,7 +118,6 @@ function TechNews() {
                 const { projectId, title, acronym, description, startDateString, endDateString, lastUpdated, statusDescription } = data.project;
                 temp.push({ projectId, title, acronym, description, startDateString, endDateString, lastUpdated, statusDescription });
             }
-            // setPaginationProjects((prev) => [...temp]);
             setProjects((prev) => [...temp]);
             setTimeout(() => setIsLoading(false), 2000)
 
