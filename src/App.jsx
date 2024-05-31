@@ -4,11 +4,17 @@ import Navbar from './components/Navbar/Navbar.jsx'
 import Footer from './components/Footer/Footer.jsx'
 import Toast from "./components/Toast/Toast.jsx"
 import BackGround from './components/BackGround/BackGround.jsx'
+import PreLoader from './components/PreLoader/PreLoader.jsx'
+import { useState } from 'react'
 
 function App() {
+
+  const [isPreLoading, setIsPreLoading] = useState(true)
+
   return (
     <>
-      <BackGround />
+      {isPreLoading && <PreLoader />}
+      <BackGround setIsPreLoading={setIsPreLoading} />
       <Toast />
       <Navbar />
       <Outlet />

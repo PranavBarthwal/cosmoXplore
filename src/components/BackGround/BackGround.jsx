@@ -13,7 +13,7 @@ function Star({ position }) {
   );
 };
 
-function StarField({ numberOfStars = 100 }) {
+function StarField({ numberOfStars = 100, setIsPreLoading }) {
 
   const starFieldRef = useRef();
 
@@ -25,6 +25,7 @@ function StarField({ numberOfStars = 100 }) {
   const [positions, setPositions] = useState([])
 
   const addStars = useCallback(() => {
+    setIsPreLoading(true);
     const starsPosition = [];
     for (let i = 0; i < numberOfStars; i++) {
       let x = (Math.random() * 2 - 1) * 10; // Ensure x is within -5 to 5 range
@@ -33,6 +34,7 @@ function StarField({ numberOfStars = 100 }) {
       starsPosition.push([x, y, z]);
     }
     setPositions((prev) => [...starsPosition]);
+    setTimeout(() => setIsPreLoading(false), 2000)
   }, [numberOfStars])
 
   useEffect(addStars, []);
@@ -48,13 +50,13 @@ function StarField({ numberOfStars = 100 }) {
 }
 
 
-function Background() {
+function Background({ setIsPreLoading }) {
 
   return (
     <div id={Styles['container']}>
       <Canvas id={Styles['background']} camera={{ fov: 80, position: [0, 0, 10], near: 1, far: 1000 }} >
         <ambientLight intensity={1} />
-        <StarField numberOfStars={5000} />
+        <StarField numberOfStars={5000} setIsPreLoading={setIsPreLoading} />
       </Canvas>
     </div>
   );
