@@ -33,4 +33,4 @@ function Paginate(array = [], currentPage = 1, itemsPerPage = 10) {
     return array.slice(start_index, last_index);
 }
 
-export { Paginate, NextPage, PrevPage, LastPage, StartPage };
+export default { Paginate, NextPage, PrevPage, LastPage, StartPage };

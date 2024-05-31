@@ -6,7 +6,7 @@ import { FaAnglesRight, FaAnglesLeft, FaAngleLeft, FaAngleRight } from "react-ic
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 import { IoReloadOutline } from "react-icons/io5";
 import ReadableStreamDecoder from "../../utils/ReadableStreamDecoder.js"
-import * as Pagination from "../../utils/Pagination.js";
+import Pagination from "../../utils/Pagination.js";
 
 
 function TechNews() {

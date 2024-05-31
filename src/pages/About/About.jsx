@@ -3,6 +3,7 @@ import Styles from "./About.module.css"
 import vision from "../../assets/vision.svg"
 import method from "../../assets/method.svg"
 import { FaAnglesRight, FaAnglesLeft, FaAngleLeft, FaAngleRight, FaGithub, FaLinkedin } from "react-icons/fa6";
+import Pagination from "../../utils/Pagination.js"
 
 
 
@@ -11,12 +12,12 @@ function About() {
 
     const FOUNDER_NAME = "PranavBarthwal"
     const FOUNDER_LINKEDIN_URL = "https://www.linkedin.com/in/pranavbarthwal03/"
-    const CARDS_PER_PAGE = 10;
+    const CARDS_PER_PAGE = 8;
     const repoName = "cosmoXplore";
 
     const [contributors, setContributors] = useState([]);
     const [founder, setFounder] = useState({});
-    const [page, setPage] = useState(1); // to store pagination number.
+    const [currentPage, setCurrentPage] = useState(1); // to store pagination number.
     const [pageinatedContributors, setPageinatedContributors] = useState([]);
 
 
@@ -24,6 +25,10 @@ function About() {
     useEffect(() => {
         fetchContributors()
     }, [])
+
+    useEffect(() => {
+        setPageinatedContributors(Pagination.Paginate(contributors, currentPage, CARDS_PER_PAGE));
+    }, [contributors, currentPage])
 
     async function fetchContributors() {
         try {
@@ -43,37 +48,6 @@ function About() {
         } catch (error) {
             console.log(error.message);
         }
-    }
-
-    // next page
-    function handleNextPage(e) {
-        setPage((prev) => {
-            if (prev < (Math.ceil(contributors.length / 8)))
-                return prev + 1;
-            return prev;
-        })
-    }
-
-
-    // go to last page
-    function handleLastPage(e) {
-        setPage(Math.ceil(contributors.length / 8));
-    }
-
-
-    // previous page
-    function handlePrevPage(e) {
-        setPage((prev) => {
-            if (prev > 1)
-                return prev - 1;
-            return prev;
-        })
-    }
-
-
-    // go to first page
-    function handleStartPage(e) {
-        setPage(1);
     }
 
 
@@ -121,7 +95,7 @@ function About() {
                     <h2>Our Contributors</h2>
                     <div id={Styles.cards}>
                         {
-                            contributors.map((user) => (
+                            pageinatedContributors.map((user) => (
                                 <div className={Styles.card}>
                                     <img src={user.avatar_url} />
                                     <h3>{user.login}</h3>
@@ -133,11 +107,11 @@ function About() {
                         }
                     </div>
                     <div id={Styles['page-btns']}>
-                        <FaAnglesLeft className={Styles['page-icons']} size={30} onClick={handleStartPage} />
-                        <FaAngleLeft className={Styles['page-icons']} size={25} onClick={handlePrevPage} />
-                        <span id={Styles['page-num']}>{page}</span>
-                        <FaAngleRight className={Styles['page-icons']} size={25} onClick={handleNextPage} />
-                        <FaAnglesRight className={Styles['page-icons']} size={30} onClick={handleLastPage} />
+                        <FaAnglesLeft className={Styles['page-icons']} size={30} onClick={() => setCurrentPage(Pagination.StartPage(contributors, currentPage, CARDS_PER_PAGE))} />
+                        <FaAngleLeft className={Styles['page-icons']} size={25} onClick={() => setCurrentPage(Pagination.PrevPage(contributors, currentPage, CARDS_PER_PAGE))} />
+                        <span id={Styles['page-num']}>{currentPage}</span>
+                        <FaAngleRight className={Styles['page-icons']} size={25} onClick={() => setCurrentPage(Pagination.NextPage(contributors, currentPage, CARDS_PER_PAGE))} />
+                        <FaAnglesRight className={Styles['page-icons']} size={30} onClick={() => setCurrentPage(Pagination.LastPage(contributors, currentPage, CARDS_PER_PAGE))} />
                     </div>
                 </div>
 
