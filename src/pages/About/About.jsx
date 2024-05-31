@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import Styles from "./About.module.css"
 import vision from "../../assets/vision.svg"
 import method from "../../assets/method.svg"
-import { FaGithub } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa6";
+import { FaAnglesRight, FaAnglesLeft, FaAngleLeft, FaAngleRight, FaGithub, FaLinkedin } from "react-icons/fa6";
+
 
 
 
@@ -16,6 +16,9 @@ function About() {
 
     const [contributors, setContributors] = useState([]);
     const [founder, setFounder] = useState({});
+    const [page, setPage] = useState(1); // to store pagination number.
+    const [pageinatedContributors, setPageinatedContributors] = useState([]);
+
 
 
     useEffect(() => {
@@ -40,6 +43,37 @@ function About() {
         } catch (error) {
             console.log(error.message);
         }
+    }
+
+    // next page
+    function handleNextPage(e) {
+        setPage((prev) => {
+            if (prev < (Math.ceil(contributors.length / 8)))
+                return prev + 1;
+            return prev;
+        })
+    }
+
+
+    // go to last page
+    function handleLastPage(e) {
+        setPage(Math.ceil(contributors.length / 8));
+    }
+
+
+    // previous page
+    function handlePrevPage(e) {
+        setPage((prev) => {
+            if (prev > 1)
+                return prev - 1;
+            return prev;
+        })
+    }
+
+
+    // go to first page
+    function handleStartPage(e) {
+        setPage(1);
     }
 
 
@@ -98,7 +132,13 @@ function About() {
                             ))
                         }
                     </div>
-
+                    <div id={Styles['page-btns']}>
+                        <FaAnglesLeft className={Styles['page-icons']} size={30} onClick={handleStartPage} />
+                        <FaAngleLeft className={Styles['page-icons']} size={25} onClick={handlePrevPage} />
+                        <span id={Styles['page-num']}>{page}</span>
+                        <FaAngleRight className={Styles['page-icons']} size={25} onClick={handleNextPage} />
+                        <FaAnglesRight className={Styles['page-icons']} size={30} onClick={handleLastPage} />
+                    </div>
                 </div>
 
             </section>
