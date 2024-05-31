@@ -196,6 +196,7 @@
 @media (max-width:800px) {
     #cards {
         grid-template-columns: repeat(2, 1fr);
+        margin-bottom: 20%;
     }
 }
 
