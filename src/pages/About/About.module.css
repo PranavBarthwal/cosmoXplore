@@ -121,18 +121,18 @@
 
 
 /* contributors */
-#cards {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 20px;
-}
-
 #contributors {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#cards {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 20px;
 }
 
 .card {
@@ -185,4 +185,42 @@
 
 #page-num {
     font-size: 2rem;
+}
+
+@media (max-width:1000px) {
+    #cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width:800px) {
+    #cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width:600px) {
+    #section_1 p {
+        font-size: 1.5rem;
+    }
+
+    #section_2 p,
+    #section_3 p {
+        font-size: 1rem;
+    }
+
+    #section_2 img,
+    #section_3 img {
+        width: 200px;
+    }
+
+    #section_3 {
+        margin-right: 20px;
+    }
+
+    .card {
+        width: 170px;
+        padding: 10px 0;
+    }
+
 }
