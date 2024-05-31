@@ -117,7 +117,7 @@ function TechNews() {
             const allProjects = [];
     
             for (const chunk of projectChunks) {
-                const projectPromises = chunk.map(async (id) => {
+                const projectPromises = chunk.map(async (id) => { //using map for concurrent execution of data
                     let response = await fetch(`https://inplace-ghib.onrender.com/inplace`, {
                         method: "POST",
                         body: JSON.stringify({
@@ -132,7 +132,7 @@ function TechNews() {
                     return { projectId, title, acronym, description, startDateString, endDateString, lastUpdated, statusDescription };
                 });
     
-                const projects = await Promise.all(projectPromises);
+                const projects = await Promise.all(projectPromises); //waits for all promise to resolve
                 allProjects.push(...projects);
     
                 // Update state after processing each chunk
