@@ -48,7 +48,7 @@ function Navbar() {
             <ul>
               <li className="sidebar-list-item rem" onClick={handleMenuClose}><a className="rem-default" href="#">Home</a></li>
               <li className="sidebar-list-item rem" onClick={handleMenuClose}><a className="rem-default" href="#apod">APOD</a></li>
-              <li className="sidebar-list-item rem" onClick={handleMenuClose}><a className="rem-default" href="#mars">MartianImagery</a></li>
+              <li className="sidebar-list-item rem" onClick={handleMenuClose}><a className="rem-default" href="/mars-rover">MartianImagery</a></li>
               <li className="sidebar-list-item rem" onClick={handleMenuClose}><NavLink className="rem-default" to="/nasa-projects">NASA's Projects</NavLink></li>
               <li className="sidebar-list-item rem" onClick={handleMenuClose}><NavLink className="rem-default" to="/about">About us</NavLink></li>
             </ul>
@@ -69,7 +69,7 @@ function Navbar() {
               <a className="nav-link text-light" href="#apod">APoD</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-light" href="#mars">MartianImagery</a>
+              <NavLink className="nav-link text-light" to="/mars-rover">MartianImagery</NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link text-light" to="/nasa-projects">NASA's Projects</NavLink>

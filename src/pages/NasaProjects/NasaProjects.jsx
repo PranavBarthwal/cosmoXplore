@@ -98,31 +98,51 @@ function TechNews() {
         }
     }
 
+    //breaking array into chunks
+    function chunkArray(array, size) {
+        const result = [];
+        for (let i = 0; i < array.length; i += size) {
+            result.push(array.slice(i, i + size));
+        }
+        return result;
+    }
 
     // fetches projects by the projects Id's.
     async function fetchProjects(projectsIds) {
         try {
-            const temp = []
-            for (const id of projectsIds) {
-                let response = await fetch(`https://inplace-ghib.onrender.com/inplace`, {
-                    method: "POST",
-                    body:
-                        JSON.stringify({
+            const chunkSize = 20; //It is the batch size 
+            const projectChunks = chunkArray(projectsIds, chunkSize);
+            const allProjects = [];
+    
+            for (const chunk of projectChunks) {
+                const projectPromises = chunk.map(async (id) => { //using map for concurrent execution of data
+                    let response = await fetch(`https://inplace-ghib.onrender.com/inplace`, {
+                        method: "POST",
+                        body: JSON.stringify({
                             url: `https://techport.nasa.gov/api/projects/${id}?api_key=${import.meta.env.VITE_API_KEY}`
                         }),
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                })
-                const data = await ReadableStreamDecoder(response.body);
-                const { projectId, title, acronym, description, startDateString, endDateString, lastUpdated, statusDescription } = data.project;
-                temp.push({ projectId, title, acronym, description, startDateString, endDateString, lastUpdated, statusDescription });
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                    });
+                    const data = await ReadableStreamDecoder(response.body);
+                    const { projectId, title, acronym, description, startDateString, endDateString, lastUpdated, statusDescription } = data.project;
+                    return { projectId, title, acronym, description, startDateString, endDateString, lastUpdated, statusDescription };
+                });
+    
+                const projects = await Promise.all(projectPromises); //waits for all promise to resolve
+                allProjects.push(...projects);
+    
+                // Update state after processing each chunk
+                setPaginationProjects((prev) => [...prev, ...projects]);
+                setProjects((prev) => [...prev, ...projects]);
+                localStorage.setItem("projects", JSON.stringify(allProjects));
             }
-            setProjects((prev) => [...temp]);
-            setTimeout(() => setIsLoading(false), 2000)
-
+    
+            setTimeout(() => setIsLoading(false), 2000);
+    
         } catch (error) {
-            setTimeout(() => setIsLoading(false), 2000)
+            setTimeout(() => setIsLoading(false), 2000);
             console.log(error.message);
         }
     }
