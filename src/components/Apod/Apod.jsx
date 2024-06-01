@@ -22,13 +22,9 @@ function Apod() {
 
       response = await response.json();
 
-      console.log(response);
-
       setApodInfo((prev) => {
         return { ...prev, url: response.url, explanation: response.explanation, title: response.title, date: response.date, copyright: response.copyright, media_type: response.media_type }
       })
-
-      console.log(apodInfo);
 
     } catch (error) {
       console.log(error.message);
