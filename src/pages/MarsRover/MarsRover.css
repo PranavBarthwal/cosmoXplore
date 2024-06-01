@@ -1,6 +1,6 @@
 .reveal {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(-30px);
     transition: all 1s ease-out;
   }
   
@@ -9,13 +9,13 @@
     transform: translateY(0);
   }
   
-  .reveal-left {
+  .reveal-top {
     opacity: 0;
-    transform: translateX(-30px);
+    transform: translateY(-30px);
     transition: all 1s ease-out;
   }
   
-  .reveal-left.reveal-left {
+  .reveal-top.reveal-top {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }

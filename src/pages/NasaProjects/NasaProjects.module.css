@@ -143,3 +143,25 @@
 #page-num {
     font-size: 2rem;
 }
+
+.reveal {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 1s ease-out;
+  }
+  
+  .reveal.reveal {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 1s ease-out;
+  }
+  
+  .reveal-left.reveal-left {
+    opacity: 1;
+    transform: translateX(0);
+  }

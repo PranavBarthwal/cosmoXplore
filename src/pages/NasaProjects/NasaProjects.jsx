@@ -174,18 +174,49 @@ function TechNews() {
     function handleChange(e) {
         setSearch(e.target.value);
     }
+    
+    useEffect(() => {
+        const section = sec.current;
+        const heading = head.current;
+        const searchWrapper = sea.current;
+        const projectsContainer = pro.current;
+        const pagination = paginat.current;
+        const loadMore = load.current;
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    section.classList.add('reveal');
+                    heading.classList.add('reveal-left');
+                    searchWrapper.classList.add('reveal-left');
+                    projectsContainer.classList.add('reveal-left');
+                    pagination.classList.add('reveal-left');
+                    loadMore.classList.add('reveal-left');
+                }
+            });
+        }, observerOptions);
+
+        observer.observe(section);
+    }, []);
 
     return (
+    <div id={Styles['container']} ref={sec}>
         <div id={Styles['container']}>
 
             <div id={Styles['section-1']}>
 
-                <h1 id={Styles['heading']} >
+                <h1 id={Styles['heading']} ref={head}>
                     Latest Projects by
                     <img src={logo} />
                 </h1>
 
-                <div id={Styles['search-wrapper']}>
+                <div id={Styles['search-wrapper']} ref={sea}>
 
                     <input id={Styles['search']} className={showSearch ? Styles['open'] : Styles['close']} name='search' type='search' placeholder='Search here...' autoComplete='off' onChange={handleChange} />
 
@@ -199,7 +230,7 @@ function TechNews() {
 
             </div>
 
-            <div id={Styles['projects']}>
+            <div id={Styles['projects']} ref={pro}>
 
                 {tempProject.map((project, idx) => (
 
@@ -209,7 +240,7 @@ function TechNews() {
             </div>
             {
                 projects.length ?
-                    <div id={Styles['page-btns']}>
+                    <div id={Styles['page-btns']} ref={paginat}>
                         <FaAnglesLeft className={Styles['page-icons']} size={30} onClick={(e) => setCurrentPage(Pagination.StartPage(projects, currentPage, itemsPerPage))} />
                         <FaAngleLeft className={Styles['page-icons']} size={25} onClick={(e) => setCurrentPage(Pagination.PrevPage(projects, currentPage, itemsPerPage))} />
                         <span id={Styles['page-num']}>{currentPage}</span>
@@ -218,9 +249,10 @@ function TechNews() {
                     </div> : ""
             }
 
-            <button id={Styles['load_more']} onClick={handleLoadMore}>{isLoading ? "Loading..." : "Load More"} <IoReloadOutline className={isLoading ? Styles['reload'] : ''} /></button>
+            <button id={Styles['load_more']} onClick={handleLoadMore}  ref={load}>{isLoading ? "Loading..." : "Load More"} <IoReloadOutline className={isLoading ? Styles['reload'] : ''} /></button>
 
         </div>
+    </div>
     )
 }
 
