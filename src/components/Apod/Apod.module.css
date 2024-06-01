@@ -29,7 +29,7 @@
     }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1150px) {
     .responsive_layout {
         flex-direction: column;
     }
@@ -48,7 +48,6 @@
         max-width: 100%;
     }
 }
-
 
 .apod_img_container {
     width: 400px;
