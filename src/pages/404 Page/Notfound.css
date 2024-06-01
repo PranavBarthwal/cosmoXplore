@@ -36,7 +36,7 @@
       height: 300px;
       display: inline-block;
       margin: auto;
-      overflow-x: hidden;
+      overflowX: hidden;
   }
   
   .error .p {
