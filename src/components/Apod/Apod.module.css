@@ -1,6 +1,7 @@
 .section_title {
     background: -webkit-linear-gradient(#e4d6fb, #8400ff);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 4rem;
     font-weight: bold;
@@ -44,3 +45,25 @@
     display: flex;
     justify-content: center;
 }
+
+.reveal {
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: all 1s ease-out;
+  }
+  
+  .reveal.reveal {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .reveal-top {
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: all 1s ease-out;
+  }
+  
+  .reveal-top.reveal-top {
+    opacity: 1;
+    transform: translateY(0);
+  }

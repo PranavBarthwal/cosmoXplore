@@ -23,6 +23,36 @@ function MarsRover() {
         getMaxDate();
     }, [])
 
+    useEffect(() => {
+        const section = sec.current;
+        const title = titleRef.current;
+        const roverContainer = roverCon.current;
+        const inputContainer = inputCon.current;
+        const displayDetails = display.current;
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    section.classList.add('reveal');
+                    title.classList.add('reveal-top');
+                    roverContainer.classList.add('reveal-top');
+                    inputContainer.classList.add('reveal-top');
+                    if (displayDetails) {
+                        displayDetails.classList.add('reveal-top');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        observer.observe(section);
+    }, [showImages]);
+
     async function displayRover(e) {
         try {
 
@@ -85,11 +115,11 @@ function MarsRover() {
 
 
     return (
-        <>
-            <h1 align="center" className="section_title section_title_mobile" id="mars">Mars Rover Imagery</h1>
+        <div ref={secRef}>
+            <h1 align="center" className="section_title section_title_mobile" id="mars" ref={titleRef}>Mars Rover Imagery</h1>
             <br />
 
-                <div className="rover_container">
+                <div className="rover_container"  ref={roverCon}>
                     <div className="rover_section_img">
                         <img src={img} className="mars_illus" alt="Mars" />
                     </div>
@@ -121,7 +151,7 @@ function MarsRover() {
                 </div>
 
             <div className="ip">
-                <div className="input-group mb-4 input_container">
+                <div className="input-group mb-4 input_container"  ref={inputCon}>
                     <input
                         className="date_input form-control"
                         type="date"
@@ -144,9 +174,9 @@ function MarsRover() {
                 </div>
             </div>
 
-            {showImages && (<DisplayDetails roverInfo={roverInfo} fun={setShowImages} />)}
+            {showImages && (<DisplayDetails roverInfo={roverInfo} fun={setShowImages}  ref={display}/>)}
 
-        </>
+        </div>
     );
 }
 

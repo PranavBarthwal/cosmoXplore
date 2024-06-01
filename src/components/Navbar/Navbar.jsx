@@ -3,6 +3,7 @@ import { NavLink, Link } from 'react-router-dom'
 import logoWhite from '../../assets/logo_white.png';
 import menuFill from '../../assets/menu-fill.svg';
 import './navabar.css'
+import RevealOnScroll from 'RevealOnScroll';
 
 function Navbar() {
 
@@ -29,8 +30,8 @@ function Navbar() {
     }
   }, []);
 
-
   return (
+    <RevealOnScroll>
     <nav className="navbar navbar-expand-lg bg-*">
       <div className="container-fluid pt-2">
         <a className="navbar-brand" href="#">
@@ -87,6 +88,7 @@ function Navbar() {
 
       </div>
     </nav>
+    </RevealOnScroll>
   );
 }
 
