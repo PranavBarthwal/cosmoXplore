@@ -1,15 +1,13 @@
 import React from "react";
 import img from "../../assets/feel the fear and do it anyway.png";
-import '../../App.css'
+import "../../App.css";
 
-function DisplayDetails({ roverInfo }) {
-
+function DisplayDetails({ roverInfo, fun }) {
   return (
     <>
       <div className="rover_display">
         <div className="inner_container">
           <div className="image_div">
-
             <img
               id="roverImg"
               src={roverInfo.url ? roverInfo.url : img}
@@ -23,19 +21,25 @@ function DisplayDetails({ roverInfo }) {
               <div className="row">
                 <div className="card">
                   <h4>Earth Date</h4>
-                  <p className="date">{roverInfo.earthDate ? roverInfo.earthDate : "...."}</p>
+                  <p className="date">
+                    {roverInfo.earthDate ? roverInfo.earthDate : "...."}
+                  </p>
                 </div>
               </div>
               <div className="row">
                 <div className="card">
                   <h4>Rover Name</h4>
-                  <p className="roverName">{roverInfo.roverName ? roverInfo.roverName : "...."}</p>
+                  <p className="roverName">
+                    {roverInfo.roverName ? roverInfo.roverName : "...."}
+                  </p>
                 </div>
               </div>
               <div className="row">
                 <div className="card">
                   <h4>Camera</h4>
-                  <p className="camera">{roverInfo.cameraName ? roverInfo.cameraName : "...."}</p>
+                  <p className="camera">
+                    {roverInfo.cameraName ? roverInfo.cameraName : "...."}
+                  </p>
                 </div>
               </div>
             </div>
@@ -44,26 +48,34 @@ function DisplayDetails({ roverInfo }) {
               <div className="row">
                 <div className="card">
                   <h4>Launch Date</h4>
-                  <p className="launch">{roverInfo.launchDate ? roverInfo.launchDate : "...."}</p>
+                  <p className="launch">
+                    {roverInfo.launchDate ? roverInfo.launchDate : "...."}
+                  </p>
                 </div>
               </div>
               <div className="row">
                 <div className="card">
                   <h4>Land Date</h4>
-                  <p className="land">{roverInfo.landingDate ? roverInfo.landingDate : "...."}</p>
+                  <p className="land">
+                    {roverInfo.landingDate ? roverInfo.landingDate : "...."}
+                  </p>
                 </div>
               </div>
               <div className="row">
                 <div className="card">
                   <h4>Status</h4>
-                  <p className="status">{roverInfo.status ? roverInfo.status : "...."}</p>
+                  <p className="status">
+                    {roverInfo.status ? roverInfo.status : "...."}
+                  </p>
                 </div>
               </div>
             </div>
           </div>
+
+          <div id="close-btn">
+            <button onClick={() => fun(false)}>X</button>
+          </div>
         </div>
-
-
       </div>
     </>
   );
