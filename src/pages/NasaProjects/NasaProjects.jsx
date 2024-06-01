@@ -16,7 +16,6 @@ function TechNews() {
     const [search, setSearch] = useState(""); // to store search query.
     const [projects, setProjects] = useState([]); // to store projects.
     const [tempProject, setTempProjects] = useState([]); // to stote temporary projects.
-    // const [paginationProjects, setPaginationProjects] = useState([]); // to store projects for pagination.
     const [currentPage, setCurrentPage] = useState(1); // to store pagination number.
     const [week, setWeek] = useState(1); // to set weeks for fetching data.
     const itemsPerPage = 10;
@@ -113,7 +112,7 @@ function TechNews() {
             const chunkSize = 20; //It is the batch size 
             const projectChunks = chunkArray(projectsIds, chunkSize);
             const allProjects = [];
-    
+
             for (const chunk of projectChunks) {
                 const projectPromises = chunk.map(async (id) => { //using map for concurrent execution of data
                     let response = await fetch(`https://inplace-ghib.onrender.com/inplace`, {
@@ -129,18 +128,17 @@ function TechNews() {
                     const { projectId, title, acronym, description, startDateString, endDateString, lastUpdated, statusDescription } = data.project;
                     return { projectId, title, acronym, description, startDateString, endDateString, lastUpdated, statusDescription };
                 });
-    
+
                 const projects = await Promise.all(projectPromises); //waits for all promise to resolve
                 allProjects.push(...projects);
-    
+
                 // Update state after processing each chunk
-                setPaginationProjects((prev) => [...prev, ...projects]);
                 setProjects((prev) => [...prev, ...projects]);
                 localStorage.setItem("projects", JSON.stringify(allProjects));
             }
-    
+
             setTimeout(() => setIsLoading(false), 2000);
-    
+
         } catch (error) {
             setTimeout(() => setIsLoading(false), 2000);
             console.log(error.message);
