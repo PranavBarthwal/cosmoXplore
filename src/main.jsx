@@ -1,11 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } from "react-router-dom"
+import './index.css'
 import App from './App.jsx'
 import Home from "./pages/Home/Home.jsx"
 import NasaProjects from "./pages/NasaProjects/NasaProjects.jsx"
 import NotFoundPage from "./pages/404 Page/NotfoundPage.jsx"
 import './index.css'
 import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } from "react-router-dom"
+import About from "./pages/About/About.jsx"
 import MarsRover from './pages/MarsRover/MarsRover.jsx'
 
 const router = createBrowserRouter(
@@ -14,6 +17,7 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path='nasa-projects' element={<NasaProjects />} />
       <Route path='*' element={<NotFoundPage />} />
+      <Route path='about' element={<About />} />
       <Route path='mars-rover' element={<MarsRover/>}/>
     </Route>
   )
