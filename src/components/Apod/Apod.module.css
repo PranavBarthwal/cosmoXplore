@@ -1,3 +1,5 @@
+/* apod.module.css */
+
 .section_title {
     background: -webkit-linear-gradient(#e4d6fb, #8400ff);
     -webkit-background-clip: text;
@@ -15,22 +17,50 @@
         width: 100%;
     }
 
-    .apod_img {
-        height: 350px;
-        width: 350px;
+    .apod_img_container {
+        width: 100%;
+        height: auto;
     }
 
+    .apod_img {
+        height: auto;
+        width: 100%;
+        max-width: 100%;
+    }
 }
 
+@media (max-width: 1200px) {
+    .responsive_layout {
+        flex-direction: column;
+    }
+
+    .col-lg-7, .apod_img_container {
+        width: 100%;
+    }
+
+    .img {
+        width: 100%;
+    }
+
+    .apod_img {
+        height: auto;
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+
 .apod_img_container {
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: auto;
 }
 
 #apod_img {
-    aspect-ratio: 5 / 4;
+    width: 100%;
+    height: auto;
     border-radius: 25px;
     position: relative;
+    object-fit: cover;
 }
 
 #apod_img:hover {
@@ -39,8 +69,7 @@
 }
 
 .img {
-    width: 500px;
-    height: 400px;
+    width: 100%;
     display: flex;
     justify-content: center;
 }
