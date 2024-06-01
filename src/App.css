@@ -13,6 +13,7 @@
   -webkit-text-fill-color: transparent;
   font-size: 4rem;
   font-weight: bold;
+  border-top: 20dvh solid transparent;
 }
 
 .ip {
@@ -26,7 +27,8 @@
   width: 20%;
   align-items: center;
   justify-content: center;
-  outline: none;
+  outline:none;
+  border: none;
 }
 
 .date_input {
@@ -95,7 +97,7 @@
   border-style: solid;
   border-width: 1px;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
 
@@ -513,4 +515,23 @@
   text-decoration: none;
   color: inherit;
   cursor: pointer;
+}
+
+#close-btn{
+  position: relative;
+  bottom: 250px;
+}
+#close-btn button{
+  padding: 5px 15px;
+  font-size: 1rem;
+  border-radius: 10px;
+  font-weight: bold;
+  color: #40019a;
+  border: none;
+}
+
+#close-btn button:hover{
+  color: white;
+  background: #40019a;
+  box-shadow: 0 0 10px white;
 }
