@@ -6,6 +6,7 @@ import App from './App.jsx'
 import Home from "./pages/Home/Home.jsx"
 import NasaProjects from "./pages/NasaProjects/NasaProjects.jsx"
 import About from "./pages/About/About.jsx"
+import MarsRover from './pages/MarsRover/MarsRover.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -13,6 +14,7 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path='nasa-projects' element={<NasaProjects />} />
       <Route path='about' element={<About />} />
+      <Route path='mars-rover' element={<MarsRover/>}/>
     </Route>
   )
 )

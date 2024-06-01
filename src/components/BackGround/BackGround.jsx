@@ -37,7 +37,7 @@ function StarField({ numberOfStars = 100 }) {
 
   useEffect(addStars, []);
   return (
-    <group ref={starFieldRef} rotation={[0, 0, 0]}>
+    <group ref={starFieldRef} rotation={[0, 0, -1]}>
       {
         positions.map((position, index) => (
           <Star key={index} position={position} />
