@@ -2,14 +2,11 @@ import React, { useEffect, useState } from 'react';
 import logo from "../../assets/NASA_logo.svg";
 import Styles from "./NasaProjects.module.css";
 import { FaSearch } from "react-icons/fa";
-import { FaAnglesRight } from "react-icons/fa6";
+import { FaAnglesRight, FaAnglesLeft, FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 import { IoReloadOutline } from "react-icons/io5";
-import { FaAnglesLeft } from "react-icons/fa6";
-import { FaAngleLeft } from "react-icons/fa6";
-import { FaAngleRight } from "react-icons/fa6";
 import ReadableStreamDecoder from "../../utils/ReadableStreamDecoder.js"
-
+import Pagination from "../../utils/Pagination.js";
 
 
 function TechNews() {
@@ -18,10 +15,11 @@ function TechNews() {
     const [isLoading, setIsLoading] = useState(true); // to show loading state.
     const [search, setSearch] = useState(""); // to store search query.
     const [projects, setProjects] = useState([]); // to store projects.
-    const [tempProject, setTempProjects] = useState(JSON.parse(localStorage.getItem("projects")) || []); // to stote temporary projects.
-    const [paginationProjects, setPaginationProjects] = useState([]); // to store projects for pagination.
-    const [page, setPage] = useState(1); // to store pagination number.
+    const [tempProject, setTempProjects] = useState([]); // to stote temporary projects.
+    // const [paginationProjects, setPaginationProjects] = useState([]); // to store projects for pagination.
+    const [currentPage, setCurrentPage] = useState(1); // to store pagination number.
     const [week, setWeek] = useState(1); // to set weeks for fetching data.
+    const itemsPerPage = 10;
 
     // Adding on scroll event listener for auto closing search bar.
     useEffect(() => {
@@ -39,10 +37,10 @@ function TechNews() {
     }, [week])
 
 
-    // to paginate when new projects are fetched or page is changed
+    // to paginate when new projects are fetched or currentPage is changed
     useEffect(() => {
-        Pagination();
-    }, [page, projects, paginationProjects])
+        setTempProjects(Pagination.Paginate(projects, currentPage, itemsPerPage));
+    }, [currentPage, projects])
 
 
     // debouncing the search query
@@ -100,33 +98,51 @@ function TechNews() {
         }
     }
 
+    //breaking array into chunks
+    function chunkArray(array, size) {
+        const result = [];
+        for (let i = 0; i < array.length; i += size) {
+            result.push(array.slice(i, i + size));
+        }
+        return result;
+    }
 
     // fetches projects by the projects Id's.
     async function fetchProjects(projectsIds) {
         try {
-            const temp = []
-            for (const id of projectsIds) {
-                let response = await fetch(`https://inplace-ghib.onrender.com/inplace`, {
-                    method: "POST",
-                    body:
-                        JSON.stringify({
+            const chunkSize = 20; //It is the batch size 
+            const projectChunks = chunkArray(projectsIds, chunkSize);
+            const allProjects = [];
+    
+            for (const chunk of projectChunks) {
+                const projectPromises = chunk.map(async (id) => { //using map for concurrent execution of data
+                    let response = await fetch(`https://inplace-ghib.onrender.com/inplace`, {
+                        method: "POST",
+                        body: JSON.stringify({
                             url: `https://techport.nasa.gov/api/projects/${id}?api_key=${import.meta.env.VITE_API_KEY}`
                         }),
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                })
-                const data = await ReadableStreamDecoder(response.body);
-                const { projectId, title, acronym, description, startDateString, endDateString, lastUpdated, statusDescription } = data.project;
-                temp.push({ projectId, title, acronym, description, startDateString, endDateString, lastUpdated, statusDescription });
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                    });
+                    const data = await ReadableStreamDecoder(response.body);
+                    const { projectId, title, acronym, description, startDateString, endDateString, lastUpdated, statusDescription } = data.project;
+                    return { projectId, title, acronym, description, startDateString, endDateString, lastUpdated, statusDescription };
+                });
+    
+                const projects = await Promise.all(projectPromises); //waits for all promise to resolve
+                allProjects.push(...projects);
+    
+                // Update state after processing each chunk
+                setPaginationProjects((prev) => [...prev, ...projects]);
+                setProjects((prev) => [...prev, ...projects]);
+                localStorage.setItem("projects", JSON.stringify(allProjects));
             }
-            setPaginationProjects((prev) => [...temp]);
-            setProjects((prev) => [...temp]);
-            localStorage.setItem("projects", JSON.stringify(temp));
-            setTimeout(() => setIsLoading(false), 2000)
-
+    
+            setTimeout(() => setIsLoading(false), 2000);
+    
         } catch (error) {
-            setTimeout(() => setIsLoading(false), 2000)
+            setTimeout(() => setIsLoading(false), 2000);
             console.log(error.message);
         }
     }
@@ -142,12 +158,13 @@ function TechNews() {
     // search for projects
     function handleSearch() {
         try {
-            setPaginationProjects(
+            setTempProjects(
                 projects.filter((item) => (
                     item.title.toLowerCase().search(search.toLowerCase()) > -1
                 ))
             );
-            setPage(1)
+            setCurrentPage(1)
+            Pagination.Paginate(tempProject, currentPage, itemsPerPage)
         } catch (error) {
             console.log(error.message);
         }
@@ -157,49 +174,6 @@ function TechNews() {
     function handleChange(e) {
         setSearch(e.target.value);
     }
-
-
-    // next page
-    function handleNextPage(e) {
-        setPage((prev) => {
-            if (prev < (Math.ceil(paginationProjects.length / 10)))
-                return prev + 1;
-            return prev;
-        })
-    }
-
-
-    // go to last page
-    function handleLastPage(e) {
-        setPage(Math.ceil(paginationProjects.length / 10));
-    }
-
-
-    // previous page
-    function handlePrevPage(e) {
-        setPage((prev) => {
-            if (prev > 1)
-                return prev - 1;
-            return prev;
-        })
-    }
-
-
-    // go to first page
-    function handleStartPage(e) {
-        setPage(1);
-    }
-
-
-    // to make pages
-    function Pagination() {
-        setTempProjects((prev) => {
-            const last_index = page * 10;
-            const start_index = last_index - 10;
-            return paginationProjects.slice(start_index, last_index);
-        })
-    }
-
 
     return (
         <div id={Styles['container']}>
@@ -236,15 +210,15 @@ function TechNews() {
             {
                 projects.length ?
                     <div id={Styles['page-btns']}>
-                        <FaAnglesLeft className={Styles['page-icons']} size={30} onClick={handleStartPage} />
-                        <FaAngleLeft className={Styles['page-icons']} size={25} onClick={handlePrevPage} />
-                        <span id={Styles['page-num']}>{page}</span>
-                        <FaAngleRight className={Styles['page-icons']} size={25} onClick={handleNextPage} />
-                        <FaAnglesRight className={Styles['page-icons']} size={30} onClick={handleLastPage} />
+                        <FaAnglesLeft className={Styles['page-icons']} size={30} onClick={(e) => setCurrentPage(Pagination.StartPage(projects, currentPage, itemsPerPage))} />
+                        <FaAngleLeft className={Styles['page-icons']} size={25} onClick={(e) => setCurrentPage(Pagination.PrevPage(projects, currentPage, itemsPerPage))} />
+                        <span id={Styles['page-num']}>{currentPage}</span>
+                        <FaAngleRight className={Styles['page-icons']} size={25} onClick={(e) => setCurrentPage(Pagination.NextPage(projects, currentPage, itemsPerPage))} />
+                        <FaAnglesRight className={Styles['page-icons']} size={30} onClick={(e) => setCurrentPage(Pagination.LastPage(projects, currentPage, itemsPerPage))} />
                     </div> : ""
             }
 
-            <button id={Styles['load_more']} onClick={handleLoadMore}>Load More <IoReloadOutline className={isLoading ? Styles['reload'] : ''} /></button>
+            <button id={Styles['load_more']} onClick={handleLoadMore}>{isLoading ? "Loading..." : "Load More"} <IoReloadOutline className={isLoading ? Styles['reload'] : ''} /></button>
 
         </div>
     )

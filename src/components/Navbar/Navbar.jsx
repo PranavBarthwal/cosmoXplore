@@ -66,8 +66,9 @@ function Navbar() {
             <ul>
               <li className="sidebar-list-item rem" onClick={() => handleNavigation('')}><a className="rem-default">Home</a></li>
               <li className="sidebar-list-item rem" onClick={() => handleNavigation('apod')}><a className="rem-default">APOD</a></li>
-              <li className="sidebar-list-item rem" onClick={() => handleNavigation('mars')}><a className="rem-default">MartianImagery</a></li>
+              <li className="sidebar-list-item rem" onClick={() => handleNavigation('mars-rover')}><a className="rem-default">MartianImagery</a></li>
               <li className="sidebar-list-item rem" onClick={handleMenuClose}><NavLink className="rem-default" to="/nasa-projects">NASA's Projects</NavLink></li>
+              <li className="sidebar-list-item rem" onClick={handleMenuClose}><NavLink className="rem-default" to="/about">About us</NavLink></li>
             </ul>
             <a onClick={() => {navigate('/#contact')}} className="sidebar-contact rem-default rem">
               <button className="btn btn-outline-light rounded-pill" type="submit">Contact Us</button>
@@ -85,11 +86,14 @@ function Navbar() {
             <li className="nav-item" onClick={() => handleNavigation('apod')}>
               <a className="nav-link text-light">APoD</a>
             </li>
-            <li className="nav-item" onClick={() => handleNavigation('mars')}>
-              <a className="nav-link text-light">MartianImagery</a>
+            <li className="nav-item">
+              <NavLink className="nav-link text-light" to="/mars-rover">MartianImagery</NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link text-light" to="/nasa-projects">NASA's Projects</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link text-light" to="/about">About us</NavLink>
             </li>
             <li className="nav-item" onClick={() => {navigate('/#contact')}}>
               <a>

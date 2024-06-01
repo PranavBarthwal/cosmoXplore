@@ -27,13 +27,16 @@
    npm install
    ```
 
-4. **Start the Server:** Start the server:
+4. **Add Environment Variables:** Create a `.env` file and add Environment Variables as mentioned in `.env.demo` file.
+
+
+5. **Start the Server:** Start the server:
 
    ```bash
    npm run dev
    ```
 
-5. **Local Host:** Access the project on your local host at:
+6. **Local Host:** Access the project on your local host at:
 
    ```bash
    http://localhost:5173/
