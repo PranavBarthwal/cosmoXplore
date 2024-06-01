@@ -9,3 +9,7 @@
     text-align: center;
     z-index: 100;
 }
+
+a {
+    cursor: pointer;
+}
