@@ -425,42 +425,57 @@
 
 .sidebar-icon {
   position: absolute;
-  top: 80px;
-  right: 20px;
+  top: 30px;
+  right: 40px;
   z-index: 10;
 }
 
 .sidebar-list-item {
   list-style-type: none;
   padding-bottom: 8px;
+  padding-top: 3px;
 }
 
-@media (min-width: 990px) {
+@media (min-width: 992px) {
   .sidebar-icon {
+    display: none;
+  }
+  .sidebar-menu {
     display: none;
   }
 }
 
 .sidebar-contact {
-  display: flex;
+   display: flex;
   justify-content: center;
+  align-items: center; 
+  margin-left: 25px;
 }
 
 .sidebar-menu {
   position: fixed;
   top: 80px;
   right: -200px;
-  width: 160px;
-  height: 160px;
-  background-color: inherit;
+  width: 210px;
+  height: auto;
   transition: right 0.3s ease;
   z-index: 5;
+  background-color: #06176250;
+  padding-right: 21px;
+  padding-top: 10px;
+  border-radius: 20px;
 }
 
 .sidebar-menu.active {
-  right: 0;
+  right: 10px;
 }
 
+/* Media queries for Brand name responsive*/
+@media screen and (max-width : 515px) {
+  .brandName{
+    width: 70vw;
+  }
+}
 .rem-default {
   text-decoration: none;
   color: inherit;

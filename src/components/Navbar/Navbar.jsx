@@ -34,7 +34,7 @@ function Navbar() {
     <nav className="navbar navbar-expand-lg bg-*">
       <div className="container-fluid pt-2">
         <a className="navbar-brand" href="#">
-          <img src={logoWhite} alt="Bootstrap" width="370" />
+          <img src={logoWhite} alt="Bootstrap" width="370" className='brandName'/>
         </a>
 
         {/* burger menu for mobiles */}
