@@ -19,15 +19,11 @@ function Apod() {
     try {
       let response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${import.meta.env.VITE_API_KEY}`);
       response = await response.json();
-      setApodInfo((prev) => ({
-        ...prev,
-        url: response.url,
-        explanation: response.explanation,
-        title: response.title,
-        date: response.date,
-        copyright: response.copyright,
-        media_type: response.media_type,
-      }));
+
+      setApodInfo((prev) => {
+        return { ...prev, url: response.url, explanation: response.explanation, title: response.title, date: response.date, copyright: response.copyright, media_type: response.media_type }
+      })
+
     } catch (error) {
       console.log(error.message);
     }
