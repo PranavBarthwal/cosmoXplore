@@ -2,9 +2,9 @@
 
 ## Issue number 
 <!-- Please make sure issue number is mention in Pull Request else PR will not be merged. 
-eg : Issue No. : #4 -->
+eg : closes: #4 -->
 
-Issue No. : 
+closes: 
 
 
 ## Video/Screenshots (mandatory)
