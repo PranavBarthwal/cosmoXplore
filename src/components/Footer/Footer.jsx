@@ -1,19 +1,27 @@
 import React from 'react';
 import img from '../../assets/logo_white.png';
-
+import './Footer.css';
 
 function Footer() {
-  const currentYear = new Date().getFullYear();
-  return (
-    <div className="container">
-      <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-        <a href="/" className="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-          <img src={img} width="150" alt="Logo" />
-        </a>
-        <p className="col-md-4 mb-0 text-light">©️ {currentYear} CosmoXplore India, Inc. All Rights Reserved</p>
-      </footer>
-    </div>
-  );
+    const currentYear = new Date().getFullYear();
+    return (
+        <div className="container mx-auto px-4">
+            <footer className="footer flex flex-col justify-center items-center py-3 my-4 border-t">
+                <a
+                    href="/"
+                    className="logo-link flex items-center justify-center mb-3"
+                >
+                    <img src={img} width="150" alt="Logo" />
+                </a>
+                <div className="text-container w-full flex justify-center">
+                    <p className="footer-text text-center">
+                        ©️ {currentYear} CosmoXplore India, Inc. All Rights Reserved
+                    </p>
+                </div>
+            </footer>
+        </div>
+    );
 }
 
 export default Footer;
+
