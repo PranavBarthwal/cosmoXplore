@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } from "react-router-dom"
+
 import './index.css'
 import App from './App.jsx'
 import Home from "./pages/Home/Home.jsx"
