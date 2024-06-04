@@ -9,3 +9,11 @@
     text-align: center;
     z-index: 100;
 }
+.sidebar-icon{
+    margin-top: -50px;
+}
+@media screen and (max-width:500px) {
+    .navbar .navbar-brand img{
+        width:70%;
+    }
+}
