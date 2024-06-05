@@ -10,7 +10,6 @@ import SpritOpp from "../../components/3D_Rovers/SpritOpp.jsx";
 
 function MarsRover() {
 
-    const [showImages, setShowImages] = useState(true);
     const [userDate, setUserDate] = useState("");
     const [roverInfo, setRoverInfo] = useState({
         url: "",
@@ -27,10 +26,15 @@ function MarsRover() {
         getMaxDate();
     }, [])
 
+    useEffect(() => {
+        if (userDate !== "")
+            displayRover()
+    }, [maxDate])
+
     async function displayRover(e) {
         try {
 
-            e.preventDefault();
+            e?.preventDefault();
 
             if (userDate == "") {
                 toastify("Enter Date", false)
@@ -45,7 +49,6 @@ function MarsRover() {
 
             if (response.photos.length === 0) {
                 toastify("No images for selected date", false)
-                setShowImages(false)
                 setRoverInfo({
                     url: "",
                     earthDate: "",
@@ -63,8 +66,6 @@ function MarsRover() {
             setRoverInfo((prev) => {
                 return { ...prev, url: image_from_rover.img_src, earthDate: image_from_rover.earth_date, roverName: image_from_rover.rover.name, cameraName: image_from_rover.camera.full_name, launchDate: image_from_rover.rover.launch_date, landingDate: image_from_rover.rover.landing_date, status: image_from_rover.rover.status };
             })
-
-            setShowImages(true)
 
         } catch (error) {
             console.log(error.message);
@@ -105,9 +106,7 @@ function MarsRover() {
                     trove of captivating images captured by these robotic explorers.
                     Each rover, armed with sophisticated cameras, has documented the
                     Martian terrain, unveiling its mysteries one snapshot at a time.
-                    This repository is a testament to the marvels of technology and
-                    the spirit of scientific curiosity that drives
-                    humanity to push the boundaries of exploration. But how do you, the
+                    But how do you, the
                     explorer, access this vast collection? Fear not, for we present a
                     user-friendly approach that allows you to effortlessly navigate
                     through the visual wonders of Mars. By simply entering the Earth
@@ -117,7 +116,7 @@ function MarsRover() {
                 </p>
             </section>
 
-
+            <hr />
 
             <section id={Styles['section-2']}>
                 <h1 className={Styles['section_title']}>Mars Rovers</h1>
@@ -140,7 +139,6 @@ function MarsRover() {
                         </p>
 
                     </div>
-
                     <div className={Styles['rover-card']}>
 
                         <h1><u>Perseverance</u></h1>
@@ -180,9 +178,10 @@ function MarsRover() {
                 </div>
             </section>
 
+            <hr />
 
             <section id={Styles['section-3']}>
-                <h1>Mars Images</h1>
+                <h1 className={Styles['section_title']}>Mars Images</h1>
 
                 <div id={Styles['calender']}>
                     <input
@@ -206,7 +205,7 @@ function MarsRover() {
                     </button>
                 </div>
 
-                {showImages && (<DisplayDetails roverInfo={roverInfo} fun={setShowImages} />)}
+                <DisplayDetails roverInfo={roverInfo} />
             </section>
 
         </div>

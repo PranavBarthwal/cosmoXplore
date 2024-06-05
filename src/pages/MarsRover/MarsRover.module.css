@@ -6,6 +6,9 @@
     min-height: 100vh;
 }
 
+#container hr {
+    width: 90%;
+}
 
 /* section - 1 */
 #section-1 {
@@ -23,6 +26,21 @@
     width: 500px;
 }
 
+@media (max-width:600px) {
+    #container h1 {
+        font-size: 2rem;
+    }
+
+    #section-1 img {
+        width: 300px;
+    }
+
+    #section-1 p {
+        font-size: 1rem;
+    }
+
+}
+
 /* section - 2 */
 #section-2 {
     /* background: red; */
@@ -33,6 +51,7 @@
 
 #section-2>div {
     margin-top: 10%;
+
 }
 
 .rover-card {
@@ -41,6 +60,7 @@
     align-items: center;
     flex-direction: column;
     margin-bottom: 10%;
+    overflow: hidden;
 }
 
 .rover {
@@ -62,8 +82,17 @@
     font-size: 1.5rem;
 }
 
+@media (max-width:600px) {
+    .rover {
+        width: 400px;
+    }
 
-/* calender */
+    .rover-card p {
+        font-size: 1rem;
+    }
+}
+
+/* section - 3 */
 #section-3 {
     width: 100%;
     height: 100%;
@@ -71,6 +100,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+}
+
+#section-3 h1 {
+    margin-bottom: 5%;
 }
 
 #calender {
@@ -117,6 +150,12 @@
     color: white;
     box-shadow: 0 0 15px white;
     cursor: pointer;
+}
+
+@media (max-width:600px) {
+    #calender {
+        width: 70%;
+    }
 }
 
 .section_title {

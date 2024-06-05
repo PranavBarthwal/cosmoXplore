@@ -3,7 +3,7 @@ import img from "../../assets/feel the fear and do it anyway.png";
 import Styles from "./DisplayDetails.module.css"
 
 
-function DisplayDetails({ roverInfo, fun }) {
+function DisplayDetails({ roverInfo }) {
   return (
     <div id={Styles['container']}>
 

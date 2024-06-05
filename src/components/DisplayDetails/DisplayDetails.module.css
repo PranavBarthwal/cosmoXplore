@@ -45,3 +45,24 @@
     color: white;
     transition: all 0.5s ease-in-out;
 }
+
+@media (max-width:600px) {
+
+    #container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        height: fit-content;
+        gap: 20px;
+    }
+
+    #rover-img img {
+        width: 350px;
+    }
+
+    .rover-info-items {
+        width: 150px;
+    }
+
+}
