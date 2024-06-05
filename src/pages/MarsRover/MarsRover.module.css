@@ -24,6 +24,18 @@
 
 #section-1 img {
     width: 500px;
+    animation: leviate 2s ease-in-out infinite;
+}
+
+#section-1 img:hover {
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgb(187, 9, 63);
+}
+
+@keyframes leviate {
+    50% {
+        transform: translateY(20px);
+    }
 }
 
 @media (max-width:600px) {

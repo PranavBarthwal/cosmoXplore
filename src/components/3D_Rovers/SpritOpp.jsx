@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 import { useGLTF, OrbitControls } from '@react-three/drei'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { DoubleSide } from 'three'
+import { memo } from 'react';
 
 
 function Scene(props) {
@@ -84,7 +85,7 @@ function Scene(props) {
 }
 
 
-export default function SpritOpp(props) {
+const SpritOpp = memo(function SpritOpp(props) {
     return (
         <Canvas camera={{ fov: 80, position: [0, 0, 5] }} shadows style={{ height: "400px" }}>
             <OrbitControls minDistance={4.0} maxDistance={5.0} />
@@ -98,6 +99,8 @@ export default function SpritOpp(props) {
         </Canvas>
 
     )
-}
+})
 
 useGLTF.preload('/24883_MER_static.glb')
+
+export default SpritOpp  

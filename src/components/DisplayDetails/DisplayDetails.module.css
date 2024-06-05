@@ -1,6 +1,6 @@
 #container {
     height: 550px;
-    width: 70vw;
+    width: fit-content;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(1, 1fr);
@@ -10,10 +10,14 @@
     border-radius: 20px;
 }
 
-#container img {
+#rover-img img {
     width: 500px;
     border-radius: 20px;
     border: 1px solid white;
+}
+
+#rover-img img:hover {
+    box-shadow: 0 0 30px rgb(204, 0, 255);
 }
 
 #rover-info {
@@ -43,6 +47,7 @@
 .rover-info-items:hover {
     background: rgb(132, 0, 255);
     color: white;
+    box-shadow: 0 0 10px white;
     transition: all 0.5s ease-in-out;
 }
 

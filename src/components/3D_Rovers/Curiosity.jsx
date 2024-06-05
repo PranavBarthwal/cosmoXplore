@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { memo, useRef } from 'react'
 import { useGLTF, OrbitControls } from '@react-three/drei'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { DoubleSide } from 'three'
@@ -87,10 +87,7 @@ function Scene(props) {
 
 }
 
-
-
-
-export default function Curiosity(props) {
+const Curiosity = memo(function Model(props) {
     return (
         <Canvas camera={{ fov: 80, position: [0, 0, 5] }} shadows style={{ height: "400px", width: "400px" }}>
             <OrbitControls minDistance={4.0} maxDistance={5.0} />
@@ -103,6 +100,8 @@ export default function Curiosity(props) {
 
         </Canvas>
     )
-}
+})
 
 useGLTF.preload('/24584_Curiosity_static.glb')
+
+export default Curiosity

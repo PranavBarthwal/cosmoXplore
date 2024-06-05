@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 import { useGLTF, OrbitControls } from '@react-three/drei'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { DoubleSide } from 'three'
+import { memo } from 'react';
 
 
 function Scene(props) {
@@ -1671,7 +1672,7 @@ function Scene(props) {
     )
 }
 
-export default function Perseverance(props) {
+const Perseverance = memo(function Perseverance(props) {
 
     return (
         <Canvas camera={{ fov: 80, position: [0, 0, 5] }} shadows style={{ height: "400px" }}>
@@ -1686,6 +1687,8 @@ export default function Perseverance(props) {
         </Canvas>
 
     )
-}
+})
 
 useGLTF.preload('/25042_Perseverance.glb')
+
+export default Perseverance
