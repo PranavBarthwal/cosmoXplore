@@ -1,0 +1,96 @@
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+/* section - 1 */
+#section-1 {
+    width: 90%;
+    text-align: center
+}
+
+#section-1 p {
+    margin-top: 5%;
+    padding: 2%;
+    font-size: 1.2rem;
+}
+
+#section-1 img {
+    width: 500px;
+}
+
+/* section - 2 */
+#section-2 {
+    /* background: red; */
+    width: 90%;
+}
+
+#section-2>div {
+    /* background: green; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    justify-items: center;
+    gap: 30px;
+}
+
+.rover-wrapper {
+    /* background: yellow; */
+    height: 400px;
+    width: 500px;
+}
+
+
+/* calender */
+#calender {
+    /* background: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 45%;
+    gap: 2%;
+}
+
+#calender input {
+    outline: none;
+    border: 2px solid #9000ff;
+    border-radius: 40px;
+    background: transparent;
+    color: white;
+    width: 90%;
+}
+
+#calender input::-webkit-calendar-picker-indicator {
+    filter: invert(100%);
+    cursor: pointer;
+}
+
+#calender input:focus {
+    outline: none;
+    border: 2px solid #9000ff;
+    box-shadow: 0 0 15px white;
+    color: white;
+}
+
+#calender button {
+    outline: none;
+    color: #8400ff;
+    background: white;
+    border-left: none;
+    border-radius: 40px;
+    border: none;
+}
+
+#calender button:hover {
+    background: #8400ff;
+    color: white;
+    box-shadow: 0 0 15px white;
+    cursor: pointer;
+}
