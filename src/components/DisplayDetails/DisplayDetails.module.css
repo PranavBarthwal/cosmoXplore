@@ -1,0 +1,47 @@
+#container {
+    height: 550px;
+    width: 70vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    padding: 20px;
+    margin: 50px;
+    border: 2px solid white;
+    border-radius: 20px;
+}
+
+#container img {
+    width: 500px;
+    border-radius: 20px;
+    border: 1px solid white;
+}
+
+#rover-info {
+    height: 500px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    align-content: center;
+    column-gap: 10px;
+    padding: 10px;
+}
+
+.rover-info-items {
+    height: 150px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+    background: white;
+    color: rgb(132, 0, 255);
+    border-radius: 20px;
+}
+
+.rover-info-items:hover {
+    background: rgb(132, 0, 255);
+    color: white;
+    transition: all 0.5s ease-in-out;
+}

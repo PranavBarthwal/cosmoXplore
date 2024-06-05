@@ -10,7 +10,7 @@ import SpritOpp from "../../components/3D_Rovers/SpritOpp.jsx";
 
 function MarsRover() {
 
-    const [showImages, setShowImages] = useState(false);
+    const [showImages, setShowImages] = useState(true);
     const [userDate, setUserDate] = useState("");
     const [roverInfo, setRoverInfo] = useState({
         url: "",
@@ -90,7 +90,7 @@ function MarsRover() {
 
     return (
         <div id={Styles['container']}>
-            <h1 className="section_title section_title_mobile" id="mars">Mars Rover Imagery</h1>
+            <h1 className={Styles["section_title"] + " section_title_mobile"} id="mars">Mars Rover Imagery</h1>
             <br />
 
             <section id={Styles['section-1']}>
@@ -120,39 +120,94 @@ function MarsRover() {
 
 
             <section id={Styles['section-2']}>
-                <h1>Rovers on Mars</h1>
+                <h1 className={Styles['section_title']}>Mars Rovers</h1>
                 <div>
-                    <div className={Styles['rover-wrapper']}><Curiosity /></div>
-                    <div className={Styles['rover-wrapper']}><Perseverance /></div>
-                    <div className={Styles['rover-wrapper']}><SpritOpp /></div>
+
+                    <div className={Styles['rover-card']}>
+
+                        <h1><u>Curiosity</u></h1>
+
+                        <div className={Styles['rover']}>
+                            <Curiosity />
+                            <div className={Styles['rover-launch-info']}>
+                                <h3>Launch Date: 26 November 2011 </h3>
+                                <h3>Landing Date: 06 August 2012</h3>
+                            </div>
+                        </div>
+
+                        <p>
+                            Launched in 2011, NASA's Curiosity rover is a Mars Science Laboratory mission currently exploring Gale Crater.Its primary mission is to determine past Martian habitability and search for potential biosignatures.  Curiosity transmits data and imagery back to Earth, furthering our understanding of the Red Planet's geology and past environment.
+                        </p>
+
+                    </div>
+
+                    <div className={Styles['rover-card']}>
+
+                        <h1><u>Perseverance</u></h1>
+
+                        <div className={Styles['rover']}>
+                            <Perseverance />
+                            <div className={Styles['rover-launch-info']}>
+                                <h3>Launch Date: 30 July 2020 </h3>
+                                <h3>Landing Date: 18 February 2021</h3>
+                            </div>
+                        </div>
+
+                        <p>
+                            The Perseverance rover, a robotic astrobiology vehicle launched by NASA in 2020, is currently investigating Mars' Jezero Crater.Perseverance's primary mission is to collect rock samples and analyze the Martian geological makeup, all while searching for potential biosignatures indicative of past microbial life.
+                        </p>
+
+                    </div>
+
+                    <div className={Styles['rover-card']}>
+
+                        <h1><u>Sprit & Opportunity</u></h1>
+
+                        <div className={Styles['rover']}>
+                            <SpritOpp />
+                            <div className={Styles['rover-launch-info']}>
+                                <h3>Launch Date: 07 July 2003 </h3>
+                                <h3>Landing Date: 03 January 2004</h3>
+                            </div>
+                        </div>
+
+                        <p>
+                            NASA's Mars Exploration Rover (MER) mission, launched in 2003, deployed twin rovers, Spirit and Opportunity, to investigate the Martian surface.  These rovers, designed for a 90-day mission, far exceeded expectations. Spirit explored Gusev Crater, searching for past water activity, while Opportunity roamed Meridiani Planum, analyzing mineral deposits.
+                        </p>
+
+                    </div>
+
                 </div>
             </section>
 
 
+            <section id={Styles['section-3']}>
+                <h1>Mars Images</h1>
 
-            <div id={Styles['calender']}>
-                <input
-                    className="date_input form-control"
-                    type="date"
-                    name="date"
-                    aria-label="Recipient's username"
-                    aria-describedby="button-addon2"
-                    min="2015-06-03"
-                    max={maxDate}
-                    value={userDate}
-                    onChange={(e) => setUserDate((prev) => e.target.value)}
-                />
-                <button
-                    className="btn btn-primary mars_button"
-                    type="button"
-                    id="button-addon2"
-                    onClick={displayRover}
-                >
-                    Enter
-                </button>
-            </div>
+                <div id={Styles['calender']}>
+                    <input
+                        className="date_input form-control"
+                        type="date"
+                        name="date"
+                        aria-label="Recipient's username"
+                        aria-describedby="button-addon2"
+                        min="2015-06-03"
+                        max={maxDate}
+                        value={userDate}
+                        onChange={(e) => setUserDate((prev) => e.target.value)}
+                    />
+                    <button
+                        className="btn btn-primary mars_button"
+                        type="button"
+                        id="button-addon2"
+                        onClick={displayRover}
+                    >
+                        Enter
+                    </button>
+                </div>
 
-            {showImages && (<DisplayDetails roverInfo={roverInfo} fun={setShowImages} />)}
+                {showImages && (<DisplayDetails roverInfo={roverInfo} fun={setShowImages} />)}
+            </section>
 
         </div>
     );

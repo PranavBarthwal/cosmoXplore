@@ -1674,8 +1674,8 @@ function Scene(props) {
 export default function Perseverance(props) {
 
     return (
-        <Canvas camera={{ fov: 80, position: [0, 0, 5] }} shadows>
-            <OrbitControls minDistance={4.0} maxDistance={6.0} />
+        <Canvas camera={{ fov: 80, position: [0, 0, 5] }} shadows style={{ height: "400px" }}>
+            <OrbitControls minDistance={4.0} maxDistance={5.0} />
             <ambientLight intensity={1} />
             <directionalLight intensity={5} position={[0, 2, 0]} color={"white"} castShadow />
             <directionalLight intensity={5} position={[0, 0, 2]} color={"#B0845B"} castShadow />
