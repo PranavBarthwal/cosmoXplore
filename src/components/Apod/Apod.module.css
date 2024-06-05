@@ -12,12 +12,17 @@
     }
 
     .img {
-        width: 100%;
+        width: 90%;
     }
-
+    .apod_img_container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .apod_img {
-        height: 350px;
-        width: 350px;
+        height: 300px;
+        width: 300px;
     }
 
 }
