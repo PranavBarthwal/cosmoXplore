@@ -1,7 +1,7 @@
-const GOOGLE_API_URL = "https://www.googleapis.com/customsearch/v1";
+const GOOGLE_API_URL = import.meta.env.VITE_GOOGLE_API_URL;
 const API_KEY = import.meta.env.VITE_CHATBOT_API_KEY;
 const CX = import.meta.env.VITE_CHATBOT_SEARCH_ENG_ID;
-;
+
 
 const greetings_responses = {
     "hi": "Hello! How can I assist you today?",
