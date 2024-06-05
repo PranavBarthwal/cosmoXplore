@@ -7,7 +7,6 @@ import Home from "./pages/Home/Home.jsx"
 import NasaProjects from "./pages/NasaProjects/NasaProjects.jsx"
 import NotFoundPage from "./pages/404 Page/NotfoundPage.jsx"
 import './index.css'
-import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } from "react-router-dom"
 import About from "./pages/About/About.jsx"
 import MarsRover from './pages/MarsRover/MarsRover.jsx'
 
