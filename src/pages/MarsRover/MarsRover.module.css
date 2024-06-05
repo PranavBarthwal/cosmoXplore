@@ -97,6 +97,7 @@
 @media (max-width:600px) {
     .rover {
         width: 400px;
+        border-radius: 20px;
     }
 
     .rover-card p {
