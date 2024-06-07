@@ -8,6 +8,8 @@
     margin: 50px;
     border: 2px solid white;
     border-radius: 20px;
+    column-gap: 40px;
+    justify-items: center;
 }
 
 #rover-img img {
@@ -26,13 +28,14 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(3, 1fr);
     align-content: center;
-    column-gap: 10px;
     padding: 10px;
+    column-gap: 20px;
+    justify-items: center;
 }
 
 .rover-info-items {
     height: 150px;
-    width: 200px;
+    width: 250px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,4 +73,11 @@
         width: 150px;
     }
 
+}
+
+@media (max-width:400px) {
+    .rover-info-items {
+        width: 100px;
+        height: 140px;
+    }
 }
