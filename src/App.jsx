@@ -7,6 +7,7 @@ import BackGround from './components/BackGround/BackGround.jsx'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop.jsx'
 import PreLoader from './components/PreLoader/PreLoader.jsx'
 import { useState } from 'react'
+import Chatbot from './components/Chatbot/chatbot.jsx';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <Outlet />
       <ScrollToTop/>
       <Footer />
+      <Chatbot />
     </>
   );
 }
