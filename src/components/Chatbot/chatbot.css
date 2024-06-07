@@ -1,0 +1,260 @@
+/* Chatbot Icon */
+.chat-icon-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    transition: all 0.3s ease;
+  }
+  
+  .chat-icon-container:hover {
+    transform: scale(1.1);
+  }
+  
+  .chat-icon {
+    background-color: #007bff;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.chat-icon i {
+  font-size: 24px; 
+  margin-right: 20px; 
+  margin-bottom: 20px; 
+}
+
+
+
+  
+  /* Chatbot Popup */
+  /* Existing styles for chatpop-up container */
+.chat-popup-container {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  z-index: 9998;
+  background-color: rgb(0, 0, 0);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(132, 130, 130, 1) 50%, rgba(170, 170, 170, 1) 77%, rgba(255, 255, 255, 1) 100%);
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  width: 500px;
+}
+
+/* Additional styles for the chatpop-up container background */
+.chat-popup-container {
+  background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+  overflow: hidden;
+}
+
+@function random_range($min, $max) {
+$rand: random();
+$random_range: $min + floor($rand * (($max - $min) + 1));
+@return $random_range;
+}
+
+.stars {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 120%;
+transform: rotate(-45deg);
+}
+
+.star {
+$star-count: 50;
+--star-color: var(--primary-color);
+--star-tail-length: 6em;
+--star-tail-height: 2px;
+--star-width: calc(var(--star-tail-length) / 6);
+--fall-duration: 9s;
+--tail-fade-duration: var(--fall-duration);
+
+position: absolute;
+top: var(--top-offset);
+left: 0;
+width: var(--star-tail-length);
+height: var(--star-tail-height);
+color: var(--star-color);
+background: linear-gradient(45deg, currentColor, transparent);
+border-radius: 50%;
+filter: drop-shadow(0 0 6px currentColor);
+transform: translate3d(104em, 0, 0);
+animation: fall var(--fall-duration) var(--fall-delay) linear infinite, tail-fade var(--tail-fade-duration) var(--fall-delay) ease-out infinite;
+
+@include sp-layout {
+  // For mobile performance, tail-fade animation will be removed QAQ
+  animation: fall var(--fall-duration) var(--fall-delay) linear infinite;
+}
+
+@for $i from 1 through $star-count {
+  &:nth-child(#{$i}) {
+    --star-tail-length: #{random_range(500em, 750em) / 100};
+    --top-offset: #{random_range(0vh, 10000vh) / 100};
+    --fall-duration: #{random_range(6000, 12000s) / 1000};
+    --fall-delay: #{random_range(0, 10000s) / 1000};
+  }
+}
+
+&::before, &::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: calc(var(--star-width) / -2);
+  width: var(--star-width);
+  height: 100%;
+  background: linear-gradient(45deg, transparent, currentColor, transparent);
+  border-radius: inherit;
+  animation: blink 2s linear infinite;
+}
+
+&::before {
+  transform: rotate(45deg);
+}
+
+&::after {
+  transform: rotate(-45deg);
+}
+}
+
+@keyframes fall {
+to {
+  transform: translate3d(-30em, 0, 0);
+}
+}
+
+@keyframes tail-fade {
+0%, 50% {
+  width: var(--star-tail-length);
+  opacity: 1;
+}
+
+70%, 80% {
+  width: 0;
+  opacity: 0.4;
+}
+
+100% {
+  width: 0;
+  opacity: 0;
+}
+}
+
+@keyframes blink {
+50% {
+  opacity: 0.6;
+}
+}
+
+  .chat-popup-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 10px; 
+    font-size: 20px; 
+  }
+  
+  
+  .chat-popup-header i {
+    cursor: pointer;
+  }
+  
+  .chat-popup-body {
+    padding: 10px;
+    height: 600px;
+    overflow-y: scroll;
+    color: #000000;
+  }
+  
+  /* Adjusting chat popup input and send button */
+  .chat-popup-footer {
+    display: flex;
+    justify-content: space-between; 
+    padding: 5px;
+    align-items: flex-end; 
+  }
+  
+  .chat-popup-input {
+    flex: 1; 
+    border: none;
+    outline: none;
+    padding: 10px;
+    margin: 0;
+  }
+  
+  .chat-popup-send {
+    background-color: #00d057;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  
+  .bot-message {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    color: white;
+  }
+  
+  .bot-message i {
+    font-size: 24px;
+    margin-right: 30px;
+  }
+  
+  .bot-message p {
+    background-color: #000000;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: calc(100% - 40px);
+    word-wrap: break-word;
+  }
+  
+  
+  .user-message {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+  }
+  
+  .user-message p {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: calc(100% - 40px);
+    word-wrap: break-word;
+  }
+  
+  .refresh-icon {
+    position: absolute;
+    right: 80px; 
+    top: 12px; 
+    cursor: pointer;
+    font-size: 20px; 
+  }
+  
+  .close-icon {
+    cursor: pointer;
+    position: relative;
+    right: 20px;
+    top: -12px; 
+    font-size: 20px; 
+  }
+  
