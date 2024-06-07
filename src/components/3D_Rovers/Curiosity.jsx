@@ -1,6 +1,6 @@
 import React, { memo, useRef } from 'react'
-import { useGLTF, OrbitControls } from '@react-three/drei'
-import { Canvas, useFrame } from '@react-three/fiber'
+import { useGLTF, OrbitControls } from '../../../node_modules/@react-three/drei'
+import { Canvas, useFrame } from '../../../node_modules/@react-three/fiber'
 import { DoubleSide } from 'three'
 
 
