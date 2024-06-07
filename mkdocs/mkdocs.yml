@@ -1,0 +1,62 @@
+site_name: CosmoXplore
+site_author: PranavBarthwal
+docs_dir: Docs
+
+theme:
+  name: material
+  feature:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotations
+    - content.code.copy
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+      primary: deep purple
+      accent: deep purple
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+      primary: slate
+      accent: lime
+  language: en
+  logo: favicon.ico
+  favicon: favicon.ico
+  
+repo_url: https://github.com/PranavBarthwal/cosmoXplore
+repo_name: CosmoXplore
+
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.arithmatex:
+      generic: true
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.mark
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+nav:
+  - Home: index.md
+  - About Us: aboutus.md
+  - Getting Started: gettingstarted.md
+  
+
+copyright: |
+  &copy; 2024 <a href="https://github.com/PranavBarthwal/cosmoXplore"  target="_blank" rel="noopener">CosmoXplore</a>
