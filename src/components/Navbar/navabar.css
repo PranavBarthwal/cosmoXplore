@@ -2,14 +2,128 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100dvw;
+    width: 100%;
     background: linear-gradient(to left, rgb(10, 0, 73), rgb(0, 0, 0));
     color: #fff;
     padding: 10px 0px;
     text-align: center;
     z-index: 100;
+    transition: all 0.3s ease-in-out;
 }
 
-a {
+.navbar.active {
+  background: rgb(0, 0, 0);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand img {
+  height: 50px;
+}
+
+.sidebar-icon {
+  display: none;
+}
+
+.sidebar-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 100;
+  transition: all 0.3s ease-in-out;
+}
+
+.sidebar-menu.active {
+  display: block;
+}
+
+.sidebar-links {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+}
+
+.sidebar-list-item {
+  padding: 15px 0;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.sidebar-list-item a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.sidebar-contact {
+  display: block;
+  margin-top: 30px;
+}
+
+.sidebar-contact button {
+  padding: 10px 20px;
+  font-size: 18px;
+}
+
+.nav-item {
+  margin-right: 20px;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  color: #f0f0f0;
+}
+
+.rem-default {
+  text-decoration: none;
+  color: #fff;
+}
+
+.rem-default:hover {
+  color: #f0f0f0;
+}
+
+.rem {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .navbar-collapse {
+    display: none;
+  }
+
+  .sidebar-icon {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 20px;
     cursor: pointer;
+  }
+
+  .sidebar-i {
+    width: 30px;
+  }
+
+  .sidebar-list-item {
+    padding: 20px 0;
+  }
+
+  .sidebar-list-item a {
+    font-size: 20px;
+  }
 }
