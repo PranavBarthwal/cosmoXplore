@@ -128,6 +128,12 @@
     .contact-form .right {
         padding-left: 0;
         margin-top: 10px;
-        /* Adjust as needed */
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .contact-form .form{
+        width:60%;
     }
 }

@@ -77,7 +77,7 @@ function ContactForm() {
           <img src={img} className={Styles["contact_img"]} alt="Contact Image" style={{ maxWidth: "100%" }} />
         </div>
         <div className={Styles["right"]}>
-          <form >
+          <form className={Styles["form"]}>
             <div className="mb-3">
               <input type="text" autoComplete='off' className={Styles["form-control"] + " " + "form-control"} id="exampleInputName" name='name' value={contactInfo.name} onChange={handleChange} placeholder="Enter your name" />
             </div>
