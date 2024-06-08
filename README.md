@@ -12,6 +12,15 @@
 ![GitHub contributors](https://img.shields.io/github/contributors/PranavBarthwal/cosmoXplore) <br>
 ---
 
+# Preview of Website
+![alt text](image-2.png)
+
+![alt text](image-3.png)
+
+![alt text](image-4.png)
+
+
+---
 
 <h2><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/High%20Voltage.png" alt="High Voltage" width="40" height="40" /><font size="6">Tech Stack</font></h2>
 
