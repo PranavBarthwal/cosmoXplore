@@ -1,0 +1,182 @@
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    min-height: 100vh;
+}
+
+#container hr {
+    width: 90%;
+}
+
+/* section - 1 */
+#section-1 {
+    width: 90%;
+    text-align: center
+}
+
+#section-1 p {
+    margin-top: 5%;
+    padding: 2%;
+    font-size: 1.2rem;
+}
+
+#section-1 img {
+    width: 500px;
+    animation: leviate 2s ease-in-out infinite;
+}
+
+#section-1 img:hover {
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgb(187, 9, 63);
+}
+
+@keyframes leviate {
+    50% {
+        transform: translateY(20px);
+    }
+}
+
+@media (max-width:600px) {
+    #container h1 {
+        font-size: 2rem;
+    }
+
+    #section-1 img {
+        width: 300px;
+    }
+
+    #section-1 p {
+        font-size: 1rem;
+    }
+
+}
+
+/* section - 2 */
+#section-2 {
+    /* background: red; */
+    width: 90%;
+    text-align: center;
+    margin: 10% 0;
+}
+
+#section-2>div {
+    margin-top: 10%;
+
+}
+
+.rover-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 10%;
+    overflow: hidden;
+}
+
+.rover {
+    background: rgba(98, 0, 255, 0.507);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.rover-launch-info {
+    border-top: 2px solid white;
+    margin-top: 20px;
+    padding-top: 20px;
+    text-align: left;
+}
+
+.rover-card p {
+    font-size: 1.5rem;
+}
+
+@media (max-width:600px) {
+    .rover {
+        width: 400px;
+        border-radius: 20px;
+    }
+
+    .rover-card p {
+        font-size: 1rem;
+    }
+}
+
+/* section - 3 */
+#section-3 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#section-3 h1 {
+    margin-bottom: 5%;
+}
+
+#calender {
+    /* background: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 45%;
+    gap: 2%;
+}
+
+#calender input {
+    outline: none;
+    border: 2px solid #9000ff;
+    border-radius: 40px;
+    background: transparent;
+    color: white;
+    width: 90%;
+}
+
+#calender input::-webkit-calendar-picker-indicator {
+    filter: invert(100%);
+    cursor: pointer;
+}
+
+#calender input:focus {
+    outline: none;
+    border: 2px solid #9000ff;
+    box-shadow: 0 0 15px white;
+    color: white;
+}
+
+#calender button {
+    outline: none;
+    color: #8400ff;
+    background: white;
+    border-left: none;
+    border-radius: 40px;
+    border: none;
+}
+
+#calender button:hover {
+    background: #8400ff;
+    color: white;
+    box-shadow: 0 0 15px white;
+    cursor: pointer;
+}
+
+@media (max-width:600px) {
+    #calender {
+        width: 70%;
+    }
+}
+
+.section_title {
+    background: -webkit-linear-gradient(#e4d6fb, #8400ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 4rem;
+    font-weight: bold;
+    border-top: 20dvh solid transparent;
+    filter: drop-shadow(0 0 2px rgb(174, 0, 255));
+}
