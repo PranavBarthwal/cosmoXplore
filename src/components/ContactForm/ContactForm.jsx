@@ -86,7 +86,7 @@ function ContactForm() {
               <div id="emailHelp" className="form-text text-light">We'll never share your email with anyone else.</div>
             </div>
             <div className="mb-3">
-              <textarea autoComplete='off' className={Styles["form-control"] + " " + "form-control"} id="exampleInputMessage" value={contactInfo.message} rows="4" name='message' onChange={handleChange} placeholder="feel free to ask your queries!"></textarea>
+              <textarea autoComplete='off' className={Styles["form-control"] + " " + "form-control"} id="exampleInputMessage" value={contactInfo.message} rows="4" name='message' onChange={handleChange} placeholder="Feel free to ask your queries!"></textarea>
             </div>
             <button type="submit" className="btn btn-primary" onClick={handleSubmit}>Send to HQ 🚀</button>
           </form>
