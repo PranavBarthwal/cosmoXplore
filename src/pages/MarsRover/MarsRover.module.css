@@ -59,7 +59,7 @@
     margin: 10% 0;
 }
 
-#section-2>div {
+#rover-wrapper {
     margin-top: 10%;
     display: flex;
     flex-direction: column;
@@ -112,10 +112,9 @@
 }
 
 .rover-model {
+    width: inherit;
     padding: 23px;
-    height: 400px;
-    width: 450px;
-    background: rgb(255, 255, 255);
+    background: rgb(201, 198, 198);
     overflow: hidden;
     border-radius: 20px 20px 0 0;
     cursor: pointer;
@@ -133,18 +132,37 @@
     text-align: left;
     padding: 10px;
     border-radius: 0px 0px 20px 20px;
-    width: 450px;
+    width: inherit;
 }
 
 @media (max-width:600px) {
-    .rover {
+    .rover-card {
+        padding: 0;
+        margin: 0;
         width: 400px;
-        border-radius: 20px;
+        padding: 20px 0;
     }
 
-    .rover-card p {
-        font-size: 1rem;
+    .rover {
+        flex-direction: column;
+        gap: 20px;
     }
+
+    .rover p {
+        font-size: 1rem;
+        width: fit-content;
+        padding: 20px 10px;
+    }
+
+    .rover-left {
+        width: 350px;
+    }
+
+    #rover-wrapper {
+        gap: 50px;
+    }
+
+
 }
 
 /* section - 3 */

@@ -120,7 +120,7 @@ function MarsRover() {
 
             <section id={Styles['section-2']}>
                 <h1 className={Styles['section_title']}>Mars Rovers</h1>
-                <div>
+                <div id={Styles['rover-wrapper']}>
 
                     <div className={Styles['rover-card']}>
                         <h1><u>Curiosity</u></h1>
