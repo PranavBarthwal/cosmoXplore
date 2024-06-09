@@ -6,6 +6,26 @@
     font-weight: bold;
 }
 
+@media (max-width: 765px) {
+    .section_title_mobile {
+        font-size: 2rem;
+    }
+
+    .img {
+        width: 90%;
+    }
+    .apod_img_container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .apod_img {
+        height: 300px;
+        width: 300px;
+    }
+
+}
 
 .apod_img_container {
     width: 500px;

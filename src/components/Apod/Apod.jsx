@@ -40,10 +40,10 @@ function Apod() {
 
     <>
       <h1 align="center" className={Styles['section_title'] + " " + Styles['section_title_mobile']} id="apod">Astronomy Picture of The Day</h1 >
+      <div className="container my-5 overflow-x-hidden">
 
-      <div className="container mt-5">
 
-        <div className="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg" id="class_removal">
+        <div className="row mx-1 p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg" id="class_removal">
 
           <div className="col-lg-7 p-3 p-lg-5 pt-lg-3">
 

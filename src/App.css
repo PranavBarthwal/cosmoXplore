@@ -27,14 +27,14 @@
   width: 20%;
   align-items: center;
   justify-content: center;
-  outline:none;
+  outline: none;
   border: none;
 }
 
 .date_input {
   width: 20%;
   outline: none;
-  border:none;
+  border: none;
 }
 
 .apod_img_container {
@@ -243,6 +243,7 @@
   box-shadow: 0 0 15px white;
   cursor: pointer;
 }
+
 
 
 /* Ui Update */
@@ -517,11 +518,12 @@
   cursor: pointer;
 }
 
-#close-btn{
+#close-btn {
   position: relative;
   bottom: 250px;
 }
-#close-btn button{
+
+#close-btn button {
   padding: 5px 15px;
   font-size: 1rem;
   border-radius: 10px;
@@ -530,7 +532,7 @@
   border: none;
 }
 
-#close-btn button:hover{
+#close-btn button:hover {
   color: white;
   background: #40019a;
   box-shadow: 0 0 10px white;
