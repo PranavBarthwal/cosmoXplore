@@ -105,7 +105,7 @@
 }
 
 .rover-left {
-    width: 450px;
+    width: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -140,7 +140,7 @@
         padding: 0;
         margin: 0;
         width: 400px;
-        padding: 20px 0;
+        padding: 20px;
     }
 
     .rover {
@@ -150,7 +150,7 @@
 
     .rover p {
         font-size: 1rem;
-        width: fit-content;
+        width: inherit;
         padding: 20px 10px;
     }
 
