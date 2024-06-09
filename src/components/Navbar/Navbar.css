@@ -3,7 +3,10 @@
   top: 0;
   left: 0;
   width: 100dvw;
-  background: linear-gradient(to left, rgb(10, 0, 73), rgb(0, 0, 0));
+  /* background: linear-gradient(to left, rgb(10, 0, 73), rgb(0, 0, 0));
+   */
+  background: rgba(10, 0, 73, 0.4); /* Semi-transparent background */
+
   color: #fff;
   padding: 1rem 2rem;
   text-align: center;
@@ -11,11 +14,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-sizing: border-box;
+  box-shadow: 0 17px 20px rgba(0, 0, 0, 0.2); /* Add shadow here */
+  backdrop-filter: blur(10px) saturate(150%); 
 }
 
 .logo {
   display: flex;
   justify-content: center;
+  grid-column: 2/3;
   align-items: center;
 }
 .logo-img{
@@ -34,7 +41,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .navbar-links.open {
@@ -55,9 +62,39 @@
   opacity: 0.7;
   list-style-type: none;
   transition: 0.5s;
+  position: relative; 
 }
+
 .navbar-list-item:hover{
-  font-size: large;
+  font-weight: bold;
+  color:aqua;
+  opacity: 1;
+}
+
+.navbar-list-item-contact-us {
+  opacity: 0.7;
+  list-style-type: none;
+  transition: 0.5s;
+}
+
+.navbar-list-item:after {
+  content: ""; /* Empty content for pseudo-element */
+  position: absolute; /* Absolute positioning for underline */
+  width: 100%; /* Full width of the list item */
+  height: 2px; /* Underline height */
+  background-color: aqua; /* White underline color */
+  opacity: 0; /* Initially hidden */
+  transition: all 0.3s; /* Smooth transition on hover */
+  bottom: -7px; /* Increased gap */
+  left: 0; /* Align underline to the left of the list item */
+}
+
+.navbar-list-item:hover:after{
+  /* font-size: large; */
+  opacity:1;
+}
+.navbar-list-item-contact-us:hover{
+  /* font-size: large; */
   opacity:1;
 }
 .hamburger {
