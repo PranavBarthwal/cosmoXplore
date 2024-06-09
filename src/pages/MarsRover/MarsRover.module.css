@@ -55,43 +55,85 @@
 
 /* section - 2 */
 #section-2 {
-    /* background: red; */
-    width: 90%;
     text-align: center;
     margin: 10% 0;
 }
 
 #section-2>div {
     margin-top: 10%;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10%;
 }
 
 .rover-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-    margin-bottom: 10%;
-    overflow: hidden;
+    background: rgba(38, 3, 94, 0.486);
+    margin: 50px;
+    padding: 50px;
+    border-radius: 20px;
+    width: 90%;
+}
+
+.rover-card h1 {
+    filter: drop-shadow(0 0 10px rgb(195, 0, 255));
+    margin-bottom: 5%;
 }
 
 .rover {
-    background: rgba(98, 0, 255, 0.507);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.rover p {
+    font-size: 1.5rem;
+    width: 50%;
+    background: rgba(98, 0, 255, 0.39);
     padding: 20px;
-    margin: 20px;
-    border-radius: 20px;
+    border-radius: 40px 0px 40px 0px;
+    transition: box-shadow 0.5s ease-in-out;
+}
+
+.rover a {
+    color: rgb(192, 101, 245);
+}
+
+.rover p:hover {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.582);
+}
+
+.rover-left {
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rover-model {
+    padding: 23px;
+    height: 400px;
+    width: 450px;
+    background: rgb(255, 255, 255);
+    overflow: hidden;
+    border-radius: 20px 20px 0 0;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rover-model:hover {
+    box-shadow: 0 0 20px rgba(98, 0, 255, 0.39);
 }
 
 .rover-launch-info {
-    border-top: 2px solid white;
-    margin-top: 20px;
-    padding-top: 20px;
+    background: rgba(98, 0, 255, 0.39);
     text-align: left;
-}
-
-.rover-card p {
-    font-size: 1.5rem;
+    padding: 10px;
+    border-radius: 0px 0px 20px 20px;
+    width: 450px;
 }
 
 @media (max-width:600px) {

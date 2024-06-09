@@ -28,10 +28,10 @@ function MarsRover() {
 
     useEffect(() => {
         if (userDate !== "")
-            displayRover()
+            fetchImage()
     }, [maxDate])
 
-    async function displayRover(e) {
+    async function fetchImage(e) {
         try {
 
             e?.preventDefault();
@@ -123,56 +123,51 @@ function MarsRover() {
                 <div>
 
                     <div className={Styles['rover-card']}>
-
                         <h1><u>Curiosity</u></h1>
-
                         <div className={Styles['rover']}>
-                            <Curiosity />
-                            <div className={Styles['rover-launch-info']}>
-                                <h3>Launch Date: 26 November 2011 </h3>
-                                <h3>Landing Date: 06 August 2012</h3>
+                            <div className={Styles['rover-left']}>
+                                <div className={Styles['rover-model']}>
+                                    <Curiosity />
+                                </div>
+                                <div className={Styles['rover-launch-info']}>
+                                    <h3>Launch Date: 26 November 2011 </h3>
+                                    <h3>Landing Date: 06 August 2012</h3>
+                                </div>
                             </div>
+                            <p>Launched in 2011, NASA's Curiosity rover is a Mars Science Laboratory mission currently exploring Gale Crater.Its primary mission is to determine past Martian habitability and search for potential biosignatures.  Curiosity transmits data and imagery back to Earth, furthering our understanding of the Red Planet's geology and past environment.<br /><a href="https://en.wikipedia.org/wiki/Curiosity_(rover)" target="_blank" >learn more here</a>👈</p>
                         </div>
-
-                        <p>
-                            Launched in 2011, NASA's Curiosity rover is a Mars Science Laboratory mission currently exploring Gale Crater.Its primary mission is to determine past Martian habitability and search for potential biosignatures.  Curiosity transmits data and imagery back to Earth, furthering our understanding of the Red Planet's geology and past environment.
-                        </p>
-
                     </div>
-                    <div className={Styles['rover-card']}>
 
+                    <div className={Styles['rover-card']}>
                         <h1><u>Perseverance</u></h1>
-
                         <div className={Styles['rover']}>
-                            <Perseverance />
-                            <div className={Styles['rover-launch-info']}>
-                                <h3>Launch Date: 30 July 2020 </h3>
-                                <h3>Landing Date: 18 February 2021</h3>
+                            <div className={Styles['rover-left']}>
+                                <div className={Styles['rover-model']}>
+                                    <Perseverance />
+                                </div>
+                                <div className={Styles['rover-launch-info']}>
+                                    <h3>Launch Date: 30 July 2020</h3>
+                                    <h3>Landing Date: 18 February 2021</h3>
+                                </div>
                             </div>
+                            <p>The Perseverance rover, a robotic astrobiology vehicle launched by NASA in 2020, is currently investigating Mars' Jezero Crater.Perseverance's primary mission is to collect rock samples and analyze the Martian geological makeup, all while searching for potential biosignatures indicative of past microbial life.<br /><a href="https://en.wikipedia.org/wiki/Perseverance_(rover)" target="_blank" >learn more here</a>👈</p>
                         </div>
-
-                        <p>
-                            The Perseverance rover, a robotic astrobiology vehicle launched by NASA in 2020, is currently investigating Mars' Jezero Crater.Perseverance's primary mission is to collect rock samples and analyze the Martian geological makeup, all while searching for potential biosignatures indicative of past microbial life.
-                        </p>
-
                     </div>
 
                     <div className={Styles['rover-card']}>
-
                         <h1><u>Sprit & Opportunity</u></h1>
-
                         <div className={Styles['rover']}>
-                            <SpritOpp />
-                            <div className={Styles['rover-launch-info']}>
-                                <h3>Launch Date: 07 July 2003 </h3>
-                                <h3>Landing Date: 03 January 2004</h3>
+                            <div className={Styles['rover-left']}>
+                                <div className={Styles['rover-model']}>
+                                    <SpritOpp />
+                                </div>
+                                <div className={Styles['rover-launch-info']}>
+                                    <h3>Launch Date: 07 July 2003</h3>
+                                    <h3>Landing Date: 03 January 2004</h3>
+                                </div>
                             </div>
+                            <p>NASA's Mars Exploration Rover (MER) mission, launched in 2003, deployed twin rovers, Spirit and Opportunity, to investigate the Martian surface.  These rovers, designed for a 90-day mission, far exceeded expectations. Spirit explored Gusev Crater, searching for past water activity, while Opportunity roamed Meridiani Planum, analyzing mineral deposits.<br /><a href="https://en.wikipedia.org/wiki/Mars_Exploration_Rover" target="_blank" >learn more here</a>👈</p>
                         </div>
-
-                        <p>
-                            NASA's Mars Exploration Rover (MER) mission, launched in 2003, deployed twin rovers, Spirit and Opportunity, to investigate the Martian surface.  These rovers, designed for a 90-day mission, far exceeded expectations. Spirit explored Gusev Crater, searching for past water activity, while Opportunity roamed Meridiani Planum, analyzing mineral deposits.
-                        </p>
-
                     </div>
 
                 </div>
@@ -199,7 +194,7 @@ function MarsRover() {
                         className="btn btn-primary mars_button"
                         type="button"
                         id="button-addon2"
-                        onClick={displayRover}
+                        onClick={fetchImage}
                     >
                         Enter
                     </button>
