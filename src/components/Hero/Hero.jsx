@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import logo from '../../assets/A letter tech logo.png';
 import Typed from 'typed.js';
-
+import { Link as ScrollLink } from 'react-scroll';
 
 function Hero() {
   useEffect(() => {
@@ -30,7 +30,8 @@ function Hero() {
           <p className="lead text-light">Welcome to CosmoXplore, where NASA's API unveils celestial wonders. Discover breathtaking images and cutting-edge astronomical data, embarking on a cosmic journey that transcends the boundaries of earthly imagination.</p>
           <div className="d-grid gap-5 d-md-flex justify-content-md-start pt-2">
             <a href="#apod">
-              <button type="button" className="btn btn-primary btn-lg px-4 me-md-2">Explore</button>
+              {/* <button type="button" className="btn btn-primary btn-lg px-4 me-md-2">Explore</button> */}
+              <ScrollLink className="btn btn-primary btn-lg px-4 me-md-2" to="apod" smooth={true} duration={500}>Explore</ScrollLink>
             </a>
           </div>
         </div>

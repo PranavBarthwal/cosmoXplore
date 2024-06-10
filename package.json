@@ -22,6 +22,7 @@
     "react-dom": "^18.2.0",
     "react-icons": "^5.2.1",
     "react-router-dom": "^6.23.1",
+    "react-scroll": "^1.9.0",
     "three": "^0.164.1",
     "typed.js": "^2.1.0"
   },
