@@ -1,11 +1,11 @@
 
 .btn{
     position: fixed;
-    right: 20px;
-    bottom: 100px;
+    left: 20px;
+    bottom: 21px;
     border-radius: 50%;
 }
-
+ 
 .scroll-btn{
     background-color: white;
     border:none;
