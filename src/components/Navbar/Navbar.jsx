@@ -57,7 +57,7 @@ function Navbar() {
               About us
             </NavLink>
           </li>
-          <li className="navbar-list-item">
+          <li className="navbar-list-item-contact-us">
             <a href="#contact" className="sidebar-contact rem-default rem">
               <button
                 className="btn btn-outline-light rounded-pill"
