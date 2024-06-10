@@ -35,7 +35,7 @@
   /* Existing styles for chatpop-up container */
 .chat-popup-container {
   position: fixed;
-  bottom: 90px;
+  bottom: 80px;
   right: 20px;
   z-index: 9998;
   background-color: rgb(0, 0, 0);
@@ -44,7 +44,20 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   transition: all 0.3s ease;
-  width: 500px;
+  width: 400px;
+  height:500px ;
+}
+
+.chat-popup-footer {
+  position:fixed ;
+  bottom:80px ; 
+  
+  width: 386px;
+ 
+  height: 100px ;
+
+  
+
 }
 
 /* Additional styles for the chatpop-up container background */
