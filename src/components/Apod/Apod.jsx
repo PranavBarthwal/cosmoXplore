@@ -39,13 +39,13 @@ function Apod() {
   return (
 
     <>
-      <h1 align="center" className={Styles['section_title'] + " " + Styles['section_title_mobile']} id="apod">Astronomy Picture of The Day</h1 >
+      <h1 align="center" className={Styles['section_title'] + " " + Styles['section_title_mobile']} id="apod" data-aos="zoom-in-up" data-aos-easing="ease-in-out">Astronomy Picture of The Day</h1 >
 
       <div className="container my-5 overflow-x-hidden">
 
         <div className="row mx-1 p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg" id="class_removal">
 
-          <div className="col-lg-7 p-3 p-lg-5 pt-lg-3">
+          <div className="col-lg-7 p-3 p-lg-5 pt-lg-3" data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="170" data-aos-easing="ease-in-out">
 
             <h2 id="title" className="display-7 fw-bold lh-1 text-light">{apodInfo.title ? apodInfo.title : "APoD Title"}</h2>
 
@@ -55,7 +55,7 @@ function Apod() {
 
           </div>
 
-          <div className={Styles["apod_img_container"]}>
+          <div className={Styles["apod_img_container"]} data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="170" data-aos-easing="ease-in-out">
             <div className={Styles["img"]}>
               {
                 apodInfo.media_type == "video" ?

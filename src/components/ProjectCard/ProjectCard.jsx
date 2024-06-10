@@ -4,7 +4,7 @@ import { Parser } from 'html-to-react'
 
 function ProjectCard({ projectId, title, acronym, description, startDate, endDate, lastUpdated, status }) {
     return (
-        <div className={Styles['card']}>
+        <div className={Styles['card']} data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="170" data-aos-easing="ease-in-out">
             <h1 >
                 <span className={Styles['title']}>Project Id:</span> {projectId}
             </h1>

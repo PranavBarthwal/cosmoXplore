@@ -119,13 +119,13 @@ function MarsRover() {
             <hr />
 
             <section id={Styles['section-2']}>
-                <h1 className={Styles['section_title']}>Mars Rovers</h1>
+                <h1 className={Styles['section_title']} data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="900" data-aos-offset="170" data-aos-easing="ease-in-out">Mars Rovers</h1>
                 <div id={Styles['rover-wrapper']}>
 
                     <div className={Styles['rover-card']}>
-                        <h1><u>Curiosity</u></h1>
+                        <h1 data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="170" data-aos-easing="ease-in-out"><u>Curiosity</u></h1>
                         <div className={Styles['rover']}>
-                            <div className={Styles['rover-left']}>
+                            <div className={Styles['rover-left']} data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="170" data-aos-easing="ease-in-out">
                                 <div className={Styles['rover-model']}>
                                     <Curiosity />
                                 </div>
@@ -134,14 +134,14 @@ function MarsRover() {
                                     <h3>Landing Date: 06 August, 2012</h3>
                                 </div>
                             </div>
-                            <p>Launched in 2011, NASA's Curiosity rover is a Mars Science Laboratory mission currently exploring Gale Crater.Its primary mission is to determine past Martian habitability and search for potential biosignatures.  Curiosity transmits data and imagery back to Earth, furthering our understanding of the Red Planet's geology and past environment.<br /><a href="https://en.wikipedia.org/wiki/Curiosity_(rover)" target="_blank" >learn more here</a>👈</p>
+                            <p data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="170" data-aos-easing="ease-in-out">Launched in 2011, NASA's Curiosity rover is a Mars Science Laboratory mission currently exploring Gale Crater.Its primary mission is to determine past Martian habitability and search for potential biosignatures.  Curiosity transmits data and imagery back to Earth, furthering our understanding of the Red Planet's geology and past environment.<br /><a href="https://en.wikipedia.org/wiki/Curiosity_(rover)" target="_blank" >learn more here</a>👈</p>
                         </div>
                     </div>
 
                     <div className={Styles['rover-card']}>
-                        <h1><u>Perseverance</u></h1>
+                        <h1 data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="170" data-aos-easing="ease-in-out"><u>Perseverance</u></h1>
                         <div className={Styles['rover']}>
-                            <div className={Styles['rover-left']}>
+                            <div className={Styles['rover-left']} data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="170" data-aos-easing="ease-in-out">
                                 <div className={Styles['rover-model']}>
                                     <Perseverance />
                                 </div>
@@ -150,14 +150,14 @@ function MarsRover() {
                                     <h3>Landing Date: 18 February, 2021</h3>
                                 </div>
                             </div>
-                            <p>The Perseverance rover, a robotic astrobiology vehicle launched by NASA in 2020, is currently investigating Mars' Jezero Crater.Perseverance's primary mission is to collect rock samples and analyze the Martian geological makeup, all while searching for potential biosignatures indicative of past microbial life.<br /><a href="https://en.wikipedia.org/wiki/Perseverance_(rover)" target="_blank" >learn more here</a>👈</p>
+                            <p data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="170" data-aos-easing="ease-in-out">The Perseverance rover, a robotic astrobiology vehicle launched by NASA in 2020, is currently investigating Mars' Jezero Crater.Perseverance's primary mission is to collect rock samples and analyze the Martian geological makeup, all while searching for potential biosignatures indicative of past microbial life.<br /><a href="https://en.wikipedia.org/wiki/Perseverance_(rover)" target="_blank" >learn more here</a>👈</p>
                         </div>
                     </div>
 
                     <div className={Styles['rover-card']}>
-                        <h1><u>Sprit & Opportunity</u></h1>
+                        <h1 data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="170" data-aos-easing="ease-in-out"><u>Sprit & Opportunity</u></h1>
                         <div className={Styles['rover']}>
-                            <div className={Styles['rover-left']}>
+                            <div className={Styles['rover-left']} data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="170" data-aos-easing="ease-in-out">
                                 <div className={Styles['rover-model']}>
                                     <SpritOpp />
                                 </div>
@@ -166,7 +166,7 @@ function MarsRover() {
                                     <h3>Landing Date: 03 January, 2004</h3>
                                 </div>
                             </div>
-                            <p>NASA's Mars Exploration Rover (MER) mission, launched in 2003, deployed twin rovers, Spirit and Opportunity, to investigate the Martian surface.  These rovers, designed for a 90-day mission, far exceeded expectations. Spirit explored Gusev Crater, searching for past water activity, while Opportunity roamed Meridiani Planum, analyzing mineral deposits.<br /><a href="https://en.wikipedia.org/wiki/Mars_Exploration_Rover" target="_blank" >learn more here</a>👈</p>
+                            <p data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="170" data-aos-easing="ease-in-out">NASA's Mars Exploration Rover (MER) mission, launched in 2003, deployed twin rovers, Spirit and Opportunity, to investigate the Martian surface.  These rovers, designed for a 90-day mission, far exceeded expectations. Spirit explored Gusev Crater, searching for past water activity, while Opportunity roamed Meridiani Planum, analyzing mineral deposits.<br /><a href="https://en.wikipedia.org/wiki/Mars_Exploration_Rover" target="_blank" >learn more here</a>👈</p>
                         </div>
                     </div>
 
@@ -176,7 +176,7 @@ function MarsRover() {
             <hr />
 
             <section id={Styles['section-3']}>
-                <h1 className={Styles['section_title']}>Mars Images</h1>
+                <h1 className={Styles['section_title']} data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="170" data-aos-easing="ease-in-out">Mars Images</h1>
 
                 <div id={Styles['calender']}>
                     <input

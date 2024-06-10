@@ -71,12 +71,12 @@ function ContactForm() {
 
   return (
     <>
-      <h1 align="center" className={Styles["section_title"]} id="contact">Contact Us</h1>
+      <h1 align="center" className={Styles["section_title"]} id="contact" data-aos="zoom-out" data-aos-duration="1000" data-aos-offset="170" data-aos-easing="ease-in-out">Contact Us</h1>
       <div className={Styles["contact-form"]}>
-        <div className={Styles["left"]}>
+        <div className={Styles["left"]} data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="170" data-aos-easing="ease-in-out">
           <img src={img} className={Styles["contact_img"]} alt="Contact Image" style={{ maxWidth: "100%" }} />
         </div>
-        <div className={Styles["right"]}>
+        <div className={Styles["right"]} data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="170" data-aos-easing="ease-in-out">
           <form className={Styles["form"]}>
             <div className="mb-3">
               <input type="text" autoComplete='off' className={Styles["form-control"] + " " + "form-control"} id="exampleInputName" name='name' value={contactInfo.name} onChange={handleChange} placeholder="Enter your name" />
