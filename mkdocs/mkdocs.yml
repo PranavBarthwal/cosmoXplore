@@ -1,6 +1,6 @@
 site_name: CosmoXplore
 site_author: PranavBarthwal
-docs_dir: mkdocs/docs
+docs_dir: Docs
 
 theme:
   name: material
