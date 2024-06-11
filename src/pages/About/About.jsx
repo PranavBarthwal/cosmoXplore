@@ -58,17 +58,17 @@ function About() {
                 </b></p>
             </section>
 
-            <section id={Styles.section_2}>
-                <h1 data-aos="fade-up" data-aos-duration="1000" data-aos-offset="170" data-aos-easing="ease-in-out"><u>Our Vision </u></h1>
-                <div data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="170" data-aos-easing="ease-in-out">
+            <section id={Styles.section_2} data-aos="zoom-in-up" data-aos-duration="1000" data-aos-offset="170" data-aos-easing="ease-in-out">
+                <h1><u>Our Vision </u></h1>
+                <div>
                     <p>Explore the cosmos with CosmoXplore and stay informed about the innovations driving humanity's journey into the final frontier. Join us in discovering the beauty and mysteries of space, one photo and breakthrough at a time.As an open source organization, we are committed to transparency, collaboration, and community-driven development.</p>
                     <img src={vision} width='400px' height='400px' />
                 </div>
             </section>
 
-            <section id={Styles.section_3}>
-                <h1 data-aos="fade-up" data-aos-duration="1000" data-aos-offset="170" data-aos-easing="ease-in-out"><u>Our Methods</u></h1>
-                <div data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="170" data-aos-easing="ease-in-out">
+            <section id={Styles.section_3} data-aos="zoom-in-up" data-aos-duration="1000" data-aos-offset="170" data-aos-easing="ease-in-out">
+                <h1><u>Our Methods</u></h1>
+                <div>
                     <img src={method} width='400px' height='400px' />
                     <p>Our platform brings you stunning Astronomy Picture of the Day (APOD) images, fascinating photos of Mars, and updates on the latest technological breakthroughs at NASA. Utilizing NASA's open API, we deliver a seamless and engaging experience for space enthusiasts and curious minds alike.</p>
                 </div>
@@ -76,9 +76,9 @@ function About() {
 
             <section id={Styles.section_4}>
 
-                <div id={Styles.founder}>
-                    <h1 data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="170" data-aos-easing="ease-in-out"><u>Our Founder</u></h1>
-                    <div data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="170" data-aos-easing="ease-in-out">
+                <div id={Styles.founder} data-aos="zoom-in-up" data-aos-duration="1000" data-aos-offset="170" data-aos-easing="ease-in-out">
+                    <h1><u>Our Founder</u></h1>
+                    <div>
                         <img src={founder.avatar_url} />
                         <h3>{founder.login}</h3>
                         <div id={Styles.social}>
