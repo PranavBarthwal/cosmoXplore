@@ -102,6 +102,7 @@ filter: drop-shadow(0 0 6px currentColor);
 transform: translate3d(104em, 0, 0);
 animation: fall var(--fall-duration) var(--fall-delay) linear infinite, tail-fade var(--tail-fade-duration) var(--fall-delay) ease-out infinite;
 
+
 @include sp-layout {
   // For mobile performance, tail-fade animation will be removed QAQ
   animation: fall var(--fall-duration) var(--fall-delay) linear infinite;
@@ -269,3 +270,20 @@ to {
     font-size: 20px; 
   }
   
+  @media screen and ( max-width: 429px ) {
+    .chat-popup-container{
+      width: 80%;
+    }
+    .chat-popup-footer{
+      width: 77%;
+    }
+    .chat-popup-input{
+      width: 80%;
+    }
+    .chat-popup-send{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 25%;
+    }
+  }
