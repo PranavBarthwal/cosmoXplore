@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, Link as RouterLink, useNavigate, useLocation } from 'react-router-dom';
+import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 import logoWhite from '../../assets/logo_white.png';
 import './Navbar.css';
@@ -109,17 +109,17 @@ function Navbar() {
       <div className={`navigator ${isOpen ? 'open' : ''}`}>
         <ul className={`navbar-links ${isOpen ? 'open' : ''}`}>
           <li className="navbar-list-item" onClick={() => { scroll.scrollToTop(); handleMenuClose(); }}>
-            <RouterLink className="rem-default" to="/">Home</RouterLink>
+            <NavLink className={({ isActive }) => ("rem-default " + (isActive ? ' active' : ''))} to="/">Home</NavLink>
           </li>
           {renderAPODLink()}
           <li className="navbar-list-item" onClick={handleMenuClose}>
-            <RouterLink className="rem-default" to="/mars-rover">MartianImagery</RouterLink>
+            <NavLink className={({ isActive }) => ("rem-default " + (isActive ? ' active' : ''))} to="/mars-rover">MartianImagery</NavLink>
           </li>
           <li className="navbar-list-item" onClick={handleMenuClose}>
-            <NavLink className="rem-default" to="/nasa-projects">NASA's Projects</NavLink>
+            <NavLink className={({ isActive }) => ("rem-default " + (isActive ? ' active' : ''))} to="/nasa-projects">NASA's Projects</NavLink>
           </li>
           <li className="navbar-list-item" onClick={handleMenuClose}>
-            <NavLink className="rem-default" to="/about">About us</NavLink>
+            <NavLink className={({ isActive }) => ("rem-default " + (isActive ? ' active' : ''))} to="/about">About us</NavLink>
           </li>
           {renderContactLink()}
         </ul>
