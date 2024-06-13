@@ -55,7 +55,7 @@
 .rem-default {
   text-decoration: none;
   color: inherit;
-  cursor: pointer;
+  cursor: none;
 }
 
 .navbar-list-item {
