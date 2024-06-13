@@ -117,7 +117,7 @@
     background: rgb(201, 198, 198);
     overflow: hidden;
     border-radius: 20px 20px 0 0;
-    cursor: pointer;
+    cursor: none;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -198,7 +198,7 @@
 
 #calender input::-webkit-calendar-picker-indicator {
     filter: invert(100%);
-    cursor: pointer;
+    cursor: none;
 }
 
 #calender input:focus {
@@ -221,7 +221,7 @@
     background: #8400ff;
     color: white;
     box-shadow: 0 0 15px white;
-    cursor: pointer;
+    cursor: none;
 }
 
 @media (max-width:600px) {
