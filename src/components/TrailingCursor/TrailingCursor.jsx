@@ -18,7 +18,7 @@ const TrailingCursor = () => {
         let scrollTop = window.pageYOffset;
         trailingContainer.className = 'trailing-container';
 
-        for (let i = 0; i<3; i++) {
+        for (let i = 0; i<8; i++) {
             const trailing = document.createElement('div');
             trailing.className = Styles['trailing'];
             let relativeX = x + scrollLeft + Math.random() * 20 - 10; // Randomize position within a range
@@ -33,7 +33,7 @@ const TrailingCursor = () => {
         // Remove the trailing elements after the animation ends
         setTimeout(() => {
             trailingContainer.remove();
-        }, 400);
+        }, 500);
     };
 
     useEffect(() => {

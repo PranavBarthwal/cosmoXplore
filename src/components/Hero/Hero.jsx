@@ -30,7 +30,7 @@ function Hero() {
           <p className="lead text-light">Welcome to CosmoXplore, where NASA's API unveils celestial wonders. Discover breathtaking images and cutting-edge astronomical data, embarking on a cosmic journey that transcends the boundaries of earthly imagination.</p>
           <div className="d-grid gap-5 d-md-flex justify-content-md-start pt-2">
             <a href="#apod">
-              <button type="button" className="btn btn-primary btn-lg px-4 me-md-2">Explore</button>
+              <button type="button" style={{cursor:'none'}} className="btn btn-primary btn-lg px-4 me-md-2">Explore</button>
             </a>
           </div>
         </div>
