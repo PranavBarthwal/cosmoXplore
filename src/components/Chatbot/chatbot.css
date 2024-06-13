@@ -20,7 +20,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
+    cursor: none;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -160,7 +160,7 @@ to {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer;
+    cursor: none;
     position: relative;
     margin-bottom: 10px; 
     font-size: 20px; 
@@ -168,7 +168,7 @@ to {
   
   
   .chat-popup-header i {
-    cursor: pointer;
+    cursor: none;
   }
   
   .chat-popup-body {
@@ -199,7 +199,7 @@ to {
     color: #ffffff;
     border: none;
     padding: 10px 20px;
-    cursor: pointer;
+    cursor: none;
     margin-left: 10px;
   }
   
@@ -244,12 +244,12 @@ to {
     position: absolute;
     right: 80px; 
     top: 12px; 
-    cursor: pointer;
+    cursor: none;
     font-size: 20px; 
   }
   
   .close-icon {
-    cursor: pointer;
+    cursor: none;
     position: relative;
     right: 20px;
     top: -12px; 

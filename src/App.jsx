@@ -8,6 +8,7 @@ import ScrollToTop from './components/ScrollToTop/ScrollToTop.jsx'
 import PreLoader from './components/PreLoader/PreLoader.jsx'
 import { useState } from 'react'
 import Chatbot from './components/Chatbot/chatbot.jsx';
+import TrailingCursor from './components/TrailingCursor/TrailingCursor.jsx'
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
     <>
       {isPreLoading && <PreLoader />}
       <BackGround setIsPreLoading={setIsPreLoading} />
+      <TrailingCursor/>
       <Toast />
       <Navbar />
       <Outlet />

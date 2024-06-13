@@ -115,7 +115,7 @@
     color: white;
     transform: scale(1.1);
     box-shadow: 0 0 15px white;
-    cursor: pointer;
+    cursor: none;
 }
 
 
