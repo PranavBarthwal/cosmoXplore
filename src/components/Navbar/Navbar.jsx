@@ -59,7 +59,7 @@ function Navbar() {
           </li>
           <li className="navbar-list-item-contact-us">
             <a href="#contact" className="sidebar-contact rem-default rem">
-              <button
+              <button style={{cursor:'none'}}
                 className="btn btn-outline-light rounded-pill"
                 type="submit"
               >
