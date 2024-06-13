@@ -1,7 +1,7 @@
 /* Chatbot Icon */
 .chat-icon-container {
     position: fixed;
-    bottom: 20px;
+    bottom: 80px;
     right: 20px;
     z-index: 9999;
     transition: all 0.3s ease;
