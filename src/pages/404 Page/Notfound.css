@@ -196,7 +196,7 @@ button.go-back {
   font-family: 'Combo', cursive;
   border: none;
   padding: 10px 20px;
-  cursor: pointer;
+  cursor: none;
   transition: 0.3s linear;
   z-index: 9;
   border-radius: 10px;
