@@ -71,8 +71,8 @@ function ContactForm() {
 
   return (
     <>
-      <h1 align="center" className={Styles["section_title"]} id="contact" data-aos="zoom-out" data-aos-duration="1000" data-aos-offset="170" data-aos-easing="ease-in-out">Contact Us</h1>
-      <div className={Styles["contact-form"]} data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="170" data-aos-easing="ease-in-out">
+      <h1 align="center" className={Styles["section_title"]} id="contact" data-aos="zoom-out" data-aos-duration="700">Contact Us</h1>
+      <div className={Styles["contact-form"]} data-aos="zoom-in" data-aos-duration="700">
         <div className={Styles["left"]} >
           <img src={img} className={Styles["contact_img"]} alt="Contact Image" style={{ maxWidth: "100%" }} />
         </div>

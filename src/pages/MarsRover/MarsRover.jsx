@@ -119,10 +119,10 @@ function MarsRover() {
             <hr />
 
             <section id={Styles['section-2']}>
-                <h1 className={Styles['section_title']} data-aos="zoom-in-up" data-aos-duration="900" data-aos-offset="170" data-aos-easing="ease-in-out">Mars Rovers</h1>
+                <h1 className={Styles['section_title']} data-aos="zoom-in-up" data-aos-duration="700" >Mars Rovers</h1>
                 <div id={Styles['rover-wrapper']}>
 
-                    <div className={Styles['rover-card']} data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="170" data-aos-easing="ease-in-out">
+                    <div className={Styles['rover-card']} data-aos="fade-up" data-aos-duration="700" >
                         <h1><u>Curiosity</u></h1>
                         <div className={Styles['rover']}>
                             <div className={Styles['rover-left']}>
@@ -138,7 +138,7 @@ function MarsRover() {
                         </div>
                     </div>
 
-                    <div className={Styles['rover-card']} data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="170" data-aos-easing="ease-in-out">
+                    <div className={Styles['rover-card']} data-aos="fade-up" data-aos-duration="700">
                         <h1><u>Perseverance</u></h1>
                         <div className={Styles['rover']}>
                             <div className={Styles['rover-left']}>
@@ -154,7 +154,7 @@ function MarsRover() {
                         </div>
                     </div>
 
-                    <div className={Styles['rover-card']} data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="170" data-aos-easing="ease-in-out">
+                    <div className={Styles['rover-card']} data-aos="fade-up" data-aos-duration="700">
                         <h1><u>Sprit & Opportunity</u></h1>
                         <div className={Styles['rover']}>
                             <div className={Styles['rover-left']}>
@@ -176,7 +176,7 @@ function MarsRover() {
             <hr />
 
             <section id={Styles['section-3']}>
-                <h1 className={Styles['section_title']} data-aos="zoom-in-up" data-aos-duration="1000" data-aos-offset="170" data-aos-easing="ease-in-out">Mars Images</h1>
+                <h1 className={Styles['section_title']} data-aos="zoom-in-up" data-aos-duration="700">Mars Images</h1>
 
                 <div id={Styles['calender']}>
                     <input
