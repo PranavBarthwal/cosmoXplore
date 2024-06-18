@@ -16,20 +16,15 @@
     text-align: center
 }
 
+#section-1 div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #section-1 p {
-    margin-top: 5%;
     padding: 2%;
     font-size: 1.2rem;
-}
-
-#section-1 img {
-    width: 500px;
-    animation: leviate 2s ease-in-out infinite;
-}
-
-#section-1 img:hover {
-    border-radius: 50%;
-    box-shadow: 0 0 30px rgb(187, 9, 63);
 }
 
 @keyframes leviate {

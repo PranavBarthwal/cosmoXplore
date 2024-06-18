@@ -4,9 +4,11 @@ import DisplayDetails from "../../components/DisplayDetails/DisplayDetails.jsx";
 import { toastify } from "../../components/Toast/Toast.jsx";
 import ReadableStreamDecoder from './../../utils/ReadableStreamDecoder';
 import Styles from "./MarsRover.module.css"
-import Curiosity from "../../components/3D_Rovers/Curiosity.jsx"
-import Perseverance from "../../components/3D_Rovers/Perseverance.jsx"
-import SpritOpp from "../../components/3D_Rovers/SpritOpp.jsx";
+import Curiosity from "../../components/3D_Models/Curiosity.jsx"
+import Perseverance from "../../components/3D_Models/Perseverance.jsx"
+import SpritOpp from "../../components/3D_Models/SpritOpp.jsx";
+import Mars from "../../components/3D_Models/Mars/Mars.jsx";
+import { Canvas } from "@react-three/fiber";
 
 function MarsRover() {
 
@@ -95,8 +97,8 @@ function MarsRover() {
             <br />
 
             <section id={Styles['section-1']}>
-                <div >
-                    <img src={img} alt="Mars" />
+                <div>
+                    <Mars />
                 </div>
                 <p >
                     Welcome to an extraordinary adventure into the Martian landscape,
