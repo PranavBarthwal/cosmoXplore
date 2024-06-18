@@ -20,8 +20,8 @@ function App() {
       <BackGround setIsPreLoading={setIsPreLoading} />
       <Toast />
       <Navbar />
-      <Outlet />
-      <ScrollToTop/>
+      <Outlet setIsPreLoading={setIsPreLoading} />
+      <ScrollToTop />
       <Footer />
       <Chatbot />
     </>

@@ -32,7 +32,7 @@ const Mars = memo(function Mars(props) {
             <OrbitControls enableZoom={false} enablePan={false} maxPolarAngle={1} minPolarAngle={1} />
             <ambientLight intensity={1} />
             <pointLight position={[10, 10, 10]} />
-            <Scene props={props} scale={0.005} />
+            <Scene props={props} scale={0.006} />
         </Canvas>
     )
 
