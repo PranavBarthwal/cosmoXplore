@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
-import logo from '../../assets/A letter tech logo.png';
 import Typed from 'typed.js';
+import Earth from '../3D_Models/Earth/Earth.jsx'
+import Styles from './Hero.module.css'
 
 function Hero() {
   useEffect(() => {
@@ -21,8 +22,8 @@ function Hero() {
   return (
     <div className="container col-xxl-9 px-3 py-5 override-display">
       <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
-        <div className="col-10 col-sm-8 col-lg-6">
-          <img src={logo} className="d-block mx-lg-auto img-fluid hero_img" alt="Bootstrap Themes" width="700" height="500" loading="lazy" />
+        <div className="col-10 col-sm-8 col-lg-6 flex justify-center   " id={Styles['earth']}>
+          <Earth />
         </div>
         <div className="col-lg-6">
           <h1 className="display-2 fw-bold text-light">Let's embark on a Cosmic <span className="highlight"><br />X<span className="auto-typed"></span></span></h1>

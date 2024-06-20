@@ -3,6 +3,7 @@ import img from '../../assets/original-5fcdc62f8266e353ea97ca56731ad804.png';
 import Styles from "./ContactForm.module.css"
 import emailjs from '@emailjs/browser';
 import { toastify } from "../Toast/Toast.jsx"
+import Neptune from "../3D_Models/Neptune/Neptune.jsx"
 
 
 function ContactForm() {
@@ -74,7 +75,7 @@ function ContactForm() {
       <h1 align="center" className={Styles["section_title"]} id="contact">Contact Us</h1>
       <div className={Styles["contact-form"]}>
         <div className={Styles["left"]}>
-          <img src={img} className={Styles["contact_img"]} alt="Contact Image" style={{ maxWidth: "100%" }} />
+          <Neptune />
         </div>
         <div className={Styles["right"]}>
           <form className={Styles["form"]}>
