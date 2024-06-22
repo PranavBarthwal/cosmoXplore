@@ -113,10 +113,10 @@ function Navbar() {
           </li>
           {renderAPODLink()}
           <li className="navbar-list-item" onClick={handleMenuClose}>
-            <NavLink className={({ isActive }) => ("rem-default " + (isActive ? ' active' : ''))} to="/mars-rover">MartianImagery</NavLink>
+            <NavLink className={({ isActive }) => ("rem-default " + (isActive ? ' active' : ''))} to="/marsrover">MartianImagery</NavLink>
           </li>
           <li className="navbar-list-item" onClick={handleMenuClose}>
-            <NavLink className={({ isActive }) => ("rem-default " + (isActive ? ' active' : ''))} to="/nasa-projects">NASA's Projects</NavLink>
+            <NavLink className={({ isActive }) => ("rem-default " + (isActive ? ' active' : ''))} to="/nasaprojects">NASA's Projects</NavLink>
           </li>
           <li className="navbar-list-item" onClick={handleMenuClose}>
             <NavLink className={({ isActive }) => ("rem-default " + (isActive ? ' active' : ''))} to="/about">About us</NavLink>
