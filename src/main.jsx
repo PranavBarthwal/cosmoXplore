@@ -13,9 +13,9 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App />}>
       <Route index element={<Home />} />
-      <Route path='mars-rover' element={<MarsRover />} />
-      <Route path='nasa-projects' element={<NasaProjects />} />
-      <Route path='about' element={<About />} />
+      <Route path='/marsrover' element={<MarsRover />} />
+      <Route path='/nasaprojects' element={<NasaProjects />} />
+      <Route path='/about' element={<About />} />
       <Route path='*' element={<NotFoundPage />} />
     </Route>
   )
