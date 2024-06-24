@@ -17,7 +17,7 @@ function ScrollToTop() {
 
     return (
         <div className={Styles['btn']} onMouseEnter={()=>setIsHover(true)} onMouseLeave={()=>setIsHover(false)}>
-            <button className={Styles['scroll-btn']} onClick={handleClick}><TbArrowBigUpLineFilled size={25} color={isHover?'white':'#8400ff'} /></button>
+            <button className={Styles['scroll-btn']} onClick={handleClick}><TbArrowBigUpLineFilled size={25} color={isHover?'white':'#720026'} /></button>
         </div>
     )
 }
