@@ -12,6 +12,9 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@hookform/resolvers": "^3.6.0",
     "@react-three/drei": "^9.106.0",
     "@react-three/fiber": "^8.16.6",
     "@tsparticles/all": "^3.4.0",
@@ -24,7 +27,8 @@
     "react-router-dom": "^6.23.1",
     "react-scroll": "^1.9.0",
     "three": "^0.164.1",
-    "typed.js": "^2.1.0"
+    "typed.js": "^2.1.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
