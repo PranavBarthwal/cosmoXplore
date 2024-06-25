@@ -1,0 +1,92 @@
+.rate-us-container {
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 350px;
+  margin: 130px auto 0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: rgb(245, 245, 249);
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.rate-us-container:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  background-color: #f9f9f9;
+}
+
+.rate-us-container h1 {
+  margin-bottom: 20px;
+  color: black;
+  text-align: center;
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  cursor: pointer;
+}
+
+input[type='radio'] {
+  display: none;
+}
+
+.star {
+  color: #e4e5e9;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.star:hover,
+.star:hover ~ .star {
+  color: #ffc107;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+textarea {
+  width: 100%;
+  height: 120px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  resize: none;
+  z-index: 1;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.toast {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #4caf50;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}

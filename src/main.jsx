@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } from "react-router-dom"
 import './index.css'
 import App from './App.jsx'
+import Rateus from './pages/Rateus/Rateus.jsx'
 import Home from "./pages/Home/Home.jsx"
 import MarsRover from './pages/MarsRover/MarsRover.jsx'
 import NasaProjects from "./pages/NasaProjects/NasaProjects.jsx"
@@ -16,6 +17,7 @@ const router = createBrowserRouter(
       <Route path='/marsrover' element={<MarsRover />} />
       <Route path='/nasaprojects' element={<NasaProjects />} />
       <Route path='/about' element={<About />} />
+      <Route path='/rateus' element={<Rateus />} />
       <Route path='*' element={<NotFoundPage />} />
     </Route>
   )
