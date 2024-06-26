@@ -65,8 +65,8 @@ const Chatbot = () => {
         <div className="chat-popup-container">
           <div className="chat-popup-header">
             <h5>SpaceBot</h5>
-            <i className="fas fa-sync refresh-icon" onClick={handleRefresh}></i>
-            <i className="fas fa-times close-icon" onClick={toggleChatbot}></i>
+            <i style={{marginTop:'1.5%'}} className="fas fa-sync refresh-icon" onClick={handleRefresh}></i>
+            <i style={{marginTop:'5%'}} className="fas fa-times close-icon" onClick={toggleChatbot}></i>
           </div>
           <div className="chat-popup-body">
             <div className="chat-messages">

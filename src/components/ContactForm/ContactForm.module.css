@@ -17,6 +17,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 500px;
 }
 
 .contact-form .right {
@@ -45,72 +46,77 @@
     animation: leviate 2s ease-in-out infinite;
     animation-delay: 2ms;
 }
+
 @keyframes leviate {
     50% {
         transform: translateY(-20px);
     }
 }
 
-.right form{
+.right form {
     width: 30vw;
     padding: 30px;
-    background-color:transparent;
+    background-color: transparent;
     backdrop-filter: blur(25px);
     border: 2px solid #40019a;
     box-sizing: content-box;
-    border-radius:10px;
+    border-radius: 10px;
     animation: circle 4s ease-in-out infinite;
 }
 
 @keyframes circle {
-    0%{
+    0% {
         box-shadow: 10px 10px 10px #8400ff;
     }
-    25%{
+
+    25% {
         box-shadow: -10px 10px 10px #8400ff;
     }
-    50%{
+
+    50% {
         box-shadow: -10px -10px 10px #8400ff;
     }
-    75%{
+
+    75% {
         box-shadow: 10px -10px 10px #8400ff;
     }
-    100%{
+
+    100% {
         box-shadow: 10px 10px 10px #8400ff;
     }
 }
 
-.right .form-control{
+.right .form-control {
     outline: none;
     border: 2px solid #9000ff;
-    border-radius:40px;
+    border-radius: 40px;
     background: transparent;
-    border-radius:10px;
+    border-radius: 10px;
     color: white;
     resize: none;
 }
 
-.right .form-control::placeholder{
+.right .form-control::placeholder {
     color: white;
 }
 
 
-.right .form-control:focus{
+.right .form-control:focus {
     outline: none;
     border: none;
-    background-color:#7805e39d;
+    background-color: #7805e39d;
     box-shadow: none;
-    color:white ;
+    color: white;
 }
 
-.right button{
+.right button {
     outline: none;
-    border:none;
+    border: none;
     border-radius: 30px;
-    background-color:#8400ff;
+    background-color: #8400ff;
 }
 
-.right button:hover{
+.right button:hover {
     background: #40019a;
     color: white;
     transform: scale(1.1);
@@ -133,7 +139,8 @@
         justify-content: center;
         align-items: center;
     }
-    .contact-form .form{
-        width:60%;
+
+    .contact-form .form {
+        width: 60%;
     }
 }

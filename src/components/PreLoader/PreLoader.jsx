@@ -1,12 +1,29 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Styles from "./PreLoader.module.css"
-import preloader from "../../assets/preloader.svg"
+import preloaderSVG from "../../assets/preloader.svg"
+import preloaderIMG from '../../assets/Rocket-rafiki (1).gif'
 
 function PreLoader() {
 
+    const [isScreen, setIsScreen] = useState(true)
+
+    useEffect(() => {
+        document.addEventListener('resize', () => {
+            if (window.innerWidth <= 500)
+                setIsScreen(false)
+            else
+                setIsScreen(true)
+        })
+    }, [])
+
     return (
         <div id={Styles.container}>
-            <object type='image/svg+xml' data={preloader} width="500px" />
+            {
+                isScreen ?
+                    <object type='image/svg+xml' data={preloaderSVG} width="500px" />
+                    :
+                    <img src={preloaderIMG} />
+            }
         </div>
     )
 }
