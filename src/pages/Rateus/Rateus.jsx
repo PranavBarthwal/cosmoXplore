@@ -11,9 +11,11 @@ const RateUs = () => {
   const handleSubmit = (event) => {
     event.preventDefault(); // Prevent default form submission
 
-    // Show the message for 3 seconds
+    // Set the message content and show the message
     setMessage(`Thanks For Your Feedback: "${feedback}"`);
     setShowMessage(true);
+
+    // Hide the message after 3 seconds
     setTimeout(() => {
       setShowMessage(false);
       setFeedback('');
@@ -63,7 +65,7 @@ const RateUs = () => {
       </form>
 
       {showMessage && (
-        <div className="toast">
+        <div className="custom-toast">
           {message}
         </div>
       )}
