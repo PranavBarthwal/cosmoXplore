@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100dvw;
+  width: 100%;
   background-image: linear-gradient(to left, rgba(10, 0, 73, 0.9), rgba(0, 0, 0, 0.9));
   color: #fff;
   padding: 1rem 2rem;
@@ -27,7 +27,7 @@
 }
 
 .navigator {
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 .navigator.open {
@@ -41,8 +41,6 @@
   align-items: center;
   gap: 2rem;
 }
-
-/*  */
 
 .navbar-links.open {
   display: flex;
@@ -71,47 +69,19 @@
   opacity: 1;
 }
 
-.navbar-list-item-contact-us {
-  opacity: 0.7;
-  list-style-type: none;
-  transition: 0.5s;
-}
-
-.active {
-  text-decoration: none;
-  opacity: 1;
-  color: rgb(0, 255, 255);
-  font-weight: bold;
-}
-
 .navbar-list-item:after {
   content: "";
-  /* Empty content for pseudo-element */
   position: absolute;
-  /* Absolute positioning for underline */
   width: 100%;
-  /* Full width of the list item */
   height: 2px;
-  /* Underline height */
   background-color: aqua;
-  /* White underline color */
   opacity: 0;
-  /* Initially hidden */
   transition: all 0.3s;
-  /* Smooth transition on hover */
   bottom: -7px;
-  /* Increased gap */
   left: 0;
-  /* Align underline to the left of the list item */
 }
 
 .navbar-list-item:hover:after {
-  /* font-size: large; */
-  opacity: 1;
-}
-
-.navbar-list-item-contact-us:hover {
-  /* font-size: large; */
   opacity: 1;
 }
 
@@ -146,7 +116,7 @@
     top: 0;
     right: 0;
     width: 30%;
-    height: 100dvh;
+    height: 100vh;
     background-color: #030013ee;
     overflow: auto;
     z-index: 10;

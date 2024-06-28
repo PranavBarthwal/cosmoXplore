@@ -9,11 +9,8 @@ import PreLoader from './components/PreLoader/PreLoader.jsx'
 import { useState } from 'react'
 import Chatbot from './components/Chatbot/chatbot.jsx';
 
-
 function App() {
-
   const [isPreLoading, setIsPreLoading] = useState(true)
-
   return (
     <>
       {isPreLoading && <PreLoader />}
@@ -27,5 +24,4 @@ function App() {
     </>
   );
 }
-
 export default App;
