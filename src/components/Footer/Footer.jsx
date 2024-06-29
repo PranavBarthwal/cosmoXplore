@@ -15,7 +15,7 @@ function Footer() {
           <i className="fab fa-github"></i>
           </a>
           <a href="https://x.com/pranavbarthwal_" className="text-light me-4">
-            <i className="fab fa-twitter"></i>
+            <i className="fab fa-x-twitter"></i>
           </a>
           <a href="https://linktr.ee/PranavBarthwal" className="text-light me-4">
             <i className="fab fa-instagram"></i>
