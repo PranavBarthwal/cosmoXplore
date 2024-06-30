@@ -71,48 +71,48 @@ export default function SignInSignUp() {
       @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
       @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
 
-      * {
-        box-sizing: border-box;
-      }
 
       body {
-        background: black;
-        display: flex;
+        background: rgb(11, 3, 71);;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         font-family: 'Montserrat', sans-serif;
-        height: 100vh;
-        margin: -20px 0 50px;
       }
-
-
-      h1 {
-        font-weight: bold;
-        margin: 0;
-        color: darkturquoise;
-        font-size: 26px;
-      }
+h1 {
+  font-weight: bold;
+  margin: 0;
+  font-size: 23px;
+  background: linear-gradient(90deg, #8a2be2, #d896ff); /* Adjust the colors to match your gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
       h2 {
         text-align: center;
+        background: linear-gradient(90deg, #8a2be2, #d896ff); /* Adjust the colors to match your gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
       }
 
       p {
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 100;
         line-height: 20px;
         letter-spacing: 0.5px;
         margin: 20px 0 30px;
+        background: linear-gradient(90deg, #8a2be2, #d896ff); /* Adjust the colors to match your gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
       }
 
       span {
         font-size: 14px;
-        color: #333;
+        color:  #9000ff;
       }
 
       a {
-        color: blue;
+        color:#9000ff ;
         font-size: 14px;
         text-decoration: none;
         margin: 15px 0;
@@ -121,7 +121,7 @@ export default function SignInSignUp() {
       button {
         border-radius: 20px;
         border: 2px solid yellow;
-        background-color: darkturquoise;
+        background-color: #9000ff;
         color: #ffffff;
         font-size: 12px;
         font-weight: bold;
@@ -144,7 +144,7 @@ export default function SignInSignUp() {
 
       button.ghost {
         background-color: transparent;
-        border-color: darkturquoise;
+        border-color:  #9000ff;
       }
 
       form {
@@ -156,31 +156,33 @@ export default function SignInSignUp() {
         padding: 0 50px;
         height: 100%;
         text-align: center;
-        border: solid 2px darkturquoise;
-        
+        border: solid 2px #9000ff; 
       }
 
       input {
         background-color: #eee;
-        border: dotted 2px darkturquoise;
-        padding: 12px 15px;
-        margin: 8px 0;
+        border: dotted 2px #9000ff;
+        padding: 6px 6px;
+        margin: 6px 0;
         width: 100%;
-        color: darkturquoise;
+        background: linear-gradient(90deg, #8a2be2, #d896ff); /* Adjust the colors to match your gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
       }
 
       .container {
         background-color: #fff;
         border-radius: 10px;
-        border: solid 2px darkturquoise;
-        box-shadow: 10px 14px 28px rgba(0, 0, 0, 0.25), 10px 10px 10px rgba(0, 0, 0, 0.22);
-        position: relative;
+        border: solid 2px  #9000ff;
+        box-shadow: 10px 14px 28px #9000ff, 10px 10px 10px #9000ff;
+        position: absolute;
         overflow: hidden;
+        margin-top:7% ;
+        margin-left:9%;
         height: 580px;
         width: 1250px;
         max-width: 100%;
         min-height: 480px;
-        
       }
 
       .form-container {
@@ -188,7 +190,7 @@ export default function SignInSignUp() {
         top: 0;
         height: 100%;
         transition: all 0.6s ease-in-out;
-        border: solid 2px darkturquoise;
+        border: solid 2px  #9000ff;
       }
 
       .eye-button {
@@ -198,14 +200,14 @@ export default function SignInSignUp() {
         background: none;
         border: none;
         cursor: pointer;
-        color: darkturquoise;
+        color:  #9000ff;
       }
 
       .sign-in-container {
         left: 0;
         width: 50%;
         z-index: 2;
-        border: solid 2px darkturquoise;
+        border: solid 2px  #9000ff;
       }
 
       .container.right-panel-active .sign-in-container {
@@ -254,8 +256,8 @@ export default function SignInSignUp() {
 
       .overlay {
         background: #ff416c;
-        background: -webkit-linear-gradient(to right, #242533, #242533);
-        background: linear-gradient(to right, #242533, #242533);
+        background: -webkit-linear-gradient(to right, #03001D, #03001D);
+        background: linear-gradient(to right, #03001D, #03001D);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: 0 0;
@@ -318,7 +320,7 @@ export default function SignInSignUp() {
         height: 50px;
         width: 50px;
         border-radius: 50%;
-        background-color: darkturquoise;
+        background-color:  #9000ff;
         margin: 0 10px;
         font-size: 20px;
         color: white;
@@ -348,14 +350,14 @@ export default function SignInSignUp() {
             )
           ),
           React.createElement('br', null),
-          React.createElement('span', null, 'or use your email for registration'),
+          React.createElement('span', null, 'Join Cosmoxplore by creating your account or register with your email'),
           React.createElement('input', { type: 'text', placeholder: 'Name', ...signUpForm.register("name") }),
           signUpForm.formState.errors.name && (
-            React.createElement('p', { className: 'text-darkturquoise' }, signUpForm.formState.errors.name?.message)
+            React.createElement('p', { className: 'text- #9000ff' }, signUpForm.formState.errors.name?.message)
           ),
           React.createElement('input', { type: 'email', placeholder: 'Email', ...signUpForm.register("email") }),
           signUpForm.formState.errors.email && (
-            React.createElement('p', { className: 'text-darkturquoise' }, signUpForm.formState.errors.email?.message)
+            React.createElement('p', { className: 'text- #9000ff' }, signUpForm.formState.errors.email?.message)
           ),
           React.createElement('div', { style: { position: 'relative', width: '100%' } },
             React.createElement('input', { type: isVisible ? "text" : "password", placeholder: 'Password', ...signUpForm.register("password") }),
@@ -364,14 +366,14 @@ export default function SignInSignUp() {
             )
           ),
           signUpForm.formState.errors.password && (
-            React.createElement('p', { className: 'text-darkturquoise' }, signUpForm.formState.errors.password?.message)
+            React.createElement('p', { className: 'text- #9000ff' }, signUpForm.formState.errors.password?.message)
           ),
           React.createElement('button', { type: 'submit' }, 'Sign Up')
         )
       ),
       React.createElement('div', { className: 'form-container sign-in-container' },
         React.createElement('form', { onSubmit: signInForm.handleSubmit(handleSignInSubmit) },
-          React.createElement('h1', null, 'Access your Account'),
+          React.createElement('h1', null, 'Access your Cosmoxplore account'),
           React.createElement('div', { className: 'social-container' },
             React.createElement('a', { href: 'https://www.facebook.com', className: 'social' },
               React.createElement('i', { className: 'fab fa-facebook-f' })
@@ -387,10 +389,10 @@ export default function SignInSignUp() {
             )
           ),
           React.createElement('br', null),
-          React.createElement('span', null, 'or Proceed with Your Profile'),
+          React.createElement('span', null, 'Join Cosmoxplore by creating your account or continue with your profile'),
           React.createElement('input', { type: 'email', placeholder: 'Email', ...signInForm.register("email") }),
           signInForm.formState.errors.email && (
-            React.createElement('p', { className: 'text-darkturquoise' }, signInForm.formState.errors.email?.message)
+            React.createElement('p', { className: 'text- #9000ff' }, signInForm.formState.errors.email?.message)
           ),
           React.createElement('div', { style: { position: 'relative', width: '100%' } },
             React.createElement('input', { type: isVisible ? "text" : "password", placeholder: 'Password', ...signInForm.register("password") }),
@@ -399,7 +401,7 @@ export default function SignInSignUp() {
             )
           ),
           signInForm.formState.errors.password && (
-            React.createElement('p', { className: 'text-darkturquoise' }, signInForm.formState.errors.password?.message)
+            React.createElement('p', { className: 'text- #9000ff' }, signInForm.formState.errors.password?.message)
           ),
           React.createElement('span', null,
             React.createElement('a', { href: 'https://cosmoxplore.vercel.app/' }, 'Forgot your password?')
@@ -411,13 +413,13 @@ export default function SignInSignUp() {
       React.createElement('div', { className: 'overlay-container' },
         React.createElement('div', { className: 'overlay' },
           React.createElement('div', { className: 'overlay-panel overlay-left' },
-            React.createElement('h1', null, 'Welcome Back!'),
-            React.createElement('p', null, 'To keep connected with us please login with your personal info'),
+            React.createElement('h1', null, 'Welcome back! Dive into your Cosmoxplore journey'),
+            React.createElement('p', null, 'We are glad you are here! Connect with us by logging in with your personal details to explore Cosmoxplore'),
             React.createElement('button', { className: 'ghost', onClick: () => handleOnClick('signIn') }, 'Sign In')
           ),
           React.createElement('div', { className: 'overlay-panel overlay-right' },
-            React.createElement('h1', null, 'Welcome aboard!'),
-            React.createElement('p', null, 'Share a bit about yourself and let\'s embark on a journey together filled with discovery and excitement.'),
+            React.createElement('h1', null, 'Explore the universe with Cosmoxplore'),
+            React.createElement('p', null, 'Cosmoxplore: Unveiling the mysteries of the cosmos'),
             React.createElement('button', { className: 'ghost', onClick: () => handleOnClick('signUp') }, 'Sign Up')
           )
         )
