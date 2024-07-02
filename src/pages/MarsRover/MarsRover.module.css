@@ -1,3 +1,4 @@
+
 #container {
     display: flex;
     flex-direction: column;
@@ -64,7 +65,7 @@
 }
 
 .rover-card {
-    background: rgba(38, 3, 94, 0.486);
+    background: rgba(66, 36, 25, 0.35);
     margin: 50px;
     padding: 50px;
     border-radius: 20px;
@@ -72,7 +73,7 @@
 }
 
 .rover-card h1 {
-    filter: drop-shadow(0 0 10px rgb(195, 0, 255));
+    filter: drop-shadow(0 0 10px #CA7968);
     margin-bottom: 5%;
 }
 
@@ -85,14 +86,14 @@
 .rover p {
     font-size: 1.5rem;
     width: 50%;
-    background: rgba(98, 0, 255, 0.39);
+    background: rgba(27, 0, 0, 0.4);
     padding: 20px;
     border-radius: 40px 0px 40px 0px;
     transition: box-shadow 0.5s ease-in-out;
 }
 
 .rover a {
-    color: rgb(192, 101, 245);
+    color: rgb(99, 99, 99);
 }
 
 .rover p:hover {
@@ -119,11 +120,11 @@
 }
 
 .rover-model:hover {
-    box-shadow: 0 0 20px rgba(98, 0, 255, 0.39);
+    box-shadow: 0 0 20px rgba(245, 245, 220, 0.39);
 }
 
 .rover-launch-info {
-    background: rgba(98, 0, 255, 0.39);
+    background: rgba(27, 0, 0, 0.4);
     text-align: left;
     padding: 10px;
     border-radius: 0px 0px 20px 20px;
@@ -184,7 +185,7 @@
 
 #calender input {
     outline: none;
-    border: 2px solid #9000ff;
+    border: 2px solid #b46f6f;
     border-radius: 40px;
     background: transparent;
     color: white;
@@ -198,14 +199,14 @@
 
 #calender input:focus {
     outline: none;
-    border: 2px solid #9000ff;
+    border: 2px solid #420000;
     box-shadow: 0 0 15px white;
     color: white;
 }
 
 #calender button {
     outline: none;
-    color: #8400ff;
+    color: rgba(27, 0, 0, 1);
     background: white;
     border-left: none;
     border-radius: 40px;
@@ -213,7 +214,7 @@
 }
 
 #calender button:hover {
-    background: #8400ff;
+    background: rgb(183, 65, 14);
     color: white;
     box-shadow: 0 0 15px white;
     cursor: pointer;
@@ -226,11 +227,11 @@
 }
 
 .section_title {
-    background: -webkit-linear-gradient(#e4d6fb, #8400ff);
+    background: -webkit-linear-gradient(#ffb4b4, #422419);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 4rem;
     font-weight: bold;
     border-top: 20dvh solid transparent;
-    filter: drop-shadow(0 0 2px rgb(174, 0, 255));
+    filter: drop-shadow(0 0 2px rgb(245, 245, 220));
 }
