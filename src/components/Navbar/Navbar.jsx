@@ -4,6 +4,17 @@ import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 import logoWhite from '../../assets/logo_white.png';
 import './Navbar.css';
 
+function MarsRoverActive() {
+  var path = window.location.pathname;
+
+  if (path === '/marsrover') { 
+    return true; 
+  }
+  else {
+    return false;
+  }
+}
+
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrollTarget, setScrollTarget] = useState(null);
@@ -99,8 +110,16 @@ function Navbar() {
     }
   };
 
+  let currentStyleNavBar = "navbar_others";
+
+  if (MarsRoverActive()) {
+    currentStyleNavBar = "navbar_marsrover";
+  } else {
+    currentStyleNavBar = "navbar_others";
+  }
+
   return (
-    <nav className="navbar">
+    <nav className={currentStyleNavBar}>
       <div className="logo">
         <a href="#" onClick={() => { scroll.scrollToTop(); navigate('/'); handleMenuClose(); }}>
           <img src={logoWhite} alt="Bootstrap" className="logo-img" />
