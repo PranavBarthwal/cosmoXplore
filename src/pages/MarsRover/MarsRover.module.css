@@ -1,9 +1,3 @@
-body {
-    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.9), rgba(27, 0, 0, 1));
-    overflow-x: hidden;
-    color: rgb(255, 255, 255);
-    font-family: "Space Grotesk", sans-serif;
-}
 
 #container {
     display: flex;

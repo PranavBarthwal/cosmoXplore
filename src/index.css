@@ -7,7 +7,6 @@
 }
 
 body {
-  background-image: linear-gradient(to left, rgb(10, 0, 73), rgb(0, 0, 0));
   overflow-x: hidden;
   color: rgb(255, 255, 255);
   font-family: "Space Grotesk", sans-serif;

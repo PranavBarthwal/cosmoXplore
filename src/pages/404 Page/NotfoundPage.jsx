@@ -1,6 +1,13 @@
 import './Notfound.css';
 import { Link } from 'react-router-dom';
 export default function NotfoundPage() {
+
+  if (window.location.pathname === '/marsrover') {
+    document.body.style.backgroundImage = "linear-gradient(to left, rgba(0, 0, 0, 0.9), rgba(27, 0, 0, 1))";
+  } else {
+    document.body.style.backgroundImage = "linear-gradient(to left, rgb(10, 0, 73), rgb(0, 0, 0))";
+  }
+
   return (
     <div className="error-page">
       <div className="container">
@@ -25,13 +32,13 @@ export default function NotfoundPage() {
               {" "}
               Oops, the page you're looking for Disappeared{" "}
             </p>
-            <button className="go-back"><Link to="/" style={{textDecoration:"none"}}>Go Back</Link></button>
+            <button className="go-back"><Link to="/" style={{ textDecoration: "none" }}>Go Back</Link></button>
           </div>
         </div>
       </div>
 
       <iframe
-        style={{ width:0,height:0,border:0}}
+        style={{ width: 0, height: 0, border: 0 }}
         frameborder="no"
         allow="autoplay"
         src="https://instaud.io/_/2Vvu.mp3"
