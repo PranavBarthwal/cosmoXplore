@@ -90,6 +90,30 @@ function MarsRover() {
         }
     }
 
+    useEffect(() => {
+        const style = document.createElement('style');
+        style.innerHTML = `
+            ::-webkit-scrollbar-track {
+                background: rgb(50 20 20);
+            }
+
+            ::-webkit-scrollbar-thumb {
+                background: linear-gradient(rgb(160, 82, 45), rgb(202, 121, 104));
+                border-radius: 7px;
+            }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background: linear-gradient(rgb(255, 157, 138), rgb(193, 154, 107));
+                border-radius: 7px;
+            }
+        `;
+        document.head.appendChild(style);
+
+        return () => {
+        document.head.removeChild(style);
+        };
+    }, []);
+
     if (window.location.pathname === '/marsrover') {
         document.body.style.backgroundImage = "linear-gradient(to left, rgba(0, 0, 0, 0.9), rgba(27, 0, 0, 1))";
     } else {

@@ -93,7 +93,7 @@
 }
 
 .rover a {
-    color: rgb(139, 0, 0);
+    color: rgb(99, 99, 99);
 }
 
 .rover p:hover {
@@ -120,7 +120,7 @@
 }
 
 .rover-model:hover {
-    box-shadow: 0 0 20px rgba(98, 0, 255, 0.39);
+    box-shadow: 0 0 20px rgba(245, 245, 220, 0.39);
 }
 
 .rover-launch-info {
@@ -214,7 +214,7 @@
 }
 
 #calender button:hover {
-    background: #8400ff;
+    background: rgb(183, 65, 14);
     color: white;
     box-shadow: 0 0 15px white;
     cursor: pointer;
@@ -233,5 +233,5 @@
     font-size: 4rem;
     font-weight: bold;
     border-top: 20dvh solid transparent;
-    filter: drop-shadow(0 0 2px rgb(174, 0, 255));
+    filter: drop-shadow(0 0 2px rgb(245, 245, 220));
 }
