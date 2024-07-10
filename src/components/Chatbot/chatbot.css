@@ -81,7 +81,7 @@ height: 120%;
 transform: rotate(-45deg);
 }
 
-.star {
+/* .star {
 $star-count: 50;
 --star-color: var(--primary-color);
 --star-tail-length: 6em;
@@ -101,7 +101,7 @@ border-radius: 50%;
 filter: drop-shadow(0 0 6px currentColor);
 transform: translate3d(104em, 0, 0);
 animation: fall var(--fall-duration) var(--fall-delay) linear infinite, tail-fade var(--tail-fade-duration) var(--fall-delay) ease-out infinite;
-
+} */
 
 @include sp-layout {
   // For mobile performance, tail-fade animation will be removed QAQ
@@ -136,7 +136,7 @@ animation: fall var(--fall-duration) var(--fall-delay) linear infinite, tail-fad
 &::after {
   transform: rotate(-45deg);
 }
-}
+
 
 @keyframes fall {
 to {
