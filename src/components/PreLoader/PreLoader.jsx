@@ -8,24 +8,30 @@ function PreLoader() {
     const [isScreen, setIsScreen] = useState(true)
 
     useEffect(() => {
-        document.addEventListener('resize', () => {
-            if (window.innerWidth <= 500)
-                setIsScreen(false)
-            else
-                setIsScreen(true)
-        })
-    }, [])
+        const handleResize = () => {
+            setIsScreen(window.innerWidth <= 500);
+        };
+        window.addEventListener('resize', handleResize);
+
+        document.body.style.overflow = 'hidden';
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+            
+            document.body.style.overflow = 'auto';
+        };
+    }, []);
 
     return (
         <div id={Styles.container}>
             {
-                isScreen ?
+                isScreen ? (
                     <object type='image/svg+xml' data={preloaderSVG} width="500px" />
-                    :
+                 ) : (
                     <img src={preloaderIMG} />
-            }
+                 )}
         </div>
-    )
+    );
 }
 
 export default PreLoader
