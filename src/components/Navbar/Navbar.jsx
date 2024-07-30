@@ -99,6 +99,29 @@ function Navbar() {
     }
   };
 
+  useEffect(() => {
+    const loadGoogleTranslate = () => {
+      new window.google.translate.TranslateElement(
+        {
+          pageLanguage: 'en',
+          includedLanguages: 'en,hi,pa,sa,mr,ur,bn,es,fr,de,it',
+          layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
+        },
+        'google_element'
+      );
+    };
+
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'https://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate';
+    script.onerror = () => console.error('Error loading Google Translate script');
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <nav className="navbar">
       <div className="logo">
@@ -125,6 +148,9 @@ function Navbar() {
             <NavLink className={({ isActive }) => ("rem-default " + (isActive ? ' active' : ''))} to="/login">AstroAccess</NavLink>
           </li>
           {renderContactLink()}
+          <li className="navbar-list-item" onClick={handleMenuClose}>
+            <div id="google_element"></div>
+          </li>
         </ul>
       </div>
       <div className="hamburger" id="hamburger" onClick={toggleMenu} aria-label="Menu">
