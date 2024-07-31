@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import Typed from 'typed.js';
-import Earth from '../3D_Models/Earth/Earth.jsx'
-import Styles from './Hero.module.css'
+import Earth from '../3D_Models/Earth/Earth.jsx';
 
 function Hero() {
   useEffect(() => {
@@ -22,7 +21,7 @@ function Hero() {
   return (
     <div className="container col-xxl-9 px-3 py-5 override-display">
       <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
-        <div className="col-10 col-sm-8 col-lg-6 flex justify-center   " id={Styles['earth']}>
+        <div className="col-10 col-sm-8 col-lg-6 flex justify-center" id="earth">
           <Earth />
         </div>
         <div className="col-lg-6">
