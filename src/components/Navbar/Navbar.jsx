@@ -62,13 +62,13 @@ function Navbar() {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     }
-    handleMenuClose();
+    toggleMenu();
   };
 
   const renderAPODLink = () => {
     if (location.pathname === '/') {
       return (
-        <li className="navbar-list-item" onClick={handleMenuClose}>
+        <li className="navbar-list-item" onClick={()=> toggleMenu()}>
           <ScrollLink className="rem-default" to="apod" smooth={true} duration={500}>APOD</ScrollLink>
         </li>
       );
@@ -84,7 +84,7 @@ function Navbar() {
   const renderContactLink = () => {
     if (location.pathname === '/') {
       return (
-        <li className="navbar-list-item" onClick={handleMenuClose}>
+        <li className="navbar-list-item" onClick={()=> toggleMenu()}>
           <ScrollLink className="rem-default" to="contact" smooth={true} duration={500}>
             <button className="btn btn-outline-light rounded-pill" type="submit">Contact Us</button>
           </ScrollLink>
@@ -102,26 +102,26 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="logo">
-        <a href="#" onClick={() => { scroll.scrollToTop(); navigate('/'); handleMenuClose(); }}>
+        <a href="#" onClick={() => { scroll.scrollToTop(); navigate('/'); toggleMenu(); }}>
           <img src={logoWhite} alt="Bootstrap" className="logo-img" />
         </a>
       </div>
       <div className={`navigator ${isOpen ? 'open' : ''}`}>
         <ul className={`navbar-links ${isOpen ? 'open' : ''}`}>
-          <li className="navbar-list-item" onClick={() => { scroll.scrollToTop(); handleMenuClose(); }}>
+          <li className="navbar-list-item" onClick={() => { scroll.scrollToTop(); toggleMenu(); }}>
             <NavLink className={({ isActive }) => ("rem-default " + (isActive ? ' active' : ''))} to="/">Home</NavLink>
           </li>
           {renderAPODLink()}
-          <li className="navbar-list-item" onClick={handleMenuClose}>
+          <li className="navbar-list-item" onClick={()=>toggleMenu()}>
             <NavLink className={({ isActive }) => ("rem-default " + (isActive ? ' active' : ''))} to="/marsrover">MartianImagery</NavLink>
           </li>
-          <li className="navbar-list-item" onClick={handleMenuClose}>
+          <li className="navbar-list-item" onClick={toggleMenu}>
             <NavLink className={({ isActive }) => ("rem-default " + (isActive ? ' active' : ''))} to="/nasaprojects">NASA's Projects</NavLink>
           </li>
-          <li className="navbar-list-item" onClick={handleMenuClose}>
+          <li className="navbar-list-item" onClick={toggleMenu}>
             <NavLink className={({ isActive }) => ("rem-default " + (isActive ? ' active' : ''))} to="/about">About us</NavLink>
           </li>
-          <li className="navbar-list-item" onClick={handleMenuClose}>
+          <li className="navbar-list-item" onClick={toggleMenu}>
             <NavLink className={({ isActive }) => ("rem-default " + (isActive ? ' active' : ''))} to="/login">AstroAccess</NavLink>
           </li>
           {renderContactLink()}
