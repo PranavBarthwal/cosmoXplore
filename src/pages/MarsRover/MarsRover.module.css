@@ -160,6 +160,16 @@
 
 }
 
+@media (max-width:400px) {
+    .rover-card{
+        width: 300px;
+    }
+    .rover-left{
+        width: 290px;
+    }
+    
+}
+
 /* section - 3 */
 #section-3 {
     width: 100%;
