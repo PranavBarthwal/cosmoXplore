@@ -195,8 +195,6 @@
   }
 }
 
-
-/* Additional styling for responsiveness */
 @media (max-width: 768px) {
   .contact-form {
     flex-direction: column;
@@ -208,10 +206,6 @@
     /* Adjust as needed */
   }
 }
-
-/* Info card in mars section */
-
-
 
 .card {
   border-radius: 10px;
@@ -282,8 +276,6 @@
     height: 350px;
     width: 350px;
   }
-
-  /*mars illus optimized for mobile devices*/
 
   .rover_section_img {
     display: flex;
@@ -384,8 +376,6 @@
 .mars_illus {
   height: 80%;
 }
-
-/* sidebar for mobile devices*/
 
 .sidebar-icon {
   position: absolute;

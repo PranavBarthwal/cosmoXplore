@@ -122,7 +122,11 @@ function Navbar() {
             <NavLink className={({ isActive }) => ("rem-default " + (isActive ? ' active' : ''))} to="/about">About us</NavLink>
           </li>
           <li className="navbar-list-item" onClick={handleMenuClose}>
+
+            <NavLink className={({ isActive }) => ("rem-default " + (isActive ? ' active' : ''))} to="/rateus">Rate Us</NavLink>
+
             <NavLink className={({ isActive }) => ("rem-default " + (isActive ? ' active' : ''))} to="/login">AstroAccess</NavLink>
+
           </li>
           {renderContactLink()}
         </ul>
