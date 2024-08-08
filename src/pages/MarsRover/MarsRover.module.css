@@ -52,15 +52,19 @@
 #section-2 {
     text-align: center;
     margin: 10% 0;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 #rover-wrapper {
+    max-width: 100%;
     margin-top: 10%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     gap: 10%;
+
 }
 
 .rover-card {
@@ -101,12 +105,14 @@
 
 .rover-left {
     width: 500px;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .rover-model {
+    max-width: 100%;
     width: inherit;
     padding: 23px;
     background: rgb(201, 198, 198);
@@ -135,6 +141,7 @@
         padding: 0;
         margin: 0;
         width: 400px;
+        max-width: 100%;
         padding: 20px;
     }
 
@@ -150,12 +157,19 @@
     }
 
     .rover-left {
+        max-width: 100%;
         width: 350px;
     }
 
     #rover-wrapper {
         gap: 50px;
     }
+
+    .rover-launch-info {
+    padding: 0.5rem;
+    border-radius: 0px 0px 20px 20px;
+    max-width: 100%
+}
 
 
 }
