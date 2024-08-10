@@ -80,4 +80,7 @@
         width: 100px;
         height: 140px;
     }
+    #rover-img img{
+        width: 300px;
+    }
 }
