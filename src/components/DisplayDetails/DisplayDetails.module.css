@@ -19,7 +19,7 @@
 }
 
 #rover-img img:hover {
-    box-shadow: 0 0 30px rgb(204, 0, 255);
+    box-shadow: 0 0 30px rgb(170, 111, 111);
 }
 
 #rover-info {
@@ -43,12 +43,12 @@
     text-align: center;
     padding: 10px;
     background: white;
-    color: rgb(132, 0, 255);
+    color: rgb(60, 0, 0);
     border-radius: 20px;
 }
 
 .rover-info-items:hover {
-    background: rgb(132, 0, 255);
+    background: rgb(60, 0, 0);
     color: white;
     box-shadow: 0 0 10px white;
     transition: all 0.5s ease-in-out;
