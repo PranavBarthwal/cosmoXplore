@@ -1,0 +1,17 @@
+#canvas {
+    filter: drop-shadow(0 0 100px rgba(40, 102, 110, 0.589));
+    width: 500px;
+}
+
+#canvas canvas {
+    height: 500px;
+    width: 500px;
+}
+
+
+@media (max-width:500px) {
+    #canvas canvas {
+        height: 400px;
+        width: 400px;
+    }
+}

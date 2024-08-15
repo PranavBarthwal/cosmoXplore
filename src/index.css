@@ -16,3 +16,25 @@ body {
 .body::-webkit-scrollbar {
   display: none;
 }
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar:hover {
+  width: 9px;
+  
+}
+
+::-webkit-scrollbar-track {
+  background: #15013c;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(rgb(203, 131, 255), rgb(106, 0, 255));
+  border-radius: 7px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(rgb(191, 102, 255), rgb(137, 58, 249));
+  border-radius: 7px;
+}

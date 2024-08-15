@@ -14,7 +14,6 @@ function Toast() {
     const [isSuccess, setIsSuccess] = useState(false);
 
     toastify = (message = "", isSuccess = true) => {
-        console.log(timeOut);
         if (timeOut) {
             setMessage(message);
             setIsSuccess(isSuccess);
@@ -32,7 +31,6 @@ function Toast() {
     function handleClose() {
         setIsShow(false);
         if (timeOut) {
-            console.log("cancle");
             clearTimeout(timeOut)
             timeOut = null
         }

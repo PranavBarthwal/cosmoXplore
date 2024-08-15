@@ -1,0 +1,83 @@
+#container {
+    height: 550px;
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    padding: 20px;
+    margin: 50px;
+    border: 2px solid white;
+    border-radius: 20px;
+    column-gap: 40px;
+    justify-items: center;
+}
+
+#rover-img img {
+    width: 500px;
+    border-radius: 20px;
+    border: 1px solid white;
+}
+
+#rover-img img:hover {
+    box-shadow: 0 0 30px rgb(204, 0, 255);
+}
+
+#rover-info {
+    height: 500px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    align-content: center;
+    padding: 10px;
+    column-gap: 20px;
+    justify-items: center;
+}
+
+.rover-info-items {
+    height: 150px;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+    background: white;
+    color: rgb(132, 0, 255);
+    border-radius: 20px;
+}
+
+.rover-info-items:hover {
+    background: rgb(132, 0, 255);
+    color: white;
+    box-shadow: 0 0 10px white;
+    transition: all 0.5s ease-in-out;
+}
+
+@media (max-width:600px) {
+
+    #container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        height: fit-content;
+        gap: 20px;
+    }
+
+    #rover-img img {
+        width: 350px;
+    }
+
+    .rover-info-items {
+        width: 150px;
+    }
+
+}
+
+@media (max-width:400px) {
+    .rover-info-items {
+        width: 100px;
+        height: 140px;
+    }
+}

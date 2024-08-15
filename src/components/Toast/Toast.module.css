@@ -64,6 +64,19 @@
 
 @media (max-width:600px) {
     #toast {
-        left: 20%;
+        left: 15%;
     }
+
+    #container {
+        width: 200px;
+    }
+
+    #toast span {
+        width: 200px;
+    }
+
+    #container img {
+        width: 20px;
+    }
+
 }
