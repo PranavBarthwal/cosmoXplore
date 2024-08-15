@@ -41,6 +41,6 @@
 
 ---
 
-Feel free to explore and contribute to CosmoXplore! If you have any questions or need assistance, don't hesitate to reach out to us. Happy coding! 🚀🌠
+Feel free to explore and contribute to CosmoXplore! If you have any questions or need assistance, don't hesitate to reach out to us. Happy coding! 🌠
 
 ---
