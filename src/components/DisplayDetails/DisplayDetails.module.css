@@ -1,5 +1,6 @@
 #container {
     height: 550px;
+    max-width: 100%;
     width: fit-content;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -14,6 +15,7 @@
 
 #rover-img img {
     width: 500px;
+    max-width: 100%;
     border-radius: 20px;
     border: 1px solid white;
 }
