@@ -10,7 +10,7 @@
 ![Screenshot 2024-02-25 233331](https://github.com/PranavBarthwal/cosmoXplore/assets/110532770/cadee836-6466-42b2-88ca-43e8fd026b41)
 
 
-# Steps to Contribute 👨‍💻
+# Steps to Contribute---------- 👨‍💻
 
 **Give this project some love! Star⭐ the repo and follow @PranavBarthwal to stay in the loop.**
 
