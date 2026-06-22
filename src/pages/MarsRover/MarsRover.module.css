@@ -20,6 +20,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    max-height: 400px;
+    overflow: hidden;
 }
 
 #section-1 p {
@@ -231,6 +233,6 @@
     -webkit-text-fill-color: transparent;
     font-size: 4rem;
     font-weight: bold;
-    border-top: 20dvh solid transparent;
+    padding-top: 2rem;
     filter: drop-shadow(0 0 2px rgb(174, 0, 255));
 }

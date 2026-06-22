@@ -43,7 +43,7 @@ function MarsRover() {
                 return
             }
 
-            let url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${userDate}&api_key=${import.meta.env.VITE_API_KEY}`;
+            let url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${userDate}&api_key=${import.meta.env.VITE_NASA_API_KEY}`;
 
             let response = await fetch(url);
 
@@ -78,7 +78,7 @@ function MarsRover() {
     async function getMaxDate() {
 
         try {
-            const response = await fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/latest_photos?api_key=${import.meta.env.VITE_API_KEY}`)
+            const response = await fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/latest_photos?api_key=${import.meta.env.VITE_NASA_API_KEY}`)
 
             const data = await ReadableStreamDecoder(response.body);
 
@@ -96,10 +96,10 @@ function MarsRover() {
             <h1 className={Styles["section_title"] + " section_title_mobile"} id="mars">Mars Rover Imagery</h1>
             <br />
 
-            <section id={Styles['section-1']}>
-                <div>
-                    <Mars />
-                </div>
+           <section id={Styles['section-1']}>
+            <div style={{ height: '400px', width: '100%' }}>
+                <Mars />
+            </div>
                 <p >
                     Welcome to an extraordinary adventure into the Martian landscape,
                     where we invite you to explore the wonders of the Red Planet through
