@@ -13,7 +13,7 @@
   -webkit-text-fill-color: transparent;
   font-size: 4rem;
   font-weight: bold;
-  border-top: 20dvh solid transparent;
+  padding-top: 2rem;
 }
 
 .ip {
